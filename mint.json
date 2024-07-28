@@ -90,6 +90,7 @@
       "group": "Applications",
       "pages": [
         "resources/applications/index",
+        "resources/applications/vite",
         "resources/applications/rails",
         "resources/applications/laravel",
         "resources/applications/django",
