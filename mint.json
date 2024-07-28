@@ -94,6 +94,7 @@
         "resources/applications/laravel",
         "resources/applications/django",
         "resources/applications/svelte-kit",
+        "resources/applications/vuejs",
         "resources/applications/nextjs",
         "resources/applications/jekyll"
       ]
