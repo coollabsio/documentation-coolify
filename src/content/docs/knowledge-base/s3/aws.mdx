@@ -1,0 +1,128 @@
+---
+title: "AWS S3"
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: "How to configure AWS S3 bucket in Coolify"
+description: "Here you can find the documentation for configuring AWS S3 bucket in Coolify."
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+# TLDR
+
+1. Create a bucket in AWS Console
+2. Create a custom policy in AWS Console with the following permissions:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:GetObjectAcl",
+        "s3:PutObjectAcl",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        // rewrite your-bucket-name with your bucket name
+        "arn:aws:s3:::your-bucket-name",
+        "arn:aws:s3:::your-bucket-name/*"
+      ]
+    }
+  ]
+}
+```
+
+3. Create an IAM user in AWS Console & attach the policy from the previous step.
+4. Go to User settings & create an `Access Key` in AWS Console.
+5. Add the `Access Key` and `Secret Key` in Coolify when you create a new S3 source.
+   <Aside type="tip">
+     You need to use the S3 HTTP endpoit without the bucket name, for example,
+     `https://s3.eu-central-1.amazonaws.com`.
+   </Aside>
+
+# Detailed steps
+
+### Create a bucket
+
+<Steps>
+1. Create a bucket in AWS Console
+    Go to [AWS Console](https://us-east-1.console.aws.amazon.com/s3/buckets) and
+    create a new bucket. ![1](../../../../assets/images/aws-s3/1-bucket.jpeg)
+2. Name your bucket.
+  ![2](../../../../assets/images/aws-s3/2-bucket.jpeg)
+</Steps>
+
+### Create a new policy
+
+<Steps>
+1. Create a new policy.
+    Go to [AWS Console](https://us-east-1.console.aws.amazon.com/iam/home) and create a new policy.
+     ![1](../../../../assets/images/aws-s3/1-policy.jpeg)
+2. Name & configure your policy.
+    Add the following JSON permissions to your policy (replace `your-bucket-name` with your bucket name):
+    ```json
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "s3:ListBucket",
+            "s3:GetObject",
+            "s3:DeleteObject",
+            "s3:GetObjectAcl",
+            "s3:PutObjectAcl",
+            "s3:PutObject"
+          ],
+          "Resource": [
+            "arn:aws:s3:::your-bucket-name",
+            "arn:aws:s3:::your-bucket-name/*"
+          ]
+        }
+      ]
+    }
+    ```
+        ![2](../../../../assets/images/aws-s3/2-policy.jpeg)
+        ![3](../../../../assets/images/aws-s3/3-policy.jpeg)
+</Steps>
+
+### Create a new IAM user
+
+<Steps>
+1. Create a new IAM User.
+    Go to [AWS Console](https://us-east-1.console.aws.amazon.com/iam/home) and
+    create a new user. ![1](../../../../assets/images/aws-s3/1-iam.jpeg)
+2. Name your user.
+    ![2](../../../../assets/images/aws-s3/2-iam.jpeg)
+3. Attach the policy created in the previous step.
+    ![3](../../../../assets/images/aws-s3/3-iam.jpeg)
+4. Go to your user settings.
+    ![4](../../../../assets/images/aws-s3/4-iam.jpeg)
+5. Create a new `Access Key`.
+    ![5](../../../../assets/images/aws-s3/5-iam.jpeg
+6. Set `Other` as use-case.
+    ![6](../../../../assets/images/aws-s3/6-iam.jpeg)
+7. Copy the `Access Key` & `Secret Access Key`.
+    You will need it to configure this S3 storage in Coolify.
+    ![7](../../../../assets/images/aws-s3/7-iam.jpeg)
+</Steps>
+
+### Configure S3 in Coolify
+
+<Steps>
+1. Add new S3 Storage.
+    Go to your Coolify instance and create a new S3 storage.
+    ![1](../../../../assets/images/aws-s3/1-coolify.jpeg)
+2. Add the details.
+    Make sure you use the S3 HTTP endpoint without the bucket name. For example,
+    `https://s3.eu-central-1.amazonaws.com`. ![2](../../../../assets/images/aws-s3/2-coolify.jpeg)
+</Steps>
+
+Well done!

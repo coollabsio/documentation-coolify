@@ -1,0 +1,35 @@
+---
+title: Downgrade - Self-hosted
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: How to downgrade the self-hosted version of Coolify
+description: "A guide on how to downgrade the self-hosted version of Coolify."
+sidebar:
+  order: 8
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+If you have any issues with the latest version, you can simple downgrade to the previous version. Here is how you can do it:
+
+<Steps>
+ 1. Disable Auto Update
+    Login as the `root` user (or any user that is in the `root` (initial) team),
+    go to your `Settings` menu and disable the `Auto Update` feature.
+
+ 2. Login to your server via SSH
+    Login to your server via SSH and execute the following command:
+    ```bash
+      curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash -s 4.0.0-beta.277
+    ```
+
+    Where `4.0.0-beta.277` is the version you want to downgrade to.
+
+</Steps>
+
+<Aside type="caution" title="Watch out!">
+  Please note that downgrading could cause weird issues, as the database schema
+  is not backward compatible. Some features might not work as expected.
+</Aside>

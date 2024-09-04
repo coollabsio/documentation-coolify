@@ -1,0 +1,234 @@
+---
+title: Installation - Self-hosted
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: "How to install self-hosted version of Coolify"
+description: "A guide to install self-hosted version of Coolify on your server."
+sidebar:
+  order: 5
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+To get started, you need a server, it can be a VPS, a Raspberry Pi, or any other server that you have SSH access to.
+
+<Aside>
+  It is strongly recommended to use a fresh, newly created server for installing Coolify. Installing on an existing server with other applications may lead to conflicts or unexpected behavior.
+</Aside>
+
+<Aside type="tip">
+  If you don't have a server or server provider yet, we prefer to use Hetzner.
+
+  You can use our [referral link](https://coolify.io/hetzner). It will helps us to keep the project alive.
+
+</Aside>
+
+<Aside>
+
+  TLDR for installation: 
+  ```bash 
+  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash 
+  ```
+</Aside>
+
+## Requirements 
+### Supported Operating Systems
+
+- Debian based Linux distributions (Debian, Ubuntu, etc.)
+- Redhat based Linux distributions (CentOS, Fedora, Redhat, AlmaLinux, Rocky etc.)
+- SUSE based Linux distributions (SLES, SUSE, openSUSE, etc.)
+- Arch Linux
+- Raspberry Pi OS (Raspbian)
+
+### Supported Architectures
+
+- AMD64
+- ARM64
+
+### Minimum Required Server
+
+#### For Coolify
+
+- 2 CPUs
+- 2 GBs memory
+- 30+ GB of storage for the images.
+
+#### For Your Resources
+
+Choosing your server resources depends on your usage. If you are planning to run a lot of things, you should consider buying a server with more resources.
+
+Hosting `Supabase`, `Appwrite` or `Posthog` requires more resources than hosting a static site (waay more).
+
+<Aside type="tip">
+
+Here is an example. I'm hosting most of my production stuffs on a server with:
+
+```
+- 8GB of memory (average usage 3.5GB)
+- 4 CPUs (average usage ~20-30%)
+- 150GB disk (usage 40GB)
+```
+
+For the following things:
+
+```
+- 3 NodeJS apps
+- 4 Static sites
+- Plausible Analytics (for visitor analytics)
+- Fider (feedback tool)
+- UptimeKuma (uptime monitoring)
+- Ghost (my newsletters)
+- 3 Redis databases
+- 2 PostgreSQL databases
+```
+
+</Aside>
+
+## Installation
+
+### Automated
+
+This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker-desktop))** on any supported Linux distribution.
+
+<Steps>
+1. SSH Enabled
+    Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user: [more details here](/docs/knowledge-base/server/openssh).
+
+    <Aside type="tip">
+    If you would like to use a custom SSH port, you can set it on the `localhost` server after you installed Coolify.
+    </Aside>
+
+2. Curl Installed
+    Make sure `curl` command is available on your server.
+
+3. Install
+    Execute the following command on your server with `root` user.
+
+    ```bash
+    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+    ```
+    > You can find the source code of this script [here](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh).
+
+4. Open Coolify's UI
+    Now you can access Coolify on port `http://<ip>:8000` of your server.
+</Steps>
+
+**What it does?**
+The script will do the following on your operating system.
+
+- Install basic commands: `curl wget git jq`
+- `Docker Engine` (24+).
+- Configures proper logging for `Docker Engine`.
+- Creates directory structure at `/data/coolify` for all the configuration files.
+- Creates an SSH key for Coolify to be able to manage this server from itself at `/data/coolify/ssh/keys/id.root@host.docker.internal`.
+- Install and start dockerized `Coolify`.
+
+### Manually
+
+<Steps>
+1. SSH Enabled
+    Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user: [more details here](/docs/knowledge-base/server/openssh).
+
+2. Curl Installed
+    Make sure `curl` command is available on your server.
+
+3. Install Docker Engine (24+)
+    Follow the official documentation to install Docker Engine on your server: [Docker Engine Installation](https://docs.docker.com/engine/install/#server).
+
+4. Create Directories
+    Create the base configuration directories under `/data/coolify`.
+
+    ```bash
+    mkdir -p /data/coolify/{source,ssh,applications,databases,backups,services,proxy,webhooks-during-maintenance}
+    mkdir -p /data/coolify/ssh/{keys,mux}
+    mkdir -p /data/coolify/proxy/dynamic
+    ```
+
+5. Generate SSH Key
+    Generate an SSH key for Coolify to be able to manage this server from itself.
+
+    ```bash
+
+    ssh-keygen -f /data/coolify/ssh/keys/id.root@host.docker.internal -t ed25519 -N '' -C root@coolify
+    ```
+
+6. Setup Your SSH Key
+    Add your public SSH key to `~/.ssh/authorized_keys`. This will allow Coolify to connect to this server from itself.
+
+    ```bash
+    cat /data/coolify/ssh/keys/id.root@host.docker.internal.pub >>~/.ssh/authorized_keys
+    chmod 600 ~/.ssh/authorized_keys
+    ```
+    <Aside type="tip">
+    You can skip this step if you already have an SSH key. But you need to add this key to your Coolify instance after installation.
+    </Aside>
+
+7. Setup Configuration Files
+    Copy the `docker-compose.yml`, `docker-compose.prod.yml`, `.env.production` & `upgrade.sh` files from Coolify's CDN to `/data/coolify/source`.
+
+    ```bash
+    curl -fsSL https://cdn.coollabs.io/coolify/docker-compose.yml -o /data/coolify/source/docker-compose.yml
+    curl -fsSL https://cdn.coollabs.io/coolify/docker-compose.prod.yml -o /data/coolify/source/docker-compose.prod.yml
+    curl -fsSL https://cdn.coollabs.io/coolify/.env.production -o /data/coolify/source/.env
+    curl -fsSL https://cdn.coollabs.io/coolify/upgrade.sh -o /data/coolify/source/upgrade.sh
+    ```
+
+8. Set Permissions
+   Set permissions for all the files and directories.
+    ```bash
+    chown -R 9999:root /data/coolify
+    chmod -R 700 /data/coolify
+    ```
+
+9. Generate Values
+    Generate values for the following variables in `/data/coolify/source/.env`.
+    ```bash
+    sed -i "s|APP_ID=.*|APP_ID=$(openssl rand -hex 16)|g" /data/coolify/source/.env
+    sed -i "s|APP_KEY=.*|APP_KEY=base64:$(openssl rand -base64 32)|g" /data/coolify/source/.env
+    sed -i "s|DB_PASSWORD=.*|DB_PASSWORD=$(openssl rand -base64 32)|g" /data/coolify/source/.env
+    sed -i "s|REDIS_PASSWORD=.*|REDIS_PASSWORD=$(openssl rand -base64 32)|g" /data/coolify/source/.env
+    sed -i "s|PUSHER_APP_ID=.*|PUSHER_APP_ID=$(openssl rand -hex 32)|g" /data/coolify/source/.env
+    sed -i "s|PUSHER_APP_KEY=.*|PUSHER_APP_KEY=$(openssl rand -hex 32)|g" /data/coolify/source/.env
+    sed -i "s|PUSHER_APP_SECRET=.*|PUSHER_APP_SECRET=$(openssl rand -hex 32)|g" /data/coolify/source/.env
+    ```
+    <Aside type="caution">
+    This only needs to be done once, when you install Coolify for the first time. If you do it after Coolify has been started, it will break your installation.
+
+    Make sure you save the values somewhere. If you lose them, you will lose access to your Coolify installation and all your data.
+    </Aside>
+
+10. Default Docker Network
+    Make sure the default `coolify` Docker network is available.
+    ```bash
+    docker network create --attachable coolify
+    ```
+
+11. Start Coolify
+    ```bash
+    docker compose --env-file /data/coolify/source/.env -f /data/coolify/source/docker-compose.yml -f /data/coolify/source/docker-compose.prod.yml up -d --pull always --remove-orphans --force-recreate
+    ```
+
+12. Open Coolify's UI
+    Now you can access Coolify on port `http://<ip>:8000` of your server.
+</Steps>
+
+### Docker Desktop
+
+<Aside type="caution">
+  This is not recommended for production usage. This is only for testing
+  purposes.
+</Aside>
+
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows.
+- Create a directory that will hold all your Coolify related data. For example in your User directory: `C:\Users\yourusername\coolify`.
+- Copy `docker-compose.windows.yml` and `.env.windows-docker-desktop.example` to the directory you created in the previous step.
+- Rename `docker-compose.windows.yml` to `docker-compose.yml`.
+- Rename `.env.windows-docker-desktop.example` to `.env`.
+- Create a `coolify` docker network with `docker network create coolify`.
+- Optional: Change the values in `.env` file.
+- Start Coolify with `docker compose up` command.
+- You can access Coolify on port `localhost:8000` of your machine.
+
+> Coolify Proxy is still not working on Windows.
