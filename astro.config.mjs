@@ -36,7 +36,7 @@ export default defineConfig({
                 },
             ]),
         ],
-        title: 'Coolify',
+        title: 'Coolify\'s Documentation',
         social: {
             github: 'https://github.com/coollabsio/coolify-documentation',
         },
@@ -61,7 +61,7 @@ export default defineConfig({
                 items: [
                     { label: 'FAQ', link: '/knowledge-base/faq' },
                     {
-                        label: 'Self-hosted Instance', items: [
+                        label: 'Self-hosted Instance', collapsed: true, items: [
                             { label: 'Monitoring', link: '/knowledge-base/monitoring' },
                             { label: 'Notifications', link: '/knowledge-base/notifications' },
                             { label: 'Self-update', link: '/knowledge-base/self-update' },
@@ -70,13 +70,13 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: 'DNS & Domains', items: [
+                        label: 'DNS & Domains', collapsed: true, items: [
                             { label: 'DNS Configuration', link: '/knowledge-base/dns-configuration' },
                             { label: 'Domains', link: '/knowledge-base/domains' },
                         ]
                     },
                     {
-                        label: 'Resources', items: [
+                        label: 'Resources', collapsed: true, items: [
                             { label: 'Environment Variables', link: '/knowledge-base/environment-variables' },
                             { label: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
                             { label: 'Drain Logs', link: '/knowledge-base/drain-logs' },
@@ -84,7 +84,7 @@ export default defineConfig({
                             { label: 'Database Backups', link: '/knowledge-base/database-backups' },
                             { label: 'How to add a new service', link: '/knowledge-base/add-a-service' },
                             {
-                                label: 'Applications', items: [
+                                label: 'Applications', collapsed: true, items: [
                                     { label: 'Overview', link: '/knowledge-base/applications' },
                                     { label: 'Django', link: '/knowledge-base/applications/django' },
                                     { label: 'Laravel', link: '/knowledge-base/applications/laravel' },
@@ -99,7 +99,7 @@ export default defineConfig({
                                 ]
                             },
                             {
-                                label: "Databases", items: [
+                                label: "Databases", collapsed: true, items: [
                                     { label: "Overview", link: '/knowledge-base/databases' },
                                     { label: 'Backups', link: '/knowledge-base/databases/backups' },
                                     { label: "MySQL", link: '/knowledge-base/databases/mysql' },
@@ -114,7 +114,7 @@ export default defineConfig({
                             },
 
                             {
-                                label: "Services", items: [
+                                label: "Services", collapsed: true, items: [
                                     { label: "Overview", link: '/knowledge-base/services' },
                                     { label: "Activepieces", link: '/knowledge-base/services/activepieces' },
                                     { label: "Appsmith", link: '/knowledge-base/services/appsmith' },
@@ -155,12 +155,12 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: 'How-Tos', items: [
+                        label: 'How-Tos', collapsed: true, items: [
                             { label: 'Load-balancing on Hetzner', link: '/knowledge-base/how-to/hetzner-loadbalancing' },
                         ]
                     },
                     {
-                        label: "Git", items: [
+                        label: "Git", collapsed: true, items: [
                             {
                                 label: "GitHub", items: [
                                     { label: "Integration", link: '/knowledge-base/git/github/integration' },
@@ -185,7 +185,7 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: "Server", items: [
+                        label: "Server", collapsed: true, items: [
                             { label: "Introduction", link: '/knowledge-base/server/introduction' },
                             { label: "Automated Cleanup", link: '/knowledge-base/server/automated-cleanup' },
                             { label: "Build Server", link: '/knowledge-base/server/build-server' },
@@ -198,14 +198,14 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: "S3", items: [
+                        label: "S3", collapsed: true, items: [
                             { label: "Introduction", link: '/knowledge-base/s3' },
                             { label: "AWS", link: '/knowledge-base/s3/aws' },
                             { label: "R2", link: '/knowledge-base/s3/r2' },
                         ]
                     },
                     {
-                        label: "Docker", items: [
+                        label: "Docker", collapsed: true, items: [
                             { label: "Compose", link: '/knowledge-base/docker/compose' },
                             { label: "Custom Commands", link: '/knowledge-base/docker/custom-commands' },
                             { label: "Registry", link: '/knowledge-base/docker/registry' },
@@ -213,11 +213,11 @@ export default defineConfig({
                         ]
                     },
                     {
-                        label: "Cloudflare", items: [
+                        label: "Cloudflare", collapsed: true, items: [
                             { label: "Tunnels", link: '/knowledge-base/cloudflare/tunnels' },
                         ]
                     }, {
-                        label: "Traefik", items: [
+                        label: "Traefik", collapsed: true, items: [
                             { label: "Basic Auth Middleware", link: '/knowledge-base/traefik/basic-auth' },
                             { label: "Custom SSL Certificates", link: '/knowledge-base/traefik/custom-ssl-certs' },
                             { label: "Dashboard", link: '/knowledge-base/traefik/dashboard' },

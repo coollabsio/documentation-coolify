@@ -4,17 +4,18 @@
 
 /* Dark mode colors. */
 :root {
-    --sl-color-accent-low: #20261f;
-    --sl-color-accent: #5e7058;
-    --sl-color-accent-high: #c4cbc2;
-    --sl-color-white: #ffffff;
+    --sl-color-accent-low: #FCD452;
+    --sl-color-accent: #FCD452;
+    --sl-color-accent-high: #242424;
+    --sl-color-text-accent: #383838;
+    --sl-color-white: #fff;
     --sl-color-gray-1: #eeeded;
     --sl-color-gray-2: #c2c2c2;
     --sl-color-gray-3: #8c8b8b;
     --sl-color-gray-4: #585858;
     --sl-color-gray-5: #383838;
-    --sl-color-gray-6: #272727;
-    --sl-color-black: #181818;
+    --sl-color-gray-6: #101010;
+    --sl-color-black: #101010;
 }
 
 /* Light mode colors. */
@@ -31,4 +32,54 @@
     --sl-color-gray-6: #eeeded;
     --sl-color-gray-7: #f6f6f6;
     --sl-color-black: #ffffff;
+}
+
+.site-title,
+h4>a {
+    @apply dark:text-white;
+}
+
+div>a>svg {
+    @apply dark:text-white;
+}
+
+a[aria-current="true"] {
+    @apply dark:text-warning;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+    @apply dark:text-warning;
+}
+
+.starlight-aside--note {
+    @apply dark:bg-blue-900 border-blue-400;
+}
+
+.starlight-aside--tip {
+    @apply dark:bg-green-900 border-green-400;
+}
+
+.starlight-aside--caution {
+    @apply dark:bg-warning border-yellow-600 dark:text-black;
+}
+
+.starlight-aside--caution .starlight-aside__title {
+    @apply dark:text-black;
+}
+
+
+.starlight-aside--danger {
+    @apply dark:bg-error border-error;
+}
+
+.type {
+    @apply dark:text-white;
+}
+
+ul>li>strong>a {
+    @apply dark:text-white;
+}
+
+.required {
+    @apply dark:text-error;
 }
