@@ -55,7 +55,10 @@ To uninstall the self-hosted version of Coolify from your server, follow these s
    sudo docker rmi quay.io/soketi/soketi:1.6-16-alpine
    sudo docker rmi postgres:15-alpine
    sudo docker rmi redis:alpine
-   sudo docker rmi traefik:v2.10
+
+   sudo docker rmi traefik:v2.10  # when using the default proxy
+   sudo docker rmi lucaslorentz/caddy-docker-proxy:2.8-alpine  # when you have switched proxy to Caddy
+   
    ```
 
 After completing these steps, Coolify will be uninstalled from your server.
