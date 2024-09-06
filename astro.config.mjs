@@ -19,12 +19,6 @@ export default defineConfig({
             './src/tailwind.css',
         ],
         favicon: '/coolify.png',
-        social: {
-            'x.com': 'https://x.com/coolifyio',
-            discord: 'https://discord.gg/coolify',
-            github: 'https://github.com/coollabsio/coolify',
-            twitch: 'https://twitch.tv/heyandras',
-        },
         plugins: [
             starlightLinksValidator(),
             starlightImageZoom(),
@@ -38,7 +32,10 @@ export default defineConfig({
         ],
         title: 'Coolify\'s Documentation',
         social: {
-            github: 'https://github.com/coollabsio/coolify-documentation',
+            github: 'https://github.com/coollabsio/documentation-coolify',
+            'x.com': 'https://x.com/coolifyio',
+            discord: 'https://discord.gg/coolify',
+            twitch: 'https://twitch.tv/heyandras',
         },
         sidebar: [
             {
