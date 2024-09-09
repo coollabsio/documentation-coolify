@@ -22,6 +22,7 @@ To validate your configuration, make sure the followings are set on your server.
 </Aside>
 
 <Steps>
+
 1. SSH Enabled
     Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user.
 
@@ -53,7 +54,9 @@ To validate your configuration, make sure the followings are set on your server.
 
     ````
 2. Root Login
-   Make sure `PermitRootLogin` is set to `yes` or `without-password` or `prohibit-password`  in `/etc/ssh/sshd_config` file.
+   Make sure that the following parameters are set in the `/etc/ssh/sshd_config` file:
+  - `PermitRootLogin` is set to `yes`, `without-password`, or `prohibit-password`.
+  - `PubkeyAuthentication` is set to `yes`.
 
     ```bash
     # Check the current value
