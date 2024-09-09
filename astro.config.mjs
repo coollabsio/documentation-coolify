@@ -57,6 +57,14 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     { label: 'FAQ', link: '/knowledge-base/faq' },
+
+                    { label: 'Contribute to Coolify', collapsed: true, items: [
+                        { label: 'Contribute to core Coolify', link: '/knowledge-base/contribute/contribute-to-coolify' },
+                        { label: 'Add a new service template to Coolify', link: '/knowledge-base/contribute/add-a-service' },
+                        { label: 'Contribute to the Coolify Documentation', link: '/knowledge-base/contribute/contribute-to-coolify-documentation' },
+                    ]
+                    },
+
                     {
                         label: 'Self-hosted Instance', collapsed: true, items: [
                             { label: 'Monitoring', link: '/knowledge-base/monitoring' },
