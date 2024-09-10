@@ -86,6 +86,14 @@ export default defineConfig({
                     name: 'twitter:description',
                     content: 'An open-source & self-hostable Heroku / Netlify / Vercel alternative.',
                 }
+            },
+            {
+                tag: 'script',
+                attrs: {
+                    defer: true,
+                    'data-domain': 'coolify.io/docs',
+                    src: 'https://analytics.coollabs.io/js/script.js',
+                }
             }
 
         ],
