@@ -93,6 +93,7 @@ export default defineConfig({
                                 label: 'Applications', collapsed: true, items: [
                                     { label: 'Overview', link: '/knowledge-base/applications' },
                                     { label: 'Django', link: '/knowledge-base/applications/django' },
+                                    { label: 'Phoenix', link: '/knowledge-base/applications/phoenix' },
                                     { label: 'Laravel', link: '/knowledge-base/applications/laravel' },
                                     { label: 'Jekyll', link: '/knowledge-base/applications/jekyll' },
                                     { label: 'Next.js', link: '/knowledge-base/applications/nextjs' },
