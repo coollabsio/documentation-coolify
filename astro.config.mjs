@@ -15,6 +15,80 @@ export default defineConfig({
         // Disable the default base styles:
         applyBaseStyles: false,
     }), starlight({
+        head: [
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'description',
+                    content: 'An open-source & self-hostable Heroku / Netlify / Vercel alternative.',
+                }
+            },
+            //og:type
+            {
+                tag: 'meta',
+                attrs: {
+                    property: 'og:type',
+                    content: 'website',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    property: 'og:image',
+                    content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    property: 'og:url',
+                    content: 'https://coolify.io/docs',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    property: 'og:site_name',
+                    content: 'Coolify',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'twitter:image',
+                    content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'twitter:card',
+                    content: 'summary_large_image',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'twitter:site',
+                    content: '@coolifyio',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'twitter:title',
+                    content: 'Coolify',
+                }
+            },
+            {
+                tag: 'meta',
+                attrs: {
+                    name: 'twitter:description',
+                    content: 'An open-source & self-hostable Heroku / Netlify / Vercel alternative.',
+                }
+            }
+
+        ],
         customCss: [
             './src/tailwind.css',
         ],
