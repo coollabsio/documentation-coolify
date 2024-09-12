@@ -67,6 +67,9 @@ a[aria-current="true"] {
     @apply dark:text-black;
 }
 
+.starlight-aside--caution a {
+    @apply dark:text-black;
+}
 
 .starlight-aside--danger {
     @apply dark:bg-error border-error;
