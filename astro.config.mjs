@@ -115,7 +115,7 @@ export default defineConfig({
           },
         ]),
       ],
-      title: "Coolify's Documentation",
+      title: "Coolify's Docs",
       logo: {
         src: "./src/assets/coolify-transparent.svg",
       },
