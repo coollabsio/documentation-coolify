@@ -11,6 +11,70 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   base: "/docs",
   site: "https://coolify.io/docs",
+  redirects: {
+    "/knowledge-base/applications": "/docs/applications",
+    "/knowledge-base/applications/laravel": "/docs/applications/laravel",
+    "/knowledge-base/applications/phoenix": "/docs/applications/phoenix",
+    "/knowledge-base/applications/jekyll": "/docs/applications/jekyll",
+    "/knowledge-base/applications/nextjs": "/docs/applications/nextjs",
+    "/knowledge-base/applications/nuxt": "/docs/applications/nuxt",
+    "/knowledge-base/applications/rails": "/docs/applications/rails",
+    "/knowledge-base/applications/svelte-kit": "/docs/applications/svelte-kit",
+    "/knowledge-base/applications/symfony": "/docs/applications/symfony",
+    "/knowledge-base/applications/vite": "/docs/applications/vite",
+    "/knowledge-base/applications/vuejs": "/docs/applications/vuejs",
+    "/knowledge-base/databases": "/docs/databases",
+    "/knowledge-base/databases/backups": "/docs/databases/backups",
+    "/knowledge-base/databases/mysql": "/docs/databases/mysql",
+    "/knowledge-base/databases/mariadb": "/docs/databases/mariadb",
+    "/knowledge-base/databases/postgresql": "/docs/databases/postgresql",
+    "/knowledge-base/databases/mongodb": "/docs/databases/mongodb",
+    "/knowledge-base/databases/redis": "/docs/databases/redis",
+    "/knowledge-base/databases/dragonfly": "/docs/databases/dragonfly",
+    "/knowledge-base/databases/keydb": "/docs/databases/keydb",
+    "/knowledge-base/databases/clickhouse": "/docs/databases/clickhouse",
+    "/knowledge-base/services": "/docs/services",
+    "/knowledge-base/services/activepieces": "/docs/services/activepieces",
+    "/knowledge-base/services/appsmith": "/docs/services/appsmith",
+    "/knowledge-base/services/appwrite": "/docs/services/appwrite",
+    "/knowledge-base/services/authentik": "/docs/services/authentik",
+    "/knowledge-base/services/babybuddy": "/docs/services/babybuddy",
+    "/knowledge-base/services/budge": "/docs/services/budge",
+    "/knowledge-base/services/changedetection": "/docs/services/changedetection",
+    "/knowledge-base/services/classicpress": "/docs/services/classicpress",
+    "/knowledge-base/services/code-server": "/docs/services/code-server",
+    "/knowledge-base/services/dashboard": "/docs/services/dashboard",
+    "/knowledge-base/services/directus": "/docs/services/directus",
+    "/knowledge-base/services/dokuwiki": "/docs/services/dokuwiki",
+    "/knowledge-base/services/duplicati": "/docs/services/duplicati",
+    "/knowledge-base/services/emby-stat": "/docs/services/emby-stat",
+    "/knowledge-base/services/emby": "/docs/services/emby",
+    "/knowledge-base/services/fider": "/docs/services/fider",
+    "/knowledge-base/services/filebrowser": "/docs/services/filebrowser",
+    "/knowledge-base/services/firefly-iii": "/docs/services/firefly-iii",
+    "/knowledge-base/services/formbricks": "/docs/services/formbricks",
+    "/knowledge-base/services/ghost": "/docs/services/ghost",
+    "/knowledge-base/services/gitea": "/docs/services/gitea",
+    "/knowledge-base/services/glitchtip": "/docs/services/glitchtip",
+    "/knowledge-base/services/grafana": "/docs/services/grafana",
+    "/knowledge-base/services/grocy": "/docs/services/grocy",
+    "/knowledge-base/services/heimdall": "/docs/services/heimdall",
+    "/knowledge-base/services/jellyfin": "/docs/services/jellyfin",
+    "/knowledge-base/services/kuzzle": "/docs/services/kuzzle",
+    "/knowledge-base/services/logto": "/docs/services/logto",
+    "/knowledge-base/services/meilisearch": "/docs/services/meilisearch",
+    "/knowledge-base/services/metabase": "/docs/services/metabase",
+    "/knowledge-base/services/metube": "/docs/services/metube",
+    "/knowledge-base/services/minio": "/docs/services/minio",
+    "/knowledge-base/services/plausible": "/docs/services/plausible",
+    "/knowledge-base/services/statusnook": "/docs/services/statusnook",
+    "/knowledge-base/contribute/coolify": "/docs/contribute/coolify",
+    "/knowledge-base/contribute/service": "/docs/contribute/service",
+    "/knowledge-base/contribute/documentation": "/docs/contribute/documentation",
+
+
+
+  },
   integrations: [
     tailwind({
       // Disable the default base styles:
@@ -141,29 +205,235 @@ export default defineConfig({
           ],
         },
         {
+          label: "How to Contribute?",
+          collapsed: true,
+          items: [
+            {
+              label: "Coolify",
+              link: "/contribute/coolify",
+            },
+            {
+              label: "New Service",
+              link: "/contribute/service",
+            },
+            {
+              label: "Documentation",
+              link: "/contribute/documentation",
+            },
+          ],
+        },
+        {
+          label: "Applications",
+          collapsed: true,
+          items: [
+            { label: "Overview", link: "/applications" },
+            {
+              label: "Django",
+              link: "/applications/django",
+            },
+            {
+              label: "Phoenix",
+              link: "/applications/phoenix",
+            },
+            {
+              label: "Laravel",
+              link: "/applications/laravel",
+            },
+            {
+              label: "Jekyll",
+              link: "/applications/jekyll",
+            },
+            {
+              label: "Next.js",
+              link: "/applications/nextjs",
+            },
+            {
+              label: "Nuxt",
+              link: "/applications/nuxt",
+            },
+            {
+              label: "Ruby on Rails",
+              link: "/applications/rails",
+            },
+            {
+              label: "SvelteKit",
+              link: "/applications/svelte-kit",
+            },
+            {
+              label: "Symfony",
+              link: "/applications/symfony",
+            },
+            {
+              label: "Vite",
+              link: "/applications/vite",
+            },
+            {
+              label: "Vue.js",
+              link: "/applications/vuejs",
+            },
+          ],
+        },
+        {
+          label: "Databases",
+          collapsed: true,
+          items: [
+            { label: "Overview", link: "/databases" },
+            {
+              label: "Backups",
+              link: "/databases/backups",
+            },
+            { label: "MySQL", link: "/databases/mysql" },
+            {
+              label: "MariaDB",
+              link: "/databases/mariadb",
+            },
+            {
+              label: "PostgreSQL",
+              link: "/databases/postgresql",
+            },
+            {
+              label: "MongoDB",
+              link: "/databases/mongodb",
+            },
+            { label: "Redis", link: "/databases/redis" },
+            {
+              label: "DragonFly",
+              link: "/databases/dragonfly",
+            },
+            { label: "KeyDB", link: "/databases/keydb" },
+            {
+              label: "Clickhouse",
+              link: "/databases/clickhouse",
+            },
+          ],
+        },
+
+        {
+          label: "Services",
+          collapsed: true,
+          items: [
+            { label: "Overview", link: "/services" },
+            {
+              label: "Activepieces",
+              link: "/services/activepieces",
+            },
+            {
+              label: "Appsmith",
+              link: "/services/appsmith",
+            },
+            {
+              label: "Appwrite",
+              link: "/services/appwrite",
+            },
+            {
+              label: "Authentik",
+              link: "/services/authentik",
+            },
+            {
+              label: "Baby Buddy",
+              link: "/services/babybuddy",
+            },
+            { label: "Budge", link: "/services/budge" },
+            {
+              label: "Changedetection",
+              link: "/services/changedetection",
+            },
+            {
+              label: "Classicpress",
+              link: "/services/classicpress",
+            },
+            {
+              label: "Code Server",
+              link: "/services/code-server",
+            },
+            {
+              label: "Dashboard",
+              link: "/services/dashboard",
+            },
+            {
+              label: "Directus",
+              link: "/services/directus",
+            },
+            {
+              label: "Dokuwiki",
+              link: "/services/dokuwiki",
+            },
+            {
+              label: "Duplicati",
+              link: "/services/duplicati",
+            },
+            {
+              label: "Emby Stat",
+              link: "/services/emby-stat",
+            },
+            { label: "Emby", link: "/services/emby" },
+            { label: "Fider", link: "/services/fider" },
+            {
+              label: "Filebrowser",
+              link: "/services/filebrowser",
+            },
+            {
+              label: "Firefly III",
+              link: "/services/firefly-iii",
+            },
+            {
+              label: "Formbricks",
+              link: "/services/formbricks",
+            },
+            { label: "Ghost", link: "/services/ghost" },
+            { label: "Gitea", link: "/services/gitea" },
+            {
+              label: "Glitchtip",
+              link: "/services/glitchtip",
+            },
+            {
+              label: "Grafana",
+              link: "/services/grafana",
+            },
+            { label: "Grocy", link: "/services/grocy" },
+            {
+              label: "Heimdall",
+              link: "/services/heimdall",
+            },
+            {
+              label: "Jellyfin",
+              link: "/services/jellyfin",
+            },
+            {
+              label: "Kuzzle",
+              link: "/services/kuzzle",
+            },
+            { label: "Logto", link: "/services/logto" },
+            {
+              label: "Meilisearch",
+              link: "/services/meilisearch",
+            },
+            {
+              label: "Metabase",
+              link: "/services/metabase",
+            },
+            {
+              label: "Metube",
+              link: "/services/metube",
+            },
+            { label: "Minio", link: "/services/minio" },
+            {
+              label: "Plausible",
+              link: "/services/plausible",
+            },
+            {
+              label: "Statusnook",
+              link: "/services/statusnook",
+            },
+          ],
+        },
+        {
           label: "Knowledge Base",
           collapsed: false,
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
 
-            {
-              label: "How to Contribute?",
-              collapsed: true,
-              items: [
-                {
-                  label: "Coolify",
-                  link: "/knowledge-base/contribute/coolify",
-                },
-                {
-                  label: "New Service",
-                  link: "/knowledge-base/contribute/service",
-                },
-                {
-                  label: "Documentation",
-                  link: "/knowledge-base/contribute/documentation",
-                },
-              ],
-            },
+
 
             {
               label: "Self-hosted Instance",
@@ -206,219 +476,6 @@ export default defineConfig({
                 {
                   label: "Health checks",
                   link: "/knowledge-base/health-checks",
-                },
-                {
-                  label: "Database Backups",
-                  link: "/knowledge-base/database-backups",
-                },
-                {
-                  label: "How to add a new service",
-                  link: "/knowledge-base/add-a-service",
-                },
-                {
-                  label: "Applications",
-                  collapsed: true,
-                  items: [
-                    { label: "Overview", link: "/knowledge-base/applications" },
-                    {
-                      label: "Django",
-                      link: "/knowledge-base/applications/django",
-                    },
-                    {
-                      label: "Phoenix",
-                      link: "/knowledge-base/applications/phoenix",
-                    },
-                    {
-                      label: "Laravel",
-                      link: "/knowledge-base/applications/laravel",
-                    },
-                    {
-                      label: "Jekyll",
-                      link: "/knowledge-base/applications/jekyll",
-                    },
-                    {
-                      label: "Next.js",
-                      link: "/knowledge-base/applications/nextjs",
-                    },
-                    {
-                      label: "Nuxt",
-                      link: "/knowledge-base/applications/nuxt",
-                    },
-                    {
-                      label: "Ruby on Rails",
-                      link: "/knowledge-base/applications/rails",
-                    },
-                    {
-                      label: "SvelteKit",
-                      link: "/knowledge-base/applications/svelte-kit",
-                    },
-                    {
-                      label: "Symfony",
-                      link: "/knowledge-base/applications/symfony",
-                    },
-                    {
-                      label: "Vite",
-                      link: "/knowledge-base/applications/vite",
-                    },
-                    {
-                      label: "Vue.js",
-                      link: "/knowledge-base/applications/vuejs",
-                    },
-                  ],
-                },
-                {
-                  label: "Databases",
-                  collapsed: true,
-                  items: [
-                    { label: "Overview", link: "/knowledge-base/databases" },
-                    {
-                      label: "Backups",
-                      link: "/knowledge-base/databases/backups",
-                    },
-                    { label: "MySQL", link: "/knowledge-base/databases/mysql" },
-                    {
-                      label: "MariaDB",
-                      link: "/knowledge-base/databases/mariadb",
-                    },
-                    {
-                      label: "PostgreSQL",
-                      link: "/knowledge-base/databases/postgresql",
-                    },
-                    {
-                      label: "MongoDB",
-                      link: "/knowledge-base/databases/mongodb",
-                    },
-                    { label: "Redis", link: "/knowledge-base/databases/redis" },
-                    {
-                      label: "DragonFly",
-                      link: "/knowledge-base/databases/dragonfly",
-                    },
-                    { label: "KeyDB", link: "/knowledge-base/databases/keydb" },
-                    {
-                      label: "Clickhouse",
-                      link: "/knowledge-base/databases/clickhouse",
-                    },
-                  ],
-                },
-
-                {
-                  label: "Services",
-                  collapsed: true,
-                  items: [
-                    { label: "Overview", link: "/knowledge-base/services" },
-                    {
-                      label: "Activepieces",
-                      link: "/knowledge-base/services/activepieces",
-                    },
-                    {
-                      label: "Appsmith",
-                      link: "/knowledge-base/services/appsmith",
-                    },
-                    {
-                      label: "Appwrite",
-                      link: "/knowledge-base/services/appwrite",
-                    },
-                    {
-                      label: "Authentik",
-                      link: "/knowledge-base/services/authentik",
-                    },
-                    {
-                      label: "Baby Buddy",
-                      link: "/knowledge-base/services/babybuddy",
-                    },
-                    { label: "Budge", link: "/knowledge-base/services/budge" },
-                    {
-                      label: "Changedetection",
-                      link: "/knowledge-base/services/changedetection",
-                    },
-                    {
-                      label: "Classicpress",
-                      link: "/knowledge-base/services/classicpress",
-                    },
-                    {
-                      label: "Code Server",
-                      link: "/knowledge-base/services/code-server",
-                    },
-                    {
-                      label: "Dashboard",
-                      link: "/knowledge-base/services/dashboard",
-                    },
-                    {
-                      label: "Directus",
-                      link: "/knowledge-base/services/directus",
-                    },
-                    {
-                      label: "Dokuwiki",
-                      link: "/knowledge-base/services/dokuwiki",
-                    },
-                    {
-                      label: "Duplicati",
-                      link: "/knowledge-base/services/duplicati",
-                    },
-                    {
-                      label: "Emby Stat",
-                      link: "/knowledge-base/services/emby-stat",
-                    },
-                    { label: "Emby", link: "/knowledge-base/services/emby" },
-                    { label: "Fider", link: "/knowledge-base/services/fider" },
-                    {
-                      label: "Filebrowser",
-                      link: "/knowledge-base/services/filebrowser",
-                    },
-                    {
-                      label: "Firefly III",
-                      link: "/knowledge-base/services/firefly-iii",
-                    },
-                    {
-                      label: "Formbricks",
-                      link: "/knowledge-base/services/formbricks",
-                    },
-                    { label: "Ghost", link: "/knowledge-base/services/ghost" },
-                    { label: "Gitea", link: "/knowledge-base/services/gitea" },
-                    {
-                      label: "Glitchtip",
-                      link: "/knowledge-base/services/glitchtip",
-                    },
-                    {
-                      label: "Grafana",
-                      link: "/knowledge-base/services/grafana",
-                    },
-                    { label: "Grocy", link: "/knowledge-base/services/grocy" },
-                    {
-                      label: "Heimdall",
-                      link: "/knowledge-base/services/heimdall",
-                    },
-                    {
-                      label: "Jellyfin",
-                      link: "/knowledge-base/services/jellyfin",
-                    },
-                    {
-                      label: "Kuzzle",
-                      link: "/knowledge-base/services/kuzzle",
-                    },
-                    { label: "Logto", link: "/knowledge-base/services/logto" },
-                    {
-                      label: "Meilisearch",
-                      link: "/knowledge-base/services/meilisearch",
-                    },
-                    {
-                      label: "Metabase",
-                      link: "/knowledge-base/services/metabase",
-                    },
-                    {
-                      label: "Metube",
-                      link: "/knowledge-base/services/metube",
-                    },
-                    { label: "Minio", link: "/knowledge-base/services/minio" },
-                    {
-                      label: "Plausible",
-                      link: "/knowledge-base/services/plausible",
-                    },
-                    {
-                      label: "Statusnook",
-                      link: "/knowledge-base/services/statusnook",
-                    },
-                  ],
                 },
               ],
             },
