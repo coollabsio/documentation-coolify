@@ -21,17 +21,18 @@ Follow these steps to set up Astro with Starlight and additional extensions:
    - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
    - [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
 
-5. **Create your contribution**
-   
-   Either edit a markdown file in the `src/content/docs/` directory or create a new `.mdx` file in the `src/content/docs/` directory and start writing your docs article.
-
-6. **Run your Astro site**
+5. **Run your Astro site**
    
    Start the development server by running the following command inside the local repository:
    ```
    npm run dev
    ```
    This will start a local server and give you a URL to preview your changes.
+
+6. **Create your contribution**
+   
+   Either edit a markdown file in the `src/content/docs/` directory or create a new `.mdx` file in the `src/content/docs/` directory and start writing your docs article.
+
 
 7. **Create a Pull Request**
 
