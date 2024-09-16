@@ -15,7 +15,7 @@ Follow these steps to set up Astro with Starlight and additional extensions:
    npm install
    ```
 
-4. **Install the Astro and MDX VS Code extension (optional)**
+4. **Optional: Install the Astro and MDX VS Code extension**
    
    Install the Astro and MDX VS Code extension to get syntax highlighting and other useful features:
    - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
