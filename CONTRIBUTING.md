@@ -30,7 +30,7 @@ Follow these steps to set up Astro with Starlight and additional extensions:
 
 6. **Create your contribution**
    
-   Eiter edit a markdown file in the `src/content/docs/` directory or create a new `.mdx` file in the `src/content/docs/` directory and start writing your docs article.
+   Either edit a markdown file in the `src/content/docs/` directory or create a new `.mdx` file in the `src/content/docs/` directory and start writing your docs article.
 
 7. **Run your Astro site**
    
