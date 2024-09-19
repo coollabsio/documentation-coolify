@@ -256,3 +256,20 @@ http {
     }
 }
 ```
+
+#### Inertia SSR
+
+If you are using Inertia.js with [server-side rendering](https://inertiajs.com/server-side-rendering), you should add another worker in your `nixpacks.toml` file to automatically start your SSR server.
+
+
+```toml
+"worker-inertia-ssr.conf" = '''
+[program:inertia-ssr]
+process_name=%(program_name)s_%(process_num)02d
+command=bash -c 'exec php /app/artisan inertia:start-ssr'
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/worker-inertia-ssr.log
+stdout_logfile=/var/log/worker-inertia-ssr.log
+'''
+```
