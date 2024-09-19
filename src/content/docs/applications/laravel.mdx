@@ -3,8 +3,8 @@ title: Laravel
 head:
   - tag: "meta"
     attrs:
-        property: "og:title"
-        content: "How to deploy Laravel with Coolify"
+      property: "og:title"
+      content: "How to deploy Laravel with Coolify"
 description: "A guide on how to deploy Laravel with Coolify"
 ---
 
@@ -187,30 +187,30 @@ http {
         add_header X-Content-Type-Options "nosniff";
 
         client_max_body_size 35M;
-     
+
         index index.php;
-     
+
         charset utf-8;
-     
+
         $if(IS_LARAVEL) (
             location / {
                 try_files $uri $uri/ /index.php?$query_string;
             }
         ) else ()
-        
+
         $if(NIXPACKS_PHP_FALLBACK_PATH) (
           location / {
             try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
           }
         ) else ()
-     
+
         location = /favicon.ico { access_log off; log_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
-     
+
         $if(IS_LARAVEL) (
             error_page 404 /index.php;
         ) else ()
-     
+
         location ~ \.php$ {
             fastcgi_pass 127.0.0.1:9000;
             fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
@@ -219,11 +219,40 @@ http {
 
             fastcgi_param PHP_VALUE "upload_max_filesize=30M \n post_max_size=35M";
         }
-     
+
         location ~ /\.(?!well-known).* {
             deny all;
         }
     }
 }
 '''
+```
+
+### With Inertia.js
+
+When using Laravel with [Inertia.js](https://inertiajs.com/), you may need to specify some additional configuration in your `nixpacks.toml` file.
+
+
+#### Increasing the NGINX buffer size for Inertia requests
+
+Because of a [known issue](https://github.com/inertiajs/inertia-laravel/issues/529) with Inertia.js and default NGINX configuration, you may need to increase the buffer size for NGINX to handle Inertia requests.
+
+
+```diff toml
+"nginx.template.conf" = '''
+# ...
+http {
+    # ...
+    server {
+        # ...
+        location ~ \.php$ {
++            fastcgi_buffer_size 8k;
+            fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+            include $!{nginx}/conf/fastcgi_params;
+            include $!{nginx}/conf/fastcgi.conf;
+
+            # ...
+        }
+    }
+}
 ```
