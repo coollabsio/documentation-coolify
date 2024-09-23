@@ -35,12 +35,14 @@ export default defineConfig({
     "/knowledge-base/databases/clickhouse": "/docs/databases/clickhouse",
     "/knowledge-base/services": "/docs/services",
     "/knowledge-base/services/activepieces": "/docs/services/activepieces",
+    "/knowledge-base/services/browserless": "/docs/services/browserless",
     "/knowledge-base/services/appsmith": "/docs/services/appsmith",
     "/knowledge-base/services/appwrite": "/docs/services/appwrite",
     "/knowledge-base/services/authentik": "/docs/services/authentik",
     "/knowledge-base/services/babybuddy": "/docs/services/babybuddy",
     "/knowledge-base/services/budge": "/docs/services/budge",
-    "/knowledge-base/services/changedetection": "/docs/services/changedetection",
+    "/knowledge-base/services/changedetection":
+      "/docs/services/changedetection",
     "/knowledge-base/services/classicpress": "/docs/services/classicpress",
     "/knowledge-base/services/code-server": "/docs/services/code-server",
     "/knowledge-base/services/dashboard": "/docs/services/dashboard",
@@ -70,10 +72,8 @@ export default defineConfig({
     "/knowledge-base/services/statusnook": "/docs/services/statusnook",
     "/knowledge-base/contribute/coolify": "/docs/contribute/coolify",
     "/knowledge-base/contribute/service": "/docs/contribute/service",
-    "/knowledge-base/contribute/documentation": "/docs/contribute/documentation",
-
-
-
+    "/knowledge-base/contribute/documentation":
+      "/docs/contribute/documentation",
   },
   integrations: [
     tailwind({
@@ -335,6 +335,10 @@ export default defineConfig({
             },
             { label: "Budge", link: "/services/budge" },
             {
+              label: "Browserless",
+              link: "/services/browserless",
+            },
+            {
               label: "Changedetection",
               link: "/services/changedetection",
             },
@@ -432,8 +436,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
-
-
 
             {
               label: "Self-hosted Instance",
