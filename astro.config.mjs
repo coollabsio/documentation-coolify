@@ -640,6 +640,13 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              label: "Terminal",
+              collapsed: true,
+              items: [
+                { label: "Introduction", link: "/knowledge-base/terminal/introduction" },
+              ],
+            },
           ],
         },
         {
