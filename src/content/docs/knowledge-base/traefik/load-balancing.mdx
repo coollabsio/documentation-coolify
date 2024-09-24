@@ -144,7 +144,7 @@ http:
           # UUID is when you mapped a port to the host system
           # host.docker.internal is when you are not exposed any port to the host system
           - url: 'http://<UUID_OR_HOST.DOCKER.INTERNAL>:<PORT>'
-          - url: 'http://<UUID_OR_HOST.DOCKER.INTERNAL>:<PORT>:<PORT>'
+          - url: 'http://<UUID_OR_HOST.DOCKER.INTERNAL>:<PORT>'
           # Add any number of containers you want to loadbalance between
     noop:
       loadBalancer:
