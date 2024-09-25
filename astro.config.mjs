@@ -449,6 +449,7 @@ export default defineConfig({
                 { label: "Self-update", link: "/knowledge-base/self-update" },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
+                { label: "OAuth", link: "/knowledge-base/oauth" },
               ],
             },
             {
