@@ -429,6 +429,7 @@ export default defineConfig({
               label: "Statusnook",
               link: "/services/statusnook",
             },
+            { label: "Wordpress", link: "/services/wordpress" },
           ],
         },
         {

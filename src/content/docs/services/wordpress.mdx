@@ -1,0 +1,44 @@
+---
+title: Wordpress
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: "How to host Wordpress with Coolify"
+description: "Here you can find the documentation for hosting Wordpress with Coolify."
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="One-click setup." variant="note" size="large" />
+
+## What is Wordpress?
+
+Wordpress is a free and open-source content management system written in PHP and paired with a MySQL/MariaDB database.
+It is used for creating websites, blogs, and applications.
+
+
+## Links
+
+- [The official website ›](https://wordpress.org)
+- [GitHub ›](https://github.com/WordPress/WordPress)
+
+## FAQ
+### How to increase the upload size limit?
+
+You can increase the upload size limit by following these steps:
+
+1. Open the `.htaccess` file through Coolify's Terminal (or through SSH, and docker exec -ti `container_id` /bin/bash)
+2. Add the following lines to the end of the file with `vi` or `nano`:
+
+```
+# END WordPress - this line already exists in the file
+
+php_value upload_max_filesize 256M
+php_value post_max_size 256M
+php_value max_execution_time 300
+php_value max_input_time 300
+```
+
+3. Save and close the file.
+4. Reload the website in your browser. The changes should be applied automatically.
