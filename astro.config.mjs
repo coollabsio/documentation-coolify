@@ -192,6 +192,7 @@ export default defineConfig({
       sidebar: [
         {
           label: "Get Started",
+          collapsed: true,
           items: [
             { label: "Introduction", link: "/" },
             { label: "Screenshots", link: "/screenshots" },
@@ -622,7 +623,7 @@ export default defineConfig({
         },
         {
           label: "Knowledge Base",
-          collapsed: false,
+          collapsed: true,
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
 
@@ -841,6 +842,7 @@ export default defineConfig({
         },
         {
           label: "API Reference",
+          collapsed: true,
           items: [
             { label: "Authorization", link: "/api-reference/authorization" },
             ...openAPISidebarGroups,
