@@ -343,8 +343,20 @@ export default defineConfig({
               link: "/services/changedetection",
             },
             {
+              label: "Chaskiq",
+              link: "/services/chaskiq",
+            },
+            {
+              label: "Chatwoot",
+              link: "/services/chatwoot",
+            },
+            {
               label: "Classicpress",
               link: "/services/classicpress",
+            },
+            {
+              label: "Cloudflared",
+              link: "/services/cloudflared",
             },
             {
               label: "Code Server",
@@ -357,6 +369,18 @@ export default defineConfig({
             {
               label: "Directus",
               link: "/services/directus",
+            },
+            {
+              label: "Docker Registry",
+              link: "/services/docker-registry",
+            },
+            {
+              label: "Docmost",
+              link: "/services/docmost",
+            },
+            {
+              label: "Docuseal",
+              link: "/services/docuseal",
             },
             {
               label: "Dokuwiki",
@@ -387,6 +411,18 @@ export default defineConfig({
             { label: "Ghost", link: "/services/ghost" },
             { label: "Gitea", link: "/services/gitea" },
             {
+              label: "Gitlab",
+              link: "/services/gitlab",
+            },
+            {
+              label: "Glance",
+              link: "/services/glance",
+            },
+            {
+              label: "Glances",
+              link: "/services/glances",
+            },
+            {
               label: "Glitchtip",
               link: "/services/glitchtip",
             },
@@ -400,6 +436,14 @@ export default defineConfig({
               link: "/services/heimdall",
             },
             {
+              label: "Homapage",
+              link: "/services/homapage",
+            },
+            {
+              label: "Invoice Ninja",
+              link: "/services/invoice-ninja",
+            },
+            {
               label: "Jellyfin",
               link: "/services/jellyfin",
             },
@@ -407,7 +451,15 @@ export default defineConfig({
               label: "Kuzzle",
               link: "/services/kuzzle",
             },
+            {
+              label: "Listmonk",
+              link: "/services/listmonk",
+            },
             { label: "Logto", link: "/services/logto" },
+            {
+              label: "Mediawiki",
+              link: "/services/mediawiki",
+            },
             {
               label: "Meilisearch",
               link: "/services/meilisearch",
@@ -420,14 +472,150 @@ export default defineConfig({
               label: "Metube",
               link: "/services/metube",
             },
+            {
+              label: "Minecraft",
+              link: "/services/minecraft",
+            },
             { label: "Minio", link: "/services/minio" },
+            {
+              label: "Moodle",
+              link: "/services/moodle",
+            },
+            {
+              label: "N8N",
+              link: "/services/n8n",
+            },
+            {
+              label: "Nextcloud",
+              link: "/services/nextcloud",
+            },
+            {
+              label: "NocoDB",
+              link: "/services/nocodb",
+            },
+            {
+              label: "Odoo",
+              link: "/services/odoo",
+            },
+            {
+              label: "Openblocks",
+              link: "/services/openblocks",
+            },
+            {
+              label: "Pairdrop",
+              link: "/services/pairdrop",
+            },
+            {
+              label: "Penpot",
+              link: "/services/penpot",
+            },
+            {
+              label: "phpMyAdmin",
+              link: "/services/phpmyadmin",
+            },
+            {
+              label: "Plane",
+              link: "/services/plane",
+            },
             {
               label: "Plausible",
               link: "/services/plausible",
             },
             {
+              label: "Plunk",
+              link: "/services/plunk",
+            },
+            {
+              label: "Pocketbase",
+              link: "/services/pocketbase",
+            },
+            {
+              label: "PostHog",
+              link: "/services/posthog",
+            },
+            {
+              label: "RabbitMQ",
+              link: "/services/rabbitmq",
+            },
+            {
+              label: "Reactive Resume",
+              link: "/services/reactive-resume",
+            },
+            {
+              label: "Rocket.Chat",
+              link: "/services/rocketchat",
+            },
+            {
+              label: "Shlink",
+              link: "/services/shlink",
+            },
+            {
+              label: "Slash",
+              link: "/services/slash",
+            },
+            {
+              label: "Snapdrop",
+              link: "/services/snapdrop",
+            },
+            {
               label: "Statusnook",
               link: "/services/statusnook",
+            },
+            {
+              label: "Stirling PDF",
+              link: "/services/stirling-pdf",
+            },
+            {
+              label: "Supabase",
+              link: "/services/supabase",
+            },
+            {
+              label: "Syncthing",
+              link: "/services/syncthing",
+            },
+            {
+              label: "Tolgee",
+              link: "/services/tolgee",
+            },
+            {
+              label: "Trigger",
+              link: "/services/trigger",
+            },
+            {
+              label: "Twenty",
+              link: "/services/twenty",
+            },
+            {
+              label: "Umami",
+              link: "/services/umami",
+            },
+            {
+              label: "Unleash",
+              link: "/services/unleash",
+            },
+            {
+              label: "Uptime Kuma",
+              link: "/services/uptime-kuma",
+            },
+            {
+              label: "Vaultwarden",
+              link: "/services/vaultwarden",
+            },
+            {
+              label: "Vikunja",
+              link: "/services/vikunja",
+            },
+            {
+              label: "Weblate",
+              link: "/services/weblate",
+            },
+            {
+              label: "Whoogle",
+              link: "/services/whoogle",
+            },
+            {
+              label: "Windmill",
+              link: "/services/windmill",
             },
             { label: "Wordpress", link: "/services/wordpress" },
           ],
