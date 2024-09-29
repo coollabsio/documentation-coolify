@@ -57,10 +57,3 @@ Public port is used to expose the container port to the internet, by starting an
 
 - Port mappings makes the connection/port permanent (you need to restart your database to change it).
 - The public port makes the connection/port dynamic (you can change it without restarting the database, Coolify will restart the Nginx TCP proxy for you).
-
-## Access database during builds
-
-If you are using `Nixpacks` build pack, you have two ways to access your database during builds:
-
-1. Database & your application are `in the same network`: You can reach it using the `internal URL` provided by Coolify.
-2. Database & your application `are not in the same network`: You need to set your database to be `Accessible over the internet` and use the `public URL` provided by Coolify.

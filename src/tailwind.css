@@ -86,3 +86,22 @@ ul>li>strong>a {
 .required {
     @apply dark:text-error;
 }
+
+.starlight-aside__title {
+    @apply dark:text-white text-white
+}
+
+.starlight-aside--tip {
+    @apply bg-green-500 text-white;
+}
+.starlight-aside--note {
+    @apply bg-blue-500 text-white;
+}
+
+.starlight-aside--caution {
+    @apply dark:bg-warning border-yellow-600 dark:text-black;
+}
+
+.starlight-aside--danger {
+    @apply dark:bg-error border-error;
+}
