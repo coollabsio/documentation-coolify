@@ -635,7 +635,12 @@ export default defineConfig({
               label: "Internal",
               collapsed: true,
               items: [
+                {
+                  label: "Scalability",
+                  link: "/knowledge-base/internal/scalability",
+                },
                 { label: "Terminal", link: "/knowledge-base/internal/terminal" },
+
               ],
             },
             {
