@@ -483,6 +483,10 @@ export default defineConfig({
               link: "/services/moodle",
             },
             {
+              label: "Mixpost",
+              link: "/services/mixpost",
+            },
+            {
               label: "N8N",
               link: "/services/n8n",
             },
@@ -627,6 +631,13 @@ export default defineConfig({
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
 
+            {
+              label: "Internal",
+              collapsed: true,
+              items: [
+                { label: "Terminal", link: "/knowledge-base/internal/terminal" },
+              ],
+            },
             {
               label: "Self-hosted Instance",
               collapsed: true,
@@ -831,13 +842,7 @@ export default defineConfig({
                 },
               ],
             },
-            {
-              label: "Terminal",
-              collapsed: true,
-              items: [
-                { label: "Introduction", link: "/knowledge-base/terminal/introduction" },
-              ],
-            },
+
           ],
         },
         {
