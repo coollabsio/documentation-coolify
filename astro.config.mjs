@@ -516,7 +516,7 @@ export default defineConfig({
               link: "/services/penpot",
             },
             {
-              label: "phpMyAdmin",
+              label: "PhpMyAdmin",
               link: "/services/phpmyadmin",
             },
             {
