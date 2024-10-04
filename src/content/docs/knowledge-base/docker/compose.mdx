@@ -29,7 +29,7 @@ services:
 
 ![Coolify's UI for environment variables](../../../../assets/images/screenshots/Docker-compose-environment-variables-UI.png)
 
-## Coolify's Magic environment variables
+## Coolify's magic environment variables
 
 Additionally, Coolify can generate some dynamic environment variables for you.
 The syntax is `SERVICE_<TYPE>_<IDENTIFIER>`.
@@ -37,7 +37,7 @@ Type may be one of:
 
 - **FQDN**: This will [generate](/docs/knowledge-base/server/introduction#wildcard-domain) an FQDN for the service. The example below shows how you can add paths and ports.
 - **URL**: Generates an URL based on the FQDN you have defined.
-- **USER**: Generates a random string using `Str::random(16)`. You might want to use it as a username in your service. 
+- **USER**: Generates a random string using `Str::random(16)`. You might want to use it as a username in your service.
 - **PASSWORD**: Generates a password using `Str::password(symbols: false)`. Use `PASSWORD_64` to generate a 64 bit long password with `Str::password(length: 64, symbols: false)`.
 - **BASE64**: Generates a random string using `Str::random(32)`. For longer strings, use `BASE64_64` or `BASE64_128`.
 - **REALBASE64**: Encodes a randomly generated string using `base64_encode(Str::random(32))`. For longer strings, use `REALBASE64_64` or `REALBASE64_128`.
@@ -114,6 +114,20 @@ services:
            ALTER USER pgbouncer WITH PASSWORD :'pgpass';
 ```
 
+## Exclude from healthchecks
+
+If you have a service that you do not want to be part of your overall healthchecks, you can exclude it from the healthchecks by setting the `exclude_from_hc` option to `true`.
+
+<Aside type="tip">
+ This is useful for example if you have a migration service that runs only once and then the container stops.
+</Aside>
+
+```yaml
+services:
+  some-service:
+    exclude_from_hc: true
+    ...
+```
 
 ## Connect to Predefined Networks
 
