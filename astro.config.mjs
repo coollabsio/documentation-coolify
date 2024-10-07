@@ -437,8 +437,8 @@ export default defineConfig({
               link: "/services/heimdall",
             },
             {
-              label: "Homapage",
-              link: "/services/homapage",
+              label: "Homepage",
+              link: "/services/homepage",
             },
             {
               label: "Invoice Ninja",
@@ -457,6 +457,7 @@ export default defineConfig({
               link: "/services/listmonk",
             },
             { label: "Logto", link: "/services/logto" },
+            { label: "Mailpit", link: "/services/mailpit" },
             {
               label: "Mediawiki",
               link: "/services/mediawiki",
@@ -515,7 +516,7 @@ export default defineConfig({
               link: "/services/penpot",
             },
             {
-              label: "phpMyAdmin",
+              label: "PhpMyAdmin",
               link: "/services/phpmyadmin",
             },
             {
