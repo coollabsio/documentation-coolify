@@ -327,6 +327,14 @@ export default defineConfig({
               link: "/services/appwrite",
             },
             {
+              label: "Argilla",
+              link: "/services/argilla",
+            },
+            {
+              label: "AnythingLLM",
+              link: "/services/anythingllm",
+            },
+            {
               label: "Authentik",
               link: "/services/authentik",
             },
@@ -441,6 +449,10 @@ export default defineConfig({
               link: "/services/homepage",
             },
             {
+              label: "Infisical",
+              link: "/services/infisical",
+            },
+            {
               label: "Invoice Ninja",
               link: "/services/invoice-ninja",
             },
@@ -453,8 +465,20 @@ export default defineConfig({
               link: "/services/kuzzle",
             },
             {
+              label: "Label Studio",
+              link: "/services/labelstudio",
+            },
+            {
+              label: "Langfuse",
+              link: "/services/langfuse",
+            },
+            {
               label: "Listmonk",
               link: "/services/listmonk",
+            },
+            {
+              label: "Litellm",
+              link: "/services/litellm",
             },
             { label: "Logto", link: "/services/logto" },
             { label: "Mailpit", link: "/services/mailpit" },
@@ -496,6 +520,10 @@ export default defineConfig({
               link: "/services/nextcloud",
             },
             {
+              label: "Nitropage",
+              link: "/services/nitropage",
+            },
+            {
               label: "NocoDB",
               link: "/services/nocodb",
             },
@@ -504,8 +532,16 @@ export default defineConfig({
               link: "/services/odoo",
             },
             {
+              label: "Ollama",
+              link: "/services/ollama",
+            },
+            {
               label: "Openblocks",
               link: "/services/openblocks",
+            },
+            {
+              label: "Outline",
+              link: "/services/outline",
             },
             {
               label: "Pairdrop",
@@ -522,6 +558,14 @@ export default defineConfig({
             {
               label: "Plane",
               link: "/services/plane",
+            },
+            {
+              label: "Prefect",
+              link: "/services/prefect",
+            },
+            {
+              label: "Qdrant",
+              link: "/services/qdrant",
             },
             {
               label: "Plausible",
@@ -550,6 +594,10 @@ export default defineConfig({
             {
               label: "Rocket.Chat",
               link: "/services/rocketchat",
+            },
+            {
+              label: "SearXNG",
+              link: "/services/searxng",
             },
             {
               label: "Shlink",
@@ -600,6 +648,10 @@ export default defineConfig({
               link: "/services/unleash",
             },
             {
+              label: "Unstructured",
+              link: "/services/unstructured",
+            },
+            {
               label: "Uptime Kuma",
               link: "/services/uptime-kuma",
             },
@@ -618,6 +670,10 @@ export default defineConfig({
             {
               label: "Whoogle",
               link: "/services/whoogle",
+            },
+            {
+              label: "Weaviate",
+              link: "/services/weaviate",
             },
             {
               label: "Windmill",
