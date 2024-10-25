@@ -110,7 +110,10 @@ This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker
 2. Curl Installed
     Make sure `curl` command is available on your server.
 
-3. Install
+3. Port 8000 opened
+    Make sure port `8000` ingress is not being blocked by your firewall. Many providers including AWS and Google Cloud have it blocked by default for security.
+
+4. Install
     Execute the following command on your server with `root` user.
 
     ```bash
@@ -118,7 +121,7 @@ This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker
     ```
     > You can find the source code of this script [here](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh).
 
-4. Open Coolify's UI
+5. Open Coolify's UI
     Now you can access Coolify on port `http://<ip>:8000` of your server.
 </Steps>
 
