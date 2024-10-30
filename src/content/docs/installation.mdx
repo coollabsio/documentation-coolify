@@ -12,57 +12,56 @@ sidebar:
 
 import { Aside, Steps } from '@astrojs/starlight/components';
 
-To get started, you need a server, it can be a VPS, a Raspberry Pi, or any other server that you have SSH access to.
+<Aside type="tip">
+  Quick Installation (recommended):
+  ```bash 
+  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash 
+  ```
+  For detailed setup instructions, including firewall configuration and prerequisites, see the [Quick Installation Guide](#1-quick-installation-recommended) below.
+</Aside>
+
+## Prerequisites
+
+### Server Requirements
+You need a server with SSH access. This can be:
+- A VPS
+- A Dedicated Server 
+- A VM in Proxmox
+- A Raspberry Pi (for all compatible models read the [Raspberry Pi OS Setup Guide](/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites) prerequisites)
+- Any other server with SSH access
 
 <Aside>
   It is strongly recommended to use a fresh, newly created server for installing Coolify. Installing on an existing server with other applications may lead to conflicts or unexpected behavior.
 </Aside>
 
-<Aside type="tip">
-  If you don't have a server or server provider yet, we prefer to use Hetzner.
-
-  You can use our [referral link](https://coolify.io/hetzner). It will help us to keep the project alive.
-
-</Aside>
-
-<Aside>
-
-  TLDR for installation: 
-  ```bash 
-  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash 
-  ```
-</Aside>
-
-## Requirements 
 ### Supported Operating Systems
 
 - Debian based Linux distributions (Debian, Ubuntu, etc.)
-- Redhat based Linux distributions (CentOS, Fedora, Redhat, AlmaLinux, Rocky etc.)
+- Redhat based Linux distributions (CentOS, Fedora, Redhat, AlmaLinux, Rocky, Asahi, etc.)
 - SUSE based Linux distributions (SLES, SUSE, openSUSE, etc.)
 - Arch Linux
-- Raspberry Pi OS (Raspbian)
+- Raspberry Pi OS 64-bit (Raspbian)
 
 ### Supported Architectures
-
+We only support 64-bit architectures:
 - AMD64
 - ARM64
 
-### Minimum Required Server
+<Aside type="caution">
+For Raspberry Pi users: You must use the 64-bit version of Raspberry Pi OS (Raspbian). See our [Raspberry Pi OS Setup Guide](/docs/knowledge-base/how-to/raspberry-pi-os) for instructions.
+</Aside>
 
-#### For Coolify
+### Minimum Hardware Requirements
 
-- 2 CPUs
-- 2 GBs memory
-- 30+ GB of storage for the images.
+#### Server Requirements for Coolify
+- 2 Core CPU
+- 2 GBs memory (RAM)
+- 30+ GB of storage for the images
 
-If you build on the same server and your builds are utilizing all available memory, 
-this may cause the server to become unresponsive. 
-To prevent this, consider 
-[enabling swap space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-20-04) 
-on your server (or paying for more resources).
+If you build and host on the same server as Coolify and your builds are utilizing all available memory, this may cause the server to become unresponsive or even crash. 
+To prevent this, consider enabling swap space on your server (or paying for more resources).
 
-#### For Your Resources
-
+#### Server Requirements for Your Resources
 Choosing your server resources depends on your usage. If you are planning to run a lot of things, you should consider buying a server with more resources.
 
 Hosting `Supabase`, `Appwrite` or `Posthog` requires more resources than hosting a static site (waay more).
@@ -92,46 +91,71 @@ For the following things:
 
 </Aside>
 
-## Installation
 
-### Automated
+## Installation Methods
 
-This works with Docker Engine **(not Docker Desktop, for that, go [here](#docker-desktop))** on any supported Linux distribution.
+### 1. Quick Installation (Recommended)
 
 <Steps>
-1. SSH Enabled
-    Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user: [more details here](/docs/knowledge-base/server/openssh).
+1. Verify Prerequisites
+   - The `curl` command is installed on your server (this will most likely be the case)
+   - Your firewall is configured with the required ports ([setup guide](/docs/knowledge-base/server/firewall)) (if you are and advanced user you can have this configured differently)
 
-    <Aside type="tip">
-    If you would like to use a custom SSH port, you can set it on the `localhost` server after you installed Coolify.
+2. Run the installation script
+
+   ```bash
+   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+   ```
+   > View the [Scripts Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
+
+3. Access coolify
+    - You can find the URL of your coolify instance in the installation output.
+    - It is recommended to use the PrivateIP to access coolify as it is more secure (a VPN setup to your Server is needed for that to work).
+
+    <Aside type="note">
+    If you installed coolify on a Raspberry Pi which is in your home network you can use the private IP address to access coolify as the public IP address will not work.
     </Aside>
 
-2. Curl Installed
-    Make sure `curl` command is available on your server.
-
-3. Install
-    Execute the following command on your server with `root` user.
-
-    ```bash
-    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
-    ```
-    > You can find the source code of this script [here](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh).
-
-4. Open Coolify's UI
-    Now you can access Coolify on port `http://<ip>:8000` of your server.
 </Steps>
 
-**What it does?**
-The script will do the following on your operating system.
+**The installer does the following:**
+- Installs required tools (`curl wget git jq`)
+- Installs Docker Engine (26+)
 
-- Install basic commands: `curl wget git jq`
-- `Docker Engine` (24+).
-- Configures proper logging for `Docker Engine`.
-- Creates directory structure at `/data/coolify` for all the configuration files.
-- Creates an SSH key for Coolify to be able to manage this server from itself at `/data/coolify/ssh/keys/id.root@host.docker.internal`.
-- Install and start dockerized `Coolify`.
+<Aside type="caution">
+Docker engine installed via snap is not supported!
+</Aside>
 
-### Manually
+- Configures Docker logging
+- Configures Docker daemon with default address pools
+- Creates directory structure at `/data/coolify`
+- Sets up SSH keys for server management
+- Installs and starts Coolify
+
+### Debugging
+
+#### Expired GitHub Personal Access Token
+If you encounter an error like `Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/1.0.1": unauthorized: authentication required`, it means Docker cannot access the GitHub Container Registry.
+
+To fix this, either:
+- Log out of the GitHub Container Registry or
+- Renew your GitHub Personal Access Token
+
+#### Raspberry Pi Crashes
+If you are using a Raspberry Pi with only 2GB of RAM, you may experience system crashes even with swap space enabled. This probably occurs because Raspberry PIs often use SD cards which are slower than SSDs and can be unstable.
+
+The solution is to either:
+- Upgrade to a modern Raspberry Pi with 4GB+ of RAM, or
+- Limit Docker's memory usage by adding the following to your `/etc/docker/daemon.json` file:
+
+```json
+{
+  "memory": "1.8g"
+}
+```
+
+### 2. Manual Installation
+For users who prefer more control over the installation process.
 
 <Steps>
 1. SSH Enabled
@@ -142,6 +166,10 @@ The script will do the following on your operating system.
 
 3. Install Docker Engine (24+)
     Follow the official documentation to install Docker Engine on your server: [Docker Engine Installation](https://docs.docker.com/engine/install/#server).
+    
+    <Aside type="caution">
+    Make sure to not install docker engine via snap as this is not supported!
+    </Aside>
 
 4. Create Directories
     Create the base configuration directories under `/data/coolify`.
@@ -200,9 +228,9 @@ The script will do the following on your operating system.
     sed -i "s|PUSHER_APP_SECRET=.*|PUSHER_APP_SECRET=$(openssl rand -hex 32)|g" /data/coolify/source/.env
     ```
     <Aside type="caution">
-    This only needs to be done once, when you install Coolify for the first time. If you do it after Coolify has been started, it will break your installation.
+    This only needs to be done once, when you install Coolify for the first time. If you do it after Coolify has been first started, it will break your installation.
 
-    Make sure you save the values somewhere. If you lose them, you will lose access to your Coolify installation and all your data.
+    Make sure you save the values somewhere that are stored in the `.env` file. If you lose them, you will lose access to your Coolify installation and all your data.
     </Aside>
 
 10. Default Docker Network
@@ -218,9 +246,11 @@ The script will do the following on your operating system.
 
 12. Open Coolify's UI
     Now you can access Coolify on port `http://<ip>:8000` of your server.
+
 </Steps>
 
-### Docker Desktop
+### 3. Docker Desktop Installation
+For local development and testing purposes only.
 
 <Aside type="caution">
   This is not recommended for production usage. This is only for testing
@@ -237,4 +267,7 @@ The script will do the following on your operating system.
 - Start Coolify with `docker compose up` command.
 - You can access Coolify on port `localhost:8000` of your machine.
 
-> Coolify Proxy is still not working on Windows.
+
+<Aside type="caution">
+Coolify Proxy is still not working on Windows.
+</Aside>
