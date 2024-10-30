@@ -9,28 +9,15 @@ description: "A guide how backups work in Coolify."
 ---
 import { Aside } from '@astrojs/starlight/components';
 
-Scheduled database backups could be configured for PostgreSQL and for Coolify itself.
+Scheduled database backups can be configured for Databases and for the Coolify PostgreSQL database itself.
 
-This schedules are based on cron expressions, so you can configure them to run as often as you want.
-
-You can also use simple cron expressions like:
-
-```js
-const VALID_CRON_STRINGS = [
-    'every_minute' => '* * * * *',
-    'hourly' => '0 * * * *',
-    'daily' => '0 0 * * *',
-    'weekly' => '0 0 * * 0',
-    'monthly' => '0 0 1 * *',
-    'yearly' => '0 0 1 1 *',
-];
-```
+These schedules are based on cron expressions, so you can configure them to run as often as you want. For more information about cron expressions, see our [cron syntax](/docs/knowledge-base/cron-syntax) documentation.
 
 ## PostgreSQL
 
 Coolify creates a full backup of your PostgreSQL databases. You can specify which database to backup, with a comma separated list.
 
-<Aside type="tip">Coolify own database is also backed up using this method.</Aside>
+<Aside type="tip">Coolify's own database is also backed up using this method.</Aside>
 
 ### Backup command
 
