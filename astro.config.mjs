@@ -314,372 +314,106 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Overview", link: "/services" },
-            {
-              label: "Activepieces",
-              link: "/services/activepieces",
-            },
-            {
-              label: "Appsmith",
-              link: "/services/appsmith",
-            },
-            {
-              label: "Appwrite",
-              link: "/services/appwrite",
-            },
-            {
-              label: "Argilla",
-              link: "/services/argilla",
-            },
-            {
-              label: "AnythingLLM",
-              link: "/services/anythingllm",
-            },
-            {
-              label: "Authentik",
-              link: "/services/authentik",
-            },
-            {
-              label: "Baby Buddy",
-              link: "/services/babybuddy",
-            },
+            { label: "Activepieces", link: "/services/activepieces" },
+            { label: "AnythingLLM", link: "/services/anythingllm" },
+            { label: "Appsmith", link: "/services/appsmith" },
+            { label: "Appwrite", link: "/services/appwrite" },
+            { label: "Argilla", link: "/services/argilla" },
+            { label: "Authentik", link: "/services/authentik" },
+            { label: "Baby Buddy", link: "/services/babybuddy" },
+            { label: "Browserless", link: "/services/browserless" },
             { label: "Budge", link: "/services/budge" },
-            {
-              label: "Browserless",
-              link: "/services/browserless",
-            },
-            {
-              label: "Changedetection",
-              link: "/services/changedetection",
-            },
-            {
-              label: "Chaskiq",
-              link: "/services/chaskiq",
-            },
-            {
-              label: "Chatwoot",
-              link: "/services/chatwoot",
-            },
-            {
-              label: "Classicpress",
-              link: "/services/classicpress",
-            },
-            {
-              label: "Cloudflared",
-              link: "/services/cloudflared",
-            },
-            {
-              label: "Code Server",
-              link: "/services/code-server",
-            },
-            {
-              label: "Dashboard",
-              link: "/services/dashboard",
-            },
-            {
-              label: "Directus",
-              link: "/services/directus",
-            },
-            {
-              label: "Docker Registry",
-              link: "/services/docker-registry",
-            },
-            {
-              label: "Docmost",
-              link: "/services/docmost",
-            },
-            {
-              label: "Docuseal",
-              link: "/services/docuseal",
-            },
-            {
-              label: "Dokuwiki",
-              link: "/services/dokuwiki",
-            },
-            {
-              label: "Duplicati",
-              link: "/services/duplicati",
-            },
-            {
-              label: "Emby Stat",
-              link: "/services/emby-stat",
-            },
+            { label: "Changedetection", link: "/services/changedetection" },
+            { label: "Chaskiq", link: "/services/chaskiq" },
+            { label: "Chatwoot", link: "/services/chatwoot" },
+            { label: "Classicpress", link: "/services/classicpress" },
+            { label: "Cloudflared", link: "/services/cloudflared" },
+            { label: "Code Server", link: "/services/code-server" },
+            { label: "Dashboard", link: "/services/dashboard" },
+            { label: "Directus", link: "/services/directus" },
+            { label: "Docker Registry", link: "/services/docker-registry" },
+            { label: "Docmost", link: "/services/docmost" },
+            { label: "Docuseal", link: "/services/docuseal" },
+            { label: "Dokuwiki", link: "/services/dokuwiki" },
+            { label: "Duplicati", link: "/services/duplicati" },
             { label: "Emby", link: "/services/emby" },
+            { label: "Emby Stat", link: "/services/emby-stat" },
             { label: "Fider", link: "/services/fider" },
-            {
-              label: "Filebrowser",
-              link: "/services/filebrowser",
-            },
-            {
-              label: "Firefly III",
-              link: "/services/firefly-iii",
-            },
-            {
-              label: "Formbricks",
-              link: "/services/formbricks",
-            },
+            { label: "Filebrowser", link: "/services/filebrowser" },
+            { label: "Firefly III", link: "/services/firefly-iii" },
+            { label: "Formbricks", link: "/services/formbricks" },
+            { label: "Forgejo", link: "/services/forgejo" },
             { label: "Ghost", link: "/services/ghost" },
             { label: "Gitea", link: "/services/gitea" },
-            {
-              label: "Gitlab",
-              link: "/services/gitlab",
-            },
-            {
-              label: "Glance",
-              link: "/services/glance",
-            },
-            {
-              label: "Glances",
-              link: "/services/glances",
-            },
-            {
-              label: "Glitchtip",
-              link: "/services/glitchtip",
-            },
-            {
-              label: "Grafana",
-              link: "/services/grafana",
-            },
+            { label: "Gitlab", link: "/services/gitlab" },
+            { label: "Glance", link: "/services/glance" },
+            { label: "Glances", link: "/services/glances" },
+            { label: "Glitchtip", link: "/services/glitchtip" },
+            { label: "Grafana", link: "/services/grafana" },
             { label: "Grocy", link: "/services/grocy" },
-            {
-              label: "Heimdall",
-              link: "/services/heimdall",
-            },
-            {
-              label: "Homepage",
-              link: "/services/homepage",
-            },
-            {
-              label: "Infisical",
-              link: "/services/infisical",
-            },
-            {
-              label: "Invoice Ninja",
-              link: "/services/invoice-ninja",
-            },
-            {
-              label: "Jellyfin",
-              link: "/services/jellyfin",
-            },
-            {
-              label: "Kuzzle",
-              link: "/services/kuzzle",
-            },
-            {
-              label: "Label Studio",
-              link: "/services/labelstudio",
-            },
-            {
-              label: "Langfuse",
-              link: "/services/langfuse",
-            },
-            {
-              label: "Listmonk",
-              link: "/services/listmonk",
-            },
-            {
-              label: "Litellm",
-              link: "/services/litellm",
-            },
+            { label: "Heimdall", link: "/services/heimdall" },
+            { label: "Homepage", link: "/services/homepage" },
+            { label: "Infisical", link: "/services/infisical" },
+            { label: "Invoice Ninja", link: "/services/invoice-ninja" },
+            { label: "Jellyfin", link: "/services/jellyfin" },
+            { label: "Kuzzle", link: "/services/kuzzle" },
+            { label: "Label Studio", link: "/services/labelstudio" },
+            { label: "Langfuse", link: "/services/langfuse" },
+            { label: "Listmonk", link: "/services/listmonk" },
+            { label: "Litellm", link: "/services/litellm" },
             { label: "Logto", link: "/services/logto" },
             { label: "Mailpit", link: "/services/mailpit" },
-            {
-              label: "Mediawiki",
-              link: "/services/mediawiki",
-            },
-            {
-              label: "Meilisearch",
-              link: "/services/meilisearch",
-            },
-            {
-              label: "Metabase",
-              link: "/services/metabase",
-            },
-            {
-              label: "Metube",
-              link: "/services/metube",
-            },
-            {
-              label: "Minecraft",
-              link: "/services/minecraft",
-            },
+            { label: "Mediawiki", link: "/services/mediawiki" },
+            { label: "Meilisearch", link: "/services/meilisearch" },
+            { label: "Metabase", link: "/services/metabase" },
+            { label: "Metube", link: "/services/metube" },
+            { label: "Minecraft", link: "/services/minecraft" },
             { label: "Minio", link: "/services/minio" },
-            {
-              label: "Moodle",
-              link: "/services/moodle",
-            },
-            {
-              label: "Mixpost",
-              link: "/services/mixpost",
-            },
-            {
-              label: "N8N",
-              link: "/services/n8n",
-            },
-            {
-              label: "Nextcloud",
-              link: "/services/nextcloud",
-            },
-            {
-              label: "Nitropage",
-              link: "/services/nitropage",
-            },
-            {
-              label: "NocoDB",
-              link: "/services/nocodb",
-            },
-            {
-              label: "Odoo",
-              link: "/services/odoo",
-            },
-            {
-              label: "Ollama",
-              link: "/services/ollama",
-            },
-            {
-              label: "Openblocks",
-              link: "/services/openblocks",
-            },
-            {
-              label: "Outline",
-              link: "/services/outline",
-            },
-            {
-              label: "Pairdrop",
-              link: "/services/pairdrop",
-            },
-            {
-              label: "Penpot",
-              link: "/services/penpot",
-            },
-            {
-              label: "PhpMyAdmin",
-              link: "/services/phpmyadmin",
-            },
-            {
-              label: "Plane",
-              link: "/services/plane",
-            },
-            {
-              label: "Prefect",
-              link: "/services/prefect",
-            },
-            {
-              label: "Qdrant",
-              link: "/services/qdrant",
-            },
-            {
-              label: "Plausible",
-              link: "/services/plausible",
-            },
-            {
-              label: "Plunk",
-              link: "/services/plunk",
-            },
-            {
-              label: "Pocketbase",
-              link: "/services/pocketbase",
-            },
-            {
-              label: "PostHog",
-              link: "/services/posthog",
-            },
-            {
-              label: "RabbitMQ",
-              link: "/services/rabbitmq",
-            },
-            {
-              label: "Reactive Resume",
-              link: "/services/reactive-resume",
-            },
-            {
-              label: "Rocket.Chat",
-              link: "/services/rocketchat",
-            },
-            {
-              label: "SearXNG",
-              link: "/services/searxng",
-            },
-            {
-              label: "Shlink",
-              link: "/services/shlink",
-            },
-            {
-              label: "Slash",
-              link: "/services/slash",
-            },
-            {
-              label: "Snapdrop",
-              link: "/services/snapdrop",
-            },
-            {
-              label: "Statusnook",
-              link: "/services/statusnook",
-            },
-            {
-              label: "Stirling PDF",
-              link: "/services/stirling-pdf",
-            },
-            {
-              label: "Supabase",
-              link: "/services/supabase",
-            },
-            {
-              label: "Syncthing",
-              link: "/services/syncthing",
-            },
-            {
-              label: "Tolgee",
-              link: "/services/tolgee",
-            },
-            {
-              label: "Trigger",
-              link: "/services/trigger",
-            },
-            {
-              label: "Twenty",
-              link: "/services/twenty",
-            },
-            {
-              label: "Umami",
-              link: "/services/umami",
-            },
-            {
-              label: "Unleash",
-              link: "/services/unleash",
-            },
-            {
-              label: "Unstructured",
-              link: "/services/unstructured",
-            },
-            {
-              label: "Uptime Kuma",
-              link: "/services/uptime-kuma",
-            },
-            {
-              label: "Vaultwarden",
-              link: "/services/vaultwarden",
-            },
-            {
-              label: "Vikunja",
-              link: "/services/vikunja",
-            },
-            {
-              label: "Weblate",
-              link: "/services/weblate",
-            },
-            {
-              label: "Whoogle",
-              link: "/services/whoogle",
-            },
-            {
-              label: "Weaviate",
-              link: "/services/weaviate",
-            },
-            {
-              label: "Windmill",
-              link: "/services/windmill",
-            },
-            { label: "Wordpress", link: "/services/wordpress" },
+            { label: "Mixpost", link: "/services/mixpost" },
+            { label: "Moodle", link: "/services/moodle" },
+            { label: "N8N", link: "/services/n8n" },
+            { label: "Nextcloud", link: "/services/nextcloud" },
+            { label: "Nitropage", link: "/services/nitropage" },
+            { label: "NocoDB", link: "/services/nocodb" },
+            { label: "Odoo", link: "/services/odoo" },
+            { label: "Ollama", link: "/services/ollama" },
+            { label: "Openblocks", link: "/services/openblocks" },
+            { label: "Outline", link: "/services/outline" },
+            { label: "Pairdrop", link: "/services/pairdrop" },
+            { label: "Penpot", link: "/services/penpot" },
+            { label: "PhpMyAdmin", link: "/services/phpmyadmin" },
+            { label: "Plane", link: "/services/plane" },
+            { label: "Plausible", link: "/services/plausible" },
+            { label: "Plunk", link: "/services/plunk" },
+            { label: "Pocketbase", link: "/services/pocketbase" },
+            { label: "PostHog", link: "/services/posthog" },
+            { label: "Prefect", link: "/services/prefect" },
+            { label: "Qdrant", link: "/services/qdrant" },
+            { label: "RabbitMQ", link: "/services/rabbitmq" },
+            { label: "Reactive Resume", link: "/services/reactive-resume" },
+            { label: "Rocket.Chat", link: "/services/rocketchat" },
+            { label: "SearXNG", link: "/services/searxng" },
+            { label: "Shlink", link: "/services/shlink" },
+            { label: "Slash", link: "/services/slash" },
+            { label: "Snapdrop", link: "/services/snapdrop" },
+            { label: "Statusnook", link: "/services/statusnook" },
+            { label: "Stirling PDF", link: "/services/stirling-pdf" },
+            { label: "Supabase", link: "/services/supabase" },
+            { label: "Syncthing", link: "/services/syncthing" },
+            { label: "Tolgee", link: "/services/tolgee" },
+            { label: "Trigger", link: "/services/trigger" },
+            { label: "Twenty", link: "/services/twenty" },
+            { label: "Umami", link: "/services/umami" },
+            { label: "Unleash", link: "/services/unleash" },
+            { label: "Unstructured", link: "/services/unstructured" },
+            { label: "Uptime Kuma", link: "/services/uptime-kuma" },
+            { label: "Vaultwarden", link: "/services/vaultwarden" },
+            { label: "Vikunja", link: "/services/vikunja" },
+            { label: "Weaviate", link: "/services/weaviate" },
+            { label: "Weblate", link: "/services/weblate" },
+            { label: "Whoogle", link: "/services/whoogle" },
+            { label: "Windmill", link: "/services/windmill" },
+            { label: "Wordpress", link: "/services/wordpress" }
           ],
         },
         {
