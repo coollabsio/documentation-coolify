@@ -1,18 +1,24 @@
 ---
 title: Forgejo
-"og:title": "How to host Forgejo with Coolify"
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: "How to host Forgejo with Coolify"
 description: "Here you can find the documentation for hosting Forgejo with Coolify."
 ---
 
-<Check>One-click setup.</Check>
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="One-click setup." variant="note" size="large" />
 
 ![Gitea](https://forgejo.org/images/forgejo-wordmark.svg)
 
 ## What is Forgejo?
 
-Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.
+Forgejo is a self-hosted lightweight software forge. It's easy to install and low maintenance, it just does the job.
 
-## Forejo Actions
+## Forgejo Actions Runner
 
 Forgejo has available a first party "actions runner" to [execute task jobs on a repository](https://forgejo.org/docs/latest/user/actions/), much like [GitHub Actions](https://docs.github.com/en/actions) or [GitLab CI](https://docs.gitlab.com/ee/ci/index.html).
 
