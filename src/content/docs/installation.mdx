@@ -132,28 +132,6 @@ Docker engine installed via snap is not supported!
 - Sets up SSH keys for server management
 - Installs and starts Coolify
 
-### Debugging
-
-#### Expired GitHub Personal Access Token
-If you encounter an error like `Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/1.0.1": unauthorized: authentication required`, it means Docker cannot access the GitHub Container Registry.
-
-To fix this, either:
-- Log out of the GitHub Container Registry or
-- Renew your GitHub Personal Access Token
-
-#### Raspberry Pi Crashes
-If you are using a Raspberry Pi with only 2GB of RAM, you may experience system crashes even with swap space enabled. This probably occurs because Raspberry PIs often use SD cards which are slower than SSDs and can be unstable.
-
-The solution is to either:
-- Upgrade to a modern Raspberry Pi with 4GB+ of RAM, or
-- Limit Docker's memory usage by adding the following to your `/etc/docker/daemon.json` file:
-
-```json
-{
-  "memory": "1.8g"
-}
-```
-
 ### 2. Manual Installation
 For users who prefer more control over the installation process.
 
@@ -271,3 +249,26 @@ For local development and testing purposes only.
 <Aside type="caution">
 Coolify Proxy is still not working on Windows.
 </Aside>
+
+
+## Debugging
+
+### Expired GitHub Personal Access Token
+If you encounter an error like `Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/1.0.1": unauthorized: authentication required`, it means Docker cannot access the GitHub Container Registry.
+
+To fix this, either:
+- Log out of the GitHub Container Registry or
+- Renew your GitHub Personal Access Token
+
+### Raspberry Pi Crashes
+If you are using a Raspberry Pi with only 2GB of RAM, you may experience system crashes even with swap space enabled. This probably occurs because Raspberry PIs often use SD cards which are slower than SSDs and can be unstable.
+
+The solution is to either:
+- Upgrade to a modern Raspberry Pi with 4GB+ of RAM, or
+- Limit Docker's memory usage by adding the following to your `/etc/docker/daemon.json` file:
+
+```json
+{
+  "memory": "1.8g"
+}
+```
