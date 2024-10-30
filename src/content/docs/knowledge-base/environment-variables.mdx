@@ -14,7 +14,7 @@ You can define environment variables for your resources, and they will be availa
 
 ## Build Time Variables
 
-If you would like to set environment variables for the build process, you can do by setting `Build Variable` on the UI.
+If you would like to set environment variables for the build process, you can do it by setting the checkbox `Build Variable` in the normal view on the UI.
 
 ## Shared Variables
 
@@ -30,15 +30,27 @@ Then you can use these variables anywhere. For example: You defined `NODE_ENV` t
 
 ### Team Based
 
-You can set them on the `Team` page and use it with <span v-pre>`{{team.NODE_ENV}}`</span>.
+You can set them on the `Team` page and use it with `{{team.NODE_ENV}}`. Do not replace "team" with your actual team name.
 
 ### Project Based
 
-You can set them on the `Projects` page, under the gear icon and use it with <span v-pre>`{{project.NODE_ENV}}`</span>.
+You can set them on the `Projects` page, under the gear icon and use it with `{{project.NODE_ENV}}`. Do not replace "project" with your actual project name.
 
 ### Environment Based
 
-You can set them on the `Environments` page (select a `Project`), under the gear icon and use it with <span v-pre>`{{environment.NODE_ENV}}`</span>.
+You can set them on the `Environments` page (select a `Project`), under the gear icon and use it with `{{environment.NODE_ENV}}`. Do not replace "environment" with your actual environment name.
+
+#### Using Shared Variables in Compose File
+If you want to use the environment variables in your compose file, you can do so by using the following syntax:
+
+```yaml
+environment:
+  - NODE_ENV=${NODE_ENV}
+```
+And then in the UI set `NODE_ENV` to your desired shared variable. For example if you want to use a team based variable (make sure you have the `NODE_ENV` variable set in the Team Variables):
+```
+NODE_ENV=${team.NODE_ENV}
+```
 
 ## Predefined Variables
 

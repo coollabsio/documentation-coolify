@@ -443,7 +443,7 @@ export default defineConfig({
                   label: "Notifications",
                   link: "/knowledge-base/notifications",
                 },
-                { label: "Self-update", link: "/knowledge-base/self-update" },
+                { label: "Coolify Updates", link: "/knowledge-base/coolify-updates" },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
@@ -477,6 +477,10 @@ export default defineConfig({
                   label: "Health checks",
                   link: "/knowledge-base/health-checks",
                 },
+                {
+                  label: "Cron Syntax",
+                  link: "/knowledge-base/cron-syntax",
+                },
               ],
             },
             {
@@ -486,6 +490,14 @@ export default defineConfig({
                 {
                   label: "Load-balancing on Hetzner",
                   link: "/knowledge-base/how-to/hetzner-loadbalancing",
+                },
+                {
+                  label: "Wordpress Multisite",
+                  link: "/knowledge-base/how-to/wordpress-multisite",
+                },
+                {
+                  label: "Raspberry Pi OS Setup",
+                  link: "/knowledge-base/how-to/raspberry-pi-os",
                 },
               ],
             },
