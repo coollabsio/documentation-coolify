@@ -136,6 +136,68 @@ For this you need to set `SSL/TLS` to `Full` in the `SSL/TLS` menu on Cloudflare
   If you would like to add a new resource, you only need to do point 6 and 7.
 </Aside>
 
+### Full HTTPS/TLS Setup (Traefik/Coolify Proxy)
+
+<Aside type="note">
+    Before proceeding with the below make sure you have your Cloudflare tunnel
+    and domain setup to be working with http and the https redirect as explained
+    above. The next steps make modifications so that you can set https in
+    Coolify and it works as you would expect.
+</Aside>
+
+<Aside type="caution">
+    If you are also using a subdomain that points to your Coolify instance that is on the same tunnel you want to configure, make sure you're still able to access your UI through the server IP (`server.ip:PORT` - i.e `192.168.x.x:8000`) before doing these changes.
+
+    The default is port `8000`. If you changed or disabled that port make sure you can access it via the set port, or that port is open again on the server.
+
+    Once you've done the below steps, it won't work for a bit until you set the Coolify instance domain to also be `https://` in the Coolify UI (`Settings -> Instance's Domain`).
+
+</Aside>
+
+The above setup with the redirect from `http -> https` in Cloudflare gets you most the of the way by using their tunnels.
+
+However you'll likely find yourself having some issues with some services where the domain name is configured as an environment variable as a http url in a service and then fails because the urls mismatch due to the automatic redirect.
+
+This becomes particularly important with some services when you first try to set them up and configure them.
+
+Authentication services such as [Logto](/docs/services/logto) are affected where the JWT token issuer is different from the callback url, this makes initial setup of the service impossible, unless a alternative URL is provided to the compose somehow.
+
+The best way to be able to solve this would be to be able to set `https://` on the domains for your services, or within your [wildcard domain](/docs/knowledge-base/server/introduction#wildcard-domain) to always be https in Coolify.
+
+If you've tried this, you may have run into the issue where you get caught in a redirect loop.
+
+To set up Coolify wildcard domains so that you can set `https://` in the url for services etc. Then you'll need to do and configure the following things:
+
+<Steps>
+
+1. Create a new origin certificate in Cloudflare for the domain you want to set it up for (`*.yourdomain.com`, `yourdomain.com`).
+
+2. Add it to the origin server and configure the Traefik proxy to use the newly created certificate (see [custom-ssl-certs](/docs/knowledge-base/traefik/custom-ssl-certs) on how to get them on your server). You can add this configuration through the UI if you like. We called it `cert.yaml`.
+
+    ```yaml
+    tls:
+        certificates:
+            - certFile: /traefik/certs/yourdomain.com.cert
+              keyFile: /traefik/certs/yourdomain.com.key
+    ```
+
+3. Set SSL/TLS encryption mode to full (strict) in Cloudflare.
+
+4. Configure the tunnel to use `https` and then in the tunnel `Additional application settings -> TLS` set the Origin Server Name to be the root domain you want it to be (i.e - `yourdomain.com`)
+
+    <Aside type="tip">
+        You need to set the dropdown to be `https` before the TLS option appears
+        in the "Additional application settings" area
+    </Aside>
+
+5. Set "Always Use HTTPS" in Cloudflare (`managing your domain -> SSL/TLS -> Edge Certificates`).
+
+6. Set a `https` domain name on any service in Coolify as a subdomain of the domain name we just setup - i.e `https://myproject.yourdomain.com`.
+
+</Steps>
+
+If configured correctly all of your traffic to any of the subdomains will now work on `https` as the FQDN in the UI and when visiting in a browser.
+
 ## Post Setup
 
 After everything is setup, you can fully disable direct access to your server by disabling all the ports (except `SSH (port:22 by default)`) on your firewall.
