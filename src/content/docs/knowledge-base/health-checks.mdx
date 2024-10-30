@@ -14,6 +14,8 @@ Health checks are important, but not mandatory for your application. It is a way
 
 If you set a health check, Coolify (and integrated proxy) will check the health of your application by sending a request to the health check endpoint.
 
+Make sure to configure the health check against the container internal endpoint (e.g. `http://localhost:3000`) and not against the domain (e.g. `https://mydomain.com`).
+
 The integrated proxy only forwards the request to your application if the health check is successful. If the health check fails, the proxy will return a 502 Bad Gateway error.
 
 ## What if I do not set a health check?
