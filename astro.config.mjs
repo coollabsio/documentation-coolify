@@ -327,12 +327,12 @@ export default defineConfig({
               link: "/services/appwrite",
             },
             {
-              label: "Argilla",
-              link: "/services/argilla",
-            },
-            {
               label: "AnythingLLM",
               link: "/services/anythingllm",
+            },
+            {
+              label: "Argilla",
+              link: "/services/argilla",
             },
             {
               label: "Authentik",
@@ -342,11 +342,11 @@ export default defineConfig({
               label: "Baby Buddy",
               link: "/services/babybuddy",
             },
-            { label: "Budge", link: "/services/budge" },
             {
               label: "Browserless",
               link: "/services/browserless",
             },
+            { label: "Budge", link: "/services/budge" },
             {
               label: "Changedetection",
               link: "/services/changedetection",
@@ -399,11 +399,11 @@ export default defineConfig({
               label: "Duplicati",
               link: "/services/duplicati",
             },
+            { label: "Emby", link: "/services/emby" },
             {
               label: "Emby Stat",
               link: "/services/emby-stat",
             },
-            { label: "Emby", link: "/services/emby" },
             { label: "Fider", link: "/services/fider" },
             {
               label: "Filebrowser",
@@ -560,14 +560,6 @@ export default defineConfig({
               link: "/services/plane",
             },
             {
-              label: "Prefect",
-              link: "/services/prefect",
-            },
-            {
-              label: "Qdrant",
-              link: "/services/qdrant",
-            },
-            {
               label: "Plausible",
               link: "/services/plausible",
             },
@@ -582,6 +574,14 @@ export default defineConfig({
             {
               label: "PostHog",
               link: "/services/posthog",
+            },
+            {
+              label: "Prefect",
+              link: "/services/prefect",
+            },
+            {
+              label: "Qdrant",
+              link: "/services/qdrant",
             },
             {
               label: "RabbitMQ",
@@ -664,16 +664,16 @@ export default defineConfig({
               link: "/services/vikunja",
             },
             {
+              label: "Weaviate",
+              link: "/services/weaviate",
+            },
+            {
               label: "Weblate",
               link: "/services/weblate",
             },
             {
               label: "Whoogle",
               link: "/services/whoogle",
-            },
-            {
-              label: "Weaviate",
-              link: "/services/weaviate",
             },
             {
               label: "Windmill",
