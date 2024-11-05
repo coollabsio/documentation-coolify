@@ -1,0 +1,687 @@
+---
+title: "Environment Variables"
+head:
+  - tag: "meta"
+    attrs:
+        property: "og:title"
+        content: "How to use environment variables with Coolify"
+description: "A detailed guide on how to use environment variables in Coolify."
+tableOfContents:
+  minHeadingLevel: 2
+  maxHeadingLevel: 4
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import dynamicEnvVars from '../../../assets/images/environment-variables/compose-dynamic-environment-variable.png';
+import dynamicEnvVarsWithDefault from '../../../assets/images/environment-variables/compose-dynamic-environment-variable-with-default.png';
+import sharedVariables from '../../../assets/images/environment-variables/shared-variables.png';
+
+Environment variables are essential configuration values that allow you to manage application settings and secrets without hardcoding them into your application code. They provide a secure and flexible way to handle sensitive information like:
+- API keys
+- Database credentials 
+- Other configuration data that might vary between environments or deployments
+
+
+## Environment Variable Configurations
+
+Coolify offers three ways to configure environment variables, each serving different needs to provide maximum flexibility in managing your application settings.
+
+<Aside type="caution">
+  Environment variable names must be unique within your application's configuration - you can only use each name once per application.
+</Aside>
+
+### Hardcoded Values
+These are unchangeable values defined directly in your docker compose file etc. that remain constant throughout your application's lifecycle. They are:
+- Fixed values that cannot be modified through the Coolify UI
+- Not visible or editable in the Coolify interface
+- Ideal for configuration values that should remain constant across all deployments
+
+Example in docker compose:
+```yaml
+environment:
+  # Hardcoded value that will remain constant - here "hello"
+  # Cannot be modified through the Coolify UI
+  - VARIABLE_NAME=hello
+```
+
+### Dynamic Variables
+These are flexible variables that can be set and modified through the Coolify interface at any time. They are:
+- Created empty when the service is first initialized
+- Fully configurable through the Coolify UI
+- Ideal for values that need to change across environments or for things you want to be able to change
+
+Example in docker compose:
+```yaml
+environment:
+  # Dynamic variable that can be set through the Coolify UI
+  # Format: ${VARIABLE_NAME}, creates a configurable environment variable with the name in the {} brackets
+  - DYNAMIC_VARIABLE=${DYNAMIC_VARIABLE}
+```
+Here's how dynamic variables appear in the UI - the value starts empty and can be set through the interface:
+<Image src={dynamicEnvVars} alt="Environment Variables UI" />
+
+<Aside type="note">
+  Coolify provides several built-in environment variables that are automatically generated for you. To learn more about these, see the [Coolify Magic Environment Variables section](#coolify-magic-environment-variables) below.
+</Aside>
+
+### Dynamic Variables with Defaults
+These combine flexibility with reliability by providing both configurability and fallback values. They:
+- Start with a predefined default value
+- Can be modified through the Coolify UI when needed
+- Ensure your application always has a valid configuration value
+
+Example in docker compose:
+```yaml
+environment:
+  # Dynamic variable with a default fallback value
+  # Format: ${VARIABLE_NAME:-VALUE} - creates a configurable environment variable with the name in the {} brackets and a default value of VALUE
+  # If not set in UI, will use 'hello' as the fallback/default value
+  - DYNAMIC_VARIABLE_DEFAULT=${DYNAMIC_VARIABLE_DEFAULT:-hello}
+```
+
+Here's how dynamic variables with defaults appear in the UI - the value starts as "hello" but can be changed through the interface if needed. If you change it in the UI, it will override the default value (the default will stay the same in the compose but the value is now set via the UI):
+<Image src={dynamicEnvVarsWithDefault} alt="Environment Variables with Defaults UI" />
+
+
+## Coolify Specifics
+
+Coolify provides several specialized features for environment variable management to give you more control and flexibility over your configurations.
+
+### Build Time Variables
+Build time variables are environment variables that are accessible during your application's build phase - other variables are not available during build time:
+- Set through the `Build Variable` checkbox in the UI in the normal view for environment variables
+- Useful for build-specific configurations like registry tokens or build flags
+
+### Literal Values
+The "Is Literal" setting determines how Coolify handles special characters in your variable values:
+- When enabled: Special characters are treated as literal text (e.g., `$VARIABLE` is stored exactly as written)
+- When disabled: Special characters trigger variable interpolation (e.g., `$VARIABLE` attempts to use the value of VARIABLE)
+- Useful when your values contain special characters that shouldn't be interpreted
+
+### Multiline Variables
+Is Multiline is a setting that allows you to enter multiline values in your environment variables:
+- When enabled: You can enter multiline values in the UI
+- Useful when you need to enter multi-line values like ssh keys or other multiline data
+
+### Variable Locking
+To prevent accidental changes to critical configuration values, Coolify allows you to lock environment variables:
+- Locked variables cannot never be modified through the UI
+- Must be deleted and re-added to change their values
+- Provides an extra layer of protection for sensitive configurations or things you don't want to be changed
+
+### Environment Specific Variables
+Coolify supports different variable configurations for different deployment scenarios:
+- Production variables are configured in the production environment variables section
+- Preview deployment variables can be set separately in the preview deployment environment variables section
+- Enables maintaining distinct and separate configurations for production and preview deployments
+
+### Shared Variables
+Coolify offers three levels of shared variables that can be reused across your applications:
+
+#### 1. Team Variables
+- Scope: Available to all projects in the team
+- Syntax: `{{team.VARIABLE_NAME}}` - do not replace "team" with your actual team name
+- Ideal for organization-wide settings
+
+#### 2. Project Variables
+- Scope: Available to all environments in the project
+- Syntax: `{{project.VARIABLE_NAME}}` - do not replace "project" with your actual project name
+- Perfect for project-wide configurations
+
+#### 3. Environment Variables
+- Scope: Available to all services in the environment
+- Syntax: `{{environment.VARIABLE_NAME}}` - do not replace "environment" with your actual environment name
+- Useful for environment-specific settings
+
+#### Using Shared Variables
+To use shared variables in your Docker Compose files:
+
+```yaml
+environment:
+  - NODE_ENV=${NODE_ENV}
+```
+
+Then in the Coolify UI, reference the shared variable with the appropriate syntax:
+
+```yaml
+NODE_ENV={{team.NODE_ENV}}     # For team variables
+NODE_ENV={{project.NODE_ENV}}  # For project variables
+NODE_ENV={{environment.NODE_ENV}}  # For environment variables
+```
+Here's how shared variables appear in the UI:
+<Image src={sharedVariables} alt="Shared Variables UI" />
+
+
+## Coolify Magic Environment Variables
+
+Coolify provides several built-in environment variables that are automatically generated for you. These "magic" variables help you create secure, random values for passwords, secrets and other data that liek URL you might need.
+
+### General Naming Convention
+All Coolify magic variables follow this general naming pattern: 
+```yaml
+COOLIFY_{SERVICE}_{TYPE}_{TYPE_SPECIFICS}
+```
+
+Where:
+- `COOLIFY_` - Required prefix that identifies Coolify magic variables. This prevents conflicts with your own variables, makes it easier to identify them and also makes it clear that these variables are Coolify only specific variables.
+- `{SERVICE}` - Your service name (e.g., `MYSQL`, `WORDPRESS_ADMIN` etc.). This is the name of the service you're generating the environment variable for - it can container one or more words (or numbers) with underscores separating them.
+- `{TYPE}` - The type of value to generate (e.g., `SECRET`, `USER`, `URL` etc.). This indicates the type of environment variable you're generating.
+- `{TYPE_SPECIFICS}` - Type specific additional settings (e.g., `LENGTH`, `BASE64` etc.). This indicates any additional settings for the type of environment variable you're generating.
+
+<Aside type="caution">
+  Never use the `COOLIFY_` prefix for your own variables as that will cause conflicts - this prefix is reserved for Coolify's magic variables. The only exception is if you want to show variables in the UI read more about this here [Show an Environment Variable in the UI](#show-an-environment-variable-in-the-ui).
+</Aside>
+
+
+### Coolify Secret Variables
+Coolify Secret variables automatically generate a secure, random and cryptographically strong random value. This can be used for things like API keys, passwords, secret keys, tokens etc.
+
+The syntax for generating a secret variable is `COOLIFY_{SERVICE}_SECRET_{TYPE}_{LENGHT}`.
+- `COOLIFY_` prefix
+- `{SERVICE}` is the name of the service you're generating the secret for.
+- `SECRET` is a constant that tells coolify to generate a secure secret variable (eg password, secret key etc).
+- `{TYPE}` is the type of secret your generating - for example `FULL` means all characters including special characters and numbers - read more about the different types below.
+- `{LENGHT}` is the length of the secret you're generating - this indicates how long the secret should be and each secret type supports this length parameter.
+
+#### Full Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_FULL_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_FULL_64}
+```
+- This will generate a 64 character password for the ADMIN_PASSWORD variable with the character set specified.
+
+#### Characters and Numbers Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+- Numbers
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_PASSWORD_64}
+```
+- This will generate a 64 character password for the MYSQL_PASSWORD variable with the character set specified.
+
+#### Uppercase and Numbers Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_UP_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Numbers
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_UP_64}
+```
+- This will generate a 64 character password for the MYSQL_PASSWORD variable with the character set specified.
+
+#### Lowercase and Numbers Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_LOW_{LENGHT}
+```
+
+Character Set:
+- Lowercase letters
+- Numbers
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_LOW_64}
+```
+- This will generate a 64 character password for the MYSQL_PASSWORD variable with the character set specified.
+
+#### Uppercase and Lowercase Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_STR_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_STR_64}
+```
+
+#### Uppercase Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_STR_UP_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_STR_UP_64}
+```
+
+#### Lowercase Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_STR_LOW_{LENGHT}
+```
+Character Set:
+- Lowercase letters
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_STR_LOW_64}
+```
+
+#### Numbers Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_INT_{LENGHT}
+```
+Character Set:
+- Numbers
+
+Example usage:
+```yaml
+environment:
+  - MYSQL_PASSWORD=${COOLIFY_WORDPRESS_MYSQL_SECRET_INT_64}
+```
+
+
+
+#### Full Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_{LENGTH}
+```
+Character Set:
+- Numbers (0-9)
+- Uppercase letters (A-F)
+- Lowercase letters (a-f)
+
+Example usage:
+```yaml
+environment:
+  - RUNNER_TOKEN=${COOLIFY_RUNNER_SECRET_HEX_40}
+```
+
+#### Uppercase and Numbers Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_UP_{LENGTH}
+```
+Character Set:
+- Numbers (0-9)
+- Uppercase letters (A-F)
+
+Example usage:
+```yaml
+environment:
+  - API_KEY=${COOLIFY_API_SECRET_HEX_UP_32}
+```
+
+#### Lowercase and Numbers Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_LOW_{LENGTH}
+```
+Character Set:
+- Numbers (0-9)
+- Lowercase letters (a-f)
+
+Example usage:
+```yaml
+environment:
+  - SESSION_KEY=${COOLIFY_SESSION_SECRET_HEX_LOW_48}
+```
+
+#### Uppercase and Lowercase Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_STR_{LENGTH}
+```
+Character Set:
+- Uppercase letters (A-F)
+- Lowercase letters (a-f)
+
+Example usage:
+```yaml
+environment:
+  - AUTH_TOKEN=${COOLIFY_AUTH_SECRET_HEX_STR_64}
+```
+
+#### Uppercase Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_STR_UP_{LENGTH}
+```
+Character Set:
+- Uppercase letters (A-F)
+
+Example usage:
+```yaml
+environment:
+  - HEX_KEY=${COOLIFY_HEX_SECRET_HEX_STR_UP_16}
+```
+
+#### Lowercase Hexadecimal Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_HEX_STR_LOW_{LENGTH}
+```
+Character Set:
+- Lowercase letters (a-f)
+
+Example usage:
+```yaml
+environment:
+  - HASH_SALT=${COOLIFY_HASH_SECRET_HEX_STR_LOW_32}
+```
+
+### Username Variables
+Coolify provides several ways to generate random usernames through environment variables.
+
+#### Basic Username
+```yaml
+COOLIFY_{SERVICE}_USER_{LENGTH}
+```
+Generates a random username using:
+- Uppercase letters
+- Lowercase letters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_USERNAME=${COOLIFY_ADMIN_USER_32}
+```
+
+#### Full Username
+```yaml
+COOLIFY_{SERVICE}_USER_FULL_{LENGTH}
+```
+Generates a random username using:
+- Uppercase letters
+- Lowercase letters
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - APP_USERNAME=${COOLIFY_APP_USER_FULL_16}
+```
+
+#### Real Word Username
+```yaml
+COOLIFY_{SERVICE}_REAL_USER_{LENGTH}
+```
+Generates a username by combining random words from a predefined word list (similar to server name generation).
+The LENGTH parameter determines how many words to combine.
+
+Example usage:
+```yaml
+environment:
+  - SYSTEM_USERNAME=${COOLIFY_SYSTEM_REAL_USER_3}
+```
+
+### ID Variables
+Coolify can generate numeric IDs for your services with various constraints.
+
+#### Basic ID
+```yaml
+COOLIFY_{SERVICE}_ID
+```
+Generates a random ID between 1 and 1000.
+
+Example usage:
+```yaml
+environment:
+  - GHOST_ADMIN_USER_ID=${COOLIFY_GHOST_ADMIN_USER_ID}
+```
+
+#### ID with Maximum
+```yaml
+COOLIFY_{SERVICE}_ID_MAX_{MAXIMUM}
+```
+Generates an ID starting from 1 up to the specified maximum value.
+
+Example usage:
+```yaml
+environment:
+  - USER_ID=${COOLIFY_USER_ID_MAX_500}
+```
+
+#### ID with Minimum
+```yaml
+COOLIFY_{SERVICE}_ID_MIN_{MINIMUM}
+```
+Generates an ID from the specified minimum value up to 1000.
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_ID=${COOLIFY_ADMIN_ID_MIN_100}
+```
+
+#### ID with Range
+```yaml
+COOLIFY_{SERVICE}_ID_MIN_{MINIMUM}_MAX_{MAXIMUM}
+```
+Generates an ID within a specified range (minimum to maximum).
+
+Example usage:
+```yaml
+environment:
+  - GHOST_ADMIN_USER_ID=${COOLIFY_GHOST_ADMIN_USER_ID_MIN_2_MAX_100}
+```
+
+### UUID Variables
+Coolify can generate UUIDs (Universally Unique Identifiers) for your services.
+
+```yaml
+COOLIFY_{SERVICE}_UUID
+```
+Generates a random UUID v4.
+
+Example usage:
+```yaml
+environment:
+  - APP_UUID=${COOLIFY_APP_UUID}
+```
+
+### Domain and URL Variables
+Coolify provides several ways to generate and manage URLs and domains for your services.
+
+#### Fully Qualified Domain Name
+```yaml
+COOLIFY_{SERVICE}_FQDN
+```
+Generates the fully qualified domain name for your service.
+
+Example usage:
+```yaml
+environment:
+  - APP_DOMAIN=${COOLIFY_APP_FQDN}
+```
+
+#### Basic URL with Port
+```yaml
+COOLIFY_{SERVICE}_URL_{PORT}
+```
+Generates a URL that will be proxied to the specified port.
+
+Example usage:
+```yaml
+environment:
+  - GHOST_URL=${COOLIFY_GHOST_URL_80}
+```
+
+#### HTTPS Required URL
+```yaml
+COOLIFY_{SERVICE}_URL_HTTPS_REQUIRED_{PORT}
+```
+Generates a URL that requires HTTPS and will be proxied to the specified port.
+
+Example usage:
+```yaml
+environment:
+  - SECURE_APP_URL=${COOLIFY_APP_URL_HTTPS_REQUIRED_3000}
+```
+
+#### URL with Path and Port
+```yaml
+COOLIFY_{SERVICE}_API_URL_{PORT}={PATH}
+```
+Generates a URL with a specific path that will be proxied to the specified port.
+
+Example usage:
+```yaml
+environment:
+  - API_ENDPOINT=${COOLIFY_GHOST_API_URL_2000=/api}
+```
+
+#### URL with Path Only
+```yaml
+COOLIFY_{SERVICE}_REALTIME_URL={PATH}
+```
+Generates a URL with a specific path.
+
+Example usage:
+```yaml
+environment:
+  - REALTIME_ENDPOINT=${COOLIFY_GHOST_REALTIME_URL=/v1/realtime}
+```
+
+
+### Base64 Encoded Environment Variables
+```yaml
+COOLIFY_{SERVICE}_SECRET_FULL_64_BASE64
+```
+Add `_BASE64` to the end of the variable name to return the secret as a base64 encoded string.
+Supported are `SECRET`, and `USER`
+
+### Show an Environment Variable in the UI
+You can show any environment variable in the UI with a text field or a password field. It is useful for login details and so on.
+
+<Aside type="tip">
+  It is not recommended to use this on every variable as it can make the UI cluttered.
+</Aside>
+
+#### Text Field UI
+
+```yaml
+COOLIFY_UI_{VARIABLE_NAME}
+```
+Add the `COOLIFY_UI_` prefix to the any variable name to show it in the UI with a text field.
+
+Tis can be usful for email adresses, smtp port etc.
+
+example:
+```yaml
+environment:
+  - SMTP_PORT=${COOLIFY_UI_SMTP_PORT:-25}
+```
+
+#### Password Field UI
+
+```yaml
+COOLIFY_SECRET_UI_{VARIABLE_NAME}
+```
+Add the `COOLIFY_SECRET_UI_` prefix to the variable name to show it in the UI with a password field.
+The VARIABLE_NAME will be the label of the variable in the UI in First letter uppercase.
+
+This can be useful for passwords, secrets, api keys etc.
+
+example:
+```yaml
+environment:
+  - SMTP_PASSWORD=${COOLIFY_SECRET_UI_SMTP_SECRET_FULL_64}
+```
+
+
+
+#### Default login credentials UI
+<Aside type="caution">
+  The following Default UI variables should only be used for default login credentials that are hardcoded into the application.
+</Aside>
+
+```yaml
+COOLIFY_DEFAULT_UI_{VARIABLE_NAME}
+```
+Add the `COOLIFY_DEFAULT_UI_` prefix to the variable name to show it in the UI with a text field and a default value.
+
+This can be useful for default login credentials.
+
+<Aside type="note">
+This UI text field will be read only and not editable as these are default values that can not be changed via the UI or environment variables they have to be changed inside the deplyed application.
+</Aside>
+
+#### Default login credentials password field UI
+<Aside type="caution">
+  The following Default UI variables should only be used for default login credentials that are hardcoded into the application.
+</Aside>
+
+```yaml
+COOLIFY_DEFAULT_SECRET_UI_{VARIABLE_NAME}=email@example.com
+```
+Add the `COOLIFY_DEFAULT_SECRET_UI_` prefix to the variable name to show it in the UI with a password field and a default value.
+
+This can be useful for default login credentials.
+
+
+example:
+```yaml
+environment:
+  - COOLIFY_DEFAULT_SECRET_UI_SMTP_PASSWORD=password
+```
+
+<Aside type="note">
+This UI text field will be read only and not editable as these are default values that can not be changed via the UI or environment variables they have to be changed inside the deplyed application.
+</Aside>
+
+
+## Predefined Variables
+
+Coolify predefines some variables for you, so you can use them in your application. All you need to do is to add an environment variable like this to your application.
+
+```bash
+# For example, you can use this variable in your application
+MY_VARIABLE=$SOURCE_COMMIT
+# You will have the commit hash of the source code in your application as an environment variable in MY_VARIABLE
+```
+
+### `COOLIFY_BRANCH`
+
+Branch name of the source code.
+
+### `COOLIFY_CONTAINER_NAME`
+
+Name of the container generated by Coolify.
+
+### `SOURCE_COMMIT`
+
+Commit hash of the source code.
+
+### `PORT`
+
+If not set: it is set to the `Port Exposes`'s first port.
+
+### `HOST`
+
+If not set: it is set to `0.0.0.0`.
+
+### `COOLIFY_CONTAINER_UUID`
+
+UUID of the container generated by Coolify.
+
+### `COOLIFY_PR_ID`
+
+ID of the pull request of the preview deployment.
