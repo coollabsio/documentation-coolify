@@ -556,75 +556,6 @@ environment:
 - This will generate a random UUID v4 for the `APP_UUID` variable.
 
 
-### Domain and URL Variables
-Coolify provides several ways to generate URLs and domains for your services automatically.
-
-#### Fully Qualified Domain Name (FQDN)
-```yaml
-COOLIFY_{SERVICE}_FQDN
-```
-Generation:
-- The fully qualified domain name for your service.
-
-Example usage:
-```yaml
-environment:
-  - ALLOWED_HOSTS=${COOLIFY_APP_FQDN}
-```
-- This will fill the `ALLOWED_HOSTS` variable with the fully qualified domain name for your service.
-
-<Aside type="note">
-  This variable is automatically generated for you as soon as you set an URL for your application.
-</Aside>
-
-#### URL
-```yaml
-COOLIFY_{SERVICE}_URL_{PORT}
-```
-Generation:
-- A URL that will be proxied to the specified port.
-
-Example usage:
-```yaml
-environment:
-  - COOLIFY_GHOST_URL_80 # This line is generating the URL
-  - GHOST_URL=${COOLIFY_GHOST_URL_80} # This line is filling the GHOST_URL variable with the generated URL (most services will not have something like this)
-```
-- This will generate an URL that will be proxied to the port 80 of your service.
-
-#### HTTPS Required URL
-```yaml
-COOLIFY_{SERVICE}_HTTPS_REQUIRED_URL_{PORT}
-```
-Generation:
-- A URL that requires HTTPS and will be proxied to the specified port. Only https is allowed and http will be redirected to https.
-
-Example usage:
-```yaml
-environment:
-  - MINIO_ENDPOINT=${COOLIFY_MINIO_ENDPOINT_HTTPS_REQUIRED_URL_9000}
-```
-- This will generate a URL that requires HTTPS and will be proxied to the port 9000.
-
-<Aside type="caution">
-  This variable should only be used if you service only works with https not if you want to force https for your application.
-</Aside>
-
-#### URL with Path
-```yaml
-COOLIFY_{SERVICE}_API_URL_{PORT}={PATH}
-```
-Generation:
-- A URL with a specific path that will be proxied to the specified port.
-
-Example usage:
-```yaml
-environment:
-  - API_ENDPOINT=${COOLIFY_GHOST_API_URL_2000=/api}
-```
-- This will generate a URL with the path `/api` that will be proxied to the port 2000 for your service.
-
-
 ### Base64 Encode Environment Variables
 ```yaml
 COOLIFY_{SERVICE}_{TYPE}_{LENGTH}_BASE64
@@ -729,22 +660,78 @@ This UI text field will be read only and not editable as these are default value
 </Aside>
 
 
-## Predefined Variables
+### Domain and URL Variables
+Coolify provides several ways to generate URLs and domains for your services automatically.
 
-Coolify predefines some variables for you that can be used in your application. To use them, simply reference them as values for your environment variables.
-
-### Source Branch
+#### Fully Qualified Domain Name (FQDN)
 ```yaml
-COOLIFY_SOURCE_BRANCH
+COOLIFY_{SERVICE}_FQDN
 ```
-Function:
-- Provides the branch name of the source code if you are using a git deploy type.
+Generation:
+- The fully qualified domain name for your service.
 
 Example usage:
 ```yaml
 environment:
-  - CURRENT_BRANCH=${COOLIFY_SOURCE_BRANCH}
+  - ALLOWED_HOSTS=${COOLIFY_APP_FQDN}
 ```
+- This will fill the `ALLOWED_HOSTS` variable with the fully qualified domain name for your service.
+
+<Aside type="note">
+  This variable is automatically generated for you as soon as you set an URL for your application.
+</Aside>
+
+#### URL
+```yaml
+COOLIFY_{SERVICE}_URL_{PORT}
+```
+Generation:
+- A URL that will be proxied to the specified port.
+
+Example usage:
+```yaml
+environment:
+  - COOLIFY_GHOST_URL_80 # This line is generating the URL
+  - GHOST_URL=${COOLIFY_GHOST_URL_80} # This line is filling the GHOST_URL variable with the generated URL (most services will not have something like this)
+```
+- This will generate an URL that will be proxied to the port 80 of your service.
+
+#### HTTPS Required URL
+```yaml
+COOLIFY_{SERVICE}_HTTPS_REQUIRED_URL_{PORT}
+```
+Generation:
+- A URL that requires HTTPS and will be proxied to the specified port. Only https is allowed and http will be redirected to https.
+
+Example usage:
+```yaml
+environment:
+  - MINIO_ENDPOINT=${COOLIFY_MINIO_ENDPOINT_HTTPS_REQUIRED_URL_9000}
+```
+- This will generate a URL that requires HTTPS and will be proxied to the port 9000.
+
+<Aside type="caution">
+  This variable should only be used if you service only works with https not if you want to force https for your application.
+</Aside>
+
+#### URL with Path
+```yaml
+COOLIFY_{SERVICE}_API_URL_{PORT}={PATH}
+```
+Generation:
+- A URL with a specific path that will be proxied to the specified port.
+
+Example usage:
+```yaml
+environment:
+  - API_ENDPOINT=${COOLIFY_GHOST_API_URL_2000=/api}
+```
+- This will generate a URL with the path `/api` that will be proxied to the port 2000 for your service.
+
+
+## Predefined Variables
+
+Coolify predefines some variables for you that can be used in your application. To use them, simply reference them as values for your environment variables.
 
 ### Container Name
 ```yaml
@@ -773,19 +760,6 @@ environment:
   - CONTAINER_UUID=${COOLIFY_CONTAINER_UUID}
 ```
 
-### Source Commit
-```yaml
-COOLIFY_SOURCE_COMMIT
-```
-Function:
-- Provides the commit hash of the source code if you are using a git deploy type.
-
-Example usage:
-```yaml
-environment:
-  - BUILD_COMMIT=${COOLIFY_SOURCE_COMMIT}
-```
-
 ### Container Port
 ```yaml
 COOLIFY_CONTAINER_PORT
@@ -812,6 +786,32 @@ Example usage:
 ```yaml
 environment:
   - APP_HOST=${COOLIFY_CONTAINER_HOST}
+```
+
+### Source Branch
+```yaml
+COOLIFY_SOURCE_BRANCH
+```
+Function:
+- Provides the branch name of the source code if you are using a git deploy type.
+
+Example usage:
+```yaml
+environment:
+  - CURRENT_BRANCH=${COOLIFY_SOURCE_BRANCH}
+```
+
+### Source Commit
+```yaml
+COOLIFY_SOURCE_COMMIT
+```
+Function:
+- Provides the commit hash of the source code if you are using a git deploy type.
+
+Example usage:
+```yaml
+environment:
+  - BUILD_COMMIT=${COOLIFY_SOURCE_COMMIT}
 ```
 
 ### Preview PR ID
