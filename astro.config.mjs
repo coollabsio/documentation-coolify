@@ -371,6 +371,7 @@ export default defineConfig({
             { label: "Minio", link: "/services/minio" },
             { label: "Mixpost", link: "/services/mixpost" },
             { label: "Moodle", link: "/services/moodle" },
+            { label: "Mosquitto", link: "/services/mosquitto" },
             { label: "N8N", link: "/services/n8n" },
             { label: "Nextcloud", link: "/services/nextcloud" },
             { label: "Nitropage", link: "/services/nitropage" },
