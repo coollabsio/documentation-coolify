@@ -356,6 +356,7 @@ export default defineConfig({
             { label: "Infisical", link: "/services/infisical" },
             { label: "Invoice Ninja", link: "/services/invoice-ninja" },
             { label: "Jellyfin", link: "/services/jellyfin" },
+            { label: "Jenkins", link: "/services/jenkins" },
             { label: "Kuzzle", link: "/services/kuzzle" },
             { label: "Label Studio", link: "/services/labelstudio" },
             { label: "Langfuse", link: "/services/langfuse" },
