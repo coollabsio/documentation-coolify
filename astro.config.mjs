@@ -185,6 +185,7 @@ export default defineConfig({
       },
       social: {
         github: "https://github.com/coollabsio/documentation-coolify",
+        blueSky: "https://bsky.app/profile/coolify.io",
         "x.com": "https://x.com/coolifyio",
         discord: "https://discord.gg/coolify",
         twitch: "https://twitch.tv/heyandras",
