@@ -1217,6 +1217,15 @@ paths:
       summary: Update
       description: 'Update application by UUID.'
       operationId: update-application-by-uuid
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the application.'
+          required: true
+          schema:
+            type: string
+            format: uuid
       requestBody:
         description: 'Application updated.'
         required: true
@@ -3253,6 +3262,15 @@ paths:
       summary: Update
       description: 'Update Project.'
       operationId: update-project-by-uuid
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the application.'
+          required: true
+          schema:
+            type: string
+            format: uuid
       requestBody:
         description: 'Project updated.'
         required: true
@@ -3671,6 +3689,14 @@ paths:
       summary: Update
       description: 'Update Server.'
       operationId: update-server-by-uuid
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: "Server's UUID"
+          required: true
+          schema:
+            type: string
       requestBody:
         description: 'Server updated.'
         required: true
