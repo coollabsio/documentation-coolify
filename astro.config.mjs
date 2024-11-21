@@ -185,6 +185,7 @@ export default defineConfig({
       },
       social: {
         github: "https://github.com/coollabsio/documentation-coolify",
+        blueSky: "https://bsky.app/profile/coolify.io",
         "x.com": "https://x.com/coolifyio",
         discord: "https://discord.gg/coolify",
         twitch: "https://twitch.tv/heyandras",
@@ -356,6 +357,7 @@ export default defineConfig({
             { label: "Infisical", link: "/services/infisical" },
             { label: "Invoice Ninja", link: "/services/invoice-ninja" },
             { label: "Jellyfin", link: "/services/jellyfin" },
+            { label: "Jenkins", link: "/services/jenkins" },
             { label: "Kuzzle", link: "/services/kuzzle" },
             { label: "Label Studio", link: "/services/labelstudio" },
             { label: "Langfuse", link: "/services/langfuse" },
@@ -371,6 +373,7 @@ export default defineConfig({
             { label: "Minio", link: "/services/minio" },
             { label: "Mixpost", link: "/services/mixpost" },
             { label: "Moodle", link: "/services/moodle" },
+            { label: "Mosquitto", link: "/services/mosquitto" },
             { label: "N8N", link: "/services/n8n" },
             { label: "Nextcloud", link: "/services/nextcloud" },
             { label: "Nitropage", link: "/services/nitropage" },
