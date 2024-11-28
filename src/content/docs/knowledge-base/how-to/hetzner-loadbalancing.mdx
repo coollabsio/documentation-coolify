@@ -34,8 +34,9 @@ In this guide, we will show you how to deploy a load-balanced application with C
 
     First, you need to buy two (or more) servers on Hetzner Cloud. You can choose the server type and location based on your requirements. Make sure to choose servers with enough resources to run your application.
 
-    Important
+    <Aside type="caution">
     Make sure you create and attach a private network to your servers. This will allow your servers to communicate with each other using a private network.
+    </Aside>
 
     If you don't have an account on Hetzner Cloud, you can sign up with this [referral link](https://coolify.io/hetzner).
 
@@ -53,12 +54,12 @@ In this guide, we will show you how to deploy a load-balanced application with C
 
     Once you have bought the database server, and added it to Coolify, deploy your preferable database type (MySQL, PostgreSQL, etc.) on it.
 
-    Important
     <Aside type="caution">
     We won't use a reverse proxy in this guide. We will bind the database to the public IP address of the server. We will use a firewall to restrict access to the database server.
 
     You can stop them on the `Server` tab and switch to a `None` proxy type.
     </Aside>
+
     Make sure you set the `Ports Mappings` correctly to allow your application servers to connect to the database server.
 
     - PostgreSQL: `5432:5432`
@@ -72,12 +73,12 @@ In this guide, we will show you how to deploy a load-balanced application with C
 
     With Coolify, you can attach more than one server to the same application. This will allow you to deploy your application on multiple servers.
 
-    Important
     <Aside type="caution">
     We won't use a reverse proxy in this guide. We will bind the application to the public IP address of the server, as the load balancer will handle the routing.
 
     You can stop them on the `Server` tab and switch to a `None` proxy type.
     </Aside>
+
     Make sure you set the `Ports Mappings` correctly to forward your application ports to the public IP address of the server.
 
     If your application uses a database, make sure you update the database connection string to point to the database server.
