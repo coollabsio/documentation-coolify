@@ -7,7 +7,7 @@ on:
 
 env:
   GITHUB_REGISTRY: ghcr.io
-  IMAGE_NAME: documentation-coolify
+  IMAGE_NAME: coollabsio/documentation-coolify
 
 jobs:
   build:
