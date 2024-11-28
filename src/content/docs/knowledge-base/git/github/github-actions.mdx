@@ -22,7 +22,7 @@ Here is an [example repository](https://github.com/andrasbacsai/github-actions-w
 3. You need to create a [Coolify API Token](/docs/api-reference/authorization) and add it to your GitHub repository secrets.
    - `COOLIFY_TOKEN` in the example.
 4. In Coolify, you need to setup your deployment type. It could be a simple Dockerfile, Docker Compose or Docker Image based deployment.
-5. Get the proper webhook endpoint from Coolify (Your resource / `Webhook` menu) and add it to your GitHub repository secrets.
+5. Get the proper webhook endpoint from Coolify (Your resource / `Webhook` menu / `Deploy Webhook`) and add it to your GitHub repository secrets.
    - `COOLIFY_WEBHOOK` in the example.
 6. Need to send a GET request to that webhook endpoint (authenticated with the token) to trigger the deployment
    - Example: `curl --request GET '${{ secrets.COOLIFY_WEBHOOK }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'`
