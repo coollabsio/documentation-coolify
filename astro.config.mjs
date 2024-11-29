@@ -324,6 +324,7 @@ export default defineConfig({
             { label: "Baby Buddy", link: "/services/babybuddy" },
             { label: "Browserless", link: "/services/browserless" },
             { label: "Budge", link: "/services/budge" },
+            { label: "Beszel", link: "/services/beszel" },
             { label: "Changedetection", link: "/services/changedetection" },
             { label: "Chaskiq", link: "/services/chaskiq" },
             { label: "Chatwoot", link: "/services/chatwoot" },
