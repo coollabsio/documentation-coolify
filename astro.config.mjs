@@ -359,6 +359,7 @@ export default defineConfig({
             { label: "Invoice Ninja", link: "/services/invoice-ninja" },
             { label: "Jellyfin", link: "/services/jellyfin" },
             { label: "Jenkins", link: "/services/jenkins" },
+            { label: "Kimai", link: "/services/kimai" },
             { label: "Kuzzle", link: "/services/kuzzle" },
             { label: "Label Studio", link: "/services/labelstudio" },
             { label: "Langfuse", link: "/services/langfuse" },
