@@ -1,9 +1,9 @@
-import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
+import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 import starlightImageZoom from "starlight-image-zoom";
 import starlightLinksValidator from "starlight-links-validator";
-import tailwind from "@astrojs/tailwind";
+import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -324,6 +324,7 @@ export default defineConfig({
             { label: "Baby Buddy", link: "/services/babybuddy" },
             { label: "Browserless", link: "/services/browserless" },
             { label: "Budge", link: "/services/budge" },
+            { label: "Beszel", link: "/services/beszel" },
             { label: "Changedetection", link: "/services/changedetection" },
             { label: "Chaskiq", link: "/services/chaskiq" },
             { label: "Chatwoot", link: "/services/chatwoot" },
@@ -387,6 +388,7 @@ export default defineConfig({
             { label: "PhpMyAdmin", link: "/services/phpmyadmin" },
             { label: "Plane", link: "/services/plane" },
             { label: "Plausible", link: "/services/plausible" },
+            { label: "Plex", link: "/services/plex" },
             { label: "Plunk", link: "/services/plunk" },
             { label: "Pocketbase", link: "/services/pocketbase" },
             { label: "PostHog", link: "/services/posthog" },
@@ -416,7 +418,7 @@ export default defineConfig({
             { label: "Weblate", link: "/services/weblate" },
             { label: "Whoogle", link: "/services/whoogle" },
             { label: "Windmill", link: "/services/windmill" },
-            { label: "Wordpress", link: "/services/wordpress" }
+            { label: "Wordpress", link: "/services/wordpress" },
           ],
         },
         {
@@ -433,8 +435,10 @@ export default defineConfig({
                   label: "Scalability",
                   link: "/knowledge-base/internal/scalability",
                 },
-                { label: "Terminal", link: "/knowledge-base/internal/terminal" },
-
+                {
+                  label: "Terminal",
+                  link: "/knowledge-base/internal/terminal",
+                },
               ],
             },
             {
@@ -446,7 +450,10 @@ export default defineConfig({
                   label: "Notifications",
                   link: "/knowledge-base/notifications",
                 },
-                { label: "Coolify Updates", link: "/knowledge-base/coolify-updates" },
+                {
+                  label: "Coolify Updates",
+                  link: "/knowledge-base/coolify-updates",
+                },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
@@ -653,7 +660,6 @@ export default defineConfig({
                 },
               ],
             },
-
           ],
         },
         {

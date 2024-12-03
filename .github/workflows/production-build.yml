@@ -1,0 +1,34 @@
+name: Production Build
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GITHUB_REGISTRY: ghcr.io
+  IMAGE_NAME: coollabsio/documentation-coolify
+
+jobs:
+  build:
+    runs-on: [self-hosted, arm64]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to ${{ env.GITHUB_REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.GITHUB_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN  }}
+      - name: Build and Push Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/arm64
+          push: true
+          tags: |
+            ${{ env.GITHUB_REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      - name: Deploy to Coolify
+        run: |
+          curl --request GET '${{ secrets.COOLIFY_WEBHOOK }}' --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'

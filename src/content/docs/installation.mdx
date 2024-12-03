@@ -14,8 +14,8 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 
 <Aside type="tip">
   Quick Installation (recommended):
-  ```bash 
-  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash 
+  ```bash
+  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
   ```
   For detailed setup instructions, including firewall configuration and prerequisites, see the [Quick Installation Guide](#1-quick-installation-recommended) below.
 </Aside>
@@ -25,7 +25,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 ### Server Requirements
 You need a server with SSH access. This can be:
 - A VPS
-- A Dedicated Server 
+- A Dedicated Server
 - A VM in Proxmox
 - A Raspberry Pi (for all compatible models read the [Raspberry Pi OS Setup Guide](/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites) prerequisites)
 - Any other server with SSH access
@@ -67,7 +67,7 @@ For Raspberry Pi users: You must use the 64-bit version of Raspberry Pi OS (Rasp
 - 2 GBs memory (RAM)
 - 30+ GB of storage for the images
 
-If you build and host on the same server as Coolify and your builds are utilizing all available memory, this may cause the server to become unresponsive or even crash. 
+If you build and host on the same server as Coolify and your builds are utilizing all available memory, this may cause the server to become unresponsive or even crash.
 To prevent this, consider enabling swap space on your server (or paying for more resources).
 
 #### Server Requirements for Your Resources
@@ -128,7 +128,7 @@ For the following things:
 </Steps>
 
 **The installer does the following:**
-- Installs required tools (`curl wget git jq`)
+- Installs required tools (`curl wget git jq openssl`)
 - Installs Docker Engine (26+)
 
 <Aside type="caution">
@@ -153,7 +153,7 @@ For users who prefer more control over the installation process.
 
 3. Install Docker Engine (24+)
     Follow the official documentation to install Docker Engine on your server: [Docker Engine Installation](https://docs.docker.com/engine/install/#server).
-    
+
     <Aside type="caution">
     Make sure to not install docker engine via snap as this is not supported!
     </Aside>
