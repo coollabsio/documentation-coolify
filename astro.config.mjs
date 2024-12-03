@@ -1,9 +1,9 @@
-import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
+import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 import starlightImageZoom from "starlight-image-zoom";
 import starlightLinksValidator from "starlight-links-validator";
-import tailwind from "@astrojs/tailwind";
+import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -383,6 +383,7 @@ export default defineConfig({
             { label: "Ollama", link: "/services/ollama" },
             { label: "Openblocks", link: "/services/openblocks" },
             { label: "Outline", link: "/services/outline" },
+            { label: "Overseerr", link: "/services/overseerr" },
             { label: "Pairdrop", link: "/services/pairdrop" },
             { label: "Penpot", link: "/services/penpot" },
             { label: "PhpMyAdmin", link: "/services/phpmyadmin" },
@@ -392,14 +393,17 @@ export default defineConfig({
             { label: "Pocketbase", link: "/services/pocketbase" },
             { label: "PostHog", link: "/services/posthog" },
             { label: "Prefect", link: "/services/prefect" },
+            { label: "Prowlarr", link: "/services/prowlarr" },
             { label: "Qdrant", link: "/services/qdrant" },
             { label: "RabbitMQ", link: "/services/rabbitmq" },
+            { label: "Radarr", link: "/services/radarr" },
             { label: "Reactive Resume", link: "/services/reactive-resume" },
             { label: "Rocket.Chat", link: "/services/rocketchat" },
             { label: "SearXNG", link: "/services/searxng" },
             { label: "Shlink", link: "/services/shlink" },
             { label: "Slash", link: "/services/slash" },
             { label: "Snapdrop", link: "/services/snapdrop" },
+            { label: "Sonarr", link: "/services/sonarr" },
             { label: "Statusnook", link: "/services/statusnook" },
             { label: "Stirling PDF", link: "/services/stirling-pdf" },
             { label: "Supabase", link: "/services/supabase" },
@@ -417,7 +421,7 @@ export default defineConfig({
             { label: "Weblate", link: "/services/weblate" },
             { label: "Whoogle", link: "/services/whoogle" },
             { label: "Windmill", link: "/services/windmill" },
-            { label: "Wordpress", link: "/services/wordpress" }
+            { label: "Wordpress", link: "/services/wordpress" },
           ],
         },
         {
@@ -434,8 +438,10 @@ export default defineConfig({
                   label: "Scalability",
                   link: "/knowledge-base/internal/scalability",
                 },
-                { label: "Terminal", link: "/knowledge-base/internal/terminal" },
-
+                {
+                  label: "Terminal",
+                  link: "/knowledge-base/internal/terminal",
+                },
               ],
             },
             {
@@ -447,7 +453,10 @@ export default defineConfig({
                   label: "Notifications",
                   link: "/knowledge-base/notifications",
                 },
-                { label: "Coolify Updates", link: "/knowledge-base/coolify-updates" },
+                {
+                  label: "Coolify Updates",
+                  link: "/knowledge-base/coolify-updates",
+                },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
@@ -654,7 +663,6 @@ export default defineConfig({
                 },
               ],
             },
-
           ],
         },
         {
