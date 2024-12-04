@@ -578,21 +578,34 @@ export default defineConfig({
                   label: "Build Server",
                   link: "/knowledge-base/server/build-server",
                 },
-                { label: "Firewall", link: "/knowledge-base/server/firewall" },
+                {
+                  label: "Firewall",
+                  link: "/knowledge-base/server/firewall",
+                },
                 {
                   label: "Multiple Servers",
                   link: "/knowledge-base/server/multiple-servers",
                 },
                 {
+                  label: "Sentinel and Metrics",
+                  link: "/knowledge-base/server/sentinel",
+                },
+                {
                   label: "Non-root User",
                   link: "/knowledge-base/server/non-root-user",
                 },
-                { label: "OpenSSH", link: "/knowledge-base/server/openssh" },
+                {
+                  label: "OpenSSH",
+                  link: "/knowledge-base/server/openssh",
+                },
                 {
                   label: "Oracle Cloud",
                   link: "/knowledge-base/server/oracle-cloud",
                 },
-                { label: "Proxies", link: "/knowledge-base/server/proxies" },
+                {
+                  label: "Proxies",
+                  link: "/knowledge-base/server/proxies",
+                },
               ],
             },
             {
