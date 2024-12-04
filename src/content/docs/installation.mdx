@@ -106,30 +106,39 @@ For the following things:
 ### 1. Quick Installation (Recommended)
 
 <Steps>
-1. Verify Prerequisites
-   - The `curl` command is installed on your server (this will most likely be the case)
-   - Your firewall is configured with the required ports ([setup guide](/docs/knowledge-base/server/firewall)) (if you are an advanced user you can have this configured differently)
+1. Prepare Your Server
+   - Log in as the `root` user (non-root user is not fully supported yet [non-root-user](/docs/knowledge-base/server/non-root-user))
+   - Configure SSH by following the [SSH Settings Configuration Guide](/docs/knowledge-base/server/openssh#ssh-settings-configuration)
+   - Configure required firewall ports using the [Firewall Guide](/docs/knowledge-base/server/firewall)
+   - Ensure `curl` is installed (pre-installed on most systems)
 
-2. Run the installation script
+2. Run the Installation Script
 
    ```bash
    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
    ```
    > View the [Scripts Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
 
-3. Access coolify
-    - You can find the URL of your coolify instance in the installation output.
-    - It is recommended to use the PrivateIP to access coolify as it is more secure (a VPN setup to your Server is needed for that to work).
+    <Aside type="note">
+    If you are not running the script as the `root` user, switch to the `root` user or use the script with `sudo`:
+    ```bash
+    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
+    ```
+    </Aside>
+
+3. Access Coolify
+   - You can find the URL of your coolify instance in the installation output.
+   - It is recommended to use the PrivateIP to access coolify as it is more secure (a VPN setup to your Server is needed for that to work).
 
     <Aside type="note">
-    If you installed coolify on a Raspberry Pi which is in your home network you can use the private IP address to access coolify as the public IP address will not work.
+      If you installed coolify on a Raspberry Pi which is in your home network you can use the private IP address to  access coolify as the public IP address will not work.
     </Aside>
 
 </Steps>
 
 **The installer does the following:**
 - Installs required tools (`curl wget git jq openssl`)
-- Installs Docker Engine (26+)
+- Installs Docker Engine (27)
 
 <Aside type="caution">
 Docker engine installed via snap is not supported!
