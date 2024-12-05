@@ -272,11 +272,27 @@ Coolify Proxy is still not working on Windows.
 ## Debugging
 
 ### Expired GitHub Personal Access Token
-If you encounter an error like `Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/1.0.1": unauthorized: authentication required`, it means Docker cannot access the GitHub Container Registry.
+You might encounter one of these errors:
 
-To fix this, either:
-- Log out of the GitHub Container Registry or
-- Renew your GitHub Personal Access Token
+```bash
+Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/1.0.1": unauthorized: authentication required
+```
+
+or
+
+```bash
+Unable to find image 'ghcr.io/coollabsio/coolify-helper:latest' locally
+docker: Error response from daemon: Head "https://ghcr.io/v2/coollabsio/coolify-helper/manifests/latest": denied: denied
+```
+
+These errors indicate that Docker cannot authenticate with the GitHub Container Registry (ghcr.io). To resolve this, you can either:
+
+1. Log out of the GitHub Container Registry (ghcr.io):
+```bash
+docker logout ghcr.io
+```
+
+2. Or renew your GitHub Personal Access Token (PAT) if you need to maintain authenticated access for deployments for example.
 
 ### Raspberry Pi Crashes
 If you are using a Raspberry Pi with only 2GB of RAM, you may experience system crashes even with swap space enabled. This probably occurs because Raspberry PIs often use SD cards which are slower than SSDs and can be unstable.
