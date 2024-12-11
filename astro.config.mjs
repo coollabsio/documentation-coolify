@@ -342,6 +342,7 @@ export default defineConfig({
             { label: "Emby Stat", link: "/services/emby-stat" },
             { label: "Fider", link: "/services/fider" },
             { label: "Filebrowser", link: "/services/filebrowser" },
+            { label: "FileFlows", link: "/services/fileflows" },
             { label: "Firefly III", link: "/services/firefly-iii" },
             { label: "Formbricks", link: "/services/formbricks" },
             { label: "Forgejo", link: "/services/forgejo" },
