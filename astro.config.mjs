@@ -518,6 +518,10 @@ export default defineConfig({
                   label: "Private NPM Registry",
                   link: "/knowledge-base/how-to/private-npm-registry",
                 },
+                {
+                  label: "Ollama with GPU",
+                  link: "/knowledge-base/how-to/ollama-with-gpu",
+                },
               ],
             },
             {
