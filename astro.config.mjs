@@ -378,6 +378,7 @@ export default defineConfig({
             { label: "Mosquitto", link: "/services/mosquitto" },
             { label: "N8N", link: "/services/n8n" },
             { label: "Nextcloud", link: "/services/nextcloud" },
+            { label: "Nexus", link: "/services/nexus" },
             { label: "Nitropage", link: "/services/nitropage" },
             { label: "NocoDB", link: "/services/nocodb" },
             { label: "Odoo", link: "/services/odoo" },
