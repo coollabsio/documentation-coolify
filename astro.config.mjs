@@ -514,6 +514,10 @@ export default defineConfig({
                   label: "Raspberry Pi OS Setup",
                   link: "/knowledge-base/how-to/raspberry-pi-os",
                 },
+                {
+                  label: "Private NPM Registry",
+                  link: "/knowledge-base/how-to/private-npm-registry",
+                },
               ],
             },
             {
