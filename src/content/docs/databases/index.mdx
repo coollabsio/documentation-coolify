@@ -49,6 +49,10 @@ You can configure a database with a simple click. Coolify supports the following
 
 Ports mapping is using the Docker [port mapping](https://docs.docker.com/network/#published-ports) feature. It is used to map the container port to the host port. For example, if you set the port mapping to `8080:80`, the container port `80` will be mapped to the host port `8080`.
 
+You can also map port to a specific ip address.
+
+For example, if you want to map the port 8080 to the ip address `192.168.1.100`, you can do it like this: `192.168.1.100:8080:80`.
+
 ### Public Port
 
 Public port is used to expose the container port to the internet, by starting an Nginx TCP proxy.
