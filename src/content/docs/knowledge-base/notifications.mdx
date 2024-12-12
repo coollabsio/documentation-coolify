@@ -13,9 +13,13 @@ tableOfContents:
 
 import { Steps, Aside } from '@astrojs/starlight/components';
 
-Coolify provides a robust notification system that supports multiple channels. Configure notifications in the **Notifications** tab of your Coolify dashboard.
+Coolify provides a robust notification system that supports multiple channels. You can configure notifications in the **Notifications** tab of your Coolify dashboard.
 
-### Email Notifications
+## Notification Providers
+
+Below are guides for setting up supported notification providers in Coolify.
+
+### Email
 
 <Aside type="note">
 Email notifications can be configured using either SMTP or [Resend](https://resend.com).
@@ -25,49 +29,48 @@ Email notifications can be configured using either SMTP or [Resend](https://rese
 1. Navigate to **Notifications** → **Email**
 
 2. Choose your email provider:
-   - Use system wide (transactional) email settings (if you self host Coolify you can set this up in the Instance Settings)
+   - Use system-wide (transactional) email settings (if you self-host Coolify, you can set this up in the Instance Settings)
    - SMTP
    - Resend
 
 3. Configure your chosen provider:
 
-   #### System Wide Email Settings
-   - Enable the system wide email settings checkbox
+   #### System-Wide Email Settings
+   - Enable the `Use System-Wide Email Settings` checkbox
    
    #### SMTP Configuration
-   Fill in the following fields:
-    - **From Name**: Display name for the sender
-    - **From Address**: Email address notifications will come from
-    - **Host**: SMTP server hostname (e.g. smtp.mail.com)
-    - **Port**: SMTP port (typically 587 or 465)
-    - **Encryption**: Choose TLS, SSL (or None - not recommended as it is highly insecure)
-    - **Username**: SMTP authentication username
-    - **Password**: SMTP authentication password
-    - **Timeout**: Connection timeout in secondss
-    - enable the SMTP checkbox
-    
+    - Fill in the following fields:
+      - `From Name` - Display name for the sender
+      - `From Address` - Email address notifications will come from
+      - `Host` - SMTP server hostname (e.g., smtp.gmail.com)
+      - `Port` - SMTP port (typically 587 or 465)
+      - `Username` - SMTP authentication username
+      - `Password` - SMTP authentication password
+      - `Encryption` - TLS, SSL, or None (not recommended as it is highly insecure)
+      - `Timeout` - Connection timeout in seconds
+    - Enable the `SMTP` checkbox
 
    #### Resend Configuration
-    - Enter your Resend API key
-    - Enable the Resend checkbox
+   - Enable the `Resend` checkbox
+   - Enter your `Resend API Key`
 
-4. Click "Send Test Email" to verify your setup
+4. Click `Send Test Email` to verify your setup
 </Steps>
 
-### Telegram Setup
+### Telegram
 
 <Steps>
 1. Initial Setup (Phone Required)
-   - Create a Telegram account using your phone number (on your phone)
-   - Open Telegram app on your phone
-   - Go to Settings → Profile
+   - Create a Telegram account using your phone number
+   - Open the Telegram app on your phone
+   - Go to **Settings** → **Profile**
    - Set up a username (recommended)
 
 2. Create Your Bot (Can be done on desktop)
    - Message [@BotFather](https://t.me/botfather)
    - Send the `/newbot` command
    - Follow BotFather's instructions to create your bot
-   - Copy the bot token when displayed
+   - Copy the `bot token` when displayed
 
     <Aside type="tip">
     Delete the message containing your bot token after saving it securely.
@@ -75,36 +78,36 @@ Email notifications can be configured using either SMTP or [Resend](https://rese
 
 3. Create and add your bot to a group
    - Create a new group in Telegram
-   - Add your bot to the group (you can add it to the groupe by using the bot name)
+   - Add your bot to the group (you can add it by using the bot name)
 
 4. Make the bot an admin of the group
    - Click on the group name
-   - Now you should see the members of the group
+   - Locate the members list
    - Click on the bot name
-   - Click on `add to group or channel`
-   - choose the group
+   - Click on **Add to group or channel**
+   - Choose the group
    - Enable the `admin` toggle
-   - click on `add bot as admin`
+   - Click on **Add bot as admin**
 
 5. Enable Topics (Optional, Phone Required)
    - Open the group on your phone
    - Tap the group name
    - Tap the pencil icon (edit)
-   - Find and enable "Topics" (essential enables threads for the group)
+   - Find and enable **Topics** (this enables threads for the group)
    - You can now create topics using the 3-dot menu in the group (also works on desktop)
 
 6. Get Required IDs (Can be done on desktop)
    - Visit: `https://api.telegram.org/bot{YOUR_BOT_TOKEN}/getUpdates`
    - Send a test message in your group or thread/topic
    - Find these values in the response:
-     - Chat ID: Look for `"chat":{"id":-100XXXXXXXXX}`
-     - Thread/Topic ID (if using threads): Look for `"message_thread_id":XXXXX`
+     - `Chat ID`: Look for `"chat":{"id":-100XXXXXXXXX}`
+     - `Thread/Topic ID` (if using threads): Look for `"message_thread_id":XXXXX`
 
 7. Configure Coolify
    - Go to **Notifications** → **Telegram**
-   - Enter your bot token (from step 2)
-   - Enter the chat ID (include the `-` minus sign if present)
-   - Enter the thread/topic ID (only if using threads)
+   - Enter your `bot token` (from step 2)
+   - Enter the `chat ID` (include the `-` minus sign if present)
+   - Enter the `thread/topic ID` (only if using threads)
    - Save settings
    - Enable the Telegram channel
    - Send a `Test notification`
@@ -119,7 +122,7 @@ Common issues:
 </Aside>
 
 <Aside type="tip" title="Thread/Topic ID">
-If you are not using threads, you can leave the thread/topic ID empty inside Coolify.
+If you are not using threads, you can leave the thread/topic ID empty in Coolify.
 </Aside>
 
 ### Discord
@@ -132,15 +135,15 @@ If you are not using threads, you can leave the thread/topic ID empty inside Coo
 2. Create a webhook
    - Open Discord server settings
    - Go to **Integrations** → **Webhooks**
-   - Click "New Webhook"
+   - Click **New Webhook**
    - Choose the channel you created for Coolify notifications
-   - Copy the webhook URL
+   - Copy the `webhook URL`
 
 3. Configure in Coolify:
    - Go to **Notifications** → **Discord**
-   - Paste the webhook URL in the `Webhook URL` field
+   - Paste the `webhook URL` in the Webhook URL field
    - Save the settings
-   - Enable the discord channel
+   - Enable the Discord channel
    - Send a `Test notification`
 </Steps>
 
@@ -160,34 +163,34 @@ See [Discord's Webhook Guide](https://support.discord.com/hc/en-us/articles/2283
    - Go to **Incoming Webhooks**
    - Toggle **Activate Incoming Webhooks**
    - Click **Add New Webhook to Workspace**
-   - Choose a channel for Coolify notifications - I would recomend creating a new channel for Coolify notifications
-   - Copy the webhook URL
+   - Choose a channel for Coolify notifications
+   - Copy the `webhook URL`
 
 3. Configure in Coolify:
    - Go to **Notifications** → **Slack**
-   - Paste the webhook URL in the `Webhook URL` field
+   - Paste the `webhook URL` in the Webhook URL field
    - Save the settings
    - Enable the Slack channel
    - Send a `Test notification`
 </Steps>
 
-### Pushover
+### Pushover (Push Notifications)
 
 <Steps>
 1. Get User Key
-   - Log in or sign up to [Pushover](https://pushover.net)
-   - Copy your User Key from the top right of the page
+   - Log in or sign up at [Pushover](https://pushover.net)
+   - Copy your `User Key` from the top right of the page
 
 2. Create an Application
    - Visit [Create Application](https://pushover.net/apps/build)
    - Fill in application details
    - Create the application
-   - Then copy the API Token/Key from the top left of the page
+   - Copy the `API Token/Key` from the top left of the page
 
 3. Configure in Coolify:
    - Go to **Notifications** → **Pushover**
-   - Enter your User Key (from step 1)
-   - Enter the API Key from your created application (from step 2)
+   - Enter your `User Key` (from step 1)
+   - Enter the `API Key` from your created application (from step 2)
    - Save the settings
    - Enable the Pushover channel
    - Send a `Test notification`
@@ -197,29 +200,29 @@ See [Discord's Webhook Guide](https://support.discord.com/hc/en-us/articles/2283
 Pushover allows you to receive notifications on multiple devices including iOS, Android, and desktop.
 </Aside>
 
-### Notification Events
+## Notification Events
 
-Configure which events you want to receive notifications for in your notification settings:
+You can configure which events trigger notifications in your notification settings:
 
-#### Deployments
+### Deployments
   - Deployment Success
   - Deployment Failure
   - Container Status changes
 
-#### Backups
+### Backups
   - Backup Success
   - Backup Failure
 
-#### Scheduled Tasks
+### Scheduled Tasks
   - Task Success
   - Task Failure
 
-#### Server Events
+### Server Events
   - Docker Cleanup Success
   - Docker Cleanup Failure
-  - HighDisk Usage Alerts
+  - High Disk Usage Alerts
   - Server Status Updates
 
 <Aside type="tip" title="Multiple Channels">
-You can configure different events for each notification channel. For example, send deployment failure notifications to Email and successes to Slack.
+You can configure different events for each notification channel. For example, you can send deployment failure notifications to Email and successes to Slack.
 </Aside>
