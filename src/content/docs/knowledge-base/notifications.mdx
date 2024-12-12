@@ -22,37 +22,37 @@ Below are guides for setting up supported notification providers in Coolify.
 ### Email
 
 <Aside type="note">
-Email notifications can be configured using either SMTP or [Resend](https://resend.com).
+Email notifications can be configured using either SMTP or Resend.
 </Aside>
 
 <Steps>
 1. Navigate to **Notifications** → **Email**
 
 2. Choose your email provider:
-   - Use system-wide (transactional) email settings (if you self-host Coolify, you can set this up in the Instance Settings)
+   - Use system wide (transactional) email settings (if you self-host Coolify, you can set this up in the Instance Settings - If you use Coolify Cloud, this is set up for you)
    - SMTP
    - Resend
 
 3. Configure your chosen provider:
 
    #### System-Wide Email Settings
-   - Enable the `Use System-Wide Email Settings` checkbox
+   - Enable the `Use system wide (transactional) email settings` checkbox
    
    #### SMTP Configuration
     - Fill in the following fields:
       - `From Name` - Display name for the sender
       - `From Address` - Email address notifications will come from
-      - `Host` - SMTP server hostname (e.g., smtp.gmail.com)
+      - `Host` - SMTP server hostname (e.g., smtp.mail.com)
       - `Port` - SMTP port (typically 587 or 465)
       - `Username` - SMTP authentication username
       - `Password` - SMTP authentication password
-      - `Encryption` - TLS, SSL, or None (not recommended as it is highly insecure)
+      - `Encryption` - TLS, SSL, or None (None is not recommended as it is highly insecure)
       - `Timeout` - Connection timeout in seconds
     - Enable the `SMTP` checkbox
 
    #### Resend Configuration
-   - Enable the `Resend` checkbox
    - Enter your `Resend API Key`
+   - Enable the `Resend` checkbox
 
 4. Click `Send Test Email` to verify your setup
 </Steps>
@@ -60,25 +60,25 @@ Email notifications can be configured using either SMTP or [Resend](https://rese
 ### Telegram
 
 <Steps>
-1. Initial Setup (Phone Required)
+1. Initial Setup (Setup only possible on phone)
    - Create a Telegram account using your phone number
    - Open the Telegram app on your phone
    - Go to **Settings** → **Profile**
    - Set up a username (recommended)
 
-2. Create Your Bot (Can be done on desktop)
+2. Create Your Bot
    - Message [@BotFather](https://t.me/botfather)
    - Send the `/newbot` command
    - Follow BotFather's instructions to create your bot
-   - Copy the `bot token` when displayed
+   - Copy the `Bot Token` when displayed
 
     <Aside type="tip">
-    Delete the message containing your bot token after saving it securely.
+    After copying your bot token, delete the message containing it from Telegram. Store the token securely as anyone with access to it can control your bot.
     </Aside>
 
 3. Create and add your bot to a group
    - Create a new group in Telegram
-   - Add your bot to the group (you can add it by using the bot name)
+   - Add your bot to the group (you can add it by using the bot name chosen while creating the bot)
 
 4. Make the bot an admin of the group
    - Click on the group name
@@ -89,40 +89,36 @@ Email notifications can be configured using either SMTP or [Resend](https://rese
    - Enable the `admin` toggle
    - Click on **Add bot as admin**
 
-5. Enable Topics (Optional, Phone Required)
+5. Enable Topics (Optional, Setup only possible on phone)
    - Open the group on your phone
    - Tap the group name
    - Tap the pencil icon (edit)
    - Find and enable **Topics** (this enables threads for the group)
    - You can now create topics using the 3-dot menu in the group (also works on desktop)
 
-6. Get Required IDs (Can be done on desktop)
-   - Visit: `https://api.telegram.org/bot{YOUR_BOT_TOKEN}/getUpdates`
+6. Get Required IDs
+   - Visit: `https://api.telegram.org/bot{YOUR_BOT_TOKEN}/getUpdates` (Replace `{YOUR_BOT_TOKEN}` with your actual bot token)
    - Send a test message in your group or thread/topic
    - Find these values in the response:
-     - `Chat ID`: Look for `"chat":{"id":-100XXXXXXXXX}`
-     - `Thread/Topic ID` (if using threads): Look for `"message_thread_id":XXXXX`
+     - `Chat ID`: Look for `"chat": {"id": -100XXXXXXXXX,` (for groups/channels, the chat ID usually starts with `-100`)
+     - `Thread/Topic ID` (if using threads): Look for `"message_thread_id":XXXXX,`
 
 7. Configure Coolify
    - Go to **Notifications** → **Telegram**
    - Enter your `bot token` (from step 2)
    - Enter the `chat ID` (include the `-` minus sign if present)
-   - Enter the `thread/topic ID` (only if using threads)
+   - Enter the `thread/topic ID` (only if you are using threads)
    - Save settings
    - Enable the Telegram channel
    - Send a `Test notification`
 </Steps>
 
-<Aside type="caution">
+<Aside type="note">
 Common issues:
 - Make sure the bot is an admin in the group/channel
 - Include the minus sign (-) in the chat ID if present
-- For groups/channels, the chat ID usually starts with `-100`
 - If `getUpdates` returns an empty response, send another message and try again
-</Aside>
-
-<Aside type="tip" title="Thread/Topic ID">
-If you are not using threads, you can leave the thread/topic ID empty in Coolify.
+- if you can not acces `getUpdates` make sure you have the correct bot token and you have replace the `{YOUR_BOT_TOKEN}` with your actual bot token (replace everything including the quotes)
 </Aside>
 
 ### Discord
