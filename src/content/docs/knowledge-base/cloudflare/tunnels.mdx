@@ -8,7 +8,7 @@ head:
 description: "A guide on how to use Cloudflare Tunnels with Coolify."
 ---
 
-import { Aside, Steps } from '@astrojs/starlight/components';
+import { Aside, Steps, TabItem, Tabs } from '@astrojs/starlight/components';
 
 You can run Coolify on your local machine (like old laptop/Raspberry PI) and expose it to the internet without opening any ports on your router with Cloudflare Tunnels.
 
@@ -52,22 +52,73 @@ You have at least two ways to setup Cloudflare Tunnels with Coolify.
 
     ![ssh](../../../../assets/images/cloudflare/cf-tunnels-ssh.png)
 
-2. Setup Tunnels on Coolify
+  2. Setup Remote Management
 
-    <Aside type="note">
-        If this server is your only coolify server, you can skip this step.
-    </Aside>
+      There are two ways to manage your new Coolify server:
+        - Connect to an existing Coolify server
+        - Use the built-in dashboard
+      
+      If you already have a Coolify server which has its dashboard exposed to the internet, or are a Coolify cloud customer, use the first option. Otherwise, use the second option.
 
-    1. Add a new server with your server's `IP Address` - it will be reconfigured later on.
-    ![addserver](../../../../assets/images/cloudflare/coolify-add-server.png)
+      <Tabs>
+        <TabItem label="Connect to an Existing Server">
+          This will allow you to manage your new Coolify server from an existing Coolify server.
+        <Steps>
+        1. Add a new server with your server's `IP Address` - it will be reconfigured later on.
+            ![addserver](../../../../assets/images/cloudflare/coolify-add-server.png)
 
-    2. Validate the server.
+            2. Validate the server.
 
-    2. After the server is validated, click on `Configure` in the `Cloudflare Tunnels` section.
+            2. After the server is validated, click on `Configure` in the `Cloudflare Tunnels` section.
 
-    3. Paste `Cloudflare Tunnel Token` from the previous step and set the `SSH Domain` to the domain you set in the previous step.
-    ![setcftoken](../../../../assets/images/cloudflare/coolify-set-cf-token.png)
+            3. Paste `Cloudflare Tunnel Token` from the previous step and set the `SSH Domain` to the domain you set in the previous step.
+            ![setcftoken](../../../../assets/images/cloudflare/coolify-set-cf-token.png)
+        </Steps>
+      </TabItem>
 
+      <TabItem label="Use the Built-in Dashboard">
+
+        This will expose this servers dashboard to the internet.
+
+        If using a [wildcard domain](#wildcard-subdomain---all-resources), you can skip this section.
+
+        
+
+        <Steps>
+  
+              1. For [one domain -> one resource](#one-domain---one-resource) setup, add these domains to Cloudflare Tunnels:
+                 | Domain                    | Maps To                 |
+                 | ------------------------- | ----------------------- |
+                 | `app.yourdomain.com`      | `http://localhost:8000` |
+                 | `realtime.yourdomain.com` | `http://localhost:6001` |
+                 | `terminal.yourdomain.com` | `http://localhost:6002` |
+              
+                  <Aside type="caution">
+                        If using a firewall, allow the [required ports](/docs/knowledge-base/server/firewall).
+                  </Aside>
+
+
+
+              3. Add these environment variables to `/data/coolify/source/.env`:
+                  ```bash
+                  # ...
+                  PUSHER_HOST=realtime.yourdomain.com
+                  PUSHER_PORT=443
+                  ```
+
+              4. Restart Coolify:
+                  ```bash
+                  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+                  ```
+
+              5. To verify the realtime server:
+                  1. Navigate to your Coolify instance, as in the example: `https://app.yourdomain.io`.
+                  2. Login with the root user (the first user you created after installation).
+                  3. Open another tab/window and navigate to `https://app.yourdomain.io/realtime`. On the other tab (opened in point 2), you should see a notification about the test event.
+                  4. If you know what are you doing, you can check the network tab as well. Search for a websocket connection.
+        </Steps>
+      </TabItem>
+      </Tabs>
 </Steps>
 
 ### Manual
@@ -207,52 +258,6 @@ If configured correctly all of your traffic to any of the subdomains will now wo
 
 After everything is setup, you can fully disable direct access to your server by disabling all the ports (except `SSH (port:22 by default)`) on your firewall.
 
-## Setup self-hosted Coolify
 
-You can use the [one domain](/docs/knowledge-base/cloudflare/tunnels/#one-domain---one-resource) without `Coolify Proxy` or [wildcard](/docs/knowledge-base/cloudflare/tunnels/#wildcard-subdomain---all-resources) setup with `Coolify Proxy` to expose your self-hosted Coolify instance to the internet.
 
-With the `wildcard` setup, you have nothing to do.
 
-With the `one domain` setup, you need a bit more setup with Coolify to make it work.
-
-Let's say you configured the following `Public Hostnames` in Cloudflare:
-
-- `app.coolify.io` mapped to `localhost:8000`
-- `realtime.coolify.io` mapped to `localhost:6001`
-- `terminal.coolify.io` mapped to `localhost:6002`
-
-After you installed Coolify, you need to add 3 lines your `.env` file, located in `/data/coolify/source` folder.
-
-```bash
-APP_ID=<random string>
-APP_KEY=<random string>
-APP_NAME=Coolify
-DB_PASSWORD=<random string>
-PUSHER_APP_ID=<random string>
-PUSHER_APP_KEY=<random string>
-PUSHER_APP_SECRET=<random string>
-REDIS_PASSWORD=<random string>
-
-###########
-# Add these lines
-PUSHER_HOST=realtime.coolify.io
-PUSHER_PORT=443
-###########
-```
-
-This tells Coolify how to connect to it's realtime server through Cloudflare Tunnels.
-
-Restart Coolify with the installation script.
-
-```bash
-curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
-```
-
-> If you have a firewall, you also need to allow the [following ports](/docs/knowledge-base/server/firewall).
-
-### Verify
-
-1. Navigate to your Coolify instance, as in the example: `https://app.coolify.io`.
-2. Login with the root user (the first user you created after installation).
-3. Open another tab/window and navigate to `https://app.coolify.io/realtime`. On the other tab (opened in point 2), you should see a notification about the test event.
-4. If you know what are you doing, you can check the network tab as well. Search for a websocket connection.
