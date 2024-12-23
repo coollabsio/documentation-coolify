@@ -29,26 +29,40 @@ Email notifications can be configured using either SMTP or Resend.
 1. Navigate to **Notifications** → **Email**
 
 2. Choose your email provider:
-   - Use system wide (transactional) email settings (if you self-host Coolify, you can set this up in the Instance Settings - If you use Coolify Cloud, this is set up for you)
-   - SMTP
+   - Use system wide (transactional) email settings (if you self-host Coolify, you can set this up in the Instance Settings - If you use Coolify Cloud, this is set up for you).
+   - SMTP Server
    - Resend
 
 3. Configure your chosen provider:
 
    #### System-Wide Email Settings
    - Enable the `Use system wide (transactional) email settings` checkbox
-   
-   #### SMTP Configuration
+   - If you're setting this up yourself, please refer to the [SMTP Server Configuration](#smtp-server-configuration) section below for detailed settings.
+
+   #### SMTP Server Configuration
     - Fill in the following fields:
       - `From Name` - Display name for the sender
       - `From Address` - Email address notifications will come from
       - `Host` - SMTP server hostname (e.g., smtp.mail.com)
-      - `Port` - SMTP port (typically 587 or 465)
+      - `Port` - SMTP port:
+        - Port 587 - StartTLS port (most widely supported)
+        - Port 465 - TLS/SSL port (recommended for highest security)
       - `Username` - SMTP authentication username
       - `Password` - SMTP authentication password
-      - `Encryption` - TLS, SSL, or None (None is not recommended as it is highly insecure)
+      - `Encryption` - Choose your encryption method:
+        - StartTLS - Starts unencrypted then upgrades to TLS via StartTLS (typically used with port 587)
+        - TLS/SSL - Uses TLS encryption from the start (typically used with port 465 - automatically puts `ssl://` in front of the host)
+        - None - No encryption (NOT recommended as it is highly insecure)
       - `Timeout` - Connection timeout in seconds
-    - Enable the `SMTP` checkbox
+    - Enable the SMTP Server via the `Enabled` checkbox
+
+   <Aside type="tip">
+   We recommend using TLS/SSL encryption with port 465 for the most secure connection. This provides encryption from the start of the connection.
+   </Aside>
+
+   <Aside type="note">
+   Some hosting providers have specific port restrictions. For example, Hetzner blocks port 465 by default. Check with your hosting provider about port availability and any required configuration changes.
+   </Aside>
 
    #### Resend Configuration
    - Enter your `Resend API Key`
