@@ -18,5 +18,13 @@
     "starlight-image-zoom": "^0.8.0",
     "starlight-links-validator": "^0.12.3",
     "starlight-openapi": "^0.8.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5",
+    "@rollup/rollup-linux-x64-musl": "4.9.5",
+    "@rollup/rollup-linux-arm64-gnu": "4.9.5",
+    "@rollup/rollup-linux-arm64-musl": "4.9.5",
+    "@rollup/rollup-darwin-x64": "4.9.5",
+    "@rollup/rollup-darwin-arm64": "4.9.5"
   }
 }
