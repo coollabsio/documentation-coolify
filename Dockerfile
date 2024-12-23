@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm install --platform=linux --arch=arm64
 
 FROM nginx:alpine AS runtime
 COPY ./nginx.conf /etc/nginx/nginx.conf
