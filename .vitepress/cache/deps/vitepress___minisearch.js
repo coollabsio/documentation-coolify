@@ -1,6 +1,4 @@
-import "./chunk-PZ5AY32C.js";
-
-// node_modules/minisearch/dist/es/index.js
+// node_modules/.pnpm/minisearch@7.1.1/node_modules/minisearch/dist/es/index.js
 function __awaiter(thisArg, _arguments, P, generator) {
   function adopt(value) {
     return value instanceof P ? value : new P(function(resolve) {

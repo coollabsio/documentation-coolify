@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import Card from '../../components/Card.vue'
 
 export default {
   extends: DefaultTheme,
@@ -12,6 +13,7 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    // register your custom global components
+    app.component('Card', Card)
   }
 } satisfies Theme

@@ -3,6 +3,9 @@ If you choose to use Coolify Cloud then you don't have to install coolify, just 
 
 The below instrcutions are to install Coolify if you decide to self host coolify
 
+<!-- <card title="Quick Installation">
+Slotted content
+</card> -->
 
 ## Self-hosted Installation
 ::: tip ⚡️ Quick Installation (recommended):
