@@ -31,6 +31,8 @@ defineProps<{
     }[]
 }>()
 
+// TODO: Relocate this cards object once we can directly use the <script setup> in overview.md, this seems to break the page at the moment 
+// see /docs/content/company/teams.md for the desired pattern.
 const cards = [
     {
         title: 'ActivePieces',
