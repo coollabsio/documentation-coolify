@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Coolify"
   text: "Open source PaaS for self-hosting apps"
-  tagline: with tons of automations.
+  tagline: Self-host your own databases, services (like Wordpress, Plausible Analytics, Ghost) and applications (like Next.js, Nuxt.js, Remix, SvelteKit) with ease.
   actions:
     - theme: brand
       text: Get Started

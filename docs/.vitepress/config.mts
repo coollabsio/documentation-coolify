@@ -6,8 +6,10 @@ export default defineConfig({
   title: "Coolify Docs",
   description: "Self hosting with super powers",
   cleanUrls: true,
+  head: [['link', { rel: 'icon', href: '/public/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/public/logo.svg',
     nav: [
       { text: 'Coolify Cloud', link: 'https://coolify.io/pricing/' },
       {
