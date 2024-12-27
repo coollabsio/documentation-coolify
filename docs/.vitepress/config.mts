@@ -51,9 +51,9 @@ export default defineConfig({
           { text: 'Overview', 
             link: '/services/overview', 
             items: [
-              { text: 'ActivePieces', link: '/services/activepieces' },
-              { text: 'AnythingLLM', link: '/services/anythingllm' },
-              { text: 'Appwrite', link: '/services/appwrite' },
+              { text: 'ActivePieces', link: '/services/service/activepieces' },
+              { text: 'AnythingLLM', link: '/services/service/anythingllm' },
+              { text: 'Appwrite', link: '/services/service/appwrite' },
             ] 
           }
         ],
@@ -62,10 +62,15 @@ export default defineConfig({
         text: 'About',
         collapsed: false,
         items: [
-          { text: 'Team', link: '/company/team' }
+          { text: 'Team', link: '/content/company/team' }
         ],
       },
     ],
     
+  },
+  // Do not remove this or URL rewriting will not work (it's relinking /content to /)
+  rewrites: {
+    'content/:section/:page': ':section/:page',
+    'content/:section/:subsection/:page': ':section/:subsection/:page'
   }
 })
