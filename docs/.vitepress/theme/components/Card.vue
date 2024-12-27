@@ -16,7 +16,7 @@ const imageSizeClass = computed(() => ({
 </script>
 
 <template>
-  <div class="p-1 bg-gray-50 rounded-lg dark:bg-gray-800 border transition-all duration-200 border-gray-50 dark:border-gray-800 hover:border-purple-500 dark:hover:border-purple-700">
+  <div class="group p-1 bg-gray-50 rounded-lg dark:bg-gray-800 border transition-all duration-200 border-gray-50 dark:border-gray-800 hover:border-purple-500 dark:hover:border-purple-700">
     <div class="flex flex-col h-[180px] dark:bg-gray-800 rounded-lg cursor-pointer transition-transform duration-200">
       <div class="flex-[2] bg-gradient-to-r from-[#00D1EE] via-[#08ABDD] via-[#15ACF1] via-[#1575C1] to-[#14336d] rounded-lg flex items-center justify-center">
         <img 
@@ -33,7 +33,7 @@ const imageSizeClass = computed(() => ({
       <div class="flex items-center justify-between px-4">
         <div class="flex items-center gap-2">
           <p class="text-base font-medium m-0 text-gray-800 dark:text-gray-100">{{ title }}</p>
-          <div class="w-4 h-4 text-gray-500 dark:text-gray-400">
+          <div class="group-hover:translate-x-1 transition-all duration-200 w-4 h-4 text-gray-500 dark:text-gray-400">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
