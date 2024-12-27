@@ -5,6 +5,7 @@ export default defineConfig({
   lang: 'en-US',
   title: "Coolify Docs",
   description: "Self hosting with super powers",
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
