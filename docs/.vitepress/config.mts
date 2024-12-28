@@ -146,8 +146,8 @@ export default defineConfig({
                 link: '/api-reference/API/overview',
                 items: [
                   {
-                    text: 'AnythingLLM',
-                    link:   '/api-reference/API/anythingllm'
+                    text: 'Overview',
+                    link:   '/api-reference/api/overview'
                   }
                 ]
               }             
@@ -174,13 +174,16 @@ export default defineConfig({
     'services/:page': 'docs/services/:page',
     'databases/:page': 'docs/databases/:page',
     'api-reference/:page': 'docs/api-reference/:page',
+    'api-reference/api/:page': 'docs/api-reference/api/:page',
     'knowledge-base/:page': 'docs/knowledge-base/:page',
+    'knowledge-base/internal/:page': 'docs/knowledge-base/internal/:page',
     'applications/:page': 'docs/applications/:page',
     'docs/content/:section/:page': 'docs/:section/:page',
     'docs/home/:page': 'docs/:page',
     'docs/:section/:page': 'docs/:section/:page',
     'docs/:section/:subsection/:page': 'docs/:section/:subsection/:page',
     'company/:page': 'docs/company/:page',
+    
   },
   vite: {
     resolve: {
