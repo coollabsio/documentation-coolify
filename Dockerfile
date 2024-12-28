@@ -15,7 +15,7 @@ FROM nginx:alpine
 
 # Set working directory for NGINX and copy built files from the build stage
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/.vitepress/dist .
+COPY --from=builder /app/docs/.vitepress/dist .
 
 # Ensure the nginx group and user exist, avoid errors if they already exist
 # Set ownership, permissions, and handle custom NGINX configuration
@@ -28,7 +28,7 @@ RUN addgroup -S nginx || true && \
 # Copy custom NGINX configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Set permissions and use nginx user for security
+# Use nginx user for security
 USER nginx
 
 # Expose port 80
