@@ -23,8 +23,8 @@ Each database has its own strengths and use cases. Click on a database to learn 
 
 When selecting a New Resource, you can select a database from the list.
 
-
-![New Resource](../../../assets/images/screenshots/How-to-add-a-database.png)
+<!-- This line is causing build error so commented it out for now -->
+<!-- ![New Resource](../../../assets/images/screenshots/How-to-add-a-database.png) -->
 
 You can configure a database with a simple click. Coolify supports the following databases:
 
