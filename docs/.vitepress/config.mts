@@ -1,5 +1,5 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
@@ -69,8 +69,30 @@ export default defineConfig({
     
   },
   // Do not remove this or URL rewriting will not work (it's relinking /content to /)
+  // TODO: Forward everything from / to the below content/ to docs/ rewrite, 
+  // choice depending on desired level of control, either:
+  // A. NGINX/Treafik (higher-up networking) level, or
+  // B. VitePress (local data-driven) level.
   rewrites: {
     'content/:section/:page': ':section/:page',
     'content/:section/:subsection/:page': ':section/:subsection/:page'
+  },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPHero\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/Landing/HeroHeader.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPBadge\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPBadge.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   }
 })

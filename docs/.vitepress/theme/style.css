@@ -68,6 +68,16 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-badge-error-border: var(--vp-c-error-2);
+  --vp-badge-error-text: var(--vp-c-error-1);
+  --vp-badge-error-bg: var(--vp-c-error-soft);
+
+  /* Base error colors */
+  --vp-c-error-1: #ff4444;
+  --vp-c-error-2: #ff6666;
+  --vp-c-error-3: #ff8888;
+  --vp-c-error-soft: rgba(255, 68, 68, 0.14);
 }
 
 /**
@@ -146,4 +156,13 @@
   --vp-custom-block-tip-text: #A7D2E8;
   --vp-custom-block-tip-bg: #0B2029;
   --vp-custom-block-tip-code-bg: #000000;
+  --vp-badge-error-border: var(--vp-c-error-2);
+  --vp-badge-error-text: var(--vp-c-error-1);
+  --vp-badge-error-bg: var(--vp-c-error-soft);
+
+  /* Base error colors for dark mode */
+  --vp-c-error-1: #ff6666;
+  --vp-c-error-2: #ff4444;
+  --vp-c-error-3: #ff2222;
+  --vp-c-error-soft: rgba(255, 68, 68, 0.16);
 }

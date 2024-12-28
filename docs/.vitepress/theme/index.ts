@@ -6,17 +6,21 @@ import './style.css'
 import './tailwind.postcss'
 import Card from './components/Card.vue'
 import CardGroup from './components/CardGroup.vue'
-
+import Landing from './layouts/Landing.vue'
+import Sections from './components/Landing/Sections.vue'
+import Features from './components/Landing/Features.vue'
+import Installer from './components/Landing/Installer.vue'
+import Referral from './components/Landing/Referral.vue'
 export default {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-    })
-  },
+  Layout: Landing,
   enhanceApp({ app, router, siteData }) {
     // register your custom global components
     app.component('Card', Card)
     app.component('CardGroup', CardGroup)
+    app.component('LandingSection', Sections)
+    app.component('LandingFeatures', Features)
+    app.component('Referral', Referral)
+    app.component('Quickstart', Installer)
   }
 } satisfies Theme
