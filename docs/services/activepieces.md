@@ -4,7 +4,7 @@ title: ActivePieces
 
 # Activepieces
 
-![ActivePieces](/public/images/services/activepieces0.png)
+![ActivePieces](/images/services/activepieces0.png)
 
 ## What is ActivePieces
 
@@ -12,8 +12,8 @@ Your friendliest open source all-in-one automation tool, designed to be extensib
 
 ## Screenshots
 
-![build](/public/images/services/activepieces1.gif)
-![templates](/public/images/services/activepieces2.gif)
+![build](/images/services/activepieces1.gif)
+![templates](/images/services/activepieces2.gif)
 
 
 ## Setup

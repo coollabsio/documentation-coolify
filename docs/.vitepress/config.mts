@@ -36,7 +36,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Home',
+        text: 'Get Started',
         collapsed: false,
         items: [
           { text: 'What is Coolify', link: '/home/what-is-coolify' },
@@ -45,10 +45,56 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Services',
-        collapsed: false,
+        text: 'Contribute',
+        collapsed: true,
         items: [
-          { text: 'Overview', 
+          { text: 'Coolify', link: '/contribute/coolify' },
+          { text: 'New Service', link: '/contribute/service' },
+          { text: 'Documentation', link: '/contribute/documentation' },
+        ],
+      },
+      {
+        text: 'Applications',
+        collapsed: true,
+       items: [
+          { 
+            text: 'Overview', 
+            link: '/applications/index', 
+            items: [
+              { text: 'Django', link: '/applications/django' },
+              { text: 'Next.js', link: '/applications/phoenix' },
+              { text: 'Laravel', link: '/applications/laravel' },
+            ] 
+          }
+        ],
+      },
+      {
+        text: 'Databases',
+        collapsed: true,
+        items: [
+          { 
+            text: 'Overview', 
+            link: '/databases/index', 
+            items: [
+              { text: 'Backups', link: '/databases/backups' },
+              { text: 'MySQL', link: '/databases/mysql' },
+              { text: 'MariaDB', link: '/databases/mariadb' },
+              { text: 'PostgreSQL', link: '/databases/postgresql' },
+              { text: 'MongoDB', link: '/databases/mongodb' },
+              { text: 'Redis', link: '/databases/redis' },
+              { text: 'DragonFly', link: '/databases/dragonfly' },
+              { text: 'KeyDB', link: '/databases/keydb' },
+              { text: 'Clickhouse', link: '/databases/clickhouse' },
+            ] 
+          }
+        ],
+      },
+      {
+        text: 'Services',
+        collapsed: true,
+        items: [
+          { 
+            text: 'Overview', 
             link: '/services/overview', 
             items: [
               { text: 'ActivePieces', link: '/services/activepieces' },
@@ -59,8 +105,59 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Knowledge Base',
+        collapsed: true,
+        items: [
+          { 
+            text: 'FAQ', 
+            link: '/knowledge-base/faq', 
+            items: [
+              { 
+                text: 'Internal',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'Scalability', 
+                    link: '/knowledge-base/internal/scalability'
+                  },
+                  {
+                    text: 'Terminal', 
+                    link: '/knowledge-base/internal/terminal'
+                  }
+                ] 
+              },
+              { text: 'Self-hosted Instance', link: '/knowledge-base/self-hosted-instance', items: [] },
+              { text: 'DNS & Domains', link: '/knowledge-base/dns-domains', items: [] },
+            ] 
+          }
+        ],
+      },
+      {
+        text: 'API Reference',
+        collapsed: true,
+        items: [
+          { 
+            text: 'Authorization',
+            link: '/api-reference/authorization',
+            items: [
+              { 
+                text: 'API', 
+                collapsed: true,
+                link: '/api-reference/API/overview',
+                items: [
+                  {
+                    text: 'AnythingLLM',
+                    link:   '/api-reference/API/anythingllm'
+                  }
+                ]
+              }             
+            ]
+          },
+        ],
+      },
+      {
         text: 'About',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: 'Team', link: '/company/team' }
         ],
@@ -68,14 +165,22 @@ export default defineConfig({
     ],
     
   },
-  // Do not remove this or URL rewriting will not work (it's relinking /content to /)
-  // TODO: Forward everything from / to the below content/ to docs/ rewrite, 
-  // choice depending on desired level of control, either:
-  // A. NGINX/Treafik (higher-up networking) level, or
-  // B. VitePress (local data-driven) level.
+
   rewrites: {
-    'content/:section/:page': ':section/:page',
-    'content/:section/:subsection/:page': ':section/:subsection/:page'
+    ':page': 'docs/:page',
+    'home/:page': 'docs/:page',
+    'content/:section/:page': 'docs/:section/:page',
+    'contribute/:page': 'docs/contribute/:page',
+    'services/:page': 'docs/services/:page',
+    'databases/:page': 'docs/databases/:page',
+    'api-reference/:page': 'docs/api-reference/:page',
+    'knowledge-base/:page': 'docs/knowledge-base/:page',
+    'applications/:page': 'docs/applications/:page',
+    'docs/content/:section/:page': 'docs/:section/:page',
+    'docs/home/:page': 'docs/:page',
+    'docs/:section/:page': 'docs/:section/:page',
+    'docs/:section/:subsection/:page': 'docs/:section/:subsection/:page',
+    'company/:page': 'docs/company/:page',
   },
   vite: {
     resolve: {

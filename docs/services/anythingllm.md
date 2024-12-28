@@ -4,7 +4,7 @@ title: AnythingLLM
 
 # AnythingLLM
 
-![AnythingLLM](/public/images/services/anythingllm.png)
+![AnythingLLM](/images/services/anythingllm.png)
 
 ## What is AnythingLLM?
 
@@ -12,7 +12,7 @@ AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI
 
 ## Screenshots
 
-![AnythingLLM](/public/images/services/anythingllm.gif)
+![AnythingLLM](/images/services/anythingllm.gif)
 
 ## Links
 
