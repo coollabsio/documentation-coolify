@@ -62,7 +62,7 @@ export default defineConfig({
         text: 'About',
         collapsed: false,
         items: [
-          { text: 'Team', link: '/content/company/team' }
+          { text: 'Team', link: '/company/team' }
         ],
       },
     ],
