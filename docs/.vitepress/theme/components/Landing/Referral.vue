@@ -1,12 +1,11 @@
 <template>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 max-w-md">
         <div class="flex flex-row gap-2">
-
             <VPBadge text="For Coolify Cloud and Self Host" />
         </div>
         <div class="flex flex-row gap-2">
             <h3 class="text-2xl font-bold tracking-wide">{{ referralTitle }}</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 m-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 my-auto mr-0 ml-auto">
                 <g id="Ebene_2">
                     <path fill="#d50c2d" class="cls-1"
                         d="M174.05,14.12a10.22,10.22,0,0,0,4.53-2l0,0a6.15,6.15,0,0,0,1.68-4.78,7.71,7.71,0,0,0-1.14-4.06A6.47,6.47,0,0,0,173.84.09l-1.09,0L170.2,0,158.66,0c-.7,0-1,.29-1,1V21.22c0,.7.29,1,1,1h3c.7,0,1-.29,1-1v-6.7h3.67a3.48,3.48,0,0,1,2.17.91l5.82,5.85a3.08,3.08,0,0,0,2,.92h4.47c.7,0,.87-.41.38-.91Zm-.76-4.3H162.64V4.72h10.65a2.13,2.13,0,0,1,1.87,2.15v.79A2.14,2.14,0,0,1,173.29,9.82Z" />
@@ -39,7 +38,6 @@
                             stroke-width="1.5"
                             d="m6.75 7.5l3 2.25l-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25" />
                     </svg>
-
                     <span class="text-xs text-gray-700 dark:text-gray-200">Terminal</span>
                 </div>
                 <button type="button"
