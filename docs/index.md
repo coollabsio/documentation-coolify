@@ -13,12 +13,12 @@ hero:
     - theme: alt
       text: View Source Code
       link: https://github.com/coollabsio/coolify
-  code: |
-    ## App Store Quick Start
-    Copy the following URL and paste it into your ZimaOS on ZimaCube Pro App Store to download the latest version of this Third Party App Store.
-    ```bash [Terminal]
-    https://github.com/justserdar/ZimaOS-AppStore/archive/refs/tags/latest-v0.0.3.zip
-    ```
+
+referral:
+  title: "Get €20 Free Credit"
+  url: "https://coolify.io/hetzner"
+  text: "Don't have a server yet? Get started with Hetzner Cloud."
+  description: "Use our referral link to get €20 in free credits at Hetzner!"
 
 features:
   - title: Any Language
