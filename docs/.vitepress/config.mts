@@ -51,9 +51,9 @@ export default defineConfig({
           { text: 'Overview', 
             link: '/services/overview', 
             items: [
-              { text: 'ActivePieces', link: '/services/service/activepieces' },
-              { text: 'AnythingLLM', link: '/services/service/anythingllm' },
-              { text: 'Appwrite', link: '/services/service/appwrite' },
+              { text: 'ActivePieces', link: '/services/activepieces' },
+              { text: 'AnythingLLM', link: '/services/anythingllm' },
+              { text: 'Appwrite', link: '/services/appwrite' },
             ] 
           }
         ],
