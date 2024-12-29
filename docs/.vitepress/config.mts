@@ -27,15 +27,18 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+
     editLink: {
       pattern: 'https://github.com/coollabsio/documentation-coolify/:path',
       text: 'Edit this page on GitHub'
     },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/coollabsio/coolify' },
       { icon: 'discord', link: 'https://discord.gg/coolify' },
       { icon: 'x', link: 'https://x.com/coolifyio' }
     ],
+
     sidebar: [
       {
         text: 'Get Started',
@@ -158,7 +161,7 @@ export default defineConfig({
         ],
       },
       {
-        text: 'About',
+        text: 'Additional Resources',
         collapsed: true,
         items: [
           { text: 'Team', link: '/company/team' }
@@ -183,6 +186,18 @@ export default defineConfig({
           find: /^.*\/VPBadge\.vue$/,
           replacement: fileURLToPath(
             new URL('./theme/components/VPBadge.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPNavBar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPNavBar.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPSidebar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPSidebar.vue', import.meta.url)
           )
         }
       ]
