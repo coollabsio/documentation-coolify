@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /home/what-is-coolify
+      link: /what-is-coolify
     - theme: alt
       text: View Source Code
       link: https://github.com/coollabsio/coolify

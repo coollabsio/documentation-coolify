@@ -41,9 +41,9 @@ export default defineConfig({
         text: 'Get Started',
         collapsed: false,
         items: [
-          { text: 'What is Coolify', link: '/home/what-is-coolify' },
-          { text: 'Quickstart', link: '/home/quickstart' },
-          { text: 'Installation', link: '/home/installation' },
+          { text: 'What is Coolify', link: '/what-is-coolify' },
+          { text: 'Quickstart', link: '/quickstart' },
+          { text: 'Installation', link: '/installation' },
         ],
       },
       {
@@ -168,9 +168,8 @@ export default defineConfig({
     
   },
 
-  rewrites: {
-    'home/:page': ':page',
-  },
+  rewrites: {},
+
   vite: {
     resolve: {
       alias: [
