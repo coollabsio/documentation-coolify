@@ -5,6 +5,7 @@ export default defineConfig({
   lang: 'en-US',
   title: "Coolify Docs",
   description: "Self hosting with super powers",
+  base: '/docs/',
   cleanUrls: true,
   // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,

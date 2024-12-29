@@ -15,7 +15,7 @@ FROM nginx:alpine
 
 # Set working directory for NGINX and copy built files from the build stage
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/docs/.vitepress/dist .
+COPY --from=builder /app/docs/.vitepress/dist /usr/share/nginx/html/docs
 
 # Ensure the nginx group and user exist, avoid errors if they already exist
 # Set ownership, permissions, and handle custom NGINX configuration
