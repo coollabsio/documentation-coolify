@@ -46,7 +46,10 @@ watch(
 
         <div class="curtain" />
 
-        <VPNavBarSearch class="search w-full mt-4 px-0" />
+        <div class="flex gap-4 mt-4">
+            <VPNavBarSearch class="search w-full my-auto px-0" />
+            <VPNavBarAppearance class="appearance my-auto" />
+        </div>
 
         <nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1">
 
@@ -58,7 +61,7 @@ watch(
             <VPSidebarGroup :items="sidebarGroups" :key="key" />
             <slot name="sidebar-nav-after" />
             <div class="flex gap-4">
-                <VPNavBarAppearance class="appearance" />
+                <!-- <VPNavBarAppearance class="appearance my-auto" /> -->
                 <VPNavBarSocialLinks class="social-links" />
             </div>
         </nav>

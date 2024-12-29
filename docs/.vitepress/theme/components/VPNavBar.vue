@@ -51,8 +51,8 @@ watchPostEffect(() => {
         <div class="content">
           <div class="content-body">
             <slot name="nav-bar-content-before" />
-            <VPNavBarSearch class="search" />
-            <VPNavBarMenu class="menu" />
+            <!-- <VPNavBarSearch class="search" /> -->
+            <!-- <VPNavBarMenu class="menu" /> -->
             <VPNavBarAppearance class="appearance" />
             <VPNavBarTranslations class="translations" />
             <VPNavBarSocialLinks class="social-links" />
@@ -196,7 +196,7 @@ watchPostEffect(() => {
 @media (min-width: 960px) {
   .VPNavBar:not(.home.top) .content-body {
     position: relative;
-    background-color: var(--vp-nav-bg-color);
+    background-color: transparent;
   }
 
   .VPNavBar:not(.has-sidebar):not(.home.top) .content-body {

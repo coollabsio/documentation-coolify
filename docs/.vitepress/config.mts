@@ -161,7 +161,7 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Additional Resources',
+        text: 'Resources',
         collapsed: true,
         items: [
           { text: 'Team', link: '/company/team' }
