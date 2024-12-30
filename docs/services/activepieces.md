@@ -15,71 +15,152 @@ Your friendliest open source all-in-one automation tool, designed to be extensib
 ![build](/images/services/activepieces1.gif)
 ![templates](/images/services/activepieces2.gif)
 
+## Installation & Configuration
 
-## Setup
+This section provides detailed information about installing and configuring ActivePieces in your environment. You'll find system requirements, credentials, environment variables, and useful external resources organized in tabs below.
 
-### Minimum Server Requirements
+<script setup>
+import { ref } from 'vue'
 
-::: info System Requirements
-- 🔲 **CPU:** 2 Cores
-- 💾 **RAM:** 2 GB
-- 💿 **Storage:** 10 GB
-- 🌐 **Network:** IPv4 Address Required
-:::
+const activeTab = ref('general')
+const tabs = [
+  { id: 'general', label: 'Overview & Requirements' },
+  { id: 'credentials', label: 'Default Credentials' },
+  { id: 'activepieces-env', label: 'ActivePieces Environment' },
+  { id: 'postgres-env', label: 'PostgreSQL Environment' },
+  { id: 'links', label: 'External Links' }
+]
+</script>
 
-### Default Credentials
+<div class="tabs-container">
+  <div class="tabs-header">
+    <button
+      v-for="tab in tabs"
+      :key="tab.id"
+      @click="activeTab = tab.id"
+      :class="['tab-button', { active: activeTab === tab.id }]"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+  <div class="tab-content">
+    <div v-show="activeTab === 'general'">
+      <h3>System Requirements</h3>
+      <ul>
+        <li>🔲 <strong>CPU:</strong> 2 Cores</li>
+        <li>💾 <strong>RAM:</strong> 2 GB</li>
+        <li>💿 <strong>Storage:</strong> 10 GB</li>
+        <li>🌐 <strong>Network:</strong> IPv4 Address Required</li>
+      </ul>
+      <div class="warning">
+        <p>It takes around 5mins for the services to go healthy so don't deploy it and think the services is not working, wait for some time.</p>
+      </div>
+    </div>
+    <div v-show="activeTab === 'credentials'">
+      <h3>Default Login Credentials</h3>
+      <ul>
+        <li>👤 <strong>Username:</strong> admin</li>
+        <li>🔑 <strong>Password:</strong> admin</li>
+      </ul>
+    </div>
+    <div v-show="activeTab === 'activepieces-env'">
+      <h3>ActivePieces Environment Variables</h3>
+      <h4>Core Configuration</h4>
+      <ul>
+        <li><code>SERVICE_FQDN_ACTIVEPIECES</code>: The fully qualified domain name for your ActivePieces instance</li>
+        <li><code>AP_API_KEY</code>: API key for authentication ($SERVICE_PASSWORD_64_APIKEY)</li>
+      </ul>
+    </div>
+    <div v-show="activeTab === 'postgres-env'">
+      <h3>PostgreSQL Environment Variables</h3>
+      <ul>
+        <li><code>POSTGRES_DB</code>: Database name (Default: activepieces)</li>
+        <li><code>POSTGRES_PASSWORD</code>: Database password ($SERVICE_PASSWORD_POSTGRES)</li>
+        <li><code>POSTGRES_USER</code>: Database user ($SERVICE_USER_POSTGRES)</li>
+        <li><code>POSTGRES_PORT</code>: Database port (Default: 5432)</li>
+      </ul>
+    </div>
+    <div v-show="activeTab === 'links'">
+      <h3>External Links</h3>
+      <ul>
+        <li><a href="https://www.activepieces.com?utm_source=coolify.io" target="_blank">Official Website</a></li>
+        <li><a href="https://github.com/activepieces/activepieces?utm_source=coolify.io" target="_blank">GitHub Repository</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-::: info Default Credentials
-- 👤 **Username:** admin
-- 🔑 **Password:** admin
-:::
+<style>
+.tabs-container {
+  @apply my-6;
+}
 
-::: warning Note
-It takes around 5mins for the services to go healthy so don't deploy it and think the services is not working, wait for some time.
-:::
+.tabs-header {
+  @apply flex gap-2 border-b border-[var(--vp-c-divider)] mb-4;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
 
-## Environment variables
-### ActivePieces
-::: info Environment Variables
-#### Core Configuration
-- `SERVICE_FQDN_ACTIVEPIECES`: The fully qualified domain name for your ActivePieces instance
-- `AP_API_KEY`: API key for authentication ($SERVICE_PASSWORD_64_APIKEY)
-- `AP_ENCRYPTION_KEY`: Key used for encrypting sensitive data ($SERVICE_PASSWORD_ENCRYPTIONKEY)
-- `AP_JWT_SECRET`: Secret key for JWT token generation ($SERVICE_PASSWORD_64_JWT)
+.tabs-header::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
-#### Execution Settings
-- `AP_ENGINE_EXECUTABLE_PATH`: Path to the engine executable (Default: dist/packages/engine/main.js)
-- `AP_ENVIRONMENT`: Environment mode (Default: prod)
-- `AP_EXECUTION_MODE`: Flow execution mode (Default: UNSANDBOXED)
-- `AP_SANDBOX_RUN_TIME_SECONDS`: Maximum runtime for sandboxed executions (Default: 600)
+.tabs-header::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 3px;
+}
 
-#### Database Configuration
-- `AP_POSTGRES_HOST`: PostgreSQL host (Default: postgres)
-- `AP_POSTGRES_PORT`: PostgreSQL port (Default: 5432)
-- `AP_POSTGRES_DATABASE`: Database name (Default: activepieces)
-- `AP_POSTGRES_USERNAME`: Database user ($SERVICE_USER_POSTGRES)
-- `AP_POSTGRES_PASSWORD`: Database password ($SERVICE_PASSWORD_POSTGRES)
+.tabs-header::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-#### Redis Configuration
-- `AP_REDIS_HOST`: Redis host (Default: redis)
-- `AP_REDIS_PORT`: Redis port (Default: 6379)
+.tab-button {
+  @apply px-4 py-2 text-sm font-medium relative transition-colors duration-200 whitespace-nowrap;
+  color: var(--vp-c-text-2);
+}
 
-#### Application Settings
-- `AP_FRONTEND_URL`: URL for the frontend interface (Same as SERVICE_FQDN_ACTIVEPIECES)
-- `AP_TELEMETRY_ENABLED`: Enable/disable telemetry data (Default: false)
-- `AP_TEMPLATES_SOURCE_URL`: Source URL for flow templates (Default: https://cloud.activepieces.com/api/v1/flow-templates)
-- `AP_TRIGGER_DEFAULT_POLL_INTERVAL`: Default polling interval in minutes (Default: 5)
-- `AP_WEBHOOK_TIMEOUT_SECONDS`: Webhook timeout duration (Default: 30)
-:::
-### Postgres
-::: info Environment Variables
-- `POSTGRES_DB`: Database name (Default: activepieces)
-- `POSTGRES_PASSWORD`: Database password ($SERVICE_PASSWORD_POSTGRES)
-- `POSTGRES_USER`: Database user ($SERVICE_USER_POSTGRES)
-- `POSTGRES_PORT`: Database port (Default: 5432)
-:::
+.tab-button:hover {
+  color: var(--vp-c-text-1);
+}
 
-## Links
+.tab-button.active {
+  color: var(--vp-c-brand);
+}
 
-- [The official website ›](https://www.activepieces.com?utm_source=coolify.io)
-- [GitHub ›](https://github.com/activepieces/activepieces?utm_source=coolify.io)
+.tab-button.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5;
+  background-color: var(--vp-c-brand);
+}
+
+.tab-content {
+  @apply p-4 rounded-b-lg;
+  background-color: var(--vp-c-bg-soft);
+  overflow-y: auto;
+  max-height: 80vh;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
+
+.tab-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.warning {
+  @apply p-4 rounded-lg mt-4;
+  background-color: var(--vp-c-yellow-dimm);
+  color: var(--vp-c-yellow);
+}
+</style>

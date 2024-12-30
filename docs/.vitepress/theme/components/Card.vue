@@ -6,6 +6,10 @@ const props = defineProps<{
     imageAlt?: string
     imageSize?: 'small' | 'medium' | 'large'
     link?: string
+    icon?: string
+    iconSize?: 'small' | 'medium' | 'large'
+    iconColor?: string
+    theme?: 'outlined' | 'solid' | 'icon'
 }>()
 
 const imageSizeClass = computed(() => ({

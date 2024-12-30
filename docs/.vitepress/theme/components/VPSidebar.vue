@@ -47,7 +47,7 @@ watch(
         <div class="curtain" />
 
         <div class="flex gap-4 mt-4">
-            <VPNavBarSearch class="search w-full my-auto px-0" />
+            <VPNavBarSearch class="search w-full my-auto px-0 border border-1 border-[#e5e7eb] dark:border-[#2e2e32] rounded-lg" />
             <VPNavBarAppearance class="appearance my-auto" />
         </div>
 
