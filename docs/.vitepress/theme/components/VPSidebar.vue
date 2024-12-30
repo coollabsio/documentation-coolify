@@ -5,7 +5,6 @@ import { ref, watch } from 'vue'
 import { useSidebar } from 'vitepress/theme'
 import VPSidebarGroup from 'vitepress/dist/client/theme-default/components/VPSidebarGroup.vue'
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
-import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
 import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
 
 const { sidebarGroups, hasSidebar } = useSidebar()
@@ -62,7 +61,7 @@ watch(
             <slot name="sidebar-nav-after" />
             <div class="flex gap-4">
                 <!-- <VPNavBarAppearance class="appearance my-auto" /> -->
-                <VPNavBarSocialLinks class="social-links" />
+                
             </div>
         </nav>
     </aside>

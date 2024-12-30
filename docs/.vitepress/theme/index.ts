@@ -11,6 +11,7 @@ import Sections from './components/Landing/Sections.vue'
 import Features from './components/Landing/Features.vue'
 import Installer from './components/Landing/Installer.vue'
 import Referral from './components/Landing/Referral.vue'
+import Callout from './components/Callout.vue'
 export default {
   extends: DefaultTheme,
   Layout: Landing,
@@ -22,5 +23,6 @@ export default {
     app.component('LandingFeatures', Features)
     app.component('Referral', Referral)
     app.component('Quickstart', Installer)
+    app.component('Callout', Callout)
   }
 } satisfies Theme

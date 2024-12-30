@@ -11,6 +11,42 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 For detailed setup instructions, including firewall configuration and prerequisites, see the Quick Installation Guide below.
 :::
 
+## Custom Callouts v0.1
+::: info ⚡️ Quick Installation (recommended):
+That was EZ
+```sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+:::
+
+::: details ⚡️ Quick Installation (recommended):
+That was EZ
+```sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+:::
+
+::: tip ⚡️ Quick Installation (recommended):
+That was EZ
+```sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+:::
+
+::: warning ⚡️ Quick Installation (recommended):
+That was EZ
+```sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+:::
+
+::: danger ⚡️ Quick Installation (recommended):
+That was EZ
+```sh
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+:::
+
 
 ## Prerequisites
 ### Server Requirements

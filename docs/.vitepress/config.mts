@@ -172,6 +172,8 @@ export default defineConfig({
     ],
     
   },
+  
+  markdown: {},
 
   rewrites: {},
 
@@ -200,6 +202,18 @@ export default defineConfig({
           find: /^.*\/VPSidebar\.vue$/,
           replacement: fileURLToPath(
             new URL('./theme/components/VPSidebar.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPLocalNav\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPLocalNav.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPDocAside\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPDocAside.vue', import.meta.url)
           )
         }
       ]
