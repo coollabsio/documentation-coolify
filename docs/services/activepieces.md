@@ -38,7 +38,7 @@ const tabs = [
   { id: 'links', label: 'External Links' }
 ]
 
-const currentIndex = computed(() => services.findIndex(tab => tab.id === activeTab.value))
+const currentIndex = computed(() => tabs.findIndex(tab => tab.id === activeTab.value))
 
 const scrollTabIntoView = (tabId: string) => {
   nextTick(() => {
