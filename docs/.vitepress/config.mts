@@ -7,6 +7,7 @@ export default defineConfig({
   description: "Self hosting with super powers",
   base: '/docs/',
   cleanUrls: true,
+  lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
