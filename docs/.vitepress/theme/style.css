@@ -238,7 +238,7 @@
 
   /* Dark mode adjustments */
   --vp-c-brand-1: #9664f3;
-  --vp-c-brand-2: #7964a0;
+  --vp-c-brand-2: #8156d1;
   --vp-c-brand-3: #B392F0;
   --vp-c-brand-soft: rgba(179, 146, 240, 0.16);
 
@@ -275,4 +275,17 @@
   --vp-custom-block-callout-bg: rgba(0, 32, 47, 0.8);
   --vp-custom-block-callout-border: #79B8FF;
   --vp-custom-block-callout-text: #79B8FF;
+}
+
+/* Global link styling */
+.vp-doc a {
+  @apply font-bold no-underline relative;
+  color: var(--vp-c-text-1);
+  border-bottom: 1px solid var(--vp-c-brand);
+}
+
+/* Exception for navigation and sidebar links if needed */
+.vp-doc .nav-link a,
+.vp-doc .sidebar-link {
+  border-bottom: none;
 }
