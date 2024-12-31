@@ -10,9 +10,10 @@ title: ActivePieces
 
 Your friendliest open source all-in-one automation tool, designed to be extensible through a type-safe pieces framework written in Typescript.
 
-## Screenshots
+## Visual Demos
 
 ![build](/images/services/activepieces1.gif)
+
 ![templates](/images/services/activepieces2.gif)
 
 ## Installation & Configuration
@@ -93,15 +94,17 @@ const navigateTab = (direction: Direction) => {
   </div>
   <div class="tab-content rounded-lg mt-2">
     <div v-show="activeTab === 'general'">
-      <h3>System Requirements</h3>
+      <h3>Minimum System Requirements</h3>
       <ul>
         <li>🔲 <strong>CPU:</strong> 2 Cores</li>
         <li>💾 <strong>RAM:</strong> 2 GB</li>
         <li>💿 <strong>Storage:</strong> 10 GB</li>
         <li>🌐 <strong>Network:</strong> IPv4 Address Required</li>
+        <li>🖥️ <strong>Supported OS:</strong> All Linux-based distributions</li>
+        <li>🌱 <strong>System Architecture:</strong> ARM64, AMD64 (x86_64)</li> 
       </ul>
       <div class="warning">
-        <p>It takes around 5mins for the services to go healthy so don't deploy it and think the services is not working, wait for some time.</p>
+        <p>It may take up to 5 minutes for the services to go healthy after deployment. Please be patient and avoid assuming the services are not working during this period.</p>
       </div>
     </div>
     <div v-show="activeTab === 'credentials'">
@@ -132,6 +135,7 @@ const navigateTab = (direction: Direction) => {
       <h3>External Links</h3>
       <ul>
         <li><a href="https://www.activepieces.com?utm_source=coolify.io" target="_blank">Official Website</a></li>
+        <li><a href="https://www.activepieces.com/docs?utm_source=coolify.io" target="_blank">Official Documentation</a></li>
         <li><a href="https://github.com/activepieces/activepieces?utm_source=coolify.io" target="_blank">GitHub Repository</a></li>
       </ul>
     </div>
