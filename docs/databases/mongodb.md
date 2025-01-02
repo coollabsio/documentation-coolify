@@ -1,18 +1,10 @@
 ---
 title: MongoDB
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "MongoDB with Coolify"
-description: "Here you find an introduction to MongoDB"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# MongoDB
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![MongoDB](../../../assets/images/database-logos/mongodb.png)
+![MongoDB](/images/database-logos/mongodb.png)
 
 ## What is MongoDB
 

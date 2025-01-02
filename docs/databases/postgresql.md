@@ -1,18 +1,10 @@
 ---
 title: PostgreSQL
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "PostgreSQL with Coolify"
-description: "Here you find an introduction to PostgreSQL"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# PostgreSQL
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![PostgreSQL](../../../assets/images/database-logos/postgresql.png)
+![PostgreSQL](/images/database-logos/postgresql.png)
 
 ## What is PostgreSQL
 

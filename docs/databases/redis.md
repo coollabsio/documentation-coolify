@@ -1,18 +1,10 @@
 ---
 title: Redis
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "Redis with Coolify"
-description: "Here you find an introduction to Redis"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# Redis
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![Redis](../../../assets/images/database-logos/redis.svg)
+![Redis](/images/database-logos/redis.svg)
 
 ## What is Redis
 

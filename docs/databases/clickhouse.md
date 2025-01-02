@@ -1,18 +1,10 @@
 ---
 title: ClickHouse
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "ClickHouse with Coolify"
-description: "Here you find an introduction to ClickHouse"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# ClickHouse
 
-<Badge text="One-click setup." variant="note" size="large" />
-
- ![clickhouse](../../../assets/images/database-logos/clickhouse.png)
+ ![clickhouse](/images/database-logos/clickhouse.png)
 
 ## What is ClickHouse
 

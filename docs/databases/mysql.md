@@ -1,18 +1,10 @@
 ---
 title: MySQL
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "MySQL with Coolify"
-description: "Here you find an introduction to MySQL"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# MySQL
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![MySQL](../../../assets/images/database-logos/mysql.png)
+![MySQL](/images/database-logos/mysql.png)
 
 ## What is MySQL
 

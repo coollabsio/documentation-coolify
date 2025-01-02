@@ -1,18 +1,10 @@
 ---
 title: KeyDB
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "KeyDB with Coolify"
-description: "Here you find an introduction to KeyDB"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# KeyDB
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![KeyDB](../../../assets/images/database-logos/keydb.png)
+![KeyDB](/images/database-logos/keydb.png)
 
 ## What is KeyDB
 

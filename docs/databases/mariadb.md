@@ -1,18 +1,10 @@
 ---
 title: MariaDB
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "MariaDB with Coolify"
-description: "Here you find an introduction to MariaDB"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# MariaDB
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-![Mariadb](../../../assets/images/database-logos/mariadb.svg)
+![Mariadb](/images/database-logos/mariadb.svg)
 
 ## What is MariaDB
 

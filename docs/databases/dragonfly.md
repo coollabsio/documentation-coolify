@@ -1,19 +1,10 @@
 ---
 title: DragonFly
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "DragonFly with Coolify"
-description: "Here you find an introduction to DragonFly"
 ---
 
-import { Badge } from '@astrojs/starlight/components';
+# DragonFly
 
-<Badge text="One-click setup." variant="note" size="large" />
-
-
-![dragonfly](../../../assets/images/database-logos/dragonfly-dark.svg)
+![dragonfly](/images/database-logos/dragonfly-dark.svg)
 
 ## What is DragonFly
 
