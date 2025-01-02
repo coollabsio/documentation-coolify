@@ -15,7 +15,7 @@ This is an experimental feature.
 
 ## Screenshot
 
-![Sentinel Metrics](/assets/images/screenshots/sentinel.png)
+![Sentinel Metrics](/images/screenshots/sentinel.png)
 
 ## Configuration
 

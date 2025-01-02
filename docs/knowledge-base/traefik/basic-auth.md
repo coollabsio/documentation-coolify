@@ -13,14 +13,14 @@ traefik.http.routers.<unique_router_name>.middlewares=<random_unique_name>
 
 In the example above, we are using `test` as username and `test` as password.
 
-<Aside type="tip">
-  You most likely have a `traefik.http.middlewares` label already set. In that case, you must append the `<random_unique_name>` middleware to the existing value.
-  For example:
+::: info
+You most likely have a `traefik.http.middlewares` label already set. In that case, you must append the `random_unique_name` middleware to the existing value.
+For example:
 
   ```bash
   traefik.http.routers.<unique_router_name>.middlewares=gzip,<random_unique_name>
-    ```
-</Aside>
+  ```
+:::
 
 Note: The `<random_unique_name>` and `<unique_router_name>` are placeholders. You need to replace them when you add them to your own labels section.
 The `<random_unique_name>` is a unique name for the middleware and you need to make that up yourself. The `<unique_router_name>`
@@ -99,9 +99,9 @@ services:
 You should replace the placeholders `<random_unique_name>` with a unique name for the middleware. For example, you might name it `mybasicauth`, and then
 replace the placeholder with `mybasicauth`. That label would then look like this:
 
-```
-    labels:
-      - 'traefik.http.middlewares.mybasicauth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG'
+```yaml
+labels:
+  - 'traefik.http.middlewares.mybasicauth.basicauth.users=test:$2y$12$ci.4U63YX83CwkyUrjqxAucnmi2xXOIlEF6T/KdP9824f1Rf1iyNG'
 ```
 
 We have now added `basicauth` middleware to the `nginx-simple-web-container` service.
