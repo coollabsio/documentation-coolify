@@ -1,12 +1,8 @@
 ---
 title: SvelteKit
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy SvelteKit app with Coolify"
-description: "A guide on how to deploy SvelteKit app with Coolify."
 ---
+
+# SvelteKit
 
 Svelte Kit is a framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.
 

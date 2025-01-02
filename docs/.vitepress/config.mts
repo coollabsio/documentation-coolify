@@ -69,8 +69,16 @@ export default defineConfig({
             link: '/applications/index', 
             items: [
               { text: 'Django', link: '/applications/django' },
-              { text: 'Next.js', link: '/applications/phoenix' },
+              { text: 'Jekyll', link: '/applications/jekyll' },
               { text: 'Laravel', link: '/applications/laravel' },
+              { text: 'Phoenix', link: '/applications/phoenix' },
+              { text: 'Ruby on Rails', link: '/applications/rails' },
+              { text: 'Symfony', link: '/applications/symfony' },
+              { text: 'Next.js', link: '/applications/nextjs' },
+              { text: 'Vite', link: '/applications/vite' },
+              { text: 'Vue', link: '/applications/vuejs' },
+              { text: 'Nuxt', link: '/applications/nuxt' },
+              { text: 'SvelteKit', link: '/applications/svelte-kit' },
             ] 
           }
         ],

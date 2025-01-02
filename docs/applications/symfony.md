@@ -1,12 +1,8 @@
 ---
 title: Symfony
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy Symfony with Coolify"
-description: "A guide on how to deploy Symfony with Coolify"
 ---
+
+# Symfony
 
 Symfony is the leading PHP framework to create websites and web applications. Built on top of the Symfony Components. 
 

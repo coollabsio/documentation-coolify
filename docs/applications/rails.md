@@ -1,12 +1,8 @@
 ---
 title: Ruby on Rails
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy Ruby on Rails apps with Coolify"
-description: "A guide on how to deploy Ruby on Rails apps with Coolify"
 ---
+
+# Ruby on Rails
 
 Ruby on Rails is a web-application framework that includes everything needed to create database-backend web applications according to the Model-View-Controller (MVC) pattern.
 

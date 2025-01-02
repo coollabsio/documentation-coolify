@@ -1,12 +1,8 @@
 ---
 title: NextJS
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy a NextJS app with Coolify"
-description: "A guide on how to deploy a NextJS app with Coolify."
 ---
+
+# NextJS
 
 NextJS is a React framework that enables functionality such as server-side rendering and generating static websites.
 

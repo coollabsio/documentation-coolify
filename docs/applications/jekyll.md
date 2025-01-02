@@ -1,12 +1,8 @@
 ---
 title: Jekyll
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy Jekyll site with Coolify"
-description: "A guide on how to deploy Jekyll site with Coolify"
 ---
+
+# Jekyll
 
 Jekyll is a simple, blog-aware, static site generator for personal, project, or organization sites.
 

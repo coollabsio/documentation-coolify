@@ -1,14 +1,8 @@
 ---
 title: Laravel
-head:
-  - tag: "meta"
-    attrs:
-      property: "og:title"
-      content: "How to deploy Laravel with Coolify"
-description: "A guide on how to deploy Laravel with Coolify"
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+# Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling.
 

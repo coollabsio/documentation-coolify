@@ -1,12 +1,8 @@
 ---
 title: Vue
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy a Vue app with Coolify"
-description: "A guide on how to deploy a Vue app with Coolify."
 ---
+
+# Vue
 
 Vue.js is an approachable, performant and versatile framework for building web user interfaces.
 

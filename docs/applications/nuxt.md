@@ -1,12 +1,8 @@
 ---
 title: Nuxt
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy a Nuxt app with Coolify"
-description: "A guide on how to deploy a Nuxt app with Coolify."
 ---
+
+# Nuxt
 
 Nuxt is an open source framework that makes web development intuitive and powerful.
 Create performant and production-grade full-stack web apps and websites with confidence.

@@ -1,12 +1,8 @@
 ---
 title: Vite
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy a Vite app with Coolify"
-description: "A guide on how to deploy a Vite app with Coolify."
 ---
+
+# Vite
 
 Vite is a is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 

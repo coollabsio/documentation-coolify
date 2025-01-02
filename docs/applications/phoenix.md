@@ -1,12 +1,8 @@
 ---
 title: Phoenix
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to deploy Phoenix application with Coolify"
-description: "A guide on how to deploy Phoenix application with Coolify."
 ---
+
+# Phoenix
 
 Phoenix is a productive web framework that does not compromise speed and maintainability written in Elixir/Erlang.
 
