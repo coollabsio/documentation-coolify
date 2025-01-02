@@ -27,6 +27,7 @@
     "transform-compose": "tsx docs/.vitepress/data/transform-compose.ts"
   },
   "dependencies": {
-    "@vueuse/core": "^12.2.0"
+    "@vueuse/core": "^12.2.0",
+    "globe.gl": "^2.34.6"
   }
 }

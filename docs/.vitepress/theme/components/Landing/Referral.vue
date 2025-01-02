@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-col gap-4 max-w-md">
-        <div class="flex flex-row gap-2">
+    <div class="relative flex flex-col gap-4 max-w-md">
+        <div class="flex flex-row gap-2 z-10">
             <VPBadge text="For Coolify Cloud and Self Host" />
         </div>
-        <div class="flex flex-row gap-2">
+        <div class="flex flex-row gap-2 z-10">
             <h3 class="text-2xl font-bold tracking-wide">{{ referralTitle }}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 my-auto mr-0 ml-auto">
                 <g id="Ebene_2">
@@ -24,11 +24,11 @@
                 </g>
             </svg>
         </div>
-        <p class="text-sm font-medium">
+        <p class="text-sm font-medium z-10">
             {{ referralText }}
         </p>
 
-        <div class="relative rounded-lg border border-gray-200 dark:border-[#202127] overflow-hidden max-w-full">
+        <div class="relative rounded-lg border border-gray-200 dark:border-[#202127] overflow-hidden max-w-full z-10">
             <!-- Terminal Header -->
             <div class="flex items-center justify-between px-3 py-1.5 bg-gray-100 dark:bg-[#202127]">
                 <div class="flex items-center gap-1.5">
@@ -69,7 +69,7 @@
             </div>
 
         </div>
-        <p class="flex text-xs font-medium">
+        <p class="flex text-xs font-medium z-10">
             <svg v-if="isCopied" class="size-5 my-auto" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                 viewBox="0 0 36 36">
                 <circle cx="17" cy="19" r="17" fill="#FFCC4D" />
@@ -101,6 +101,9 @@
                 {{ !isCopied ? referralDescription : 'Copied to clipboard!' }}
             </span>
         </p>
+        
+        <Globe />
+            
     </div>
 </template>
 
@@ -109,6 +112,7 @@ import { ref } from 'vue'
 import { VPBadge } from 'vitepress/theme'
 import { useClipboard } from '@vueuse/core'
 import { useData } from 'vitepress'
+import Globe from './Globe.vue'
 
 // Get frontmatter data
 const { frontmatter } = useData()

@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
   margin-left: 2px;
   border: 1px solid transparent;
   border-radius: 12px;
-  padding: 20px;
+  padding: 8px;
   line-height: 22px;
   font-size: 12px;
   font-weight: 500;

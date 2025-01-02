@@ -10,7 +10,9 @@ export default defineConfig({
   lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.svg',
