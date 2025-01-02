@@ -1,11 +1,5 @@
 ---
 title: Logto
-head:
-  - tag: "meta"
-    attrs:
-        property: "og:title"
-        content: "How to host Logto with Coolify"
-description: "Here you can find the documentation for hosting Logto with Coolify."
 ---
 
 ![Logto](https://github.com/logto-io/logto/raw/master/logo.png)
