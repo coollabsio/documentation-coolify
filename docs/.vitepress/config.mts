@@ -174,7 +174,6 @@ export default defineConfig({
               },
               { text: 'Self-hosted Instance', 
                 collapsed: true,
-                link: '/knowledge-base/self-hosted-instance', 
                 items: [
                   { text: 'Monitoring', link: '/knowledge-base/monitoring' },
                   { text: 'Notifications', link: '/knowledge-base/notifications' },
@@ -187,7 +186,6 @@ export default defineConfig({
               { 
                 text: 'DNS & Domains',
                 collapsed: true,
-                link: '/knowledge-base/dns-domains',
                 items: [
                   { text: 'DNS Configuration', link: '/knowledge-base/dns-configuration' },
                   { text: 'Domains', link: '/knowledge-base/domains' },
@@ -196,7 +194,6 @@ export default defineConfig({
               { 
                 text: 'Resources',
                 collapsed: true,
-                link: '/knowledge-base/resources',
                 items: [
                   { text: 'Environment Variables', link: '/knowledge-base/environment-variables' },
                   { text: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
@@ -208,7 +205,6 @@ export default defineConfig({
               { 
                 text: 'How-Tos',
                 collapsed: true,
-                link: '/knowledge-base/how-tos',
                 items: [
                   { text: 'Load-balancing on Hetzner', link: '/knowledge-base/load-balancing-on-hetzner' },
                   { text: 'Wordpress Multisite', link: '/knowledge-base/wordpress-multisite' },
@@ -245,7 +241,7 @@ export default defineConfig({
                   { text: 'Build Server', link: '/knowledge-base/server/build-server' },
                   { text: 'Firewall', link: '/knowledge-base/server/firewall' },
                   { text: 'Multiple Servers', link: '/knowledge-base/server/multiple-servers' },
-                  { text: 'Sentinal and Metrics', link: '/knowledge-base/server/sentinal-and-metrics' },
+                  { text: 'Sentinel and Metrics', link: '/knowledge-base/server/sentinel' },
                   { text: 'Non-root User', link: '/knowledge-base/server/non-root-user' },
                   { text: 'OpenSSH', link: '/knowledge-base/server/openssh' },
                   { text: 'Oracle Cloud', link: '/knowledge-base/server/oracle-cloud' },
