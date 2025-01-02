@@ -15,6 +15,7 @@ import Callout from './components/Callout.vue'
 import TabBlock from './components/TabBlock.vue'
 import ZoomableImage from './components/ZoomableImage.vue'
 import Globe from './components/Landing/Globe.vue'
+import Browser from './components/Landing/Browser.vue'
 
 export default {
   extends: DefaultTheme,
@@ -31,5 +32,6 @@ export default {
     app.component('TabBlock', TabBlock)
     app.component('ZoomableImage', ZoomableImage)
     app.component('Globe', Globe)
+    app.component('Browser', Browser)
   }
 } satisfies Theme

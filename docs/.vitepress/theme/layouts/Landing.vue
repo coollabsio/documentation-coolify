@@ -1,5 +1,7 @@
 <template>
   <Layout>
+    <template #home-features-before>
+    </template>
   </Layout>
 </template>
 
