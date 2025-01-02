@@ -76,9 +76,10 @@ compose:
       user: ${UID:-1000}:${GID:-1000}
 ---
 
----
-title: AnythingLLM
----
+<script setup>
+import { useData } from 'vitepress'
+const { frontmatter } = useData()
+</script>
 
 # AnythingLLM
 
@@ -91,7 +92,6 @@ AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI
 ## Screenshots
 
 ![AnythingLLM](/images/services/anythingllm.gif)
-
 
 <TabBlock   
   :tabs="frontmatter.tabs" 

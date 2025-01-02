@@ -184,7 +184,6 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
     </div>
   </div>
 </template>
-
 <style>
 .tabs-container {
   @apply my-6;
