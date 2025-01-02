@@ -172,8 +172,126 @@ export default defineConfig({
                   }
                 ] 
               },
-              { text: 'Self-hosted Instance', link: '/knowledge-base/self-hosted-instance', items: [] },
-              { text: 'DNS & Domains', link: '/knowledge-base/dns-domains', items: [] },
+              { text: 'Self-hosted Instance', 
+                collapsed: true,
+                link: '/knowledge-base/self-hosted-instance', 
+                items: [
+                  { text: 'Monitoring', link: '/knowledge-base/monitoring' },
+                  { text: 'Notifications', link: '/knowledge-base/notifications' },
+                  { text: 'Coolify Updates', link: '/knowledge-base/self-update' },
+                  { text: 'Commands', link: '/knowledge-base/commands' },
+                  { text: 'Delete User', link: '/knowledge-base/delete-user' },
+                  { text: 'OAuth', link: '/knowledge-base/oauth' },
+                ] 
+              },
+              { 
+                text: 'DNS & Domains',
+                collapsed: true,
+                link: '/knowledge-base/dns-domains',
+                items: [
+                  { text: 'DNS Configuration', link: '/knowledge-base/dns-configuration' },
+                  { text: 'Domains', link: '/knowledge-base/domains' },
+                ] 
+              },
+              { 
+                text: 'Resources',
+                collapsed: true,
+                link: '/knowledge-base/resources',
+                items: [
+                  { text: 'Environment Variables', link: '/knowledge-base/environment-variables' },
+                  { text: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
+                  { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
+                  { text: 'Health Checks', link: '/knowledge-base/health-checks' },
+                  { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
+                ] 
+              },
+              { 
+                text: 'How-Tos',
+                collapsed: true,
+                link: '/knowledge-base/how-tos',
+                items: [
+                  { text: 'Load-balancing on Hetzner', link: '/knowledge-base/load-balancing-on-hetzner' },
+                  { text: 'Wordpress Multisite', link: '/knowledge-base/wordpress-multisite' },
+                  { text: 'Raspberry Pi OS Setup', link: '/knowledge-base/raspberry-pi-os-setup' },
+                  { text: 'Private NPM Registry', link: '/knowledge-base/private-npm-registry' },
+                  { text: 'Ollama with GPU', link: '/knowledge-base/ollama-with-gpu' },
+                ] 
+              },
+              { 
+                text: 'Git',
+                collapsed: true,
+                items: [
+                  { text: 'Github', collapsed: true, items: [
+                    { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
+                    { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
+                  ] },
+                  { text: 'Gitlab', collapsed: true, items: [
+                    { text: 'Integrations', link: '/knowledge-base/git/gitlab/integration' },
+                  ] },
+                  { text: 'Bitbucket', collapsed: true, items: [
+                    { text: 'Integrations', link: '/knowledge-base/git/bitbucket/integration' },
+                  ] },
+                  { text: 'Gitea', collapsed: true, items: [
+                    { text: 'Integrations', link: '/knowledge-base/git/gitea/integration' },
+                  ] },
+                ] 
+              },
+              { 
+                text: 'Servers',
+                collapsed: true,
+                items: [
+                  { text: 'Introduction', link: '/knowledge-base/server/introduction' },
+                  { text: 'Automated Cleanup', link: '/knowledge-base/server/automated-cleanup' },
+                  { text: 'Build Server', link: '/knowledge-base/server/build-server' },
+                  { text: 'Firewall', link: '/knowledge-base/server/firewall' },
+                  { text: 'Multiple Servers', link: '/knowledge-base/server/multiple-servers' },
+                  { text: 'Sentinal and Metrics', link: '/knowledge-base/server/sentinal-and-metrics' },
+                  { text: 'Non-root User', link: '/knowledge-base/server/non-root-user' },
+                  { text: 'OpenSSH', link: '/knowledge-base/server/openssh' },
+                  { text: 'Oracle Cloud', link: '/knowledge-base/server/oracle-cloud' },
+                  { text: 'Proxies', link: '/knowledge-base/server/proxies' },
+                ] 
+              },
+              { 
+                text: 'S3',
+                collapsed: true,
+                items: [
+                  { text: 'Introduction', link: '/knowledge-base/s3/introduction' },
+                  { text: 'AWS', link: '/knowledge-base/s3/aws' },
+                  { text: 'R2', link: '/knowledge-base/s3/r2' },
+                ] 
+              },
+              { 
+                text: 'Docker',
+                collapsed: true,
+                items: [
+                  { text: 'Compose', link: '/knowledge-base/docker/compose' },
+                  { text: 'Docker Commands', link: '/knowledge-base/docker/custom-commands' },
+                  { text: 'Registry', link: '/knowledge-base/docker/registry' },
+                  { text: 'Swarm', link: '/knowledge-base/docker/swarm' },
+                ] 
+              },
+              { 
+                text: 'Cloudflare',
+                collapsed: true,
+                items: [
+                  { text: 'Tunnels', link: '/knowledge-base/cloudflare/tunnels' },
+                ] 
+              },
+              { 
+                text: 'Traefik',
+                collapsed: true,
+                items: [
+                  { text: 'Basic Auth Middleware', link: '/knowledge-base/traefik/basic-auth' },
+                  { text: 'Custom SSL Certificates', link: '/knowledge-base/traefik/custom-ssl-certs' },
+                  { text: 'Dashboard', link: '/knowledge-base/traefik/dashboard' },
+                  { text: 'Dynamic Configurations', link: '/knowledge-base/traefik/dynamic-configurations' },
+                  { text: 'Healthcheck', link: '/knowledge-base/traefik/healthcheck' },
+                  { text: 'Load Balancing', link: '/knowledge-base/traefik/load-balancing' },
+                  { text: 'Redirects', link: '/knowledge-base/traefik/redirects' },
+                  { text: 'Wildcard SSL Certificates', link: '/knowledge-base/traefik/wildcard-certificates' }
+                ] 
+              },
             ] 
           }
         ],

@@ -2,6 +2,10 @@
 title: "Introduction"
 ---
 
+# Introduction
+
+## Requirements
+
 No matter what type of server you have (localhost or remote), you need the following requirements.
 
 - Connectivity
