@@ -2,10 +2,14 @@
   "name": "coolify-docs",
   "version": "0.0.1",
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.10.2",
     "autoprefixer": "^10.4.13",
+    "fast-glob": "^3.3.2",
+    "js-yaml": "^4.1.0",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4",
+    "tsx": "^4.19.2",
     "vitepress": "^1.5.0",
     "vue": "^3.5.13"
   },
@@ -19,7 +23,8 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "transform-compose": "tsx docs/.vitepress/data/transform-compose.ts"
   },
   "dependencies": {
     "@vueuse/core": "^12.2.0"

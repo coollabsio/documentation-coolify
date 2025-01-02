@@ -13,6 +13,7 @@ import Installer from './components/Landing/Installer.vue'
 import Referral from './components/Landing/Referral.vue'
 import Callout from './components/Callout.vue'
 import TabBlock from './components/TabBlock.vue'
+import ZoomableImage from './components/ZoomableImage.vue'
 
 export default {
   extends: DefaultTheme,
@@ -27,5 +28,6 @@ export default {
     app.component('Quickstart', Installer)
     app.component('Callout', Callout)
     app.component('TabBlock', TabBlock)
+    app.component('ZoomableImage', ZoomableImage)
   }
 } satisfies Theme

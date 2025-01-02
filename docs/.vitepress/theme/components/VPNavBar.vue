@@ -82,7 +82,6 @@ watchPostEffect(() => {
 .VPNavBar.screen-open {
   transition: none;
   background-color: var(--vp-nav-bg-color);
-  border-bottom: 1px solid var(--vp-c-divider);
 }
 
 .VPNavBar:not(.home) {
@@ -239,6 +238,7 @@ watchPostEffect(() => {
 .divider {
   width: 100%;
   height: 1px;
+  display: none;
 }
 
 @media (min-width: 960px) {
@@ -257,6 +257,7 @@ watchPostEffect(() => {
   width: 100%;
   height: 1px;
   transition: background-color 0.5s;
+  background-color: transparent;
 }
 
 .VPNavBar:not(.home) .divider-line {
