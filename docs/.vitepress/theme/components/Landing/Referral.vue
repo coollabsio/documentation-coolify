@@ -101,8 +101,9 @@
                 {{ !isCopied ? referralDescription : 'Copied to clipboard!' }}
             </span>
         </p>
-        
-        <Globe />
+        <ClientOnly>
+            <Globe />
+        </ClientOnly>
             
     </div>
 </template>

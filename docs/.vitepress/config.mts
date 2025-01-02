@@ -371,6 +371,12 @@ export default defineConfig({
           )
         },
         {
+          find: /^.*\/VPFeatures\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPFeatures.vue', import.meta.url)
+          )
+        },
+        {
           find: /^.*\/VPLocalNav\.vue$/,
           replacement: fileURLToPath(
             new URL('./theme/components/VPLocalNav.vue', import.meta.url)

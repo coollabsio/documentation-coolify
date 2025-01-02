@@ -4,7 +4,16 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import Globe from 'globe.gl'
+
+const globeContainer = ref<HTMLElement | null>(null)
+let Globe: any
+let globeInstance: any = null
+
+// Import Globe.gl dynamically only on client-side
+onMounted(async () => {
+  Globe = (await import('globe.gl')).default
+  initGlobe()
+})
 
 // Constants for arc animation
 const ARC_REL_LEN = 0.4
@@ -50,10 +59,6 @@ const initializeArcSources = (): ArcSource[] => {
 
 // Initialize arc sources
 const prevCoordsList = ref<ArcSource[]>(initializeArcSources())
-
-const globeContainer = ref<HTMLElement | null>(null)
-let globeInstance: any = null
-let animationFrameId: number
 
 const emitArc = (sourceIndex: number) => {
   const currentTime = Date.now()
@@ -169,10 +174,6 @@ const initGlobe = () => {
   const interval = setInterval(emitArcs, FLIGHT_TIME * 1.5)
   globeInstance.__interval = interval
 }
-
-onMounted(() => {
-  initGlobe()
-})
 
 onUnmounted(() => {
   if (globeInstance) {
