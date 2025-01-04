@@ -464,6 +464,7 @@ export default defineConfig({
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
+                { label: "Change Localhost Key", link: "/knowledge-base/change-localhost-key" },
               ],
             },
             {
