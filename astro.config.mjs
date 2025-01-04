@@ -337,6 +337,7 @@ export default defineConfig({
             { label: "Docmost", link: "/services/docmost" },
             { label: "Docuseal", link: "/services/docuseal" },
             { label: "Dokuwiki", link: "/services/dokuwiki" },
+            { label: "Dozzle", link: "/services/dozzle" },
             { label: "Duplicati", link: "/services/duplicati" },
             { label: "Emby", link: "/services/emby" },
             { label: "Emby Stat", link: "/services/emby-stat" },
@@ -426,6 +427,7 @@ export default defineConfig({
             { label: "Whoogle", link: "/services/whoogle" },
             { label: "Windmill", link: "/services/windmill" },
             { label: "Wordpress", link: "/services/wordpress" },
+            { label: "Zipline", link: "/services/zipline" },
           ],
         },
         {
