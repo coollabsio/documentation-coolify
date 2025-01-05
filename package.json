@@ -10,6 +10,7 @@
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4",
     "tsx": "^4.19.2",
+    "vite-plugin-yaml": "^1.0.5",
     "vitepress": "^1.5.0",
     "vue": "^3.5.13"
   },
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^12.2.0",
-    "globe.gl": "^2.34.6"
+    "globe.gl": "^2.34.6",
+    "vitepress-openapi": "0.0.3-alpha.55"
   }
 }

@@ -1,8 +1,5 @@
 <template>
-    <div class="relative flex flex-col gap-4 max-w-md">
-        <div class="flex flex-row gap-2 z-10">
-            <VPBadge text="For Coolify Cloud and Self Host" />
-        </div>
+    <div class="relative flex flex-col gap-4 max-w-lg">
         <div class="flex flex-row gap-2 z-10">
             <h3 class="text-2xl font-bold tracking-wide">{{ referralTitle }}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 my-auto mr-0 ml-auto">
@@ -98,7 +95,7 @@
                 <path fill="#77B255" d="M31.999 13L36 7.999L33 6z" />
             </svg>
             <span :class="{ 'ml-2': isCopied }" class="my-auto">
-                {{ !isCopied ? referralDescription : 'Copied to clipboard!' }}
+                {{ !isCopied ? '' : 'Copied to clipboard!' }}
             </span>
         </p>
         <ClientOnly>

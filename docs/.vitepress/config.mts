@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import yaml from 'vite-plugin-yaml'
 import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -344,6 +345,8 @@ export default defineConfig({
   rewrites: {},
 
   vite: {
+    plugins: [yaml as any],
+    assetsInclude: ['**/*.yml'],
     resolve: {
       alias: [
         {
