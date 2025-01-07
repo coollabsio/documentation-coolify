@@ -1,10 +1,23 @@
 // https://vitepress.dev/guide/custom-theme
+// Import types
 import type { Theme } from "vitepress";
+
+// Import OpenAPI components
 import { theme, useOpenapi } from "vitepress-openapi";
+
+// Import default theme
 import DefaultTheme from "vitepress/theme";
+
+// Import styles
 import "./style.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
+
+// Load the OpenAPI spec
+import { load } from 'js-yaml'
+import rawSpec from './openapi.yml?raw'
+
+// Import components
 import Card from "./components/Card.vue";
 import CardGroup from "./components/CardGroup.vue";
 import Landing from "./layouts/Landing.vue";
@@ -17,8 +30,6 @@ import TabBlock from "./components/TabBlock.vue";
 import ZoomableImage from "./components/ZoomableImage.vue";
 import Globe from "./components/Landing/Globe.vue";
 import Browser from "./components/Landing/Browser.vue";
-import { load } from 'js-yaml'
-import rawSpec from '/openapi.yml?raw'
 
 export default {
   extends: DefaultTheme,

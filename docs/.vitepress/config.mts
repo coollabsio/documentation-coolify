@@ -347,6 +347,9 @@ export default defineConfig({
   vite: {
     plugins: [yaml as any],
     assetsInclude: ['**/*.yml'],
+    build: {
+      chunkSizeWarningLimit: 5000
+    },
     resolve: {
       alias: [
         {
