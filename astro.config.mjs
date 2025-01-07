@@ -686,6 +686,10 @@ export default defineConfig({
                   label: "Wildcard Certificates",
                   link: "/knowledge-base/traefik/wildcard-certificates",
                 },
+                {
+                  label: "Protecting Services with Authentik",
+                  link: "/knowledge-base/traefik/protecting-services-with-authentik",
+                }
               ],
             },
           ],
