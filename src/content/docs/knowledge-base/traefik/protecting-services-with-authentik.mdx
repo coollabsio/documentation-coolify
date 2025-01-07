@@ -1,27 +1,27 @@
 ---
 
-title: "Authentik Forward Authentication Middleware"  
-head:  
-  - tag: "meta"  
-    attrs:  
-      property: "og:title"  
-      content: "How to configure Authentik forward authentication with Traefik in Coolify"  
-description: "A guide to configure Authentik forward authentication with Traefik in Coolify"  
+title: "Authentik Forward Authentication Middleware"
+head:
+  - tag: "meta"
+    attrs:
+      property: "og:title"
+      content: "How to configure Authentik forward authentication with Traefik in Coolify"
+description: "A guide to configure Authentik forward authentication with Traefik in Coolify"
 
 ---
 
-Traefik enables you to secure your applications with authentication by using a [Proxy Provider](https://docs.goauthentik.io/docs/add-secure-apps/providers/proxy/).  
+Traefik enables you to secure your applications with authentication by using a [Proxy Provider](https://docs.goauthentik.io/docs/add-secure-apps/providers/proxy/).
 This allows you to protect your services with Single Sign-On (SSO).
 
-## Configure an Authentik Application and Proxy Provider  
+## Configure an Authentik Application and Proxy Provider
 
-The first step is to deploy the [Authentik service](../../services/authentik) and then configure the required components:
+The first step is to deploy the [Authentik service](/docs/services/authentik) and then configure the required components:
 
-- Create a Proxy Provider with forward authentication.  
-- Create an application and assign the Proxy Provider you created.  
-- In the "Cookie Domain" field, add the domain of the services.  
+- Create a Proxy Provider with forward authentication.
+- Create an application and assign the Proxy Provider you created.
+- In the "Cookie Domain" field, add the domain of the services.
 
-## Create the Traefik Configuration  
+## Create the Traefik Configuration
 
 The next step is to add the Traefik middleware configuration to your instance's dynamic configuration.
 
@@ -49,7 +49,7 @@ http:
           - X-authentik-meta-version
 ```
 
-## Protecting Services  
+## Protecting Services
 
 To protect a service, the Traefik middleware label must be added to the container's Docker Compose configuration:
 
