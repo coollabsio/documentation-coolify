@@ -466,6 +466,7 @@ export default defineConfig({
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
+                { label: "Change Localhost Key", link: "/knowledge-base/change-localhost-key" },
               ],
             },
             {
@@ -688,6 +689,10 @@ export default defineConfig({
                   label: "Wildcard Certificates",
                   link: "/knowledge-base/traefik/wildcard-certificates",
                 },
+                {
+                  label: "Protecting Services with Authentik",
+                  link: "/knowledge-base/traefik/protecting-services-with-authentik",
+                }
               ],
             },
           ],
