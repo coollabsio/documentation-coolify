@@ -33,6 +33,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
+            ghcr.io/shadowarcanist/coolify-new-docs:latest
           platforms: linux/arm64
 
