@@ -306,7 +306,7 @@ export default defineConfig({
               { 
                 text: 'API', 
                 collapsed: true,
-                link: '/api-reference/API/overview',
+                link: '/api-reference/api/overview',
                 items: [
                   {
                     text: 'Overview',
