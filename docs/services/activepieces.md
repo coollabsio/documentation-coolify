@@ -124,9 +124,8 @@ import { useData } from 'vitepress'
 const { frontmatter } = useData()
 </script>
 
-# Activepieces
 
-![ActivePieces](/images/services/activepieces0.webp)
+![ActivePieces](/images/services/activepieces-banner.webp)
 
 ## What is ActivePieces
 
@@ -135,6 +134,8 @@ Your friendliest open source all-in-one automation tool, designed to be extensib
 ## Visual Demos
 
 <ZoomableImage src="/docs/public/images/services/activepieces1.gif" />
+
+<br />
 
 <ZoomableImage src="/docs/public/images/services/activepieces2.gif" />
 
