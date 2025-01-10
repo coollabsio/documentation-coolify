@@ -134,9 +134,9 @@ Your friendliest open source all-in-one automation tool, designed to be extensib
 
 ## Visual Demos
 
-<ZoomableImage src="/images/services/activepieces1.gif" />
+<ZoomableImage src="/docs/public/images/services/activepieces1.gif" />
 
-<ZoomableImage src="/images/services/activepieces2.gif" />
+<ZoomableImage src="/docs/public/images/services/activepieces2.gif" />
 
 ## Installation & Configuration
 
