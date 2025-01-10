@@ -2,7 +2,7 @@
 title: Fider
 ---
 
-![Fider](https://github.com/getfider/fider/raw/main/etc/homepage.png)
+![Fider](https://github.com/getfider/fider/raw/main/etc/homepage.webp)
 
 ## What is Fider?
 

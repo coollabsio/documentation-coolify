@@ -4,7 +4,7 @@ title: PostgreSQL
 
 # PostgreSQL
 
-![PostgreSQL](/images/database-logos/postgresql.png)
+![PostgreSQL](/images/database-logos/postgresql.webp)
 
 ## What is PostgreSQL
 

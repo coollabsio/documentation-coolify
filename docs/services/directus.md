@@ -2,7 +2,7 @@
 title: Directus
 ---
 
-![directus](https://user-images.githubusercontent.com/522079/158864859-0fbeae62-9d7a-4619-b35e-f8fa5f68e0c8.png)
+![directus](https://user-images.githubusercontent.com/522079/158864859-0fbeae62-9d7a-4619-b35e-f8fa5f68e0c8.webp)
 
 ## What is Directus?
 

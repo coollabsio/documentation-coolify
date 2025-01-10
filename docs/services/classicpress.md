@@ -2,7 +2,7 @@
 title: ClassicPress
 ---
 
-![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.png)
+![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.webp)
 
 ## What is ClassicPress?
 

@@ -36,7 +36,7 @@ We also recommend to use [Hetzner](https://coolify.io/hetzner) (referral link) f
 
 #### One domain across multiple servers (Recommended)
 
-![load-balance-one-domain](/images/loadbalancer/one-domain.png)
+![load-balance-one-domain](/images/loadbalancer/one-domain.webp)
 
 - **Pros**:
     - Easy to understand and implement.
@@ -49,7 +49,7 @@ We also recommend to use [Hetzner](https://coolify.io/hetzner) (referral link) f
 
 #### Multiple domains across multiple servers (Recommended, but more complex)
 
-![load-balance-multiple-domains](/images/loadbalancer/multiple-domains.png)
+![load-balance-multiple-domains](/images/loadbalancer/multiple-domains.webp)
 
 - **Pros**:
     - Easy to understand and implement.

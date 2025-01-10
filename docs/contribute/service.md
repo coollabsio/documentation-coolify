@@ -54,7 +54,7 @@ Services in Coolify are templates made from normal [docker-compose](https://docs
 3. Add a logo
 
    - Create or obtain an SVG logo for your service (strongly preferred format)
-   - If SVG is unavailable, use a high-quality PNG or JPG as a last resort
+   - If SVG is unavailable, use a high-quality.webp or JPG as a last resort
    - Add the logo file to the `svgs` folder in the Coolify repository
    - The logo filename should match the docker-compose service name exactly
      - For example, if your service name is `wordpress`, your logo should be `wordpress.svg` and the final path then is `svgs/wordpress.svg` use this path in the `logo` metadata.

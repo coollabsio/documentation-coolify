@@ -2,7 +2,7 @@
 title: Firefly III
 ---
 
-![Firefly III](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/logo-small.png)
+![Firefly III](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/logo-small.webp)
 
 ## What is Firefly III?
 
@@ -14,7 +14,7 @@ But you get the idea: this is your money. These are your expenses. Stop them fro
 
 ## Screenshots
 
-![Firefly III screenshot](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.png)
+![Firefly III screenshot](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.webp)
 
 ## Links
 

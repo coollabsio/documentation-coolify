@@ -2,7 +2,7 @@
 title: Logto
 ---
 
-![Logto](https://github.com/logto-io/logto/raw/master/logo.png)
+![Logto](https://github.com/logto-io/logto/raw/master/logo.webp)
 
 ## What is Logto?
 

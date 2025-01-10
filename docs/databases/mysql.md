@@ -4,7 +4,7 @@ title: MySQL
 
 # MySQL
 
-![MySQL](/images/database-logos/mysql.png)
+![MySQL](/images/database-logos/mysql.webp)
 
 ## What is MySQL
 

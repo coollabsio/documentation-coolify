@@ -20,7 +20,7 @@ services:
 ```
 
 
-![Coolify's UI for environment variables](/images/screenshots/Docker-compose-environment-variables-UI.png)
+![Coolify's UI for environment variables](/images/screenshots/Docker-compose-environment-variables-UI.webp)
 
 ## Coolify's Magic environment variables
 

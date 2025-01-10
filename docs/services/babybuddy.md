@@ -2,7 +2,7 @@
 title: BabyBuddy
 ---
 
-![BabyBuddy](https://raw.githubusercontent.com/babybuddy/babybuddy/master/babybuddy/static_src/logo/icon.png)
+![BabyBuddy](https://raw.githubusercontent.com/babybuddy/babybuddy/master/babybuddy/static_src/logo/icon.webp)
 
 ## What is BabyBuddy?
 
@@ -10,8 +10,8 @@ A buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tumm
 
 ## Screenshots
 
-![Baby Buddy desktop view](https://raw.githubusercontent.com/babybuddy/babybuddy/master/screenshot.png)
-![Baby Buddy mobile views](https://raw.githubusercontent.com/babybuddy/babybuddy/master/screenshot_mobile.png)
+![Baby Buddy desktop view](https://raw.githubusercontent.com/babybuddy/babybuddy/master/screenshot.webp)
+![Baby Buddy mobile views](https://raw.githubusercontent.com/babybuddy/babybuddy/master/screenshot_mobile.webp)
 
 ## Demo
 

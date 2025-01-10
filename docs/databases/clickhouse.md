@@ -4,7 +4,7 @@ title: ClickHouse
 
 # ClickHouse
 
- ![clickhouse](/images/database-logos/clickhouse.png)
+ ![clickhouse](/images/database-logos/clickhouse.webp)
 
 ## What is ClickHouse
 

@@ -2,7 +2,7 @@
 title: DokuWiki
 ---
 
-![DokuWiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)
+![DokuWiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.webp)
 
 ## What is DokuWiki?
 

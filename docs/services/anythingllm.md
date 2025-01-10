@@ -83,7 +83,7 @@ const { frontmatter } = useData()
 
 # AnythingLLM
 
-![AnythingLLM](/images/services/anythingllm.png)
+![AnythingLLM](/images/services/anythingllm.webp)
 
 ## What is AnythingLLM?
 

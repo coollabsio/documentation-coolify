@@ -2,8 +2,8 @@
 title: Code Server
 ---
 
-![Code Server1](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png)
-![Code Server2](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-2.png)
+![Code Server1](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.webp)
+![Code Server2](https://github.com/coder/code-server/raw/main/docs/assets/screenshot-2.webp)
 
 ## What is Code Server?
 

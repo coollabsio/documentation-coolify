@@ -19,8 +19,8 @@ BudgE (pronounced "budgie", like the bird) is an open source "budgeting with env
 
 ## Screenshots
 
-![screenshot1](https://raw.githubusercontent.com/linuxserver/budge/main/images/budget.png)
-![screenshot2](https://raw.githubusercontent.com/linuxserver/budge/main/images/account.png)
+![screenshot1](https://raw.githubusercontent.com/linuxserver/budge/main/images/budget.webp)
+![screenshot2](https://raw.githubusercontent.com/linuxserver/budge/main/images/account.webp)
 
 ## Support
 

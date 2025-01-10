@@ -2,7 +2,7 @@
 title: Change Detection
 ---
 
-![Change Detection](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png)
+![Change Detection](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.webp)
 
 ## What is Change Detection?
 

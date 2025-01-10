@@ -126,7 +126,7 @@ const { frontmatter } = useData()
 
 # Activepieces
 
-![ActivePieces](/images/services/activepieces0.png)
+![ActivePieces](/images/services/activepieces0.webp)
 
 ## What is ActivePieces
 

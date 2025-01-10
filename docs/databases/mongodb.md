@@ -4,7 +4,7 @@ title: MongoDB
 
 # MongoDB
 
-![MongoDB](/images/database-logos/mongodb.png)
+![MongoDB](/images/database-logos/mongodb.webp)
 
 ## What is MongoDB
 

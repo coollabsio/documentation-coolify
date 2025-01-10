@@ -2,7 +2,7 @@
 title: Emby Stat
 ---
 
-![Emby Stat](https://raw.githubusercontent.com/mregni/EmbyStat/develop/branding/logo-color.png)
+![Emby Stat](https://raw.githubusercontent.com/mregni/EmbyStat/develop/branding/logo-color.webp)
 
 ## What is Emby Stat?
 

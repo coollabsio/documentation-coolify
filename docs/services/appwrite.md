@@ -738,7 +738,7 @@ title: Appwrite
 ---
 
 # Appwrite
-![Appwrite](https://raw.githubusercontent.com/appwrite/appwrite/main/public/images/banner.png)
+![Appwrite](https://raw.githubusercontent.com/appwrite/appwrite/main/public/images/banner.webp)
 
 ## What is Appwrite?
 

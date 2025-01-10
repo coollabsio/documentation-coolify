@@ -24,17 +24,17 @@ You have at least two ways to setup Cloudflare Tunnels with Coolify.
     3. Open `Networks`-> `Tunnels`-> `Create a Tunnel`
 
     4. Connector: `Cloudflared`
-    ![connector](/images/cloudflare/cf-tunnels-connector.png)
+    ![connector](/images/cloudflare/cf-tunnels-connector.webp)
 
     5. Choose any name you like.
-    ![notice](/images/cloudflare/cf-tunnels-notice-me.png)
+    ![notice](/images/cloudflare/cf-tunnels-notice-me.webp)
 
     6. Copy your `Cloudflare Tunnel Token` from any of the commands.
     <Aside type="caution">
     The token starts with `eyJ...`.
     </Aside>
 
-    ![token](/images/cloudflare/cf-tunnels-token.png)
+    ![token](/images/cloudflare/cf-tunnels-token.webp)
 
     7. On the `Route Tunnel` tab, add the following tunnels:
 
@@ -42,18 +42,18 @@ You have at least two ways to setup Cloudflare Tunnels with Coolify.
     You can use any domains/subdomains. This will make sure you can reach your server through Cloudflare Tunnels.
     </Aside>
 
-    ![ssh](/images/cloudflare/cf-tunnels-ssh.png)
+    ![ssh](/images/cloudflare/cf-tunnels-ssh.webp)
 
 2. Setup Tunnels on Coolify
     1. Add a new server with your server's `IP Address` - it will be reconfigured later on.
-    ![addserver](/images/cloudflare/coolify-add-server.png)
+    ![addserver](/images/cloudflare/coolify-add-server.webp)
 
     2. Validate the server.
 
     2. After the server is validated, click on `Configure` in the `Cloudflare Tunnels` section.
 
     3. Paste `Cloudflare Tunnel Token` from the previous step and set the `SSH Domain` to the domain you set in the previous step.
-    ![setcftoken](/images/cloudflare/coolify-set-cf-token.png)
+    ![setcftoken](/images/cloudflare/coolify-set-cf-token.webp)
 
 </Steps>
 
@@ -80,13 +80,13 @@ In this case, you need to add a public domain every time you would like to expos
 1. Go to your tunnel settings on Cloudflare. (https://one.dash.cloudflare.com/ -> Networks -> Tunnels -> Select your tunnel)
 2. Switch to `Public Hostname` tab.
 3. Add a new `Public Hostname`.
-   ![onepublic](/images/cloudflare/cf-one-public-hostname.png)
+   ![onepublic](/images/cloudflare/cf-one-public-hostname.webp)
 4. Go to Coolify and to your resource settings: - Remove any `Domains` settings. - Set `Port Mappings` to the same port that you set in the `Public Hostname` settings.
    <Aside type="caution">
      As an example, I'm deploying a static site, that listens in port `80`
      inside the container and I'm mapping it to the port `8888` on the host. So,
      I need to set the `Port Mappings` to `8888:80`.
-     ![portmappings](/images/cloudflare/coolify-set-port-mappings.png)
+     ![portmappings](/images/cloudflare/coolify-set-port-mappings.webp)
    </Aside>
 5. Deploy & enjoy.
 
@@ -102,9 +102,9 @@ In this case, you only need to setup a wildcard domain once and you can expose a
 1. Go to your tunnel settings on Cloudflare. (https://one.dash.cloudflare.com/ -> Networks -> Tunnels -> Select your tunnel)
 2. Switch to `Public Hostname` tab.
 3. Add a new wildcard `Public Hostname`.
-   ![wildcard-cf](/images/cloudflare/cf-wildcard-public-hostname.png)
+   ![wildcard-cf](/images/cloudflare/cf-wildcard-public-hostname.webp)
 4. In Cloudflare go to ` Networks -> Tunnels` and click on your tunnel name. From the sidebar copy the `Tunnel ID`.
-   ![cf-tunnel-id](/images/cloudflare/cf-tunnel-id.png)
+   ![cf-tunnel-id](/images/cloudflare/cf-tunnel-id.webp)
 5. In Cloudflare go to your `DNS` settings and add a new `CNAME` record with the following settings:
    - `Name`: `*`
    - `Target`: `<Tunnel ID>.cfargotunnel.com`
@@ -113,12 +113,12 @@ In this case, you only need to setup a wildcard domain once and you can expose a
 
 Set the `Domains` to any subdomain of the wildcard domain you set in the previous step.
 
-![wildcard-coolify](/images/cloudflare/coolify-set-domains.png)
+![wildcard-coolify](/images/cloudflare/coolify-set-domains.webp)
 
 <Aside type="caution">
 You need to use `http://` in the `Domains` settings. Cloudflare will take care of the `https` part.
 For this you need to set `SSL/TLS` to `Full` in the `SSL/TLS` menu on Cloudflare.
-![ssl-full](/images/cloudflare/cf-ssl-full.png)
+![ssl-full](/images/cloudflare/cf-ssl-full.webp)
 
 </Aside>
 

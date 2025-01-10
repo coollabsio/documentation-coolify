@@ -2,7 +2,7 @@
 title: Dashboard
 ---
 
-![dashboard](https://github.com/phntxx/dashboard/blob/master/screenshot.png?raw=true)
+![dashboard](https://github.com/phntxx/dashboard/blob/master/screenshot.webp?raw=true)
 
 ## What is Dashboard?
 

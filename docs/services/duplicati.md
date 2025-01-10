@@ -2,7 +2,7 @@
 title: Duplicati
 ---
 
-![Duplicati](https://docs.duplicati.com/en/latest/duplicatilogo.png)
+![Duplicati](https://docs.duplicati.com/en/latest/duplicatilogo.webp)
 
 ## What is Duplicati?
 

@@ -46,9 +46,9 @@ title: "AWS S3"
 <Steps>
 1. Create a bucket in AWS Console
     Go to [AWS Console](https://us-east-1.console.aws.amazon.com/s3/buckets) and
-    create a new bucket. ![1](/images/aws-s3/1-bucket.jpeg)
+    create a new bucket. ![1](/images/aws-s3/1-bucket.webp)
 2. Name your bucket.
-  ![2](/images/aws-s3/2-bucket.jpeg)
+  ![2](/images/aws-s3/2-bucket.webp)
 </Steps>
 
 ### Create a new policy
@@ -56,7 +56,7 @@ title: "AWS S3"
 <Steps>
 1. Create a new policy.
     Go to [AWS Console](https://us-east-1.console.aws.amazon.com/iam/home) and create a new policy.
-     ![1](/images/aws-s3/1-policy.jpeg)
+     ![1](/images/aws-s3/1-policy.webp)
 2. Name & configure your policy.
     Add the following JSON permissions to your policy (replace `your-bucket-name` with your bucket name):
     ```json
@@ -81,8 +81,8 @@ title: "AWS S3"
       ]
     }
     ```
-        ![2](/images/aws-s3/2-policy.jpeg)
-        ![3](/images/aws-s3/3-policy.jpeg)
+        ![2](/images/aws-s3/2-policy.webp)
+        ![3](/images/aws-s3/3-policy.webp)
 </Steps>
 
 ### Create a new IAM user
@@ -90,20 +90,20 @@ title: "AWS S3"
 <Steps>
 1. Create a new IAM User.
     Go to [AWS Console](https://us-east-1.console.aws.amazon.com/iam/home) and
-    create a new user. ![1](/images/aws-s3/1-iam.jpeg)
+    create a new user. ![1](/images/aws-s3/1-iam.webp)
 2. Name your user.
-    ![2](/images/aws-s3/2-iam.jpeg)
+    ![2](/images/aws-s3/2-iam.webp)
 3. Attach the policy created in the previous step.
-    ![3](/images/aws-s3/3-iam.jpeg)
+    ![3](/images/aws-s3/3-iam.webp)
 4. Go to your user settings.
-    ![4](/images/aws-s3/4-iam.jpeg)
+    ![4](/images/aws-s3/4-iam.webp)
 5. Create a new `Access Key`.
-    ![5](/images/aws-s3/5-iam.jpeg
+    ![5](/images/aws-s3/5-iam.webp
 6. Set `Other` as use-case.
-    ![6](/images/aws-s3/6-iam.jpeg)
+    ![6](/images/aws-s3/6-iam.webp)
 7. Copy the `Access Key` & `Secret Access Key`.
     You will need it to configure this S3 storage in Coolify.
-    ![7](/images/aws-s3/7-iam.jpeg)
+    ![7](/images/aws-s3/7-iam.webp)
 </Steps>
 
 ### Configure S3 in Coolify
@@ -111,10 +111,10 @@ title: "AWS S3"
 <Steps>
 1. Add new S3 Storage.
     Go to your Coolify instance and create a new S3 storage.
-    ![1](/images/aws-s3/1-coolify.jpeg)
+    ![1](/images/aws-s3/1-coolify.webp)
 2. Add the details.
     Make sure you use the S3 HTTP endpoint without the bucket name. For example,
-    `https://s3.eu-central-1.amazonaws.com`. ![2](/images/aws-s3/2-coolify.jpeg)
+    `https://s3.eu-central-1.amazonaws.com`. ![2](/images/aws-s3/2-coolify.webp)
 </Steps>
 
 Well done!

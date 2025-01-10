@@ -26,4 +26,4 @@ The terminal is a web-based interface that allows you to interact with your reso
 After that, it creates a new process on the Terminal server (inside Coolify's realtime container) and connects to your main Coolify instance container, via SSH. But the connection is not direct, it goes first through a Websocket connection, requiring an authentication to do so, after that, the connection is established inside Coolify's main Instance (host server), to make sure that we have the permissions to access the resources.
 And then, the process inside the Coolify's main Instance container, establishes a new SSH connection to the target resource (container or server). Lets see a diagram explaining it better:
 
-![terminal-diagram](/images/terminal/terminal-diagram.jpeg)
+![terminal-diagram](/images/terminal/terminal-diagram.webp)

@@ -2,7 +2,7 @@
 title: Ghost
 ---
 
-![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png)
+![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.webp)
 
 ## What is Ghost?
 

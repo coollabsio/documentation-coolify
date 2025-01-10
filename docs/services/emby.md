@@ -2,7 +2,7 @@
 title: Emby
 ---
 
-![Emby](https://emby.media/support/images/logo.png)
+![Emby](https://emby.media/support/images/logo.webp)
 
 ## What is Emby?
 

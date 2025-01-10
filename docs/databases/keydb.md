@@ -4,7 +4,7 @@ title: KeyDB
 
 # KeyDB
 
-![KeyDB](/images/database-logos/keydb.png)
+![KeyDB](/images/database-logos/keydb.webp)
 
 ## What is KeyDB
 

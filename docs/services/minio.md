@@ -2,7 +2,7 @@
 title: MinIO
 ---
 
-![MinIO](https://github.com/minio.png)
+![MinIO](https://github.com/minio.webp)
 
 ## What is MinIO?
 

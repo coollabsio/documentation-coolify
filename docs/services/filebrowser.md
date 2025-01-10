@@ -2,7 +2,7 @@
 title: Filebrowser
 ---
 
-![Filebrowser](https://raw.githubusercontent.com/filebrowser/logo/master/banner.png)
+![Filebrowser](https://raw.githubusercontent.com/filebrowser/logo/master/banner.webp)
 
 ## What is Filebrowser?
 
