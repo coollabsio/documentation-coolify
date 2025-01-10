@@ -5,7 +5,7 @@ Coolify is an all-in-one PaaS that helps you self-host your applications, databa
 It is an open-source, self-hostable alternative to platforms like Heroku, Netlify, and Vercel.
 
 ## Why Coolify?
-| | |
+| Features |  Description |
 | :--------------------- | :--------------------------------------------------------------------------------------------------------------------- |
 | **No Hidden Costs**    | Unlike traditional cloud providers, Coolify keeps your expenses predictable with no unexpected costs.                  |
 | **Highly Cost-Efficient** | Save thousands monthly compared to traditional cloud platforms. Real examples can be found [here](https://twitter.com/heyandras/status/1742078215986860460), [here](https://twitter.com/heyandras/status/1752209429276086688), and [here](https://twitter.com/heyandras/status/1724510876256944244). |
