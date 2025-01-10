@@ -52,6 +52,7 @@ export default defineConfig({
           { text: 'What is Coolify?', link: '/what-is-coolify' },
           { text: 'Cloud vs Self-Hosted', link: '/cloud-vs-selfhost' },
           { text: 'Installation', link: '/installation' },
+          { text: 'Upgrade', link: '/upgrade' },
           { text: 'Uninstallation', link: '/uninstallation' },
         ],
       },
