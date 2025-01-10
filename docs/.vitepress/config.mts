@@ -49,8 +49,8 @@ export default defineConfig({
         text: 'Get Started',
         collapsed: false,
         items: [
-          { text: 'What is Coolify', link: '/what-is-coolify' },
-          { text: 'Quickstart', link: '/quickstart' },
+          { text: 'What is Coolify?', link: '/what-is-coolify' },
+          { text: 'Cloud vs Self-Hosted', link: '/cloud-vs-selfhost' },
           { text: 'Installation', link: '/installation' },
         ],
       },
