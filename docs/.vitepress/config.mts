@@ -53,6 +53,7 @@ export default defineConfig({
           { text: 'Cloud vs Self-Hosted', link: '/cloud-vs-selfhost' },
           { text: 'Installation', link: '/installation' },
           { text: 'Upgrade', link: '/upgrade' },
+          { text: 'Downgrade', link: '/downgrade' },
           { text: 'Uninstallation', link: '/uninstallation' },
         ],
       },
