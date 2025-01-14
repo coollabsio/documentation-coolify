@@ -68,16 +68,6 @@ const coreMembers = [
   }
 ]
 
-const sponsors = [
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Hetzner',
-    links: [
-      { icon: 'expedia', link: 'https://adiology.dev' },
-      { icon: 'x', link: 'https://x.com/' },
-    ]
-  }
-]
 </script>
 
 <VPTeamPage>
@@ -89,18 +79,5 @@ const sponsors = [
       The development of Coolify is guided by an international team, some of whom have chosen to be featured below.
     </template>
   </VPTeamPageTitle>
-
-  <!-- Core Team Members Section -->
   <VPTeamMembers size="small" :members="coreMembers" />
-
-  <!-- sponsors Section -->
-  <VPTeamPageSection>
-    <template #title>Sponsors</template>
-    <template #lead>
-      We have amazing sponsors who support the development of Coolify.
-    </template>
-    <template #members>
-      <VPTeamMembers size="small" :members="sponsors" />
-    </template>
-  </VPTeamPageSection>
 </VPTeamPage>
