@@ -336,8 +336,9 @@ export default defineConfig({
         text: 'Resources',
         collapsed: true,
         items: [
+          { text: 'Team', link: '/resource/team' },
           { text: 'Support', link: '/support' },
-          { text: 'Team', link: '/company/team' },
+          { text: 'Sponsors', link: '/resource/sponsors' },
         ],
       },
     ],
