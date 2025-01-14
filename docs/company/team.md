@@ -13,77 +13,58 @@ import {
 
 const coreMembers = [
   {
-    avatar: 'https://avatars.githubusercontent.com/u/5845193?v=4',
+    avatar: '../images/team/andras.webp',
     name: 'Andras Bacsai',
-    title: 'Founder',
+    title: 'Founder, Lead Developer',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-      { icon: 'expedia', link: 'https://google.com/' }
+      { icon: 'github', link: 'https://github.com/andrasbacsai' },
+      { icon: 'expedia', link: 'https://heyandras.dev' },
+      { icon: 'x', link: 'https://x.com/heyandras' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/122374094?v=4',
+    avatar: '../images/team/peak.webp',
     name: 'Peaklabs Dev',
     title: 'Core Developer',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
+      { icon: 'github', link: 'https://github.com/peaklabs-dev' },
+      { icon: 'x', link: 'https://x.com/peaklabs_dev' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 3',
-    title: 'Developer',
+    avatar: '../images/team/shadowarcanist.webp',
+    name: 'ShadowArcanist',
+    title: 'Community Lead, Docs Maintainer',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
+      { icon: 'github', link: 'https://github.com/shadowarcanist' },
+      { icon: 'expedia', link: 'https://shadowarcanist.com' },
+      { icon: 'x', link: 'https://x.com/shadowarcanist' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 4',
-    title: 'Developer',
+    avatar: '../images/team/serdar.webp',
+    name: 'Serdar Yerdelen',
+    title: 'Community Moderator, Docs Maintainer',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
+      { icon: 'github', link: 'https://github.com/justserdar' },
+      { icon: 'expedia', link: 'https://justserdar.dev' },
+      { icon: 'x', link: 'https://x.com/darwebdb' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 5',
-    title: 'Developer',
+    avatar: '../images/team/aditya.webp',
+    name: 'Aditya Tripathi',
+    title: 'Developer, Community Moderator',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
+      { icon: 'github', link: 'https://github.com/shadowarcanist' },
+      { icon: 'expedia', link: 'https://adiology.dev' },
+      { icon: 'x', link: 'https://x.com/AdityaTripathiD' }
     ]
   },
   {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 6',
-    title: 'Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 6',
-    title: 'Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Member 6',
-    title: 'Developer',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' }
-    ]
+    avatar: '../images/team/coollabs.webp',
+    name: 'You?',
+    title: 'Will You Be Next?'
   }
 ]
 
@@ -92,72 +73,8 @@ const sponsors = [
     avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
     name: 'Hetzner',
     links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Logto',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Tolgee',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'QuantCDN',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Arcjet',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'ubicloud',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'algora',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'comit.',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
-    ]
-  },
-  {
-    avatar: 'https://avatars.githubusercontent.com/u/60715044?s=160&v=4',
-    name: 'Syntax',
-    links: [
-      { icon: 'github', link: 'https://github.com/' },
-      { icon: 'twitter', link: 'https://twitter.com/' },
+      { icon: 'expedia', link: 'https://adiology.dev' },
+      { icon: 'x', link: 'https://x.com/' },
     ]
   }
 ]
