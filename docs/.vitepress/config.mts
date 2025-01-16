@@ -314,7 +314,7 @@ export default defineConfig({
               { 
                 text: 'API', 
                 collapsed: true,
-                link: '/api-reference/api/',
+                // link: '/api-reference/api/', // disabled for now, you can enable it if you want to
                 items: [
                   ...sidebar.generateSidebarGroups({
                     /**
