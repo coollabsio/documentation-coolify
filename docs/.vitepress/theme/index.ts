@@ -13,9 +13,8 @@ import "./style.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
 
-// Load the OpenAPI spec
-import { load } from 'js-yaml'
-import rawSpec from './openapi.yml?raw'
+// @ts-ignore
+import spec from '../../public/openapi.json' assert { type: 'json' }
 
 // Import components
 import Card from "./components/Card.vue";
@@ -35,13 +34,12 @@ export default {
   extends: DefaultTheme,
   Layout: Landing,
   enhanceApp({ app, router, siteData }) {
-    const spec = load(rawSpec)
     const openapi = useOpenapi({
       spec,
-      base: "/docs/api-reference/api/overview/",
-      label: "API",
+      base: "/docs/api-reference/api/operations/",
+      label: "API"
     });
-    // Use theme.enhanceApp with both app and openapi
+    
     theme.enhanceApp({ app, openapi });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);

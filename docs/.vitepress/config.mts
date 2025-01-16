@@ -1,6 +1,11 @@
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
 import { defineConfig } from 'vitepress'
+import { useSidebar, useOpenapi } from 'vitepress-openapi'
+import spec from '../public/openapi.json' assert { type: 'json' }
+
+const sidebar = useSidebar({ spec, collapsible: true })
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
@@ -311,10 +316,34 @@ export default defineConfig({
                 collapsed: true,
                 link: '/api-reference/api/overview',
                 items: [
-                  {
-                    text: 'Overview',
-                    link:   '/api-reference/api/overview'
-                  }
+                  ...sidebar.generateSidebarGroups({
+                    /**
+                     * Optionally, you can filter paths by a prefix. Default is an empty string.
+                     */
+                    startsWith: 'operations',
+    
+                    /**
+                     * Optionally, you can specify if the sidebar items are collapsible. Default is true.
+                     */
+                    collapsible: true,
+                    
+                    /**
+                     * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
+                     */
+                    depth: 6,
+    
+                    /**
+                     * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
+                     */
+                    linkPrefix: '/api-reference/api/operations/',
+    
+                    /**
+                     * Optionally, you can specify a template for the sidebar items. You can see the default value
+                     * in `sidebarItemTemplate` function in the `useSidebar` composable.
+                     */
+                    //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
+                }),
+
                 ]
               }             
             ]

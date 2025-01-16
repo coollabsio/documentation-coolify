@@ -25,7 +25,7 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "transform-compose": "tsx docs/.vitepress/data/transform-compose.ts"
+    "transform-openapi": "tsx scripts/convert-openapi.ts"
   },
   "dependencies": {
     "@vueuse/core": "^12.2.0",
