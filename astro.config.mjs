@@ -353,6 +353,7 @@ export default defineConfig({
             { label: "Glance", link: "/services/glance" },
             { label: "Glances", link: "/services/glances" },
             { label: "Glitchtip", link: "/services/glitchtip" },
+            { label: "Gotenberg", link: "/services/gotenberg" },
             { label: "Grafana", link: "/services/grafana" },
             { label: "Grocy", link: "/services/grocy" },
             { label: "Heimdall", link: "/services/heimdall" },
