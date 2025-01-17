@@ -21,8 +21,8 @@ COPY --from=builder /app/docs/.vitepress/dist /usr/share/nginx/html/docs
 # Copy custom NGINX configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 8080 (default for unprivileged image, remap it to 80 during container runtime)
-EXPOSE 8080
+# Expose port 80
+EXPOSE 80
 
 # Start NGINX
 CMD ["nginx", "-g", "daemon off;"]
