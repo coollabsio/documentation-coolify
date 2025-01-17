@@ -461,6 +461,10 @@ export default defineConfig({
                   label: "Coolify Updates",
                   link: "/knowledge-base/coolify-updates",
                 },
+                {
+                  label: "Create Root User with Environment Variables",
+                  link: "/knowledge-base/server/create-root-user-with-environment-variables",
+                },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
