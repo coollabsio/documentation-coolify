@@ -156,10 +156,7 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
 
           <!-- Regular content -->
           <template v-else>
-            <div v-if="tab.content.message" class="flex items-start gap-2">
-              <span v-if="tab.content.message.icon" class="text-lg">{{ tab.content.message.icon }}</span>
-              <VPBadge :type="tab.content.message.type">{{ tab.content.message.value }}</VPBadge>
-            </div>
+
 
             <h4 v-if="tab.content.subtitle" class="font-medium text-lg">{{ tab.content.subtitle }}</h4>
 
@@ -178,6 +175,17 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
                 </template>
               </li>
             </ul>
+
+            <div v-if="tab.content?.message" class="flex items-start gap-2">
+              <!-- <VPBadge :type="tab.content.message.type">
+                <span v-if="tab.content.message.icon" class="text-lg">{{ tab.content.message.icon }}</span>
+                {{ tab.content.message.value }}
+              </VPBadge> -->
+
+              <Callout :type="tab.content?.message?.type">
+                {{ tab.content?.message?.value }}
+              </Callout>
+            </div>
           </template>
         </div>
       </template>

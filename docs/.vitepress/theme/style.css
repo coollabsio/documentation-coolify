@@ -136,6 +136,33 @@
   --vp-custom-block-success-bg: rgba(0, 47, 28, 0.8);
   --vp-custom-block-success-border: #4ade80;
   --vp-custom-block-success-text: #4ade80;
+
+  /* Custom Block Colors - Light Mode */
+  
+  /* Primary/Brand - Purple */
+  --vp-custom-block-tip-border: #7937f3;
+  --vp-custom-block-tip-text: #7937f3;
+  --vp-custom-block-tip-bg: rgba(121, 55, 243, 0.1);
+
+  /* Info - Blue */
+  --vp-custom-block-info-border: #0ea5e9 !important;
+  --vp-custom-block-info-text: #0ea5e9 !important;
+  --vp-custom-block-info-bg: rgba(14, 165, 233, 0.1) !important;
+
+  /* Warning - Yellow */
+  --vp-custom-block-warning-border: #eab308;
+  --vp-custom-block-warning-text: #eab308;
+  --vp-custom-block-warning-bg: rgba(234, 179, 8, 0.1);
+
+  /* Danger - Red */
+  --vp-custom-block-danger-border: #dc2626;
+  --vp-custom-block-danger-text: #dc2626;
+  --vp-custom-block-danger-bg: rgba(220, 38, 38, 0.1);
+
+  /* Success - Green */
+  --vp-custom-block-success-border: #22c55e;
+  --vp-custom-block-success-text: #22c55e;
+  --vp-custom-block-success-bg: rgba(34, 197, 94, 0.1);
 }
 
 /**
@@ -242,39 +269,32 @@
   --vp-c-brand-3: #B392F0;
   --vp-c-brand-soft: rgba(179, 146, 240, 0.16);
 
-  /* Custom Block Colors - Matching VitePress default theme */
-  --vp-custom-block-info-bg: rgba(0, 32, 47, 0.8);
-  --vp-custom-block-info-border: #0ea5e9;
-  --vp-custom-block-info-text: #0ea5e9;
+  /* Custom Block Colors - Dark Mode */
+  
+  /* Primary/Brand - Purple */
+  --vp-custom-block-tip-border: #9664f3;
+  --vp-custom-block-tip-text: #9664f3;
+  --vp-custom-block-tip-bg: rgba(150, 100, 243, 0.1);
 
-  --vp-custom-block-tip-bg: rgba(0, 32, 47, 0.8);
-  --vp-custom-block-tip-border: #79B8FF;
-  --vp-custom-block-tip-text: #79B8FF;
+  /* Info - Blue */
+  --vp-custom-block-info-border: #38bdf8 !important;
+  --vp-custom-block-info-text: #38bdf8 !important;
+  --vp-custom-block-info-bg: rgba(56, 189, 248, 0.1) !important;
 
-  /* Warning - Amber */
-  --vp-custom-block-warning-bg: rgba(47, 31, 0, 0.8);
-  --vp-custom-block-warning-border: #ffc517;
-  --vp-custom-block-warning-text: #ffc517;
+  /* Warning - Yellow */
+  --vp-custom-block-warning-border: #facc15;
+  --vp-custom-block-warning-text: #facc15;
+  --vp-custom-block-warning-bg: rgba(250, 204, 21, 0.1);
 
   /* Danger - Red */
-  --vp-custom-block-danger-bg: rgba(47, 0, 0, 0.8);
-  --vp-custom-block-danger-border: #ff6b6b;
-  --vp-custom-block-danger-text: #ff6b6b;
+  --vp-custom-block-danger-border: #ef4444;
+  --vp-custom-block-danger-text: #ef4444;
+  --vp-custom-block-danger-bg: rgba(239, 68, 68, 0.1);
 
-  /* Info - Grey/Purple */
-  --vp-custom-block-info-bg: rgba(30, 30, 36, 0.8);
-  --vp-custom-block-info-border: #B392F0;
-  --vp-custom-block-info-text: #B392F0;
-
-  /* Success - Brighter Green */
-  --vp-custom-block-success-bg: rgba(0, 47, 28, 0.8);
+  /* Success - Green */
   --vp-custom-block-success-border: #4ade80;
   --vp-custom-block-success-text: #4ade80;
-
-  /* Add custom callout colors for dark mode */
-  --vp-custom-block-callout-bg: rgba(0, 32, 47, 0.8);
-  --vp-custom-block-callout-border: #79B8FF;
-  --vp-custom-block-callout-text: #79B8FF;
+  --vp-custom-block-success-bg: rgba(74, 222, 128, 0.1);
 }
 
 /* Global link styling */
