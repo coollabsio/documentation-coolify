@@ -13,8 +13,14 @@ If you're experiencing issues with the latest version of Coolify, you can easily
   **Downgrading can introduce issues, so it is recommended to test the downgrade process in a staging environment before applying it to your production server.**
 :::
 
-## 1. Disable Auto Update
 
+The Downgrade process involves the following three steps:
+- [Disable Auto Update](#_1-disable-auto-update)
+- [Login to the Server via SSH](#_2-login-to-your-server-via-ssh)
+- [Execute the Downgrade Command](#_3-execute-the-downgrade-command)
+
+
+## 1. Disable Auto Update
 Before downgrading, it's important to disable the Auto Update feature to prevent Coolify from automatically upgrading again after you perform the downgrade.
 
 1. Log in as the root user (or any user who has access to the root or initial team).
