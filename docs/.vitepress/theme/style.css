@@ -163,6 +163,9 @@
   --vp-custom-block-success-border: #22c55e;
   --vp-custom-block-success-text: #22c55e;
   --vp-custom-block-success-bg: rgba(34, 197, 94, 0.1);
+
+  /* Modern monospace font stack */
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
 }
 
 /**
@@ -237,6 +240,10 @@
   --vp-c-text-1: #F2F2F2;
   --vp-c-text-2: #9A989D;
   --vp-c-text-3: #9A989D;
+  
+  /* Lighter code background in dark mode */
+  --vp-code-bg: #333338;
+  
   --vp-custom-block-tip-border: #0C4C69;
   --vp-custom-block-tip-text: #A7D2E8;
   --vp-custom-block-tip-bg: #0B2029;
@@ -304,8 +311,54 @@
   border-bottom: 1px solid var(--vp-c-brand);
 }
 
+/* Custom styling for links inside custom blocks/callouts */
+.custom-block.tip a { border-bottom-color: var(--vp-custom-block-tip-text); }
+.custom-block.info a { border-bottom-color: var(--vp-custom-block-info-text); }
+.custom-block.warning a { border-bottom-color: var(--vp-custom-block-warning-text); }
+.custom-block.danger a { border-bottom-color: var(--vp-custom-block-danger-text); }
+.custom-block.success a { border-bottom-color: var(--vp-custom-block-success-text); }
+
 /* Exception for navigation and sidebar links if needed */
 .vp-doc .nav-link a,
 .vp-doc .sidebar-link {
   border-bottom: none;
+}
+
+/* Force code element text color */
+code {
+  color: var(--vp-c-text-2) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.dark code {
+  color: #F2F2F2 !important;  /* Whiter text in dark mode */
+  transition: color 0.2s ease-in-out;
+}
+
+code:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.dark code:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Custom Block Colors - Light Mode */
+.custom-block.info {
+  --vp-custom-block-info-border: #0ea5e9 !important;
+  --vp-custom-block-info-text: #0ea5e9 !important;
+  --vp-custom-block-info-bg: rgba(14, 165, 233, 0.1) !important;
+}
+
+.custom-block.info a {
+  color: var(--vp-custom-block-info-text) !important;
+  border-bottom-color: var(--vp-custom-block-info-text) !important;
+  opacity: 1 !important;
+}
+
+/* Dark mode adjustments if needed */
+.dark .custom-block.info a {
+  color: var(--vp-custom-block-info-text) !important;
+  border-bottom-color: var(--vp-custom-block-info-text) !important;
+  opacity: 1 !important;
 }

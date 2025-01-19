@@ -145,9 +145,9 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
                 <li v-for="env in tab.content.service.envVars" 
                     :key="env.name" 
                     class="env-var flex items-start gap-2">
-                  <code class="text-sm px-2 py-1 bg-[var(--vp-c-bg-soft)] rounded shrink-0">{{ env.name }}</code>
+                  <code class="text-sm px-2 py-1 bg-[var(--vp-c-bg-soft)] rounded shrink-0 text-[var(--vp-c-text-2)]">{{ env.name }}</code>
                   <span v-if="env.value" class="text-sm text-[var(--vp-c-text-2)]">
-                    Default: <code class="px-1 bg-[var(--vp-c-bg-soft)] rounded">{{ env.value }}</code>
+                    Default: <code class="px-1 bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-2)]">{{ env.value }}</code>
                   </span>
                 </li>
               </ul>
@@ -166,11 +166,11 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
                   class="flex items-center gap-2">
                 <template v-if="item.icon && item.label">
                   <span class="text-lg">{{ item.icon }}</span>
-                  <strong>{{ item.label }}:</strong> 
+                  <span class="font-mono font-medium">{{ item.label }}:</span> 
                   <span>{{ item.value }}</span>
                 </template>
                 <template v-else-if="item.code">
-                  <code class="text-sm bg-[var(--vp-c-bg-soft)] px-2 py-1 rounded">{{ item.code }}</code>
+                  <code class="text-sm bg-[var(--vp-c-bg-soft)] px-2 py-1 rounded font-mono">{{ item.code }}</code>
                   <span>{{ item.description }}</span>
                 </template>
               </li>
