@@ -362,3 +362,130 @@ code:hover {
   border-bottom-color: var(--vp-custom-block-info-text) !important;
   opacity: 1 !important;
 }
+
+/* Code block container styling */
+.vp-doc div[class*='language-'] {
+  position: relative;
+  margin: 16px 0;
+  background-color: var(--vp-code-bg);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Copy button styling - both for main and nested code blocks */
+.vp-doc div[class*='language-'] > button.copy,
+.vp-doc div[class*='language-'] > button.copy-code,
+.vp-doc :deep(div[class*='language-']) > button.copy,
+.vp-doc :deep(div[class*='language-']) > button.copy-code {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: transparent;
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: var(--vp-c-text-2);
+  z-index: 3;
+}
+
+/* Show button on hover or when copied - for both main and nested */
+.vp-doc div[class*='language-']:hover > button.copy,
+.vp-doc div[class*='language-']:hover > button.copy-code,
+.vp-doc div[class*='language-'] > button.copy.copied,
+.vp-doc div[class*='language-'] > button.copy-code.copied,
+.vp-doc :deep(div[class*='language-']:hover) > button.copy,
+.vp-doc :deep(div[class*='language-']:hover) > button.copy-code,
+.vp-doc :deep(div[class*='language-']) > button.copy.copied,
+.vp-doc :deep(div[class*='language-']) > button.copy-code.copied {
+  opacity: 1;
+}
+
+.vp-doc div[class*='language-'] > button.copy:hover,
+.vp-doc div[class*='language-'] > button.copy-code:hover,
+.vp-doc :deep(div[class*='language-']) > button.copy:hover,
+.vp-doc :deep(div[class*='language-']) > button.copy-code:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Success state styling */
+.vp-doc div[class*='language-'] > button.copy.copied,
+.vp-doc div[class*='language-'] > button.copy-code.copied,
+.vp-doc :deep(div[class*='language-']) > button.copy.copied,
+.vp-doc :deep(div[class*='language-']) > button.copy-code.copied {
+  background-color: rgba(34, 197, 94, 0.1); /* Light green background */
+  color: rgb(34, 197, 94); /* Green text */
+}
+
+/* Hide the original icon when copied */
+.vp-doc [class*='language-'] > button.copy.copied > span,
+.vp-doc [class*='language-'] > button.copy-code.copied > span,
+.vp-doc :deep([class*='language-']) > button.copy.copied > span,
+.vp-doc :deep([class*='language-']) > button.copy-code.copied > span {
+  display: none;
+}
+
+/* Show checkmark icon when copied */
+.vp-doc [class*='language-'] > button.copy.copied::after,
+.vp-doc [class*='language-'] > button.copy-code.copied::after,
+.vp-doc :deep([class*='language-']) > button.copy.copied::after,
+.vp-doc :deep([class*='language-']) > button.copy-code.copied::after {
+  content: '✓';
+  color: rgb(34, 197, 94); /* Green checkmark */
+  font-size: 1.2em;
+}
+
+/* Single Copied label with animation */
+.vp-doc [class*='language-'] button.copy.copied::before,
+.vp-doc [class*='language-'] button.copy-code.copied::before,
+.vp-doc :deep([class*='language-']) button.copy.copied::before,
+.vp-doc :deep([class*='language-']) button.copy-code.copied::before {
+  content: 'Copied!';
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(20 184 166); /* Teal color */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.25s ease;
+  animation: copyLabel 1.5s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes copyLabel {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Language indicator styling */
+.vp-doc div[class*='language-'] .lang {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vp-c-text-3);
+  transition: color 0.2s;
+}
+
+/* Adjust copy button position when language indicator is present */
+.vp-doc div[class*='language-'] > button.copy,
+.vp-doc div[class*='language-'] > button.copy-code {
+  right: 40px;  /* Give space for language indicator */
+}
