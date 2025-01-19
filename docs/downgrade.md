@@ -29,7 +29,7 @@ Before downgrading, it's important to disable the Auto Update feature to prevent
 
 3. In the Settings menu, disable the **Auto Update** feature.
 
-<ZoomableImage src="/docs/public/images/get-started/upgrade-disable-auto-update.webp" />
+<ZoomableImage src="/docs/images/get-started/upgrade-disable-auto-update.webp" />
 
 ::: warning Important!
   Disabling auto-update is essential, as it ensures that Coolify doesn’t override your downgrade with a newer version.
