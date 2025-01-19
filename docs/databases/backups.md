@@ -2,7 +2,7 @@
 title: "Backups"
 ---
 
-# Backups
+# Backups <badge type="info" text="^1.9.0" />
 
 Scheduled database backups could be configured for PostgreSQL and for Coolify itself.
 

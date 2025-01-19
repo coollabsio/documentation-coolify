@@ -14,13 +14,14 @@ withDefaults(defineProps<Props>(), {
   </span>
 </template>
 
+
 <style>
 .VPBadge {
   display: inline-block;
   margin-left: 2px;
   border: 1px solid transparent;
   border-radius: 12px;
-  padding: 8px;
+  padding: 0 10px;
   line-height: 22px;
   font-size: 12px;
   font-weight: 500;
@@ -82,17 +83,5 @@ withDefaults(defineProps<Props>(), {
   border-color: var(--vp-badge-danger-border);
   color: var(--vp-badge-danger-text);
   background-color: var(--vp-badge-danger-bg);
-}
-
-.VPBadge.error {
-  border-color: var(--vp-badge-error-border);
-  color: var(--vp-badge-error-text);
-  background-color: var(--vp-badge-error-bg);
-}
-
-.VPBadge.success {
-  border-color: var(--vp-badge-success-border);
-  color: var(--vp-badge-success-text);
-  background-color: var(--vp-badge-success-bg);
 }
 </style>
