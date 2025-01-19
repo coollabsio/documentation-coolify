@@ -28,7 +28,7 @@ The automatic update feature is enabled by default, and Coolify will automatical
 ### Customizing Automatic Updates:
 If you'd like to disable the auto-update feature, you can do so by navigating to the Settings menu in your Coolify dashboard.
 
-<ZoomableImage src="/docs/public/images/get-started/upgrade-disable-auto-update.webp" />
+<ZoomableImage src="/docs/images/get-started/upgrade-disable-auto-update.webp" />
 
 ::: info 📌 Info
   Disabling automatic updates may be helpful if you want to test a new version on a staging environment first, or if you require more control over when updates are applied to your instance.
@@ -40,14 +40,14 @@ For users who want to stay up to date but prefer some control over when the upda
 
 ### How it works:
 If an update is available, you will see an Upgrade button in the Navigation bar within the Coolify interface.
-<ZoomableImage src="/docs/public/images/get-started/upgrade-button-ui.webp" />
+<ZoomableImage src="/docs/images/get-started/upgrade-button-ui.webp" />
 
 Clicking this button will start the upgrade process, allowing you to update Coolify to the latest version.
 
 ### Configuring Update Checks:
 You can configure how often Coolify checks for updates within the Settings menu. Coolify will notify you based on the interval you set, allowing you to choose the frequency of update checks (e.g., daily, weekly, etc.).
 
-<ZoomableImage src="/docs/public/images/get-started/upgrade-change-frequency.webp" />
+<ZoomableImage src="/docs/images/get-started/upgrade-change-frequency.webp" />
 
 ::: info 📌 Info
   This method is great for users who want to review the new version notes or test the upgrade process in a controlled manner before applying the update to their production environment.
