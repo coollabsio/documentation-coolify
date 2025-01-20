@@ -436,6 +436,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
+            { label: "Common Issues", link: "/knowledge-base/common-issues" },
 
             {
               label: "Internal",
