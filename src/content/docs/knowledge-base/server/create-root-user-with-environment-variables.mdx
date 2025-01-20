@@ -28,7 +28,7 @@ The following requirements must be met for the root user credentials in a produc
 - Must contain both uppercase and lowercase letters
 - Must contain at least one number
 - Must contain at least one special symbol
-- Must not be a commonly used or compromised password 
+- Must not be a commonly used or compromised password
 
 ## Automated Installation Method
 
@@ -42,12 +42,15 @@ The following requirements must be met for the root user credentials in a produc
    Execute the automated installation script with your prepared credentials:
 
    ```bash
-   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash ROOT_USERNAME=RootUser ROOT_USER_EMAIL=example@example.com ROOT_USER_PASSWORD=Password
+   env ROOT_USERNAME=RootUser ROOT_USER_EMAIL=example@example.com ROOT_USER_PASSWORD=Password bash -c 'curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash'
    ```
     > View the [Scripts Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
 
    <Aside type="note">
    The installation script must be run as `root`. If you're not logged in as `root`, the script will use `sudo` to elevate privileges.
+   ```bash
+   sudo -E env ROOT_USERNAME=RootUser ROOT_USER_EMAIL=example@example.com ROOT_USER_PASSWORD=Password bash -c 'curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash'
+   ```
    </Aside>
 
    <Aside type="caution">
@@ -79,7 +82,7 @@ The following requirements must be met for the root user credentials in a produc
    ROOT_USER_EMAIL=example@example.com
    ROOT_USER_PASSWORD=Password
    ```
-    
+
     <Aside type="caution">
     If any of the environment variables values contain a space, wrap the values in double quotes, for example `ROOT_USERNAME="Root User"`.
    </Aside>
