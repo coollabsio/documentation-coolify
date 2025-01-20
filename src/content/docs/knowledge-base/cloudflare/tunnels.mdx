@@ -183,7 +183,7 @@ To set up Coolify wildcard domains so that you can set `https://` in the url for
 
 3. Set SSL/TLS encryption mode to full (strict) in Cloudflare.
 
-4. Configure the tunnel to use `https` and then in the tunnel `Additional application settings -> TLS` set the Origin Server Name to be the root domain you want it to be (i.e - `yourdomain.com`)
+4. Configure the tunnel to use `https` and set the port to `443` instead of `80`. In the tunnel `Additional application settings -> TLS` set the Origin Server Name to be the root domain you want it to be (i.e - `yourdomain.com`)
 
     <Aside type="tip">
         You need to set the dropdown to be `https` before the TLS option appears
@@ -214,7 +214,7 @@ Let's say you configured the following `Public Hostnames` in Cloudflare:
 
 - `app.coolify.io` mapped to `localhost:8000`
 - `realtime.coolify.io` mapped to `localhost:6001`
-- `terminal.coolify.io` mapped to `localhost:6002`
+- `app.coolify.io/terminal/ws` mapped to `localhost:6002`
 
 After you installed Coolify, you need to add 3 lines your `.env` file, located in `/data/coolify/source` folder.
 

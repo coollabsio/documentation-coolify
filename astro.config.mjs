@@ -337,6 +337,7 @@ export default defineConfig({
             { label: "Docmost", link: "/services/docmost" },
             { label: "Docuseal", link: "/services/docuseal" },
             { label: "Dokuwiki", link: "/services/dokuwiki" },
+            { label: "Dozzle", link: "/services/dozzle" },
             { label: "Duplicati", link: "/services/duplicati" },
             { label: "Emby", link: "/services/emby" },
             { label: "Emby Stat", link: "/services/emby-stat" },
@@ -352,6 +353,7 @@ export default defineConfig({
             { label: "Glance", link: "/services/glance" },
             { label: "Glances", link: "/services/glances" },
             { label: "Glitchtip", link: "/services/glitchtip" },
+            { label: "Gotenberg", link: "/services/gotenberg" },
             { label: "Grafana", link: "/services/grafana" },
             { label: "Grocy", link: "/services/grocy" },
             { label: "Heimdall", link: "/services/heimdall" },
@@ -426,6 +428,7 @@ export default defineConfig({
             { label: "Whoogle", link: "/services/whoogle" },
             { label: "Windmill", link: "/services/windmill" },
             { label: "Wordpress", link: "/services/wordpress" },
+            { label: "Zipline", link: "/services/zipline" },
           ],
         },
         {
@@ -433,6 +436,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "FAQ", link: "/knowledge-base/faq" },
+            { label: "Common Issues", link: "/knowledge-base/common-issues" },
 
             {
               label: "Internal",
@@ -461,9 +465,14 @@ export default defineConfig({
                   label: "Coolify Updates",
                   link: "/knowledge-base/coolify-updates",
                 },
+                {
+                  label: "Create Root User with Environment Variables",
+                  link: "/knowledge-base/server/create-root-user-with-environment-variables",
+                },
                 { label: "Commands", link: "/knowledge-base/commands" },
                 { label: "Delete User", link: "/knowledge-base/delete-user" },
                 { label: "OAuth", link: "/knowledge-base/oauth" },
+                { label: "Change Localhost Key", link: "/knowledge-base/change-localhost-key" },
               ],
             },
             {
@@ -686,6 +695,10 @@ export default defineConfig({
                   label: "Wildcard Certificates",
                   link: "/knowledge-base/traefik/wildcard-certificates",
                 },
+                {
+                  label: "Protecting Services with Authentik",
+                  link: "/knowledge-base/traefik/protecting-services-with-authentik",
+                }
               ],
             },
           ],
