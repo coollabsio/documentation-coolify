@@ -401,9 +401,9 @@ export default defineConfig({
             text: 'Contribute',
             collapsed: true,
             items: [
-              { text: 'Coolify', link: '/contribute/coolify' },
-              { text: 'New Service', link: '/contribute/service' },
-              { text: 'Documentation', link: '/contribute/documentation' },
+              { text: 'Coolify', link: '/resource/contribute/coolify' },
+              { text: 'New Service', link: '/resource/contribute/service' },
+              { text: 'Documentation', link: '/resource/contribute/documentation' },
             ],
           },
         ],
