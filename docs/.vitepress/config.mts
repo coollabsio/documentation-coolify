@@ -63,18 +63,9 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Contribute',
-        collapsed: true,
-        items: [
-          { text: 'Coolify', link: '/contribute/coolify' },
-          { text: 'New Service', link: '/contribute/service' },
-          { text: 'Documentation', link: '/contribute/documentation' },
-        ],
-      },
-      {
         text: 'Applications',
         collapsed: true,
-       items: [
+        items: [
           { 
             text: 'Overview', 
             link: '/applications/index', 
@@ -406,6 +397,15 @@ export default defineConfig({
           { text: 'Team', link: '/resource/team' },
           { text: 'Support', link: '/support' },
           { text: 'Sponsors', link: '/resource/sponsors' },
+          {
+            text: 'Contribute',
+            collapsed: true,
+            items: [
+              { text: 'Coolify', link: '/contribute/coolify' },
+              { text: 'New Service', link: '/contribute/service' },
+              { text: 'Documentation', link: '/contribute/documentation' },
+            ],
+          },
         ],
       },
     ],
