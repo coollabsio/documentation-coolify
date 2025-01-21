@@ -15,4 +15,4 @@ It is an open-source, self-hostable alternative to platforms like Heroku, Netlif
 | **Quick Setup**        | Start hosting in minutes with minimal maintenance work required.                                                     |
 | **User-Friendly Interface** | Manage your entire infrastructure through a clean, simple UI designed for developers.                                |
 | **100% Open Source**   | Review the code, contribute to development, and help shape the future of the platform.                                |
-| **Active Community**   | Join a growing community of over 10,000 people on Discord and over 85,000 instances running Coolify.                  |
+| **Active Community**   | Join a growing community of over 12,000 people on Discord and over 123,000 instances running Coolify.                  |
