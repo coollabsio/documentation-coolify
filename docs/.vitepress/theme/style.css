@@ -489,3 +489,29 @@ code:hover {
 .vp-doc div[class*='language-'] > button.copy-code {
   right: 40px;  /* Give space for language indicator */
 }
+
+/* Custom Block Colors - Light Mode */
+.custom-block.success {
+  --vp-custom-block-success-border: #22c55e;
+  --vp-custom-block-success-text: #22c55e;
+  --vp-custom-block-success-bg: rgba(34, 197, 94, 0.1);
+}
+
+/* Dark mode adjustments */
+.dark .custom-block.success {
+  --vp-custom-block-success-border: #4ade80;
+  --vp-custom-block-success-text: #4ade80;
+  --vp-custom-block-success-bg: rgba(74, 222, 128, 0.1);
+}
+
+/* Success container styles */
+.custom-block.success {
+  border: 1px solid var(--vp-custom-block-success-border);
+  color: var(--vp-custom-block-success-text);
+  background-color: var(--vp-custom-block-success-bg);
+}
+
+.custom-block.success a {
+  color: var(--vp-custom-block-success-text);
+  border-bottom-color: var(--vp-custom-block-success-text);
+}

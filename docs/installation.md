@@ -9,7 +9,7 @@ The following instructions are for installing Coolify if you decide to self-host
 
 
 ## Self-hosted Installation
-::: tip ⚡️ Quick Installation (recommended):
+::: success ⚡️ Quick Installation (recommended):
   ``` sh
    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
   ```

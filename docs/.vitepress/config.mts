@@ -3,6 +3,7 @@ import yaml from 'vite-plugin-yaml'
 import { defineConfig } from 'vitepress'
 import { useSidebar, useOpenapi } from 'vitepress-openapi'
 import spec from '../public/openapi.json' assert { type: 'json' }
+import container from 'markdown-it-container'
 
 const sidebar = useSidebar({ spec, collapsible: true })
 
@@ -422,7 +423,27 @@ export default defineConfig({
     
   },
   
-  markdown: {},
+  markdown: {
+    config: (md) => {
+      md.use(container, 'success', {
+        validate: (params) => {
+          return params.trim().match(/^success\s*(.*)$/)
+        },
+        render: (tokens, idx) => {
+          const m = tokens[idx].info.trim().match(/^success\s+(.*)$/)
+          if (tokens[idx].nesting === 1) {
+            // opening tag
+            return `<div class="custom-block success">${
+              m ? `<p class="custom-block-title">${m[1]}</p>` : ''
+            }\n`
+          } else {
+            // closing tag
+            return '</div>\n'
+          }
+        }
+      })
+    }
+  },
 
   rewrites: {},
 
