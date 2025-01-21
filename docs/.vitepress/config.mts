@@ -63,18 +63,9 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Contribute',
-        collapsed: true,
-        items: [
-          { text: 'Coolify', link: '/contribute/coolify' },
-          { text: 'New Service', link: '/contribute/service' },
-          { text: 'Documentation', link: '/contribute/documentation' },
-        ],
-      },
-      {
         text: 'Applications',
         collapsed: true,
-       items: [
+        items: [
           { 
             text: 'Overview', 
             link: '/applications/index', 
@@ -166,9 +157,47 @@ export default defineConfig({
         collapsed: true,
         items: [
           { 
-            text: 'FAQ', 
-            link: '/knowledge-base/faq', 
+            text: 'Overview', 
+            link: '/knowledge-base/overview', 
             items: [
+              { 
+                text: 'Common Issues',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'Applications', 
+                    link: '/knowledge-base/common-issues/applications'
+                  },
+                  {
+                    text: 'Backup', 
+                    link: '/knowledge-base/common-issues/backup'
+                  },
+                  {
+                    text: 'Cloudflare', 
+                    link: '/knowledge-base/common-issues/cloudflare'
+                  },
+                  {
+                    text: 'Docker', 
+                    link: '/knowledge-base/common-issues/docker'
+                  },
+                  {
+                    text: 'Databases', 
+                    link: '/knowledge-base/common-issues/databases'
+                  },
+                  {
+                    text: 'Services', 
+                    link: '/knowledge-base/common-issues/services'
+                  },
+                  {
+                    text: 'Servers', 
+                    link: '/knowledge-base/common-issues/servers'
+                  },
+                  {
+                    text: 'Proxy', 
+                    link: '/knowledge-base/common-issues/proxy'
+                  }
+                ] 
+              },
               { 
                 text: 'Internal',
                 collapsed: true,
@@ -283,6 +312,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: 'Tunnels', link: '/knowledge-base/cloudflare/tunnels' },
+                  { text: 'Origin Certificate', link: '/knowledge-base/cloudflare/origin-cert' },
                 ] 
               },
               { 
@@ -368,6 +398,24 @@ export default defineConfig({
           { text: 'Team', link: '/resource/team' },
           { text: 'Support', link: '/support' },
           { text: 'Sponsors', link: '/resource/sponsors' },
+          {
+            text: 'Contribute',
+            collapsed: true,
+            items: [
+              { text: 'Coolify', link: '/resource/contribute/coolify' },
+              { text: 'New Service', link: '/resource/contribute/service' },
+              { text: 'Documentation', link: '/resource/contribute/documentation' },
+            ],
+          },
+          {
+            text: 'Changelog',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/resource/changelog/overview' },
+              { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
+              { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
+            ],
+          },
         ],
       },
     ],
