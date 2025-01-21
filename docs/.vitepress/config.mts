@@ -166,9 +166,47 @@ export default defineConfig({
         collapsed: true,
         items: [
           { 
-            text: 'FAQ', 
-            link: '/knowledge-base/faq', 
+            text: 'Overview', 
+            link: '/knowledge-base/overview', 
             items: [
+              { 
+                text: 'Common Issues',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'Applications', 
+                    link: '/knowledge-base/common-issues/applications'
+                  },
+                  {
+                    text: 'Backup', 
+                    link: '/knowledge-base/common-issues/backup'
+                  },
+                  {
+                    text: 'Cloudflare', 
+                    link: '/knowledge-base/common-issues/cloudflare'
+                  },
+                  {
+                    text: 'Docker', 
+                    link: '/knowledge-base/common-issues/docker'
+                  },
+                  {
+                    text: 'Databases', 
+                    link: '/knowledge-base/common-issues/databases'
+                  },
+                  {
+                    text: 'Services', 
+                    link: '/knowledge-base/common-issues/services'
+                  },
+                  {
+                    text: 'Servers', 
+                    link: '/knowledge-base/common-issues/servers'
+                  },
+                  {
+                    text: 'Proxy', 
+                    link: '/knowledge-base/common-issues/proxy'
+                  }
+                ] 
+              },
               { 
                 text: 'Internal',
                 collapsed: true,
