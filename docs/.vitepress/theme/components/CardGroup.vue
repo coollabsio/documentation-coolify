@@ -1,27 +1,17 @@
 <template>
-    <div class="grid w-full gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl2:grid-cols-4">
-        <template v-for="(card, i) in cards" :key="i">
-            <Card 
-                :title="card.title" 
-                :image-size="card.imageSize" 
-                :image="card.image" 
-                :imageAlt="card.imageAlt" 
-            />
-        </template>
+    <div class="grid w-full gap-4" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <Card
+            v-for="(card, i) in cards" :key="i"
+            :title="card.title" 
+            :image-size="card.imageSize" 
+            :image="card.image" 
+            :imageAlt="card.imageAlt" 
+            :link="card.url"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-    columns: number
-    cards: {
-        title: string
-        image: string
-        imageAlt: string
-        imageSize: 'small' | 'medium' | 'large'
-    }[]
-}>()
-
 // TODO: Relocate this cards object once we can directly use the <script setup> in overview.md, this seems to break the page at the moment 
 // see /docs/content/company/teams.md for the desired pattern.
 const cards = [

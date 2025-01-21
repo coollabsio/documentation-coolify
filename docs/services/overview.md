@@ -12,7 +12,7 @@ You can host ANY service with Coolify that could be containerized.
 
 Click the below cards to know more about the services.
 
-<CardGroup :columns="3" :cards="cards" />
+<CardGroup :columns="3" />
 
 All services are open source and self-hostable.
 
