@@ -312,6 +312,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: 'Tunnels', link: '/knowledge-base/cloudflare/tunnels' },
+                  { text: 'Origin Certificate', link: '/knowledge-base/cloudflare/origin-cert' },
                 ] 
               },
               { 
@@ -411,7 +412,6 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Overview', link: '/resource/changelog/overview' },
-              // Update links to the page later after creating them
               { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
               { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
             ],
