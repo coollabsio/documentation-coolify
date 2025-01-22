@@ -55,7 +55,7 @@ You’ll be asked to choose a private key type, hostnames, and certificate valid
   
   For example, it works for **`coolify.shadowarcanist.com`** but not **`www.coolify.shadowarcanist.com`**. 
   
-  To cover multiple levels, you'll need to purchase the [Advanced Certificate Manager](https://www.cloudflare.com/application-services/products/advanced-certificate-manager/)
+  To cover multiple levels, you'll need to purchase the [Advanced Certificate Manager ↗](https://www.cloudflare.com/application-services/products/advanced-certificate-manager/)
 :::
 
 3. Set the certificate validity to **15 years**.
@@ -317,11 +317,11 @@ Now you’re done! Your server is set up to use the Cloudflare Origin Certificat
 
 
 ## Credits
-The header image is designed using icons from [Flaticon](https://www.flaticon.com/). 
+The header image is designed using icons from [Flaticon ↗](https://www.flaticon.com/). 
 Links to each icon can be found below:
-- [Medal icon](https://www.flaticon.com/free-icon/medal_14468558) by [Vlad Szirka](https://www.flaticon.com/authors/vlad-szirka)
-- [Award icon](https://www.flaticon.com/free-icon/award_15218157) by [explanaicon](https://www.flaticon.com/authors/explanaicon)
-- [Worldwide icon](https://www.flaticon.com/free-icon/worldwide_870169) by [Freepik](https://www.flaticon.com/authors/freepik)
-- [Lock icon](https://www.flaticon.com/free-icon/lock_2089784) by [Those Icons](https://www.flaticon.com/authors/those-icons)
-- [Browser icon](https://www.flaticon.com/free-icon/browser_331190) by [Alfredo Hernandez](https://www.flaticon.com/authors/alfredo-hernandez)
-- [Database icon](https://www.flaticon.com/free-icon/database_8028666) by [Tanah Basah](https://www.flaticon.com/authors/tanah-basah)
+- [Medal icon ↗](https://www.flaticon.com/free-icon/medal_14468558) by [Vlad Szirka ↗](https://www.flaticon.com/authors/vlad-szirka)
+- [Award icon ↗](https://www.flaticon.com/free-icon/award_15218157) by [explanaicon ↗](https://www.flaticon.com/authors/explanaicon)
+- [Worldwide icon ↗](https://www.flaticon.com/free-icon/worldwide_870169) by [Freepik ↗](https://www.flaticon.com/authors/freepik)
+- [Lock icon ↗](https://www.flaticon.com/free-icon/lock_2089784) by [Those Icons ↗](https://www.flaticon.com/authors/those-icons)
+- [Browser icon ↗](https://www.flaticon.com/free-icon/browser_331190) by [Alfredo Hernandez ↗](https://www.flaticon.com/authors/alfredo-hernandez)
+- [Database icon ↗](https://www.flaticon.com/free-icon/database_8028666) by [Tanah Basah ↗](https://www.flaticon.com/authors/tanah-basah)

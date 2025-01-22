@@ -3,7 +3,7 @@ title: Uninstalling Coolify
 ---
 
 # Uninstalling Coolify
-If you're using [Coolify Cloud](https://coolify.io/pricing/), you don't need to uninstall Coolify, as the instance is hosted on servers managed by the [core team](/resource/team). To stop using Coolify Cloud, simply head over to the **Billing** page and cancel your subscription.
+If you're using [Coolify Cloud ↗](https://coolify.io/pricing/), you don't need to uninstall Coolify, as the instance is hosted on servers managed by the [Core Team ↗](/resource/team). To stop using Coolify Cloud, simply head over to the **Billing** page and cancel your subscription.
 
 The following instructions are for those who are **self-hosting** Coolify and wish to uninstall it from their server.
 

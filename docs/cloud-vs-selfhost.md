@@ -5,7 +5,7 @@ title: Coolify Cloud vs. Self-Hosting
 
 # Choosing Your Way to Use Coolify
 There are 2 ways to use coolify:
-- [Coolify Cloud](https://coolify.io/pricing/) (starts at $5/mo)
+- [Coolify Cloud ↗](https://coolify.io/pricing/) (starts at $5/mo)
 - **Self Host Coolify** (fully free forever)
 
 ## Coolify Cloud

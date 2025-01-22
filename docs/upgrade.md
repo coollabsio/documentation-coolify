@@ -4,7 +4,7 @@ title: Upgrading Coolify
 
 # Upgrading Coolify 
 
-If you're using [Coolify Cloud](https://coolify.io/pricing/), updates are managed by the [Coolify core team](/resource/team), so you don't need to worry about them. The following instructions are for those who are self-hosting Coolify.
+If you're using [Coolify Cloud ↗](https://coolify.io/pricing/), updates are managed by the [Coolify Core Team ↗](/resource/team), so you don't need to worry about them. The following instructions are for those who are self-hosting Coolify.
 
 There are three ways to upgrade your self-hosted instance:
 
@@ -23,7 +23,7 @@ There are three ways to upgrade your self-hosted instance:
 Coolify automatically checks for new updates and will upgrade your instance to the latest version as soon as it becomes available. This ensures that your instance remains up to date without requiring any manual intervention.
 
 ### How it works:
-The automatic update feature is enabled by default, and Coolify will automatically pull the latest version from the [official repository](https://github.com/orgs/coollabsio/packages?repo_name=coolify) whenever a new version is released. Once the update is detected, the Coolify will begin the upgrade process without you needing to take any action.
+The automatic update feature is enabled by default, and Coolify will automatically pull the latest version from the [official repository ↗](https://github.com/orgs/coollabsio/packages?repo_name=coolify) whenever a new version is released. Once the update is detected, the Coolify will begin the upgrade process without you needing to take any action.
 
 ### Customizing Automatic Updates:
 If you'd like to disable the auto-update feature, you can do so by navigating to the Settings menu in your Coolify dashboard.
@@ -62,7 +62,7 @@ To manually upgrade your Coolify instance, open the terminal on your server and 
 ```sh
   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 ```
-This command will download and execute the official [Coolify installation script](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh). The script will check for the latest version and perform the necessary upgrade steps.
+This command will download and execute the official [Coolify installation script ↗](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh). The script will check for the latest version and perform the necessary upgrade steps.
 
 ### What the Script Does:
-The script automatically downloads the latest version of Coolify from the [official repository](https://github.com/orgs/coollabsio/packages?repo_name=coolify) and installs it over your current installation.
+The script automatically downloads the latest version of Coolify from the [official repository ↗](https://github.com/orgs/coollabsio/packages?repo_name=coolify) and installs it over your current installation.

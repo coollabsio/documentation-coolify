@@ -36,7 +36,7 @@ You need access to a server that supports SSH connections. This can be:
 - A VPS (Virtual Private Server)
 - A Dedicated Server
 - A Virtual Machine (VM) in Proxmox
-- A Raspberry Pi (check compatibility in the [Raspberry Pi OS Setup Guide]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites ))
+- A Raspberry Pi (check compatibility in the [Raspberry Pi OS Setup Guide ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites ))
 - Any other server with SSH access
 
 :::tip 📝 Note:
@@ -44,7 +44,7 @@ You need access to a server that supports SSH connections. This can be:
 :::
 
 :::info 💡 Tip:
-  If you don’t have a server provider yet, we recommend using [Hetzner](https://coolify.io/hetzner). You can use our [referral link](https://coolify.io/hetzner) to help support the project.
+  If you don’t have a server provider yet, we recommend using [Hetzner ↗](https://coolify.io/hetzner). You can use our [referral link ↗](https://coolify.io/hetzner) to help support the project.
 :::
 
 ---
@@ -68,7 +68,7 @@ Coolify supports 64-bit architectures only, including:
 - ARM64
 
 ::: warning ⚠️ Caution for Raspberry Pi users: 
-  Make sure you use the 64-bit version of Raspberry Pi OS (Raspbian). Check out our [Raspberry Pi OS Setup Guide]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites ) for more details.
+  Make sure you use the 64-bit version of Raspberry Pi OS (Raspbian). Check out our [Raspberry Pi OS Setup Guide ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/how-to/raspberry-pi-os#prerequisites ) for more details.
 :::
 
 ---
@@ -122,8 +122,8 @@ Applications like Supabase, Appwrite, or Posthog require far more resources than
 
 ## Installation Methods
 There are **two ways** to install Coolify:
-- [Quick Installation](#quick-installation-recommended) (Recommended)
-- [Manual Installation](#manual-installation)
+- [Quick Installation ↗](#quick-installation-recommended) (Recommended)
+- [Manual Installation ↗](#manual-installation)
 
 We highly recommend using the **Quick Installation** method as it automates the setup and reduces the chances of errors.
 
@@ -133,9 +133,9 @@ We highly recommend using the **Quick Installation** method as it automates the 
 This method is the easiest and fastest way to install Coolify, as it handles everything automatically.
 
 #### 1. Prepare Your Server
-- Log in as the root user ([non-root]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/non-root-user ) users are not fully supported yet).
-- Configure SSH by following the [SSH Settings Configuration Guide]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/openssh#ssh-settings-configuration ).
-- Configure the required firewall ports using the [Firewall Guide]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/firewall ) (advanced users can configure this differently).
+- Log in as the root user ([non-root ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/non-root-user ) users are not fully supported yet).
+- Configure SSH by following the [SSH Settings Configuration Guide ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/openssh#ssh-settings-configuration ).
+- Configure the required firewall ports using the [Firewall Guide ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/firewall ) (advanced users can configure this differently).
 - Ensure curl is installed (it’s pre-installed on most systems).
 
 #### 2. Run the Installation Script
@@ -144,7 +144,7 @@ Once your server is prepared, run the following script to install Coolify:
 ```sh
   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 ```
-View the [Script's Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
+View the [Script's Source Code ↗](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
 
 ::: success Tip: 
   If you're not logged in as the root user, run the script with sudo:
@@ -154,7 +154,7 @@ View the [Script's Source Code](https://github.com/coollabsio/coolify/blob/main/
   ```
 <br />
 
-  You can also set up the first admin account directly during the installation. For details, see: [Create Root User with Environment Variables](LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/create-root-user-with-environment-variables/)
+  You can also set up the first admin account directly during the installation. For details, see: [Create Root User with Environment Variables ↗](LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/create-root-user-with-environment-variables/)
 :::
 
 #### 3. Access Coolify
@@ -191,9 +191,9 @@ After installation, the script will display the Coolify URL (ex: `http://203.0.1
 This method gives you more control over the installation process, but it requires more steps.
 
 #### Prerequisites
-- **SSH**: Make sure SSH is enabled and you can connect to your server as the root user: [more details here]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/non-root-user).
+- **SSH**: Make sure SSH is enabled and you can connect to your server as the root user: [more details here ↗]( LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/non-root-user).
 - **curl**: Ensure curl is installed on your server.
-- **Docker Engine**: Follow the official [Docker Engine Installation](https://docs.docker.com/engine/install/#server) guide to install Docker (version 24+).
+- **Docker Engine**: Follow the official [Docker Engine Installation ↗](https://docs.docker.com/engine/install/#server) guide to install Docker (version 24+).
 
 ::: warning ⚠️ Caution: 
   Docker installed via snap is not supported!

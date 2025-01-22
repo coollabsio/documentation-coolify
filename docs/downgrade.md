@@ -3,7 +3,7 @@ title: Downgrading Coolify
 ---
 
 # Downgrading Coolify
-If you're using [Coolify Cloud](https://coolify.io/pricing/), please note that you **cannot** downgrade the version of Coolify, as the cloud instances are managed by the [core team](/resource/team). If you are facing any issues, please contact [support](/support). 
+If you're using [Coolify Cloud ↗](https://coolify.io/pricing/), please note that you **cannot** downgrade the version of Coolify, as the cloud instances are managed by the [Core Team ↗](/resource/team). If you are facing any issues, please contact [support ↗](/support). 
 
 The following instructions are for those who are self-hosting Coolify and wish to downgrade their instance.
 
@@ -50,7 +50,7 @@ Replace `4.0.0-beta.369` with the version number you want to downgrade to.
 For example, you can downgrade to `4.0.0-beta.333` or any previous version.
 
 ::: info 📌 Info
-  Double-check the version number you are specifying to ensure you are downgrading to the correct version. You can check the Coolify [release notes](https://github.com/coollabsio/coolify/releases) for version details.
+  Double-check the version number you are specifying to ensure you are downgrading to the correct version. You can check the Coolify [release notes ↗](https://github.com/coollabsio/coolify/releases) for version details.
 :::
 
 
