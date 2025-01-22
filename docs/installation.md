@@ -98,8 +98,8 @@ The resources you need (CPU, memory, and storage) depend on your usage. If you'r
 Applications like Supabase, Appwrite, or Posthog require far more resources than hosting a simple static site.
 
 
-::: tip ⚙️ Example Setup: 
-  I’m hosting most of my production applications on a server with:
+::: success ⚙️ Example Setup: 
+  Bob is hosting most of his production applications on a server with:
 
   - **Memory**: 8GB (average usage: 3.5GB)
   - **CPU**: 4 cores (average usage: 20-30%)
@@ -146,20 +146,27 @@ Once your server is prepared, run the following script to install Coolify:
 ```
 View the [Script's Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
 
-::: tip Note: 
+::: success Tip: 
   If you're not logged in as the root user, run the script with sudo:
 
   ```sh
   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
   ```
+<br />
+
+  You can also set up the first admin account directly during the installation. For details, see: [Create Root User with Environment Variables](LINK-TO-BE-UPDATED-AFTER-CREATING-PAGE-ON-THIS-DOC-https://coolify.io/docs/knowledge-base/server/create-root-user-with-environment-variables/)
 :::
 
 #### 3. Access Coolify
-After installation, the script will display the Coolify URL in the terminal output. 
+After installation, the script will display the Coolify URL (ex: `http://203.0.113.1:8000`) in the terminal output. 
 
-For security, it’s recommended to use the private IP of your server to access Coolify (you will need a VPN setup to use this method).
+::: danger ⚠️ CAUTION!
+ **After installing Coolify, the URL redirects to a registration page to set up the first admin account. It's important to create this account immediately.** 
+  
+  **If someone else access the registration page before you, they could create the admin account and gain full root access to your server.**
+:::
 
-::: tip Note: 
+::: info Note: 
   If you installed Coolify on a Raspberry Pi in your home network, use the private IP address to access Coolify, as the public IP may not work.
 :::
 
