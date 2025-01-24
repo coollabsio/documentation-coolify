@@ -317,8 +317,8 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                       { text: 'Overview', link: '/knowledge-base/cloudflare/tunnels/overview' },
-                      { text: 'Single Resource', link: '/knowledge-base/cloudflare/tunnels/single-resource' },
                       { text: 'All Resources', link: '/knowledge-base/cloudflare/tunnels/all-resource' },
+                      { text: 'Single Resource', link: '/knowledge-base/cloudflare/tunnels/single-resource' },
                       { text: 'Server SSH Access', link: '/knowledge-base/cloudflare/tunnels/server-ssh' },
                       { text: 'Full TLS/HTTPS', link: '/knowledge-base/cloudflare/tunnels/full-tls' },
                       { text: 'Manual Setup', link: '/knowledge-base/cloudflare/tunnels/manual-setup' },
