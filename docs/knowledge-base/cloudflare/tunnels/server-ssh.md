@@ -26,8 +26,15 @@ To use Coolify's automated setup for a Cloudflare Tunnel:
 
 ## Before We Start
 - We assume you already have a server running Coolify and you are looking to set up a tunnel to connect a different server to Coolify.
-
 - If you are trying to set up a tunnel on the server where Coolify is running and you don’t have any other servers to connect, you don’t need a SSH tunnel. Coolify already has full root access to the server it’s running on, so there’s no need for an SSH tunnel in this case.
+
+
+## How It Works?
+A simple high-level overview diagram to give you a visual idea of how this works:
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/server-ssh/high-level-diagram.webp" />
+
+---
 
 ### Quick Links to Important Sections:
 - [Create a Private SSH Key](#_1-create-a-private-ssh-key)
