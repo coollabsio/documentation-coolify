@@ -29,13 +29,13 @@ Below are some of the key features and ways you can use Traefik with Coolify:
 
 1. [Basic Authentication](/knowledge-base/proxy/traefik/basic-auth) -> Add username and password protection to your applications.  
 
-2. [Custom SSL Certificates](/knowledge-base/proxy/traefik/custom-ssl) -> Use your own SSL certificates instead of automatically generated ones.  
+2. [Custom SSL Certificates](/knowledge-base/proxy/traefik/custom-ssl-certs) -> Use your own SSL certificates instead of automatically generated ones.  
 
 3. [Dashboard](/knowledge-base/proxy/traefik/dashboard) -> Enable Traefik’s built-in dashboard for real-time monitoring and insights.  
 
 4. [Dynamic Configuration](/knowledge-base/proxy/traefik/dynamic-config) -> Manage dynamic configuration changes like routing rules or middlewares.  
 
-5. [Health Checks](/knowledge-base/proxy/traefik/health-checks) -> Configure health checks to ensure your applications are running smoothly.  
+5. [Health Checks](/knowledge-base/proxy/traefik/healthchecks) -> Configure health checks to ensure your applications are running smoothly.  
 
 6. [Load Balancing](/knowledge-base/proxy/traefik/load-balancing) -> Distribute traffic across multiple app instances for better performance.  
 
