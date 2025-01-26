@@ -3,7 +3,7 @@ title: "Traefik Overview"
 ---
 
 # Traefik Proxy
-[Traefik ↗](https://doc.traefik.io/traefik/) is a modern, open-source reverse proxy and load balancer designed to handle incoming requests and route them to the appropriate services. It’s widely used in the container ecosystem, making it a perfect fit for projects running on Coolify.  
+[Traefik ↗](https://traefik.io/) is a modern, open-source reverse proxy and load balancer designed to handle incoming requests and route them to the appropriate services. It’s widely used in the container ecosystem, making it a perfect fit for projects running on Coolify.  
 
 By default, Coolify uses Traefik as its proxy, enabling easy management of routing, SSL certificates, and more, without requiring deep technical expertise.  
 
