@@ -328,17 +328,31 @@ export default defineConfig({
                 ] 
               },
               { 
-                text: 'Traefik',
+                text: 'Proxy',
                 collapsed: true,
                 items: [
-                  { text: 'Basic Auth Middleware', link: '/knowledge-base/proxy/traefik/basic-auth' },
-                  { text: 'Custom SSL Certificates', link: '/knowledge-base/proxy/traefik/custom-ssl-certs' },
-                  { text: 'Dashboard', link: '/knowledge-base/proxy/traefik/dashboard' },
-                  { text: 'Dynamic Configurations', link: '/knowledge-base/proxy/traefik/dynamic-configurations' },
-                  { text: 'Healthcheck', link: '/knowledge-base/proxy/traefik/healthcheck' },
-                  { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
-                  { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
-                  { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certificates' }
+                  { 
+                    text: 'Traefik',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/knowledge-base/proxy/traefik/overview' },
+                      { text: 'Basic Auth', link: '/knowledge-base/proxy/traefik/basic-auth' },
+                      { text: 'Custom SSL Certificates', link: '/knowledge-base/proxy/traefik/custom-ssl-certs' },
+                      { text: 'Dashboard', link: '/knowledge-base/proxy/traefik/dashboard' },
+                      { text: 'Dynamic Configurations', link: '/knowledge-base/proxy/traefik/dynamic-configurations' },
+                      { text: 'Healthcheck', link: '/knowledge-base/proxy/traefik/healthcheck' },
+                      { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
+                      { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
+                      { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certificates' }
+                    ] 
+                  },
+                  { 
+                    text: 'Caddy',
+                    collapsed: true,
+                    items: [
+                      { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
+                    ] 
+                  },
                 ] 
               },
             ] 
