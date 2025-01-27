@@ -119,7 +119,7 @@ Once the validation is completed, your server page will look like this:
 
 
 ## 5. Create a Cloudflare Tunnel
-To create a Cloudflare Tunnel, first log in to your Cloudflare account and go to the [Zero Trust ↗](https://dash.cloudflare.com/sign-up) page (located in the sidebar on the homepage of the dashboard)..
+To create a Cloudflare Tunnel, first log in to your Cloudflare account and go to the [Zero Trust ↗](https://one.dash.cloudflare.com/) page.
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/server-ssh/7.webp" />
 
