@@ -3,7 +3,7 @@ title: "Access Single Resource via Cloudflare Tunnels"
 ---
 
 # Access Single Resource via Cloudflare Tunnels
-Accessing an Resource deployed on Coolify using a Cloudflare Tunnel allows you to securely reach your app without exposing your server’s IP address or without having a public ip for the server. 
+Accessing an Resource deployed on Coolify using a Cloudflare Tunnel allows you to securely reach your app without exposing your server’s IP address or without having a Public IP address for the server. 
 
 
 ## Who this is for?
@@ -93,7 +93,7 @@ Copy the install command, which contains the token for your tunnel (token starts
 
 Scroll down until you see the **Next** button, then click it.
 
-Then, you will be prompted to add a hostname. This is where we expose our SSH tunnel.
+Then, you will be prompted to add a hostname.
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/single-resource/7.webp" />
 
