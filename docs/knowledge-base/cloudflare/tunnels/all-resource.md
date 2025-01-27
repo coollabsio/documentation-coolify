@@ -36,9 +36,10 @@ A simple high-level overview diagram to give you a visual idea of how this works
 
 ### Quick Links to Important Sections:
 - [Create a Cloudflare Tunnel](#_1-create-a-cloudflare-tunnel)
-- [Setup Cloudflare Tunnel on Coolify](#_2-setup-cloudflare-tunnel-on-coolify)
-- [Start Coolify Proxy](#_3-start-coolify-proxy)
-- [Configure Your Resource to Use the Tunnel Domain](#_4-configure-your-resource-to-use-the-tunnel-domain)
+- [Setup Encryption mode on Cloudflare](#_2-setup-encryption-mode-on-cloudflare)
+- [Setup Cloudflare Tunnel on Coolify](#_3-setup-cloudflare-tunnel-on-coolify)
+- [Start Coolify Proxy](#_4-start-coolify-proxy)
+- [Configure Your Resource to Use the Tunnel Domain](#_5-configure-your-resource-to-use-the-tunnel-domain)
 - [How to use Mutiple Different Domains](#how-to-use-mutiple-different-domains)
 - [Known issues and Solutions](#known-issues-and-solutions)
 
@@ -92,7 +93,21 @@ Then, you will be prompted to add a hostname.
 6. After filling in the details, click the **Save Tunnel** button.
 
 
-## 2. Setup Cloudflare Tunnel on Coolify
+## 2. Setup Encryption mode on Cloudflare
+To set up encryption on Cloudflare, follow these steps:
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/15.webp" />
+
+1. Go to **SSL/TLS** in Cloudflare.
+2. Select **Overview**.
+3. Click **Configure** button
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/16.webp" />
+
+Choose **Full** as the encryption mode.
+
+
+## 3. Setup Cloudflare Tunnel on Coolify
 To set up the tunnel on Coolify, follow these steps:
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/7.webp" />
@@ -108,7 +123,7 @@ You will see many options to deploy a new app. Search for Cloudflared and click 
 Go to the **Environment Variables** page, enter your tunnel token, and deploy the Cloudflared app. This token was copied in [Step 1](#_1-create-a-cloudflare-tunnel)
 
 
-## 3. Start Coolify Proxy
+## 4. Start Coolify Proxy
 To start the Coolify proxy, follow these steps:
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/10.webp" />
@@ -122,7 +137,7 @@ To start the Coolify proxy, follow these steps:
   The Coolify proxy is used to route traffic to apps running on your server. This eliminates the need to create new hostnames on the Cloudflare tunnel every time you deploy a new app.  
 :::
 
-## 4. Configure Your Resource to Use the Tunnel Domain
+## 5. Configure Your Resource to Use the Tunnel Domain
 Enter the domain you want to use for your resource/app and deploy your resource.
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/11.webp" />
