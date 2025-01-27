@@ -145,7 +145,9 @@ Copy the install command, which contains the token for your tunnel (token starts
 
 Scroll down until you see the **Next** button, then click it.
 
-Then, you will be prompted to add a hostname. This is where we expose our SSH tunnel.<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/server-ssh/12.webp" />
+Then, you will be prompted to add a hostname. This is where we expose our SSH tunnel.
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/server-ssh/12.webp" />
 
 1. **Subdomain** - (Optional) You can make SSH accessible on any subdomain. For this guide, we are using the subdomain **ssh**.
 2. **Domain** - Choose the domain you want to use for the tunnel.
