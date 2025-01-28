@@ -321,7 +321,6 @@ export default defineConfig({
                       { text: 'Single Resource', link: '/knowledge-base/cloudflare/tunnels/single-resource' },
                       { text: 'Server SSH Access', link: '/knowledge-base/cloudflare/tunnels/server-ssh' },
                       { text: 'Full TLS/HTTPS', link: '/knowledge-base/cloudflare/tunnels/full-tls' },
-                      { text: 'Manual Setup', link: '/knowledge-base/cloudflare/tunnels/manual-setup' },
                     ] 
                   },
                   { text: 'Origin Certificate', link: '/knowledge-base/cloudflare/origin-cert' },

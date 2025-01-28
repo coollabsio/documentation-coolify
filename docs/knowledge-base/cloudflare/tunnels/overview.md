@@ -33,9 +33,8 @@ You can set up Cloudflare Tunnels with Coolify in several ways, depending on you
 
 3. [Server SSH Access](/knowledge-base/cloudflare/tunnels/server-ssh) -> Securely connect your server to Coolify using a domain through Cloudflare Tunnel.
 
-4. [Full HTTPS/TLS](/knowledge-base/cloudflare/tunnels/full-tls) -> Enable always-on **HTTPS** for all domains and subdomains. Normally, Coolify uses **HTTP** while Cloudflare manages **HTTPS**. If certain apps require **HTTPS** directly on Coolify.
+4. [Full HTTPS/TLS](/knowledge-base/cloudflare/tunnels/full-tls) -> Setup always-on **HTTPS** for all domains and subdomains. Normally, Coolify uses **HTTP** while Cloudflare manages **HTTPS**. If certain apps require **HTTPS** directly on Coolify.
 
-5. [Manual Setup](/knowledge-base/cloudflare/tunnels/manual-setup) -> A detailed, step-by-step guide for manual tunnel configuration. **Only follow this if you know what you are doing.**
 
 ::: success Tip:
   It’s highly recommended to go with the first option [All Resources](/knowledge-base/cloudflare/tunnels/all-resource) if you're new to Coolify and Cloudflare Tunnels, as it’s much easier to set up and manage.
