@@ -122,19 +122,92 @@ Go to the **Environment Variables** page, enter your tunnel token, and deploy th
 
 **Congratulations**! You've successfully set up a resource that can be accessed by anyone on the internet your domain.
 
+:::danger HEADS UP!
+   **The steps above show how to tunnel a single resource. Below are the steps for tunneling multiple resources**
+:::
 
-## Expose Mutiple Resource on Different Domains
-If you want to expose different apps, you can follow our [Setup All resource guide ↗](/knowledge-base/cloudflare/tunnels/all-resource), but there's an alternate way.
 
-Simply follow [Step 1](#_1-setup-your-app-for-tunneling) for your new app, then create a new public hostname on Cloudflare Tunnel as we did in [Step 2](#_2-create-a-cloudflare-tunnel). 
+## Tunnel Multiple Resources
+The easiest way to tunnel multiple resources is by following our [Tunnel All Resources](/knowledge-base/cloudflare/tunnels/all-resource) guide, which uses Coolify's built-in proxy. However, if you prefer not to use the proxy, there are two alternative methods:
+
+- [Tunnel Multiple Single Resources](#tunnel-multiple-single-resources)
+- [Tunnel Coolify](#tunnel-coolify)
+
+Tunneling multiple single resources is straightforward, but tunneling Coolify itself requires additional manual setup.
+
+
+## Tunnel Multiple Single Resources
+If you want to expose different apps individually, you can follow our [Tunnel All Resources](/knowledge-base/cloudflare/tunnels/all-resource), or take an alternate approach:
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/single-resource/11.webp" />
 
-You don't need to create new tunnels for each app, just create a new hostname and point it to the port your app is listening on.
+1. Follow [Step 1](#_1-setup-your-app-for-tunneling) for your new resource.  
+2. Create a new public hostname on Cloudflare Tunnel as described in [Step 2](#_2-create-a-cloudflare-tunnel).  
+
+There’s no need to create a separate tunnel for each resources, simply create a new hostname and point it to the port your app is listening on.
+
+
+## Tunnel Coolify
+Tunneling Coolify itself to make it accessible over a domain requires a bit more manual configuration. Here's how you can set it up:
+
+### 1. Create Public Hostnames in Cloudflare Tunnel
+Follow [Step 2](#_2-create-a-cloudflare-tunnel) from the main guide to create public hostnames for each service Coolify exposes. Use the following mapping:  
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/single-resource/14.webp" />
+
+- **Hostnames**:  
+  1. `app.shadowarcanist.com` → `localhost:8000` (Coolify dashboard)  
+  2. `realtime.shadowarcanist.com` → `localhost:6001` (Realtime server)  
+  3. `app.shadowarcanist.com/terminal/ws` → `localhost:6002` (WebSocket terminal)  
+
+- **Type**: HTTP (Ensure you select HTTP for each hostname.)  
+
+---
+
+### 2. Update Coolify’s `.env` File
+After creating public hostnames, update the `.env` file in your Coolify instance located at `/data/coolify/source` to enable connections to the realtime server. Add the following lines:  
+
+```bash
+APP_ID=<random string>
+APP_KEY=<random string>
+APP_NAME=Coolify
+DB_PASSWORD=<random string>
+PUSHER_APP_ID=<random string>
+PUSHER_APP_KEY=<random string>
+PUSHER_APP_SECRET=<random string>
+REDIS_PASSWORD=<random string>
+
+###########
+# Add these lines
+PUSHER_HOST=realtime.shadowarcanist.com
+PUSHER_PORT=443
+###########
+```
+
+This ensures that Coolify uses the Cloudflare Tunnel for its realtime server.
+
+
+### 3. Restart Coolify
+Run the following command to restart Coolify and apply the changes:
+
+```bash
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+```
+
+
+### 4. Verify the Setup
+1. Access your Coolify dashboard at `https://app.shadowarcanist.com`.  
+2. Test the realtime functionality by visiting `https://app.shadowarcanist.com/realtime` in another browser tab. You should see a notification about a test event.  
+3. If you know what are you doing, you can check the network tab as well. Search for a websocket connection.
+
+
+::: warning HEADS UP!
+  If you use a firewall, ensure that the required ports (e.g., `8000`, `6001`, `6002`) are open for internal communication but not exposed to the public internet.  
+:::
 
 
 ## Known issues and Solutions
-When you create a new public hostname in Step 2, Cloudflare will create a DNS record for the hostname. 
+When you create a new public hostname in [Step 2](#_2-create-a-cloudflare-tunnel), Cloudflare will create a DNS record for the hostname. 
 
 However, if a DNS record for the hostname already exists, Cloudflare won’t create a new one. 
 
