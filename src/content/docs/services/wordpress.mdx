@@ -44,3 +44,22 @@ php_value max_input_time 300
 
 3. Save and close the file.
 4. Reload the website in your browser. The changes should be applied automatically.
+
+### How to Fix a Redirection Loop in WordPress?
+
+
+If your WordPress site is stuck in a redirection loop, follow these steps to resolve the issue:
+
+Access the .htaccess file:
+
+1. Open the `.htaccess` file through Coolify's Terminal (or through SSH, and docker exec -ti `container_id` /bin/sh)
+2. Navigate to the WordPress root directory and locate the .htaccess file. Edit the .htaccess file:
+
+```
+<IfModule mod_setenvif.c>
+  SetEnvIf X-Forwarded-Proto "^https$" HTTPS
+</IfModule>
+```
+
+3. Save and close the file.
+4. Reload the website in your browser. The changes should be applied automatically.
