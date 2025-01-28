@@ -14,5 +14,6 @@ temp
 examples-temp
 node_modules
 pnpm-global
+pnpm-lock.yaml
 TODOs.md
 *.timestamp-*.mjs

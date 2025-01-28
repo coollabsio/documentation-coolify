@@ -365,44 +365,34 @@ export default defineConfig({
           { 
             text: 'Authorization',
             link: '/api-reference/authorization',
-            items: [
-              { 
-                text: 'API', 
-                collapsed: true,
-                // link: '/api-reference/api/', // disabled for now, you can enable it if you want to
-                items: [
-                  ...sidebar.generateSidebarGroups({
-                    /**
-                     * Optionally, you can filter paths by a prefix. Default is an empty string.
-                     */
-                    startsWith: 'operations',
-    
-                    /**
-                     * Optionally, you can specify if the sidebar items are collapsible. Default is true.
-                     */
-                    collapsible: true,
-                    
-                    /**
-                     * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
-                     */
-                    depth: 6,
-    
-                    /**
-                     * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
-                     */
-                    linkPrefix: '/api-reference/api/operations/',
-    
-                    /**
-                     * Optionally, you can specify a template for the sidebar items. You can see the default value
-                     * in `sidebarItemTemplate` function in the `useSidebar` composable.
-                     */
-                    //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
-                }),
-
-                ]
-              }             
-            ]
           },
+          ...sidebar.generateSidebarGroups({
+              /**
+               * Optionally, you can filter paths by a prefix. Default is an empty string.
+               */
+              startsWith: 'operations',
+
+              /**
+               * Optionally, you can specify if the sidebar items are collapsible. Default is true.
+               */
+              collapsible: true,
+              
+              /**
+               * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
+               */
+              depth: 6,
+
+              /**
+               * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
+               */
+              linkPrefix: '/api-reference/api/operations/',
+
+              /**
+               * Optionally, you can specify a template for the sidebar items. You can see the default value
+               * in `sidebarItemTemplate` function in the `useSidebar` composable.
+               */
+              //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
+          }),
         ],
       },
       {
