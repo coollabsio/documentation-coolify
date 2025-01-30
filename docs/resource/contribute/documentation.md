@@ -8,16 +8,10 @@ We appreciate your interest in contributing to the Coolify documentation! Your c
 
 ## Documentation Contributing Guide
 
-For detailed information on how to contribute to the Coolify documentation, please refer to our official contributing guide:
+For detailed information on how to contribute to the Coolify documentation, please refer to our official contributing guide: https://github.com/coollabsio/documentation-coolify/blob/main/CONTRIBUTING.md
 
-<LinkButton
-  variant="secondary" 
-  icon="external" 
-  href="https://github.com/coollabsio/documentation-coolify/blob/main/CONTRIBUTING.md"
->
-Coolify Documentation Contributing Guide
-</LinkButton>
 
-<Aside type="note">
+
+::: info
   Please read this guide thoroughly before making any contributions, opening issues, or suggesting changes to the documentation.
-</Aside>
+:::

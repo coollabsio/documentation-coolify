@@ -8,17 +8,9 @@ We're thrilled that you're interested in contributing to Coolify! Thank you for 
 
 ## Contributing Guide
 
-For detailed information on how to contribute to Coolify, please refer to our official contributing guide:
-
-<LinkButton
-  variant="secondary" 
-  icon="external" 
-  href="https://github.com/coollabsio/coolify/blob/main/CONTRIBUTING.md"
->
-Coolify Contributing Guide
-</LinkButton>
+For detailed information on how to contribute to Coolify, please refer to our official contributing guide: https://github.com/coollabsio/coolify/blob/main/CONTRIBUTING.md
 
 
-<Aside type="note">
+::: info
   Please read this guide thoroughly before making any contributions, opening issues, or asking questions.
-</Aside>
+:::
