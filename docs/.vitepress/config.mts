@@ -422,15 +422,15 @@ export default defineConfig({
               { text: 'Documentation', link: '/resource/contribute/documentation' },
             ],
           },
-          {
-            text: 'Changelog',
-            collapsed: true,
-            items: [
-              { text: 'Overview', link: '/resource/changelog/overview' },
-              { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
-              { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
-            ],
-          },
+          // {
+          //   text: 'Changelog',
+          //   collapsed: true,
+          //   items: [
+          //     { text: 'Overview', link: '/resource/changelog/overview' },
+          //     { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
+          //     { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
+          //   ],
+          // },
         ],
       },
     ],
