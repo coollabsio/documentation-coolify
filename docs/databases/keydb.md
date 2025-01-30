@@ -3,8 +3,8 @@ title: KeyDB
 ---
 
 # KeyDB
-
-![KeyDB](/images/database-logos/keydb.webp)
+<!-- Commentented out the image because it is taking up the whole screen, will be fixed later -->
+<!-- ![KeyDB](/images/database-logos/keydb.webp) -->
 
 ## What is KeyDB
 

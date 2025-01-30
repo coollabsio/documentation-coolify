@@ -4,7 +4,8 @@ title: MariaDB
 
 # MariaDB
 
-![Mariadb](/images/database-logos/mariadb.svg)
+<!-- Commentented out the image because it is taking up the whole screen, will be fixed later -->
+<!-- ![Mariadb](/images/database-logos/mariadb.svg) -->
 
 ## What is MariaDB
 
