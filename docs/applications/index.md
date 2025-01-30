@@ -9,12 +9,11 @@ Application could be any type of web application. It could be a static site, a N
 For complex applications, you can use Docker Compose based deployments or the one-click services.
 
 ## Examples
-<Aside type="tip">
-The list is not complete.
+::: info
+  The list is not complete.
 
-You can host almost any application that you want, not just the ones listed here.
-
-</Aside>
+  You can host almost any application that you want, not just the ones listed here.
+:::
 
 - [Vite](/docs/applications/vite)
 - [Django](/docs/applications/django)
@@ -38,11 +37,11 @@ You can overwrite the default commands by setting a custom value on the UI.
 - Install
 - Start
 
-<Aside type="tip">
+::: info
   If you leave it empty, Nixpacks will detect which commands to run. For
   example, in Nodejs, it will check the lock files and run `npm ci` or `yarn
   install` or `pnpm install` accordingly.
-</Aside>
+:::
 
 ### Base Directory
 
@@ -64,20 +63,20 @@ If you have a Nginx server that listens on port 80, you can set it like this: `8
 
 ### Port Mappings
 
-<Aside type="caution">
+::: warning
   You will lose some functionality if you map a port to the host system, like
   `Rolling Updates`.
-</Aside>
+:::
 
 If you would like to map a port to the host system (server), you can do it here like this: `8080:80`.
 
 This will map the port 8080 on the host system to the port 80 inside the container.
 
-<Aside type="tip">
+::: info
   If you would like to get performance boost and you do not need any domain
   (websocket server with VERY high traffic), you can map its port to the host,
   so the request will not go through the proxy.
-</Aside>
+:::
 
 ## Advanced
 
@@ -107,10 +106,10 @@ You can setup your preview URL with a custom template. Default is <span v-pre>`{
 
 This means that if you open a Pull Request with the ID `123`, and you resource domain is `example.com` the preview URL will be `123.example.com`.
 
-<Aside type="tip">
+:::success TIP
   If you have several domains for your resource, the first will be used as the{" "}
   <span v-pre>`{{ domain }}`</span> part.
-</Aside>
+:::
 
 #### Automated Preview Deployments
 
@@ -144,10 +143,10 @@ If you are using git lfs, you can set this to `true`. `Enabled by default`.
 
 By default, all containers are checked for liveness.
 
-<Aside type="caution">
+:::warning
   Traefik Proxy won't work if the container has health check defined, but it is
   `unhealthy`. If you do not know how to set up health checks, turn it off.
-</Aside>
+:::
 
 ### Rollbacks
 
@@ -185,10 +184,10 @@ But if needed, you can customize it by adding a `nixpacks.toml` file to your rep
 
 For example, if you are using a NodeJS application, you can set the `NIXPACKS_NODE_VERSION` to control the NodeJS version.
 
-<Aside type="tip">
+:::success TIP
   Worth reading their [documentation](https://nixpacks.com/docs) to understand
   how it works.
-</Aside>
+:::
 
 ### Dockerfile
 
