@@ -11,7 +11,7 @@ import DefaultTheme from "vitepress/theme";
 // Import styles
 import "./style.css";
 // Custom Style override
-import "./custom.css";
+// import "./custom.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
 
