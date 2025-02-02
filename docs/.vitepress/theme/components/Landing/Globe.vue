@@ -1,5 +1,5 @@
 <template>
-  <div ref="globeContainer" class="absolute -top-32 w-full h-[500px] pointer-events-none"></div>
+  <div ref="globeContainer" class="absolute -top-24 w-full h-[375px] pointer-events-none"></div>
 </template>
 
 <script setup lang="ts">

@@ -12,11 +12,13 @@ export default defineConfig({
   lang: 'en-US',
   title: "Coolify Docs",
   description: "Self hosting with super powers",
+  appearance: 'force-dark', // 'dark' allows user to change theme
   base: '/docs/',
   cleanUrls: true,
   lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
+
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
