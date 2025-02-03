@@ -8,14 +8,14 @@ Coolify supports a variety of databases to suit different application needs. Eve
 
 Coolify offers one-click setup for the following databases:
 
-- [PostgreSQL](/docs/databases/postgresql)
-- [Redis](/docs/databases/redis)
-- [DragonFly](/docs/databases/dragonfly)
-- [KeyDB](/docs/databases/keydb)
-- [Clickhouse](/docs/databases/clickhouse)
-- [MongoDB](/docs/databases/mongodb)
-- [MySQL](/docs/databases/mysql)
-- [MariaDB](/docs/databases/mariadb)
+- [PostgreSQL](/databases/postgresql)
+- [Redis](/databases/redis)
+- [DragonFly](/databases/dragonfly)
+- [KeyDB](/databases/keydb)
+- [Clickhouse](/databases/clickhouse)
+- [MongoDB](/databases/mongodb)
+- [MySQL](/databases/mysql)
+- [MariaDB](/databases/mariadb)
 
 Each database has its own strengths and use cases. Click on a database to learn more about it.
 
@@ -40,7 +40,7 @@ You can configure a database with a simple click. Coolify supports the following
 
 ### Ports Mapping
 
-Ports mapping is using the Docker [port mapping](https://docs.docker.com/network/#published-ports) feature. It is used to map the container port to the host port. For example, if you set the port mapping to `8080:80`, the container port `80` will be mapped to the host port `8080`.
+Ports mapping is using the Docker [port mapping](https:/.docker.com/network/#published-ports) feature. It is used to map the container port to the host port. For example, if you set the port mapping to `8080:80`, the container port `80` will be mapped to the host port `8080`.
 
 ### Public Port
 
