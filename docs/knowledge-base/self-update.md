@@ -1,42 +1,37 @@
 ---
-title: "Self-update"
+title: "Coolify Instance Updates - Self-hosted"
 ---
 
-# Coolify Self-update
-Within the `Settings` page, you can configure the update settings for your Coolify instance.
+# Coolify Instance Updates - Self-hosted
 
-## How it works
+## Update Settings
 
-By default Coolify checks for updates periodically based on the cron syntax that is provided.
+You can configure your Coolify instance's update settings on the `Settings` page under the `Update` section.
 
-These settings are split in to two categories:
+There are two main update configurations:
 
-- **Update Check Frequency**: Cron expression for update check frequency (check for new Coolify versions and pull new Service Templates from CDN). Default is every hour.
-- **Auto Update Frequency**: Cron expression for auto update frequency (automatically update coolify). Default is every day at 00:00
+1. **Update Check Frequency**
+   - Controls how often Coolify checks for:
+     - New Coolify versions
+     - New Service Templates from CDN
+   - Default: Every hour
+   - Uses cron syntax
 
-By default on self hosted instances the `Auto Update Enabled` should be preticked.
+2. **Auto Update Frequency**
+   - Controls when Coolify automatically installs updates
+   - Default: Daily at midnight (00:00)
+   - Uses cron syntax
 
-## Cron Syntax
+## Auto Update Toggle
 
-The cron syntax supports the base cron syntax as well as the following strings:
+- By default, `Auto Update Enabled` is turned on for self-hosted instances
+- You can disable automatic updates which is recommended for production instances. Please note that disabling `Auto Update Enabled` will not disable the update check frequency as updates should be checked periodically.
+- If you disable `Auto Update Enabled`, you can still manually update Coolify by clicking the `Update` button once a new version is available.
 
-```js
-const VALID_CRON_STRINGS = [
-    'every_minute' => '* * * * *',
-    'hourly' => '0 * * * *',
-    'daily' => '0 0 * * *',
-    'weekly' => '0 0 * * 0',
-    'monthly' => '0 0 1 * *',
-    'yearly' => '0 0 1 1 *',
-];
-```
+## Configuring Update Schedules
 
-## Update Check Frequency
+Both update frequencies use cron syntax for scheduling. For detailed information about the supported cron syntax, please see our [cron syntax guide](/knowledge-base/cron-syntax).
 
-This setting is used to check for new Coolify versions and pull new Service Templates from the CDN. The default value is every hour.
+## Version Availability
 
-Please note that disabling `Auto Update Enabled` will not disable the update check frequency, meaning you can control when to update Coolify.
-
-## Auto Update Frequency
-
-This setting is used to automatically update Coolify. The default value is every day at 00:00.
+For details about the availability and versioning scheme of new versions please read the [RELEASE.md](https://github.com/coollabsio/coolify/blob/main/RELEASE.md) file on GitHub:
