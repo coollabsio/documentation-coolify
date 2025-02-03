@@ -2,13 +2,13 @@
 title: Drain Logs
 ---
 
+# Drain Logs
 You can drain logs of your deployed services to a third-party applications like [Axiom](https://axiom.co/) or [New Relic](https://newrelic.com).
 
 > We will support more services in the future, like Signoz, HyperDX, etc.
 
 ## How to enable?
 
-<Steps>
 1. Enable on your Server
    First, you need to enable it on your `Server` settings. 
 
@@ -17,12 +17,11 @@ You can drain logs of your deployed services to a third-party applications like 
 2. Enable on your Resource
  Go to your resource, `Advanced` tab and enable the `Drain Logs` for the resource.
 
-</Steps>
 
-<Aside type="caution">
+::: warning Caution
   Once you enabled at least one of the `Drain Logs`, you need to `Restart` your
   service to apply the changes.
-</Aside>
+:::
 
 ## How to configure?
 ### Axiom

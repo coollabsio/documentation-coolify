@@ -2,6 +2,7 @@
 title: Health checks
 ---
 
+# Health checks
 Health checks are important, but not mandatory for your application. It is a way to check if your application is started properly. Coolify provides a way to configure health checks for your application.
 
 ## How it works
