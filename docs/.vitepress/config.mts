@@ -224,6 +224,7 @@ export default defineConfig({
                   { text: 'Commands', link: '/knowledge-base/commands' },
                   { text: 'Delete User', link: '/knowledge-base/delete-user' },
                   { text: 'OAuth', link: '/knowledge-base/oauth' },
+                  { text: 'Create Root User using ENV', link: '/knowledge-base/create-root-user-with-env' },
                 ] 
               },
               { 
