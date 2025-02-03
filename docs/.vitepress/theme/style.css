@@ -521,3 +521,46 @@ code:hover {
   color: var(--vp-custom-block-success-text);
   border-bottom-color: var(--vp-custom-block-success-text);
 }
+
+/* Custom Block text colors with webkit support - but exclude code blocks */
+.custom-block.tip p:not(pre *) {
+  color: var(--vp-custom-block-tip-text) !important;
+  -webkit-text-fill-color: var(--vp-custom-block-tip-text) !important;
+}
+
+.custom-block.info p:not(pre *) {
+  color: var(--vp-custom-block-info-text) !important;
+  -webkit-text-fill-color: var(--vp-custom-block-info-text) !important;
+}
+
+.custom-block.warning p:not(pre *) {
+  color: var(--vp-custom-block-warning-text) !important;
+  -webkit-text-fill-color: var(--vp-custom-block-warning-text) !important;
+}
+
+.custom-block.danger p:not(pre *) {
+  color: var(--vp-custom-block-danger-text) !important;
+  -webkit-text-fill-color: var(--vp-custom-block-danger-text) !important;
+}
+
+.custom-block.success p:not(pre *) {
+  color: var(--vp-custom-block-success-text) !important;
+  -webkit-text-fill-color: var(--vp-custom-block-success-text) !important;
+}
+
+/* Custom block titles */
+.custom-block .custom-block-title {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* Reset webkit styles for code blocks */
+.vp-doc [class*='language-'] code {
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Ensure syntax highlighting works in code blocks within custom blocks */
+.custom-block [class*='language-'] code {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
