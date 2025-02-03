@@ -2,6 +2,7 @@
 title: Monitoring
 ---
 
+# Monitoring
 Coolify has a built-in monitoring system, which can be used to monitor your resources and send notifications to your team if something goes wrong.
 
 Currently Coolify monitors the following resources:

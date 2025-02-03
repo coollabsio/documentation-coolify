@@ -2,6 +2,7 @@
 title: Delete User
 ---
 
+# Delete User
 This guide will show you how to delete a user from the self-hosted Coolify instance.
 
 <Aside type="caution">

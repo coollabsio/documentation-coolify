@@ -66,7 +66,7 @@ We also recommend to use [Hetzner](https://coolify.io/hetzner) (referral link) f
 
 ## Docker Swarm
 
-Coolify supports Docker Swarm (experimental). You can read more about it [here](/docs/knowledge-base/docker/swarm).
+Coolify supports Docker Swarm (experimental). You can read more about it [here](/knowledge-base/docker/swarm).
 
 
 ## Kubernetes (planned)

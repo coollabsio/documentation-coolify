@@ -2,6 +2,7 @@
 title: "Self-update"
 ---
 
+# Coolify Self-update
 Within the `Settings` page, you can configure the update settings for your Coolify instance.
 
 ## How it works

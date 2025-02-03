@@ -167,14 +167,14 @@ export default defineConfig({
                 text: 'Common Issues',
                 collapsed: true,
                 items: [
-                  {
-                    text: 'Applications', 
-                    link: '/knowledge-base/common-issues/applications'
-                  },
-                  {
-                    text: 'Backup', 
-                    link: '/knowledge-base/common-issues/backup'
-                  },
+                  // {
+                  //   text: 'Applications', 
+                  //   link: '/knowledge-base/common-issues/applications'
+                  // },
+                  // {
+                  //   text: 'Backup', 
+                  //   link: '/knowledge-base/common-issues/backup'
+                  // },
                   {
                     text: 'Cloudflare', 
                     link: '/knowledge-base/common-issues/cloudflare'
@@ -183,22 +183,22 @@ export default defineConfig({
                     text: 'Docker', 
                     link: '/knowledge-base/common-issues/docker'
                   },
-                  {
-                    text: 'Databases', 
-                    link: '/knowledge-base/common-issues/databases'
-                  },
-                  {
-                    text: 'Services', 
-                    link: '/knowledge-base/common-issues/services'
-                  },
+                  // {
+                  //   text: 'Databases', 
+                  //   link: '/knowledge-base/common-issues/databases'
+                  // },
+                  // {
+                  //   text: 'Services', 
+                  //   link: '/knowledge-base/common-issues/services'
+                  // },
                   {
                     text: 'Servers', 
                     link: '/knowledge-base/common-issues/servers'
                   },
-                  {
-                    text: 'Proxy', 
-                    link: '/knowledge-base/common-issues/proxy'
-                  }
+                  // {
+                  //   text: 'Proxy', 
+                  //   link: '/knowledge-base/common-issues/proxy'
+                  // }
                 ] 
               },
               { 

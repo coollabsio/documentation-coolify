@@ -2,6 +2,7 @@
 title: Commands
 ---
 
+# Commands
 ## Root password reset without SMTP
 You can use the following method to reset the root user's password, in case you forgot and do not have an SMTP server set, so you cannot request a forgot password.
 

@@ -2,7 +2,7 @@
 title: Notifications
 ---
 
-## Notifications
+# Notifications
 
 You can set up several types of notifications. Each team could have different notification settings.
 

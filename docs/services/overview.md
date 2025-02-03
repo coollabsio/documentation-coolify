@@ -4,7 +4,7 @@ title: Overview
 
 # Overview
 
-This list only includes services that are available as one-click services in Coolify.
+<!-- This list only includes services that are available as one-click services in Coolify. -->
 
 <!-- ::: info ⚡️ Tip:
 You can host ANY service with Coolify that could be containerized.
