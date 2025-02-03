@@ -251,7 +251,7 @@ export default defineConfig({
                 text: 'How-Tos',
                 collapsed: true,
                 items: [
-                  { text: 'Load-balancing on Hetzner', link: '/knowledge-base/load-balancing-on-hetzner' },
+                  { text: 'Load-balancing on Hetzner', link: '/knowledge-base/how-to/hetzner-loadbalancing' },
                   { text: 'Wordpress Multisite', link: '/knowledge-base/wordpress-multisite' },
                   { text: 'Raspberry Pi OS Setup', link: '/knowledge-base/raspberry-pi-os-setup' },
                   { text: 'Private NPM Registry', link: '/knowledge-base/private-npm-registry' },

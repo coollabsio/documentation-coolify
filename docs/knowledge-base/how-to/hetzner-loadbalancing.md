@@ -1,7 +1,9 @@
 ---
 title: "Load Balancing on Hetzner"
+description: "Here you can find the documentation for deploying a loadbalanced application with Coolify on Hetzner."
 ---
 
+# Load Balancing on Hetzner
 Hetzner Cloud is a cloud hosting provider that offers a wide range of services. In this guide, we will show you how to deploy a load-balanced application with Coolify on Hetzner Cloud.
 
 ## Introduction
@@ -10,7 +12,9 @@ Your application is growing, and you need to scale it. One of the most common wa
 
 In this guide, we will show you how to deploy a load-balanced application with Coolify on Hetzner Cloud. We will use two (or more) servers to host our application and a load balancer to distribute incoming traffic. We will also show you how to set up a database server if you need one.
 
-<Aside type="tip">The whole infractructure costs around ~15€ per month.</Aside>
+::: success Tip
+The whole infrastructure costs around ~15€ per month.
+:::
 
 ## Requirements
 
@@ -20,35 +24,39 @@ In this guide, we will show you how to deploy a load-balanced application with C
 - Firewall rules to restrict access to your servers
 - Optional: A database server on Hetzner Cloud
 
+
 ## Steps
 
-<Steps>
-1. Buy Servers
+1. ### Buy Servers
+
     First, you need to buy two (or more) servers on Hetzner Cloud. You can choose the server type and location based on your requirements. Make sure to choose servers with enough resources to run your application.
 
-    ## Important
+    ::: warning Caution
     Make sure you create and attach a private network to your servers. This will allow your servers to communicate with each other using a private network.
+    :::
 
     If you don't have an account on Hetzner Cloud, you can sign up with this [referral link](https://coolify.io/hetzner).
 
-2. Add & validate them in Coolify
+2. ### Add & validate them in Coolify
+
     Once you have bought the servers, you need to add them to Coolify. You can do this by clicking on the `Add Server` button in the Coolify dashboard and following the instructions.
 
     Coolify will automatically install the necessary software on your servers.
 
-3. Optional: Deploy your database
+3. ### Optional: Deploy your database
+
     It is preferable to have a separate database server for your application. Not just for performance reasons, but also for security reasons. Also in this way you can connect your applications to a centralized database server.
 
     Skip this step if you don't need a database server or if you already have one hosted elsewhere.
 
     Once you have bought the database server, and added it to Coolify, deploy your preferable database type (MySQL, PostgreSQL, etc.) on it.
 
-    ## Important
-    <Aside type="caution">
+    ::: warning Caution
     We won't use a reverse proxy in this guide. We will bind the database to the public IP address of the server. We will use a firewall to restrict access to the database server.
 
     You can stop them on the `Server` tab and switch to a `None` proxy type.
-    </Aside>
+    :::
+
     Make sure you set the `Ports Mappings` correctly to allow your application servers to connect to the database server.
 
     - PostgreSQL: `5432:5432`
@@ -56,27 +64,31 @@ In this guide, we will show you how to deploy a load-balanced application with C
     - MariaDB: `3306:3306`
     - MongoDB: `27017:27017`
 
-4. Deploy your applications
+4. ### Deploy your applications
+
     Now it's time to deploy your application on the app servers. Details of deploying your application will depend on the type of application you are deploying.
 
     With Coolify, you can attach more than one server to the same application. This will allow you to deploy your application on multiple servers.
 
-    ## Important
-    <Aside type="caution">
+    ::: warning Caution
     We won't use a reverse proxy in this guide. We will bind the application to the public IP address of the server, as the load balancer will handle the routing.
 
     You can stop them on the `Server` tab and switch to a `None` proxy type.
-    </Aside>
+    :::
+
     Make sure you set the `Ports Mappings` correctly to forward your application ports to the public IP address of the server.
 
     If your application uses a database, make sure you update the database connection string to point to the database server.
-    <Aside type="tip">
-        Hetzner Cloud has a private network feature that allows you to connect your servers using a private network. This can help improve the security and performance of your application. `Make sure you enable the private network feature on your servers and use it in the database connection string.`
-    </Aside>
+    ::: success Tip
+     Hetzner Cloud has a private network feature that allows you to connect your servers using a private network. This can help improve the security and performance of your application. 
+     
+     Make sure you enable the private network feature on your servers and use it in the database connection string.
+    :::
 
     Test if your application is working correctly by accessing the public IP address and port of the server in your browser.
 
-5. Add & configure the loadbalancer
+5. ### Add & configure the loadbalancer
+
     Now it's time to add a load balancer to distribute incoming traffic across your servers.
 
     This loadbalancer will do the following:
@@ -101,7 +113,8 @@ In this guide, we will show you how to deploy a load-balanced application with C
 
     Wait for the load balancer to be created and healthy. Once it's healthy, you can check if your application is accessible via the loadbalancer's IP address.
 
-6. Setup DNS
+6. ### Setup DNS
+
     Now it's time to point your domain name to the `load balancer's IP address`. You can do this by adding an `A` record to your domain name provider's DNS settings.
 
     1. Go to your DNS settings.
@@ -110,7 +123,8 @@ In this guide, we will show you how to deploy a load-balanced application with C
 
     Once the DNS changes have propagated, you should be able to access your application using your domain name.
 
-7. Setup Firewall
+7. ### Setup Firewall
+
     Hetzner Cloud offers a firewall feature that allows you to restrict access to your servers. We will use this feature to restrict access to your servers.
 
     As the load balancer communicates with your servers over the private network, we only need to add rules for the public IP addresses.
@@ -123,8 +137,6 @@ In this guide, we will show you how to deploy a load-balanced application with C
     4. Add your servers to the `Apply rule` section.
     5. Name your firewall and click on `Create Firewall`.
 
-    <Aside type="tip">
+    ::: success Tip
     Optional: You can add more rules to allow access to specific ports or IP addresses if needed.
-    </Aside>
-
-</Steps>
+    :::
