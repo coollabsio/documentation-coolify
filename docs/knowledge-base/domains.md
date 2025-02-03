@@ -2,6 +2,7 @@
 title: Domains
 ---
 
+# Domains
 You can easily add your own domains to Coolify or your resources.
 
 All domain fields are capable to generate your proxy configurations based on the following rules:
@@ -12,7 +13,7 @@ All domain fields are capable to generate your proxy configurations based on the
 
 ## Wildcard Domain
 
-You can set a wildcard domain (`example: http://example.com`) to your server, so you can easily assign generated domains to all the resources connected to this server. [More details](/docs/knowledge-base/server/introduction#wildcard-domain)
+You can set a wildcard domain (`example: http://example.com`) to your server, so you can easily assign generated domains to all the resources connected to this server. [More details](/knowledge-base/server/introduction#wildcard-domain)
 
 ## DNS Validation
 

@@ -2,6 +2,8 @@
 title: "DNS Configuration"
 ---
 
+
+# DNS Configuration
 In general you need an `A` record for all the domains or subdomains you want to use, pointing to the IP address of your server where you would like to deploy your application.
 
 Note that you can use the same IP address for multiple domains and subdomains.
@@ -14,10 +16,9 @@ Let's say you want deploy your resource to `example.com` with the IP address `1.
 
 - You need to set an `A` record for `example.com` pointing to `1.1.1.1`.
 
-<Aside type="tip">
-  You can also add `www.example.com` as an `A` record and redirect it inside
-  Coolify with the chosen reverse proxy.
-</Aside>
+::: success Tip
+  You can also add `www.example.com` as an `A` record and redirect it inside Coolify with the chosen reverse proxy.
+:::
 
 Then you can use `https://example.com` as a FQDN (Fully Qualified Domain Name) for any of your resources, even for your Coolify instance.
 
@@ -41,10 +42,9 @@ Then if you create a new resource:
 - You will get a random subdomain for your application, for example `https://random.example.com`.
 - Also for your Preview Deployments, for example `https://<PRId>.random.example.com`.
 
-<Aside type="tip">
-  The Preview URL template could be modified in the application's page /
-  `Preview Deployments` tab.
-</Aside>
+::: success Tip
+  The Preview URL template could be modified in the application's page /  `Preview Deployments` tab.
+:::
 
 ## Instance Domain
 
