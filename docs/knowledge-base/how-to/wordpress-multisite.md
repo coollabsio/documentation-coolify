@@ -1,10 +1,11 @@
 ---
 title: "Using WordPress Multisite with Coolify"
+description: "Here you can find the documentation for configuring WordPress Multisite with Coolify."
 ---
 
-# Introduction
 
-<Steps>
+# Using WordPress Multisite with Coolify
+
 1. Add Wordpress with one-click installation
   Add a Wordpress service with the one-click installation feature in Coolify.
 
@@ -35,4 +36,3 @@ title: "Using WordPress Multisite with Coolify"
       define( 'WP_ALLOW_MULTISITE', true );
     ```
     Refresh your WordPress panel in your browser. You should now see a new menu item called `Network Setup` under the `Tools` menu.
-</Steps>
