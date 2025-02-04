@@ -1,4 +1,3 @@
-import fs from 'fs'
 import spec from '../../../public/openapi.json' assert { type: 'json' }
 
 export default {

@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: API Operation - {{ $params.operation }}
+title: API
 toc: false
 ---
 
