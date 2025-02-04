@@ -7,7 +7,7 @@ title: "Add a new service template to Coolify"
 Services in Coolify are templates made from normal [docker-compose](https://docs.docker.com/reference/compose-file/) files with some added Coolify magic.
 
 ::: info
-  See [Coolify's docker-compose specs](/docs/knowledge-base/docker/compose#coolifys-magic-environment-variables) to learn more about Coolify's magic and how to benefit from generated variables and storage handling. Please use this magic when submitting your PR to make the merging process smoother.
+  See [Coolify's docker-compose specs](/knowledge-base/docker/compose#coolify-s-magic-environment-variables) to learn more about Coolify's magic and how to benefit from generated variables and storage handling. Please use this magic when submitting your PR to make the merging process smoother.
 ::: 
 
 
@@ -29,13 +29,13 @@ Services in Coolify are templates made from normal [docker-compose](https://docs
    - `logo`: Path to the service's logo (see step 3)
    - `port`: The main entrypoint port of the service
 
-::: warning
-     Always specify a port, as Caddy Proxy cannot automatically determine the service's port.
+::: warning Caution
+  Always specify a port, as Caddy Proxy cannot automatically determine the service's port.
 :::
 
 2. Create the docker-compose file
 
-   Below the metadata, add your docker-compose configuration. Use Coolify's environment variable magic [here](/docs/knowledge-base/docker/compose#coolifys-magic-environment-variables).
+   Below the metadata, add your docker-compose configuration. Use Coolify's environment variable magic [here](/knowledge-base/docker/compose#coolifys-magic-environment-variables).
 
    Example:
 
