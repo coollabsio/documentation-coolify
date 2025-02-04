@@ -1,9 +1,12 @@
 ---
 title: "Sentinel and Metrics"
+description: "Learn how to set up and use Sentinel as a Linux API and metrics collection tool for server and container metrics in Coolify"
 ---
 
-::: warning
-This is an experimental feature.
+# Sentinel and Metrics
+
+::: danger CAUTION
+**This is an experimental feature.**
 :::
 
 # Sentinel Overview
@@ -15,7 +18,7 @@ This is an experimental feature.
 
 ## Screenshot
 
-![Sentinel Metrics](/images/screenshots/sentinel.webp)
+<ZoomableImage src="/docs/images/screenshots/sentinel.webp" />
 
 ## Configuration
 
@@ -32,9 +35,9 @@ In the same section, you can enable metrics. Once enabled, you will be able to v
 - CPU usage
 - Memory consumption (RAM Usage)
 
-<Aside type="note">
+::: info Note
 Metrics collection is currently NOT available for Docker Compose and Service Template based deployments.
-</Aside>
+:::
 
 ## Viewing Metrics
 

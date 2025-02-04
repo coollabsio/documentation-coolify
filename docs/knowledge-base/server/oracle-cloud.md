@@ -1,13 +1,15 @@
 ---
 title: "Oracle Cloud"
+description: "A guide to use Oracle Cloud servers in Coolify"
 ---
 
+# Oracle Cloud
 If you are using `Oracle Cloud free ARM server`, you need to do a few extra steps to use it in Coolify, as a `Coolify instance` or just a `remote server`.
 
 ## Normal user
 Non-root user is in `experimental` mode and works with `sudo`.
 - Make sure the ssh key is added to the user's `~/.ssh/authorized_keys` file.
-- All configuration is set for sudo. Details [here](/docs/knowledge-base/server/non-root-user).
+- All configuration is set for sudo. Details [here](/knowledge-base/server/non-root-user).
 
 ## Setup Root User
 
@@ -24,4 +26,4 @@ This is only required if you self-host Coolify on Oracle ARM server.
 
 By default, Oracle ARM server has a firewall enabled and you need to allow some ports to use Coolify.
 
-For more details, check [this](/docs/knowledge-base/server/firewall) page.
+For more details, check [this](/knowledge-base/server/firewall) page.

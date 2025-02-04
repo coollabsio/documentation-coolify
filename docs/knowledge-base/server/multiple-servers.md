@@ -1,14 +1,21 @@
 ---
 title: "Multiple Servers"
+description: "A guide on how to deploy a resource to multiple servers with Coolify"
 ---
 
+# Multiple Servers
 With this feature, You could deploy the same application to multiple servers, add a load balancer in front of them and you will get a highly available application.
+
+::: danger CAUTION
+**This is an experimental feature.**
+:::
+
 
 ## Requirements
 
 - Each server should be added to Coolify, validated and reachable.
 - Each server (and the optional build server) should be the same architecture (AMD64, ARM).
-- You must push the built image to a Docker Registry. Coolify automates the process, you just need to [login to the registry](/docs/knowledge-base/docker/registry#docker-credentials) on the server.
+- You must push the built image to a Docker Registry. Coolify automates the process, you just need to [login to the registry](/knowledge-base/docker/registry#docker-credentials) on the server.
 
 ## How to use?
 
@@ -18,7 +25,7 @@ Any additional servers must be set in the `Servers` menu, simply by clicking on 
 
 Now everytime you redeploy, restart or stop the application, the action will be done on all servers.
 
-If the deploy needs a build process, it will be executed on the main server (or on the build server if you have on). The deploy process will upload the built image to the Docker Registry and only after all other servers will be notified to pull and deploy this image.
+If the deploy needs a build process, it will be executed on the main server (or on the build server if you have one). The deploy process will upload the built image to the Docker Registry and only after all other servers will be notified to pull and deploy this image.
 
 ## How to configure a loadbalancer?
 
@@ -33,12 +40,9 @@ If you set `Ports Mappings` for your application, so one port from the docker co
 
 In this case, Coolify Proxy is not used as you can reach the application with IP:PORT
 
-<Aside type="tip">
-  This is super simple and effective. But keep in mind, that you need to only
-  allow incoming connections to the selected `PORT` from the loadbalancer,
-  otherwise everyone can reach your application directly, without the
-  loadbalancer.
-</Aside>
+::: success Tip
+  This is super simple and effective. But keep in mind, that you need to only allow incoming connections to the selected `PORT` from the loadbalancer, otherwise everyone can reach your application directly, without the loadbalancer.
+:::
 
 ### Using a domain
 

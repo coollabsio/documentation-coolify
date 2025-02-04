@@ -1,105 +1,111 @@
 ---
 title: "OpenSSH"
+description: "A guide to configure OpenSSH for Coolify."
 ---
 
-Coolify uses SSH to connect to your server and deploy your application, even if you are using only the `localhost` server - where Coolify is running on.
+# OpenSSH
+Coolify uses SSH to connect to your server and deploy your applications. This is true even when using the `localhost` server where Coolify is running.
 
-To validate your configuration, make sure the followings are set on your server.
+::: warning Caution
+  The SSH key must not have a passphrase or 2FA enabled for the user used to run the Coolify installation script or the connection will fail.
+:::
 
-<Aside type="caution">Some commands may vary based on your Linux distribution.</Aside>
+## SSH Settings Configuration
 
-<Aside type="caution">
-  Make sure the SSH key does not have a passphrase. Connection will fail if the
-  key has a passphrase.
-</Aside>
+These settings need to be configured manually before running the Coolify installation script:
 
-<Steps>
 
-1. SSH Enabled
-    Make sure SSH is enabled and you can connect to your server with SSH from your local machine with root user.
+1. Edit SSH Configuration
+   ```bash
+   nano /etc/ssh/sshd_config
+   ```
+   Ensure these settings are present:
+   ```ssh
+   PermitRootLogin prohibit-password
+   PubkeyAuthentication yes
+   ```
+   ::: info Note
+   `PermitRootLogin` can be set to `yes`, `without-password`, or `prohibit-password`. We recommend `prohibit-password` for better security.
+   :::
 
-    ```bash
-    # Ubuntu/Debian
+2. Restart SSH Service
 
-    sudo apt install openssh-server
-    sudo systemctl status sshd
+SystemD:
+  ```bash
+  systemctl restart sshd
+  ```
 
-    # CentOS/RHEL
+OpenRC:
+  ```bash
+  rc-service sshd restart
+  ```
 
-    sudo yum install openssh-server
-    sudo systemctl status sshd
 
-    # Arch Linux
+## Manual Configuration
 
-    sudo pacman -S openssh
-    sudo systemctl status sshd
+::: info Note
+The following steps are handled automatically by the Coolify installation script. Manual configuration is only needed if the automatic setup fails.
+:::
 
-    # Alpine Linux
 
-    sudo apk add openssh
-    sudo rc-service sshd status
+1. Install OpenSSH Server
 
-    # SLES/openSUSE
+   **Ubuntu/Debian/PopOS**
+   ```bash
+   apt update && apt install -y openssh-server
+   systemctl enable --now sshd
+   ```
 
-    sudo zypper install openssh
-    sudo systemctl status sshd
+   **CentOS/RHEL/Fedora/Rocky**
+   ```bash
+   dnf install -y openssh-server
+   systemctl enable --now sshd
+   ```
 
-    ````
-2. Root Login
-   Make sure that the following parameters are set in the `/etc/ssh/sshd_config` file:
-    - `PermitRootLogin` is set to `yes`, `without-password`, or `prohibit-password`.
-    - `PubkeyAuthentication` is set to `yes`.
+   **SLES/openSUSE**
+   ```bash
+   zypper install -y openssh
+   systemctl enable --now sshd
+   ```
 
-    ```bash
-    # Check the current value
-    grep PermitRootLogin /etc/ssh/sshd_config
+   **Arch Linux**
+   ```bash
+   pacman -Sy --noconfirm openssh
+   systemctl enable --now sshd
+   ```
 
-    # If the value is not `yes` or `without-password` or `prohibit-password`, change it and make sure it is not commented out.
-    # If it is commented out, remove the `#` character at the beginning of the line.
+   **Alpine Linux**
+   ```bash
+   apk add openssh
+   rc-update add sshd
+   rc-service sshd start
+   ```
 
-    sudo vi /etc/ssh/sshd_config
+2. Configure SSH Settings
+   Follow the [SSH Settings Configuration](#ssh-settings-configuration) section above.
 
-    # You can exit the editor by pressing `Esc` and then `:wq` and then `Enter` keys - thank me later.
+3. Generate and Configure SSH Keys
+   ```bash
+   # Generate SSH key pair
+   ssh-keygen -t ed25519 -a 100 \
+       -f /data/coolify/ssh/keys/id.root@host.docker.internal \
+       -q -N "" -C root@coolify
 
-    # Restart the SSH service
-    # Ubuntu/Debian/CentOS/RHEL/Arch Linux/SLES/openSUSE
-    sudo systemctl restart sshd
+   # Set correct ownership
+   chown 9999 /data/coolify/ssh/keys/id.root@host.docker.internal
 
-    # Alpine Linux
-    sudo rc-service sshd restart
+   # Add public key to authorized_keys
+   mkdir -p ~/.ssh
+   cat /data/coolify/ssh/keys/id.root@host.docker.internal.pub >> ~/.ssh/authorized_keys
 
-    ````
-3. SSH Key set on the Server
-    Make sure an SSH key is added to the `~/.ssh/authorized_keys` file.
-    If you installed Coolify with the automated script, you don't need to do anything else.
+   # Set proper permissions
+   chmod 600 ~/.ssh/authorized_keys
+   chmod 700 ~/.ssh
+   ```
 
-    If you installed Coolify manually, you need to add an SSH key to the `~/.ssh/authorized_keys` file.
+4. Configure in Coolify UI
+   1. Navigate to `Keys & Tokens` menu
+   2. Go to `Private Keys` section
+   3. Add the private key
+   4. Configure the key in your localhost server settings
 
-    <Aside type="caution">
-      Make sure the SSH key does not have a passphrase. Connection will fail if the
-      key has a passphrase.
-    </Aside>
-
-    ```bash
-    # Create a new SSH key pair ed25519 (recommended) or rsa (legacy) with the following command.
-
-    # The key needs to be created in the `/data/coolify/ssh/keys` directory with,
-    # id.root@host.docker.internal name,
-    # no passphrase,
-    # root@coolify comment.
-
-    ssh-keygen -t ed25519 -a 100 -f /data/coolify/ssh/keys/id.root@host.docker.internal -q -N "" -C root@coolify
-    chown 9999 /data/coolify/ssh/keys/id.root@host.docker.internal
-
-    # Copy the public key to the `authorized_keys` file
-    cat /data/coolify/ssh/keys/id.root@host.docker.internal.pub >>~/.ssh/authorized_keys
-
-    # Set the correct permissions
-    chmod 600 ~/.ssh/authorized_keys
-    chmod 700 ~/.ssh
-    ```
-
-4. SSH Key set in Coolify
-    Add the private key to Coolify at `Keys & Tokens` menu -> `Private Keys` and set this new key in the localhost server settings.
-
-</Steps>

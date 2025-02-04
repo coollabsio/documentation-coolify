@@ -1,7 +1,9 @@
 ---
 title: "Build Server"
+description: "A guide on how to use a build server with Coolify"
 ---
 
+# Build Server
 You could have a build server to build your projects on instead of building them on the server where you host your resources.
 
 This keeps the load separated, so it does not affect your application's performance.
@@ -9,7 +11,7 @@ This keeps the load separated, so it does not affect your application's performa
 ## Requirements
 
 - The built images needs to be pushed to a container registry.
-- The server needs to be authenticated to the container registry. See [this](/docs/knowledge-base/docker/registry) for more information.
+- The server needs to be authenticated to the container registry. See [this](/knowledge-base/docker/registry) for more information.
 - The server needs to have access to the source code.
 - The server needs Docker Engine installed.
 - The server should be the same architecture as the deployment servers.
