@@ -25,16 +25,13 @@ You can set shared variables on their respective pages.
 Then you can use these variables anywhere. For example: You defined `NODE_ENV` to `production`.
 
 ### Team Based
-<!-- SERDAR_PLS_FIX -->
-<!-- You can set them on the `Team` page and use it with `{{team.NODE_ENV}}`. Do not replace "team" with your actual team name. -->
+You can set them on the `Team` page and use it with <code v-pre>{{team.NODE_ENV}}</code>. Do not replace "team" with your actual team name.
 
 ### Project Based
-
-<!-- You can set them on the `Projects` page, under the gear icon and use it with `{{project.NODE_ENV}}`. Do not replace "project" with your actual project name. -->
+You can set them on the `Projects` page, under the gear icon and use it with <code v-pre>{{project.NODE_ENV}}</code>. Do not replace "project" with your actual project name.
 
 ### Environment Based
-
-<!-- You can set them on the `Environments` page (select a `Project`), under the gear icon and use it with `{{environment.NODE_ENV}}` Do not replace "environment" with your actual environment name. -->
+You can set them on the `Environments` page (select a `Project`), under the gear icon and use it with <code v-pre>{{environment.NODE_ENV}}</code> Do not replace "environment" with your actual environment name.
 
 #### Using Shared Variables in Compose File
 If you want to use the environment variables in your compose file, you can do so by using the following syntax:
