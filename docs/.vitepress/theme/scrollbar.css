@@ -47,4 +47,44 @@
     }
   }
 }
+
+.VPLocalSearchBox {
+  width: 100% !important;
+  
+  & .search-box {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  & .search-box > .DocSearch-Button {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  & .DocSearch-Button-Keys {
+    margin-left: auto !important;
+  }
+}
+
+.VPNavBarSearch {
+  width: 100% !important;
+
+  & #local-search {
+    width: 100% !important;
+  }
+
+  & .DocSearch-Button {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  & .DocSearch-Button-Container {
+    flex: 1 !important;
+  }
+
+  & .DocSearch-Button-Keys {
+    margin-left: auto !important;
+  }
+}
+
   
