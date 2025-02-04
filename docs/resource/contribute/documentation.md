@@ -2,16 +2,58 @@
 title: "Contributing to Coolify Documentation"
 ---
 
-# Contributing to Coolify Documentation
+# Contribution Guide
 
-We appreciate your interest in contributing to the Coolify documentation! Your contributions help improve the documentation for all users. Before you begin, please take a moment to review our documentation contributing guide.
+Follow these steps to contribute to our documentation:
 
-## Documentation Contributing Guide
+## 1. Fork and Clone the Repository
 
-For detailed information on how to contribute to the Coolify documentation, please refer to our official contributing guide: https://github.com/coollabsio/documentation-coolify/blob/main/CONTRIBUTING.md
+- Fork the documentation repository on GitHub.
+- Clone your fork to your local system using:
+  ```sh
+  git clone https://github.com/your-username/your-repo-name.git
+  ```
+- Navigate to the cloned directory:
+  ```sh
+  cd your-repo-name
+  ```
 
+## 2. Install Dependencies
 
+Run one of the following commands to install dependencies:
+  ```sh
+  bun install
+  # or
+  npm install
+  # or
+  yarn install
+  # or
+  pnpm install
+  ```
 
-::: info
-  Please read this guide thoroughly before making any contributions, opening issues, or suggesting changes to the documentation.
-:::
+## 3. Start the Development Server
+
+Run one of the following commands to start the development server:
+  ```sh
+  bun dev
+  # or
+  npm run dev
+  # or
+  yarn dev
+  # or
+  pnpm dev
+  ```
+This will start a local server and provide a URL to preview your changes.
+
+## 4. Make Your Contribution
+
+- Edit an existing markdown file in the `/docs` directory.
+- Or create a new `.md` file inside `/docs` or its subdirectories.
+
+## 5. Submit a Pull Request
+
+- Push your changes to your forked repository.
+- Create a pull request to merge your changes into the main documentation repository.
+
+Thank you for contributing!
+
