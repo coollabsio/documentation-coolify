@@ -44,8 +44,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
                 <slot name="home-hero-actions-after" />
             </div>
 
-            <div class="order-2 w-full sm:mt-12 m-autopx-4 py-6">
-                <!-- <Quickstart /> -->
+            <div class="order-2 w-full mb-12 mt-16 sm:mt-12 m-autopx-4 py-6">
                 <Referral />
             </div>
         </div>
@@ -112,13 +111,13 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
     }
 }
 
-.name,
+
 .text {
     max-width: 392px;
     letter-spacing: -0.4px;
     line-height: 40px;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 500;
     white-space: pre-wrap;
 }
 
@@ -128,6 +127,10 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 }
 
 .name {
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 40px;
+    font-size: 40px;
     color: var(--vp-home-hero-name-color);
 }
 
@@ -140,20 +143,28 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
 
 @media (min-width: 640px) {
 
-    .name,
+    .name {
+        line-height: 64px;
+        font-size: 48px;
+    }
+
     .text {
         max-width: 576px;
         line-height: 56px;
-        font-size: 48px;
+        font-size: 40px;
     }
 }
 
 @media (min-width: 960px) {
 
-    .name,
-    .text {
+    .name {
         line-height: 64px;
         font-size: 56px;
+    }
+
+    .text {
+        line-height: 64px;
+        font-size: 40px;
     }
 
     .VPHero.has-image .name,
@@ -166,7 +177,7 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
     padding-top: 8px;
     max-width: 392px;
     line-height: 28px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     white-space: pre-wrap;
     color: var(--vp-c-text-2);

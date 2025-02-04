@@ -1,5 +1,5 @@
 <template>
-  <div ref="globeContainer" class="absolute -top-24 w-full h-[375px] pointer-events-none"></div>
+  <div ref="globeContainer" class="absolute -top-20 sm:-top-24 w-full h-[375px] pointer-events-none"></div>
 </template>
 
 <script setup lang="ts">
@@ -184,6 +184,3 @@ onUnmounted(() => {
   }
 })
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>

@@ -24,9 +24,7 @@
         <p class="text-sm font-medium z-10">
             {{ referralText }}
         </p>
-
         <div class="relative rounded-lg border border-gray-200 dark:border-[#202127] overflow-hidden max-w-full z-10">
-            <!-- Terminal Header -->
             <div class="flex items-center justify-between px-3 py-1.5 bg-gray-100 dark:bg-[#202127]">
                 <div class="flex items-center gap-1.5">
                     <!-- TODO: Replace w a Icon module source=https://icones.js.org/collection/all?s=command-line&icon=heroicons:command-line -->
