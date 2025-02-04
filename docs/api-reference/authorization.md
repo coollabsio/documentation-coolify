@@ -1,20 +1,25 @@
 ---
 title: Authorization
+description: "Learn how to authorize your API requests."
 ---
 
 # Authorization
-
 API request requires a `Bearer` token in `Authorization` header, which could be generated from the UI.
+
+## Access
+
+The API can be accesed through `http://<ip>:8000/api`.
+
+With the exception of `/health` and `/feedback`, all routes are additionally prefixed with `/v1` resulting in the base rouce `http://<ip>:8000/api/v1`.
 
 ## Generate
 
 1. Go to `Keys & Tokens` / `API tokens`.
 2. Define a name for your token and click `Create New Token`.
 
-<Aside type="tip">
-  You will see the token once, so make sure to copy it and store it in a safe
-  place.
-</Aside>
+::: success Tip
+  You will see the token once, so make sure to copy it and store it in a safe place.
+:::
 
 ## Scope
 
