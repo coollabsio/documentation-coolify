@@ -19,7 +19,10 @@ WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/docs/.vitepress/dist /usr/share/nginx/html/docs
 
 # Copy custom NGINX configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Copy custom redirects NGINX configuration
+COPY nginx/redirects.conf /etc/nginx/conf.d/redirects.conf
 
 # Expose port 80
 EXPOSE 80
