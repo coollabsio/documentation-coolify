@@ -1,6 +1,10 @@
 ---
 title: "Docker Registry"
+description: "A guide on how to configure a Docker Registry with Coolify."
 ---
+
+
+# Docker Registry
 
 You can easily push your built docker images to any docker registries with Coolify.
 
@@ -26,7 +30,7 @@ Docker credentials (from v4.0.0-beta.88) are used to authenticate with Docker re
 
 If you want to authenticate Coolify with a Docker Registry:
 
-<Steps>
+
 1. Login to your server
     Login on the server through SSH with the same user that configured for your server.
 
@@ -34,7 +38,7 @@ If you want to authenticate Coolify with a Docker Registry:
     Login to the Docker Registry, normally execute `docker login` command.
     
     > You will be prompted to enter your Docker registry username and password/token - this can be varied depending on the Docker registry you are using.
-</Steps>
+
 Once you logged in, Coolify will automatically detect your credentials and use them.
 
 ## Swarm Mode
@@ -61,4 +65,6 @@ htpasswd -nbB test test
 
 Then go to `Storages` menu, and in the `/auth/registry.password` file, simply add the generated user / password. One line per user.
 
-<Aside type="caution">Do not forget to restart the registry service.</Aside>
+::: warning Caution
+Do not forget to restart the registry service.
+:::

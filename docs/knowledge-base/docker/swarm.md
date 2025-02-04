@@ -1,8 +1,15 @@
 ---
 title: "Docker Swarm"
+description: "A guide on how to use Docker Swarm with Coolify."
 ---
 
-# Setup in Coolify
+# Docker Swarm
+
+::: danger Caution
+***This is an experimental feature.***
+:::
+
+## Setup in Coolify
 
 If you would like to use a Swarm to deploy your resources, you need to add the `Swarm Manager` to Coolify.
 
@@ -15,7 +22,7 @@ You need to have an external Docker Registry available to use a Swarm, as all wo
 - The Swarm Manager needs to push the image to the Docker Registry.
 - The Swarm Workers need to pull the image from the Docker Registry.
 
-So set your docker login credentials accordingly. More information [here](/docs/knowledge-base/docker/registry).
+So set your docker login credentials accordingly. More information [here](/knowledge-base/docker/registry).
 
 ## Install Swarm Cluster
 
@@ -57,7 +64,7 @@ systemctl start docker
 systemctl enable docker
 ```
 
-<Aside type="caution">
+::: warning Caution
 Hetzner specific configuration. Hetnzer servers use a MTU of 1450. You need to configure Docker to use the same MTU.
 
 On the `manager`, run the following command to configure Docker.
@@ -75,8 +82,8 @@ cat <<EOF > /etc/docker/daemon.json
 EOF
 systemctl restart docker
 ```
+:::
 
-</Aside>
 
 ### Create a Swarm cluster
 
