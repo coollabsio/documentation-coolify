@@ -4,8 +4,17 @@ import { defineConfig } from 'vitepress'
 import { useSidebar, useOpenapi } from 'vitepress-openapi'
 import spec from '../public/openapi.json' assert { type: 'json' }
 import container from 'markdown-it-container'
+import { getHighlighter, bundledLanguages } from 'shiki'
+import { join, dirname } from 'node:path'
 
 const sidebar = useSidebar({ spec, collapsible: true })
+
+// Add SSH to bundled languages
+bundledLanguages['ssh'] = {
+  id: 'ssh',
+  scopeName: 'source.ssh-config',
+  path: join(dirname(fileURLToPath(import.meta.url)), '../../node_modules/shiki/languages/ssh-config.tmLanguage.json')
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -460,6 +469,18 @@ export default defineConfig({
           }
         }
       })
+    },
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    },
+    // Configure Shiki with SSH language
+    async shikiSetup(shiki) {
+      await shiki.loadLanguage('ssh-config')
+    },
+    // Map ssh to ssh-config
+    languageAlias: {
+      ssh: 'ssh-config'
     }
   },
 
