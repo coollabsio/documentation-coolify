@@ -15,22 +15,22 @@ const operation = params.value.operation
 const themeConfig = {
     codeSamples: {
         langs: [
-            'bruno',
+            // 'bruno',
             ...useTheme().getCodeSamplesLangs(),
         ],
         availableLanguages: [
-            {
-                lang: 'bruno',
-                label: 'Bruno',
-                highlighter: 'plaintext',
-            },
+            // {
+            //     lang: 'bruno',
+            //     label: 'Bruno',
+            //     highlighter: 'plaintext',
+            // },
             ...useTheme().getCodeSamplesAvailableLanguages(),
         ],
         defaultLang: 'bruno',
         generator: (lang, request) => {
-            if (lang === 'bruno') {
-                return generateBrunoRequest(request) || ''
-            }
+            // if (lang === 'bruno') {
+            //     return generateBrunoRequest(request) || ''
+            // }
             return generateCodeSample(lang, request) || ''
         },
     }
