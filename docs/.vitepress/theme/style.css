@@ -304,6 +304,14 @@
   --vp-custom-block-success-bg: rgba(74, 222, 128, 0.1);
 }
 
+/* Container padding override */
+.container {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+
+
 /* Global link styling */
 .vp-doc a {
   @apply font-bold no-underline relative;
