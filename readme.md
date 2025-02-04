@@ -1,35 +1,5 @@
-### Install dependencies
+# Coolify Documentation
+This is the official repository for Coolify documentation, available at https://coolify.io/docs
 
-```bash
-bun i
-```
-
-```bash
-pnpm i
-```
-
-### Start dev server
-
-```bash
-bun dev
-```
-
-```bash
-pnpm dev
-```
-
-### Build
-
-```bash
-bun run build
-```
-
-```bash
-pnpm run build
-```
-
-### Docker Deployment
-```bash
-docker build -t docs . && docker run -p 80:80 docs
-
-```
+## Contributing
+Contributors should follow the guide at: https://coolify.io/docs/resource/contribute/documentation
