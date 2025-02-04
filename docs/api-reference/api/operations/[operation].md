@@ -26,7 +26,7 @@ const themeConfig = {
             // },
             ...useTheme().getCodeSamplesAvailableLanguages(),
         ],
-        defaultLang: 'bruno',
+        defaultLang: 'curl',
         generator: (lang, request) => {
             // if (lang === 'bruno') {
             //     return generateBrunoRequest(request) || ''
@@ -36,25 +36,25 @@ const themeConfig = {
     }
 }
 
-function generateBrunoRequest(request) {
-    if (!request) return ''
-    const { method, url, headers, body } = request
-    let brunoScript = `${method} ${url}\n`
+// function generateBrunoRequest(request) {
+//     if (!request) return ''
+//     const { method, url, headers, body } = request
+//     let brunoScript = `${method} ${url}\n`
     
-    if (headers && Object.keys(headers).length) {
-        brunoScript += '\nHeaders\n'
-        for (const [key, value] of Object.entries(headers)) {
-            brunoScript += `${key}: ${value}\n`
-        }
-    }
+//     if (headers && Object.keys(headers).length) {
+//         brunoScript += '\nHeaders\n'
+//         for (const [key, value] of Object.entries(headers)) {
+//             brunoScript += `${key}: ${value}\n`
+//         }
+//     }
 
-    if (body) {
-        brunoScript += '\nBody\n'
-        brunoScript += typeof body === 'string' ? body : JSON.stringify(body, null, 2)
-    }
+//     if (body) {
+//         brunoScript += '\nBody\n'
+//         brunoScript += typeof body === 'string' ? body : JSON.stringify(body, null, 2)
+//     }
 
-    return brunoScript
-}
+//     return brunoScript
+// }
 
 useTheme(themeConfig)
 </script>
