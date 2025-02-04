@@ -166,6 +166,12 @@
 
   /* Modern monospace font stack */
   --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+
+  /* Enhanced code highlighting, especially for Safari */
+  --vp-code-color: #f8f8f8;
+  --vp-code-link-color: #42b883;
+  --vp-code-link-hover-color: #35495e;
+  --vp-code-bg: #292d3e;  /* Darker background for better contrast */
 }
 
 /**
@@ -242,7 +248,7 @@
   --vp-c-text-3: #9A989D;
   
   /* Lighter code background in dark mode */
-  --vp-code-bg: #333338;
+  --vp-code-bg: #1a1a1f;  /* Darker background in dark mode */
   
   --vp-custom-block-tip-border: #0C4C69;
   --vp-custom-block-tip-text: #A7D2E8;
@@ -302,6 +308,10 @@
   --vp-custom-block-success-border: #4ade80;
   --vp-custom-block-success-text: #4ade80;
   --vp-custom-block-success-bg: rgba(74, 222, 128, 0.1);
+
+  /* Enhanced code highlighting, especially for Safari */
+  --vp-code-color: #F2F2F2;
+  --vp-code-bg: #1a1a1f;  /* Darker background in dark mode */
 }
 
 /* Container padding override */
@@ -334,14 +344,14 @@
 
 /* Force code element text color with webkit support */
 code {
-  color: #f8f8f8 !important;
-  -webkit-text-fill-color: #f8f8f8 !important;
+  color: var(--vp-code-color) !important;
+  -webkit-text-fill-color: var(--vp-code-color) !important;
   transition: color 0.2s ease-in-out, -webkit-text-fill-color 0.2s ease-in-out;
 }
 
 .dark code {
-  color: #F2F2F2 !important;
-  -webkit-text-fill-color: #F2F2F2 !important;
+  color: var(--vp-code-color) !important;
+  -webkit-text-fill-color: var(--vp-code-color) !important;
   transition: color 0.2s ease-in-out, -webkit-text-fill-color 0.2s ease-in-out;
 }
 
@@ -571,4 +581,150 @@ code:hover {
 .custom-block [class*='language-'] code {
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
+}
+
+/* Code highlighting enhancements */
+[class*='language-'] {
+  position: relative;
+  margin: 1em 0;
+  background-color: var(--vp-code-bg);
+  overflow-x: auto;
+}
+
+[class*='language-'] code {
+  color: var(--vp-code-color) !important;
+  -webkit-text-fill-color: var(--vp-code-color) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* Syntax highlighting colors with increased vibrancy */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8e908c !important;
+  -webkit-text-fill-color: #8e908c !important;
+}
+
+.token.property,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c792ea !important;
+  -webkit-text-fill-color: #c792ea !important;
+}
+
+.token.boolean,
+.token.number {
+  color: #ff9d00 !important;
+  -webkit-text-fill-color: #ff9d00 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+  color: #7ec699 !important;
+  -webkit-text-fill-color: #7ec699 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #67cdcc !important;
+  -webkit-text-fill-color: #67cdcc !important;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+/* Safari-specific enhancements */
+@supports (-webkit-hyphens:none) {
+  [class*='language-'] code {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    font-weight: 600 !important;
+  }
+
+  .token {
+    font-weight: 600 !important;
+  }
+
+  /* Comments styling */
+  .token.comment,
+  .token.block-comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    font-weight: 400 !important;  /* Normal weight for entire comment */
+    opacity: 0.7;  /* Slightly dim the comments */
+  }
+
+  /* Make specific tokens slightly bolder */
+  .token.keyword,
+  .token.function,
+  .token.class-name,
+  .token.property,
+  .token.number,
+  .token.boolean {
+    font-weight: 700 !important;
+  }
+}
+
+/* Markdown Labels like NODE_ENV */
+:not(pre) > code {
+  background-color: rgba(40, 44, 52, 0.95) !important;
+  color: #f0f0f0 !important;
+  -webkit-text-fill-color: #f0f0f0 !important;
+  font-weight: 500 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+  font-size: 0.7em !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 
+              0 0 2px rgba(255, 255, 255, 0.05) !important;
+  margin: 0 3px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+}
+
+/* Dark mode adjustments */
+.dark :not(pre) > code {
+  background-color: rgba(50, 50, 60, 0.95) !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3),
+              0 0 3px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Safari-specific enhancements for inline code */
+@supports (-webkit-hyphens:none) {
+  :not(pre) > code {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    backdrop-filter: blur(8px);  /* Subtle blur effect behind code */
+  }
+}
+
+/* Hover effect */
+:not(pre) > code:hover {
+  background-color: rgba(45, 50, 60, 0.98) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25),
+              0 0 3px rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
 }
