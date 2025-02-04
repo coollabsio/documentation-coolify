@@ -1,7 +1,9 @@
 ---
 title: "Integration"
+description: "A guide on how to use GitHub based repositories with Coolify."
 ---
 
+# Github Integration
 This guide will show you how to use GitHub based repositories with Coolify.
 
 ## Public Repositories
@@ -11,7 +13,9 @@ You can use public repositories without any additional setup.
 1. Select the `Public repository` option in the Coolify when you create a new resource.
 2. Add your repository URL to the input field, for example: `https://github.com/coollabsio/coolify-examples`
 
-<Aside type="caution">You can only use the https URL.</Aside>
+::: warning Caution
+You can only use the https URL.
+:::
 
 3. That's it! Coolify will automatically pull the latest version of your repository and deploy it.
 
@@ -30,7 +34,7 @@ You can use private repositories with the GitHub App integration. You will get f
 
 1. Add a private key (aka `Deploy Keys`) to Coolify and to your GitHub repository in the `Settings` / `Deploy Keys` menu.
 
-<Aside type="caution">
+::: warning Caution
   - You can generate a new key pair with the following command: 
   
   ```bash
@@ -38,12 +42,14 @@ You can use private repositories with the GitHub App integration. You will get f
   ```
 
   - Or you can also use Coolify to generate a new key for you in the `Keys & Tokens` menu.
-</Aside>
+:::
 
 2. Create a new resource and select the `Private Repository (with deploy key)`
 3. Add your repository URL to the input field, for example: `git@github.com:coollabsio/coolify-examples.git`
 
-<Aside type="caution">You need to use the SSH URL, so the one that starts with `git@`.</Aside>
+::: warning Caution
+You need to use the SSH URL, so the one that starts with `git@`.
+:::
 
 4. That's it!
 
@@ -51,12 +57,11 @@ You can use private repositories with the GitHub App integration. You will get f
 
 You can add a custom webhook URL to your GitHub repository to trigger a new deployment when you push to your repository.
 
-<Aside type="caution">
+::: warning Caution
 This can be set on either public or private repositories.
 
 Not required if you use GitHub App integration.
-
-</Aside>
+:::
 
 In your resource, there is a `Webhooks` menu. In the `Manual Git Webhooks` section, you can find the URL what you need to set in your GitHub repository.
 
@@ -70,11 +75,10 @@ In your resource, there is a `Webhooks` menu. In the `Manual Git Webhooks` secti
 
 You can add a custom webhook URL to your GitHub repository to trigger a new deployment when you create a new merge request.
 
-<Aside type="caution">
+::: warning Caution
 This can be set on either public or private repositories.
 
 Not required if you use GitHub App integration.
-
-</Aside>
+:::
 
 The process is the same as the previous one, but you need to select the `Pull Request` events option in the `Settings` / `Webhooks` menu.

@@ -2,6 +2,7 @@
 title: "GitHub Actions"
 ---
 
+# GitHub Actions
 You can use GitHub Actions to build your image and deploy it to Coolify.
 
 Here is an [example repository](https://github.com/andrasbacsai/github-actions-with-coolify) and a [workflow file](https://github.com/andrasbacsai/github-actions-with-coolify/blob/main/.github/workflows/build.yaml) that you can check how it works.
@@ -12,7 +13,7 @@ Here is an [example repository](https://github.com/andrasbacsai/github-actions-w
 
 2. You need to build your image and push it to a Docker registry. In the example, I use ghcr.io, but you can use any other registry.
 
-3. You need to create a [Coolify API Token](/docs/api-reference/authorization) and add it to your GitHub repository secrets.
+3. You need to create a [Coolify API Token](/api-reference/authorization) and add it to your GitHub repository secrets.
    - `COOLIFY_TOKEN` in the example.
 
 4. In Coolify, you need to setup your deployment type. It could be a simple Dockerfile, Docker Compose or Docker Image based deployment.
