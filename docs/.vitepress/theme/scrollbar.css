@@ -1,0 +1,90 @@
+* {
+  & ::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: transparent !important;
+  }
+
+  & ::-webkit-scrollbar-track {
+    background-color: transparent !important;
+    border-radius: 8px !important;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent !important;
+    border-radius: 8px !important;
+    background-color: var(--vp-c-divider) !important;
+    background-clip: padding-box !important;
+  }
+
+  & ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vp-c-text-3) !important;
+  }
+
+  & ::-webkit-scrollbar-corner {
+    background-color: transparent !important;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  * {
+    & ::-webkit-scrollbar {
+      width: 0.6em !important;
+      height: 0.6em !important;
+      background-color: transparent !important;
+    }
+  
+    & ::-webkit-scrollbar-track {
+      background-color: var(--vp-c-bg-soft) !important;
+    }
+  
+    & ::-webkit-scrollbar-thumb {
+      border-radius: 0.6em !important;
+      background-color: var(--vp-c-divider) !important;
+    }
+    & ::-webkit-scrollbar-thumb:hover {
+      background-color: var(--vp-c-text-3) !important;
+    }
+  }
+}
+
+.VPLocalSearchBox {
+  width: 100% !important;
+  
+  & .search-box {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  & .search-box > .DocSearch-Button {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  & .DocSearch-Button-Keys {
+    margin-left: auto !important;
+  }
+}
+
+.VPNavBarSearch {
+  width: 100% !important;
+
+  & #local-search {
+    width: 100% !important;
+  }
+
+  & .DocSearch-Button {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  & .DocSearch-Button-Container {
+    flex: 1 !important;
+  }
+
+  & .DocSearch-Button-Keys {
+    margin-left: auto !important;
+  }
+}
+
+  

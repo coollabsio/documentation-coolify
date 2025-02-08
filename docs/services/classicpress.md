@@ -1,0 +1,16 @@
+---
+title: ClassicPress
+---
+
+![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.webp)
+
+## What is ClassicPress?
+
+ClassicPress is a community-led open source content management system for creators. It is a fork of WordPress 6.2 that preserves the TinyMCE classic editor as the default option. It is half the size of WordPress, contains less bloat improving performance, and has no block editor (Gutenberg/Full Site Editing).
+
+For more information, see:
+
+- [The official website ›](https://www.classicpress.net/)
+- [The ClassicPress documentation ›](https://docs.classicpress.net/)
+- [The ClassicPress governance ›](https://www.classicpress.net/governance/)
+- [Suggest features ›](https://github.com/ClassicPress/ClassicPress/issues/)
