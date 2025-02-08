@@ -22,7 +22,7 @@ export default defineConfig({
   title: "Coolify Docs",
   description: "Self hosting with super powers",
   appearance: 'force-dark', // 'dark' allows user to change theme
-  base: '/',
+  base: '/docs/',
   cleanUrls: true,
   lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
