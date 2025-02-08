@@ -22,7 +22,7 @@ export default defineConfig({
   title: "Coolify Docs",
   description: "Self hosting with super powers",
   appearance: 'force-dark', // 'dark' allows user to change theme
-  base: '/docs/',
+  base: '/',
   cleanUrls: true,
   lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
@@ -78,9 +78,9 @@ export default defineConfig({
         text: 'Applications',
         collapsed: true,
         items: [
-          { 
-            text: 'Overview', 
-            link: '/applications/index', 
+          {
+            text: 'Overview',
+            link: '/applications/index',
             items: [
               { text: 'Django', link: '/applications/django' },
               { text: 'Jekyll', link: '/applications/jekyll' },
@@ -93,7 +93,7 @@ export default defineConfig({
               { text: 'Vue', link: '/applications/vuejs' },
               { text: 'Nuxt', link: '/applications/nuxt' },
               { text: 'SvelteKit', link: '/applications/svelte-kit' },
-            ] 
+            ]
           }
         ],
       },
@@ -101,9 +101,9 @@ export default defineConfig({
         text: 'Databases',
         collapsed: true,
         items: [
-          { 
-            text: 'Overview', 
-            link: '/databases/index', 
+          {
+            text: 'Overview',
+            link: '/databases/index',
             items: [
               { text: 'Backups', link: '/databases/backups' },
               { text: 'MySQL', link: '/databases/mysql' },
@@ -114,7 +114,7 @@ export default defineConfig({
               { text: 'DragonFly', link: '/databases/dragonfly' },
               { text: 'KeyDB', link: '/databases/keydb' },
               { text: 'Clickhouse', link: '/databases/clickhouse' },
-            ] 
+            ]
           }
         ],
       },
@@ -122,9 +122,9 @@ export default defineConfig({
         text: 'Services',
         collapsed: true,
         items: [
-          { 
-            text: 'Overview', 
-            link: '/services/overview', 
+          {
+            text: 'Overview',
+            link: '/services/overview',
             // items: [
             //   { text: 'ActivePieces', link: '/services/activepieces' },
             //   { text: 'AnythingLLM', link: '/services/anythingllm' },
@@ -160,7 +160,7 @@ export default defineConfig({
             //   { text: 'MinIO', link: '/services/minio' },
             //   { text: 'Plausible', link: '/services/plausible' },
             //   { text: 'Statusnook', link: '/services/statusnook' },
-            // ] 
+            // ]
           }
         ],
       },
@@ -168,63 +168,64 @@ export default defineConfig({
         text: 'Knowledge Base',
         collapsed: true,
         items: [
-          { 
-            text: 'Overview', 
-            link: '/knowledge-base/overview', 
+          {
+            text: 'Overview',
+            link: '/knowledge-base/overview',
             items: [
-              { 
+              {
                 text: 'Common Issues',
                 collapsed: true,
                 items: [
                   // {
-                  //   text: 'Applications', 
+                  //   text: 'Applications',
                   //   link: '/knowledge-base/common-issues/applications'
                   // },
                   // {
-                  //   text: 'Backup', 
+                  //   text: 'Backup',
                   //   link: '/knowledge-base/common-issues/backup'
                   // },
                   {
-                    text: 'Cloudflare', 
+                    text: 'Cloudflare',
                     link: '/knowledge-base/common-issues/cloudflare'
                   },
                   {
-                    text: 'Docker', 
+                    text: 'Docker',
                     link: '/knowledge-base/common-issues/docker'
                   },
                   // {
-                  //   text: 'Databases', 
+                  //   text: 'Databases',
                   //   link: '/knowledge-base/common-issues/databases'
                   // },
                   // {
-                  //   text: 'Services', 
+                  //   text: 'Services',
                   //   link: '/knowledge-base/common-issues/services'
                   // },
                   {
-                    text: 'Servers', 
+                    text: 'Servers',
                     link: '/knowledge-base/common-issues/servers'
                   },
                   // {
-                  //   text: 'Proxy', 
+                  //   text: 'Proxy',
                   //   link: '/knowledge-base/common-issues/proxy'
                   // }
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Internal',
                 collapsed: true,
                 items: [
                   {
-                    text: 'Scalability', 
+                    text: 'Scalability',
                     link: '/knowledge-base/internal/scalability'
                   },
                   {
-                    text: 'Terminal', 
+                    text: 'Terminal',
                     link: '/knowledge-base/internal/terminal'
                   }
-                ] 
+                ]
               },
-              { text: 'Self-hosted Instance', 
+              {
+                text: 'Self-hosted Instance',
                 collapsed: true,
                 items: [
                   { text: 'Monitoring', link: '/knowledge-base/monitoring' },
@@ -235,17 +236,17 @@ export default defineConfig({
                   { text: 'OAuth', link: '/knowledge-base/oauth' },
                   { text: 'Create Root User using ENV', link: '/knowledge-base/create-root-user-with-env' },
                   { text: 'Change Localhost Key', link: '/knowledge-base/change-localhost-key' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'DNS & Domains',
                 collapsed: true,
                 items: [
                   { text: 'DNS Configuration', link: '/knowledge-base/dns-configuration' },
                   { text: 'Domains', link: '/knowledge-base/domains' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Resources',
                 collapsed: true,
                 items: [
@@ -254,9 +255,9 @@ export default defineConfig({
                   { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
                   { text: 'Health Checks', link: '/knowledge-base/health-checks' },
                   { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'How-Tos',
                 collapsed: true,
                 items: [
@@ -265,28 +266,36 @@ export default defineConfig({
                   { text: 'Raspberry Pi OS Setup', link: '/knowledge-base/how-to/raspberry-pi-os' },
                   { text: 'Private NPM Registry', link: '/knowledge-base/how-to/private-npm-registry' },
                   { text: 'Ollama with GPU', link: '/knowledge-base/how-to/ollama-with-gpu' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Git',
                 collapsed: true,
                 items: [
-                  { text: 'Github', collapsed: true, items: [
-                    { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
-                    { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
-                  ] },
-                  { text: 'Gitlab', collapsed: true, items: [
-                    { text: 'Integrations', link: '/knowledge-base/git/gitlab/integration' },
-                  ] },
-                  { text: 'Bitbucket', collapsed: true, items: [
-                    { text: 'Integrations', link: '/knowledge-base/git/bitbucket/integration' },
-                  ] },
-                  { text: 'Gitea', collapsed: true, items: [
-                    { text: 'Integrations', link: '/knowledge-base/git/gitea/integration' },
-                  ] },
-                ] 
+                  {
+                    text: 'Github', collapsed: true, items: [
+                      { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
+                      { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
+                    ]
+                  },
+                  {
+                    text: 'Gitlab', collapsed: true, items: [
+                      { text: 'Integrations', link: '/knowledge-base/git/gitlab/integration' },
+                    ]
+                  },
+                  {
+                    text: 'Bitbucket', collapsed: true, items: [
+                      { text: 'Integrations', link: '/knowledge-base/git/bitbucket/integration' },
+                    ]
+                  },
+                  {
+                    text: 'Gitea', collapsed: true, items: [
+                      { text: 'Integrations', link: '/knowledge-base/git/gitea/integration' },
+                    ]
+                  },
+                ]
               },
-              { 
+              {
                 text: 'Servers',
                 collapsed: true,
                 items: [
@@ -300,18 +309,18 @@ export default defineConfig({
                   { text: 'OpenSSH', link: '/knowledge-base/server/openssh' },
                   { text: 'Oracle Cloud', link: '/knowledge-base/server/oracle-cloud' },
                   { text: 'Proxies', link: '/knowledge-base/server/proxies' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'S3',
                 collapsed: true,
                 items: [
                   { text: 'Introduction', link: '/knowledge-base/s3/introduction' },
                   { text: 'AWS', link: '/knowledge-base/s3/aws' },
                   { text: 'R2', link: '/knowledge-base/s3/r2' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Docker',
                 collapsed: true,
                 items: [
@@ -319,13 +328,13 @@ export default defineConfig({
                   { text: 'Docker Commands', link: '/knowledge-base/docker/custom-commands' },
                   { text: 'Registry', link: '/knowledge-base/docker/registry' },
                   { text: 'Swarm', link: '/knowledge-base/docker/swarm' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Cloudflare',
                 collapsed: true,
                 items: [
-                  { 
+                  {
                     text: 'Tunnels',
                     collapsed: true,
                     items: [
@@ -334,16 +343,16 @@ export default defineConfig({
                       { text: 'Single Resource', link: '/knowledge-base/cloudflare/tunnels/single-resource' },
                       { text: 'Server SSH Access', link: '/knowledge-base/cloudflare/tunnels/server-ssh' },
                       { text: 'Full TLS/HTTPS', link: '/knowledge-base/cloudflare/tunnels/full-tls' },
-                    ] 
+                    ]
                   },
                   { text: 'Origin Certificate', link: '/knowledge-base/cloudflare/origin-cert' },
-                ] 
+                ]
               },
-              { 
+              {
                 text: 'Proxy',
                 collapsed: true,
                 items: [
-                  { 
+                  {
                     text: 'Traefik',
                     collapsed: true,
                     items: [
@@ -356,18 +365,18 @@ export default defineConfig({
                       { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
                       { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
                       { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certificates' }
-                    ] 
+                    ]
                   },
-                  { 
+                  {
                     text: 'Caddy',
                     collapsed: true,
                     items: [
                       { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
-                    ] 
+                    ]
                   },
-                ] 
+                ]
               },
-            ] 
+            ]
           }
         ],
       },
@@ -375,36 +384,36 @@ export default defineConfig({
         text: 'API Reference',
         collapsed: true,
         items: [
-          { 
+          {
             text: 'Authorization',
             link: '/api-reference/authorization',
           },
           ...sidebar.generateSidebarGroups({
-              /**
-               * Optionally, you can filter paths by a prefix. Default is an empty string.
-               */
-              startsWith: 'operations',
+            /**
+             * Optionally, you can filter paths by a prefix. Default is an empty string.
+             */
+            startsWith: 'operations',
 
-              /**
-               * Optionally, you can specify if the sidebar items are collapsible. Default is true.
-               */
-              collapsible: true,
-              
-              /**
-               * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
-               */
-              depth: 6,
+            /**
+             * Optionally, you can specify if the sidebar items are collapsible. Default is true.
+             */
+            collapsible: true,
 
-              /**
-               * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
-               */
-              linkPrefix: '/api-reference/api/operations/',
+            /**
+             * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
+             */
+            depth: 6,
 
-              /**
-               * Optionally, you can specify a template for the sidebar items. You can see the default value
-               * in `sidebarItemTemplate` function in the `useSidebar` composable.
-               */
-              //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
+            /**
+             * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
+             */
+            linkPrefix: '/api-reference/api/operations/',
+
+            /**
+             * Optionally, you can specify a template for the sidebar items. You can see the default value
+             * in `sidebarItemTemplate` function in the `useSidebar` composable.
+             */
+            //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
           }),
         ],
       },
@@ -447,9 +456,9 @@ export default defineConfig({
         ],
       },
     ],
-    
+
   },
-  
+
   markdown: {
     config: (md) => {
       md.use(container, 'success', {
@@ -460,9 +469,8 @@ export default defineConfig({
           const m = tokens[idx].info.trim().match(/^success\s+(.*)$/)
           if (tokens[idx].nesting === 1) {
             // opening tag
-            return `<div class="custom-block success">${
-              m ? `<p class="custom-block-title">${m[1]}</p>` : ''
-            }\n`
+            return `<div class="custom-block success">${m ? `<p class="custom-block-title">${m[1]}</p>` : ''
+              }\n`
           } else {
             // closing tag
             return '</div>\n'
