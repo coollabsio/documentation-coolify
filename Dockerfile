@@ -1,5 +1,5 @@
 # Stage 1: Build Stage (oven/bun:1.1.44-alpine, ARM64)
-FROM oven/bun@sha256:de8a253c6b7b2cbde89697a951cc9828e5dbe1c3462abc157a9605db6fbdd6d9 AS builder
+FROM oven/bun:1.1.44-alpine AS builder
 
 # Set working directory and copy necessary files
 WORKDIR /app
@@ -8,11 +8,17 @@ WORKDIR /app
 COPY . .
 
 # Install Git and dependencies, then build the project
-RUN apk update && apk add --no-cache git && \
-    bun install && bun run build
+RUN --mount=type=cache,target=/var/cache/apk \
+    apk update && apk add --no-cache git
+
+RUN --mount=type=cache,target=/root/.bun \
+    --mount=type=cache,target=/root/.cache/bun \
+    bun install
+
+RUN bun run build
 
 # Stage 2: NGINX Unprivileged Setup (1.27.3-alpine-slim, ARM64)
-FROM nginxinc/nginx-unprivileged@sha256:ad8208f59f060b5e49638b15902af1965e2e53dc76395903fecfbee3bb0b9018 AS final
+FROM nginxinc/nginx-unprivileged:1.27.3-alpine-slim AS final
 
 # Set working directory for NGINX and copy built files from the build stage
 WORKDIR /usr/share/nginx/html

@@ -1,4 +1,4 @@
-import spec from '../../../public/openapi.json' assert { type: 'json' }
+import spec from '../../../public/openapi.json' with { type: 'json' }
 
 export default {
   async paths() {
@@ -17,4 +17,4 @@ export default {
       params: { operation: op }
     }))
   }
-} 
+}

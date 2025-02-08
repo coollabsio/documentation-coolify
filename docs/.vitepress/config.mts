@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
 import { defineConfig } from 'vitepress'
 import { useSidebar, useOpenapi } from 'vitepress-openapi'
-import spec from '../public/openapi.json' assert { type: 'json' }
+import spec from '../public/openapi.json' with { type: 'json' }
 import container from 'markdown-it-container'
 import { getHighlighter, bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
