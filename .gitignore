@@ -17,3 +17,4 @@ pnpm-global
 pnpm-lock.yaml
 TODOs.md
 *.timestamp-*.mjs
+bun.lockb
