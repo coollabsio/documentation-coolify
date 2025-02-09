@@ -1,8 +1,10 @@
 ---
-title: Firefly III
+title: "Firefly III"
+description: "Here you can find the documentation for hosting Firefly III with Coolify."
 ---
 
-![Firefly III](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/logo-small.webp)
+
+![Firefly III](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/logo-small.png)
 
 ## What is Firefly III?
 
@@ -14,9 +16,9 @@ But you get the idea: this is your money. These are your expenses. Stop them fro
 
 ## Screenshots
 
-![Firefly III screenshot](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.webp)
+![Firefly III screenshot](https://raw.githubusercontent.com/firefly-iii/firefly-iii/develop/.github/assets/img/imac-complete.png)
 
 ## Links
 
-- [The official website ›](https://firefly-iii.org/)
-- [GitHub ›](https://github.com/firefly-iii/firefly-iii/)
+- [The official website ›](https://firefly-iii.org?utm_source=coolify.io)
+- [GitHub ›](https://github.com/firefly-iii/firefly-iii?utm_source=coolify.io)

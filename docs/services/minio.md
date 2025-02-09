@@ -1,8 +1,10 @@
 ---
-title: MinIO
+title: "MinIO"
+description: "Here you can find the documentation for hosting MinIO with Coolify."
 ---
 
-![MinIO](https://github.com/minio.webp)
+
+![MinIO](https://github.com/minio.png)
 
 ## What is MinIO?
 

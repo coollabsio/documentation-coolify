@@ -1,8 +1,9 @@
 ---
-title: Logto
+title: "Logto"
+description: "Here you can find the documentation for hosting Logto with Coolify."
 ---
 
-![Logto](https://github.com/logto-io/logto/raw/master/logo.webp)
+![Logto](https://github.com/logto-io/logto/raw/master/logo.png)
 
 ## What is Logto?
 

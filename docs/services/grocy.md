@@ -1,6 +1,8 @@
 ---
-title: Grocy
+title: "Grocy"
+description: "Here you can find the documentation for hosting Grocy with Coolify."
 ---
+
 
 ![Grocy](https://raw.githubusercontent.com/grocy/grocy/master/public/img/logo.svg?sanitize=true)
 

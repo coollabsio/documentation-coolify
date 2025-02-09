@@ -1,6 +1,8 @@
 ---
-title: Glitchtip
+title: "Glitchtip"
+description: "Here you can find the documentation for hosting Glitchtip with Coolify."
 ---
+
 
 ![Glitchtip](https://glitchtip.com/assets/logo-again.svg)
 

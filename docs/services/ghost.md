@@ -1,8 +1,9 @@
 ---
-title: Ghost
+title: "Ghost"
+description: "Here you can find the documentation for hosting Ghost with Coolify."
 ---
 
-![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.webp)
+![Ghost](https://user-images.githubusercontent.com/353959/169805900-66be5b89-0859-4816-8da9-528ed7534704.png)
 
 ## What is Ghost?
 

@@ -1,8 +1,10 @@
 ---
-title: Change Detection
+title: "Change Detection"
+description: "Here you can find the documentation for hosting Change Detection with Coolify."
 ---
 
-![Change Detection](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.webp)
+
+![Change Detection](https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/docs/screenshot.png)
 
 ## What is Change Detection?
 
@@ -48,10 +50,10 @@ Live your data-life pro-actively.
 - Execute JS before extracting text (Good for logging in, see examples in the UI!)
 - Override Request Headers, Specify `POST` or `GET` and other methods
 - Use the "Visual Selector" to help target specific elements
-- Configurable [proxy per watch](https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration)
+- Configurable [proxy per watch](https://github.com/dgtlmoon/changedetection.io/wiki/Proxy-configuration?utm_source=coolify.io)
 - Send a screenshot with the notification when a change is detected in the web page.
 
 ## Links
 
-- [The official website ›](https://changedetection.io)
-- [GitHub ›](https://github.com/dgtlmoon/changedetection.io)
+- [The official website ›](https://changedetection.io?utm_source=coolify.io)
+- [GitHub ›](https://github.com/dgtlmoon/changedetection.io?utm_source=coolify.io)

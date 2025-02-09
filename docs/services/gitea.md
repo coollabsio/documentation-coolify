@@ -1,6 +1,8 @@
 ---
-title: Gitea
+title: "Gitea"
+description: "Here you can find the documentation for hosting Gitea with Coolify."
 ---
+
 
 ![Gitea](https://about.gitea.com/gitea-text.svg)
 

@@ -1,8 +1,9 @@
 ---
-title: ClassicPress
+title: "ClassicPress"
+description: "Here you can find the documentation for hosting ClassicPress with Coolify."
 ---
 
-![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.webp)
+![ClassicPress](https://raw.githubusercontent.com/ClassicPress/ClassicPress/develop/src/wp-admin/images/classicpress-logo.png)
 
 ## What is ClassicPress?
 
@@ -10,7 +11,7 @@ ClassicPress is a community-led open source content management system for creato
 
 For more information, see:
 
-- [The official website ›](https://www.classicpress.net/)
-- [The ClassicPress documentation ›](https://docs.classicpress.net/)
-- [The ClassicPress governance ›](https://www.classicpress.net/governance/)
-- [Suggest features ›](https://github.com/ClassicPress/ClassicPress/issues/)
+- [The official website ›](https://www.classicpress.net?utm_source=coolify.io)
+- [The ClassicPress documentation ›](https://docs.classicpress.net?utm_source=coolify.io)
+- [The ClassicPress governance ›](https://www.classicpress.net/governance?utm_source=coolify.io)
+- [Suggest features ›](https://github.com/ClassicPress/ClassicPress/issues?utm_source=coolify.io)

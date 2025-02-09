@@ -1,5 +1,6 @@
 ---
-title: Metube
+title: "Metube"
+description: "Here you can find the documentation for hosting Metube with Coolify."
 ---
 
 ![Metube](https://github.com/alexta69/metube/raw/master/screenshot.gif)

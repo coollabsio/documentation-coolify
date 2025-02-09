@@ -1,8 +1,10 @@
 ---
-title: Emby Stat
+title: "Emby Stat"
+description: "Here you can find the documentation for hosting Emby Stat with Coolify."
 ---
 
-![Emby Stat](https://raw.githubusercontent.com/mregni/EmbyStat/develop/branding/logo-color.webp)
+
+![Emby Stat](https://raw.githubusercontent.com/mregni/EmbyStat/develop/branding/logo-color.png)
 
 ## What is Emby Stat?
 
@@ -10,4 +12,4 @@ EmbyStat is a personal web server that can calculate all kinds of statistics fro
 
 ## Links
 
-- [The official website ›](https://github.com/mregni/EmbyStat)
+- [The official website ›](https://github.com/mregni/EmbyStat?utm_source=coolify.io)
