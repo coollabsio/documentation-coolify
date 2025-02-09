@@ -59,8 +59,9 @@
 
             <!-- Terminal Content -->
             <div class="p-3 bg-white dark:bg-[#202127]/40">
-                <code
-                    class="language-bash mr-auto ml-0 text-sm text-[#E2931D] dark:text-[#FFCB6B]">{{ referralUrl }}</code>
+                <a :href="referralUrl" target="_blank" rel="noopener noreferrer">
+                    <code class="language-bash mr-auto ml-0 text-sm text-[#E2931D] dark:text-[#FFCB6B]">{{ referralUrl }}</code>
+                </a>
             </div>
 
         </div>
@@ -99,7 +100,7 @@
         <ClientOnly>
             <Globe />
         </ClientOnly>
-            
+
     </div>
 </template>
 
