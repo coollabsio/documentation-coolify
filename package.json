@@ -1,22 +1,24 @@
 {
-  "name": "coolify-docs",
+  "name": "documentation-coolify",
   "version": "0.0.1",
   "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.10.2",
-    "autoprefixer": "^10.4.13",
-    "fast-glob": "^3.3.2",
-    "js-yaml": "^4.1.0",
-    "markdown-it-container": "^4.0.0",
-    "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4",
-    "tsx": "^4.19.2",
+    "@types/js-yaml": "4.0.9",
+    "@types/node": "22.13.1",
+    "autoprefixer": "10.4.20",
+    "fast-glob": "3.3.3",
+    "js-yaml": "4.1.0",
+    "markdown-it-container": "4.0.0",
+    "postcss": "8.5.1",
+    "tailwindcss": "3.2.4",
+    "tsx": "4.19.2",
     "vite-plugin-yaml": "^1.0.5",
-    "vitepress": "^1.5.0",
+    "vitepress": "1.6.3",
     "vue": "^3.5.13"
   },
   "postcss": {
     "plugins": {
+      "postcss-import": {},
+      "tailwindcss/nesting": {},
       "tailwindcss": {},
       "autoprefixer": {}
     }
@@ -29,8 +31,8 @@
     "transform-openapi": "tsx scripts/convert-openapi.ts"
   },
   "dependencies": {
-    "@vueuse/core": "^12.2.0",
-    "globe.gl": "^2.34.6",
+    "@vueuse/core": "12.5.0",
+    "globe.gl": "2.39.7",
     "vitepress-openapi": "0.0.3-alpha.55"
   }
 }

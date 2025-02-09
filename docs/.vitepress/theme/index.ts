@@ -44,7 +44,7 @@ export default {
       base: "/docs/api-reference/api/operations/",
       label: "API"
     });
-    
+
     theme.enhanceApp({ app, openapi });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);

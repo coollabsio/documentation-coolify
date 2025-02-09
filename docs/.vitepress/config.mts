@@ -1,10 +1,10 @@
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
 import { defineConfig } from 'vitepress'
-import { useSidebar, useOpenapi } from 'vitepress-openapi'
+import { useSidebar } from 'vitepress-openapi'
 import spec from '../public/openapi.json' with { type: 'json' }
 import container from 'markdown-it-container'
-import { getHighlighter, bundledLanguages } from 'shiki'
+import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
 
 const sidebar = useSidebar({ spec, collapsible: true })
@@ -27,6 +27,9 @@ export default defineConfig({
   lastUpdated: true,
   // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
+  sitemap: {
+    hostname: 'https://coolify.io/docs/'
+  },
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
@@ -240,7 +243,7 @@ export default defineConfig({
               { text: 'Windmill', link: '/services/windmill' },
               { text: 'WordPress', link: '/services/wordpress' },
               { text: 'Zipline', link: '/services/zipline' }
-            ]            
+            ]
           }
         ],
       },
