@@ -1,8 +1,10 @@
 ---
-title: Kuzzle
+title: "Kuzzle"
+description: "Here you can find the documentation for hosting Kuzzle with Coolify."
 ---
 
-![Kuzzle](https://user-images.githubusercontent.com/7868838/103797784-32337580-5049-11eb-8917-3fcf4487644c.webp)
+
+![Kuzzle](https://user-images.githubusercontent.com/7868838/103797784-32337580-5049-11eb-8917-3fcf4487644c.png)
 
 ## What is Kuzzle?
 

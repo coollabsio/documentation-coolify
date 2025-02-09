@@ -1,8 +1,10 @@
 ---
-title: DokuWiki
+title: "DokuWiki"
+description: "Here you can find the documentation for hosting DokuWiki with Coolify."
 ---
 
-![DokuWiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.webp)
+
+![DokuWiki](https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png)
 
 ## What is DokuWiki?
 
@@ -32,5 +34,5 @@ DokuWiki are quick to update and new pages are easily added. Designed for collab
 
 ## Links
 
-- [The official website ›](https://www.dokuwiki.org)
-- [GitHub ›](https://github.com/splitbrain/dokuwiki)
+- [The official website ›](https://www.dokuwiki.org?utm_source=coolify.io)
+- [GitHub ›](https://github.com/splitbrain/DokuWiki?utm_source=coolify.io)

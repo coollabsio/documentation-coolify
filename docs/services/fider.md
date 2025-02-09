@@ -1,8 +1,10 @@
 ---
-title: Fider
+title: "Fider"
+description: "Here you can find the documentation for hosting Fider with Coolify."
 ---
 
-![Fider](https://github.com/getfider/fider/raw/main/etc/homepage.webp)
+
+![Fider](https://github.com/getfider/fider/raw/main/etc/homepage.png)
 
 ## What is Fider?
 
@@ -10,4 +12,4 @@ Fider is a feedback portal for feature requests and suggestions. Give your custo
 
 ## Links
 
-- [The official website ›](https://fider.io/)
+- [The official website ›](https://fider.io?utm_source=coolify.io)

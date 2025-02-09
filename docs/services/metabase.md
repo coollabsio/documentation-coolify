@@ -1,5 +1,6 @@
 ---
-title: Metabase
+title: "Metabase"
+description: "Here you can find the documentation for hosting Metabase with Coolify."
 ---
 
 ![Metabase](https://github.com/metabase/metabase/raw/master/docs/images/metabase-product-screenshot.svg)

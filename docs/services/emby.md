@@ -1,8 +1,10 @@
 ---
-title: Emby
+title: "Emby"
+description: "Here you can find the documentation for hosting Emby with Coolify."
 ---
 
-![Emby](https://emby.media/support/images/logo.webp)
+
+![Emby](https://emby.media/support/images/logo.png)
 
 ## What is Emby?
 
@@ -32,5 +34,5 @@ Windows, Mac, Linux, or FreeBSD computer
 
 ## Community
 
-- [The official website ›](https://emby.media/)
-- [The Emby community ›](https://emby.media/community/)
+- [The official website ›](https://emby.media?utm_source=coolify.io)
+- [The Emby community ›](https://emby.media/community?utm_source=coolify.io)

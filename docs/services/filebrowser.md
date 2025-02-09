@@ -1,8 +1,10 @@
 ---
-title: Filebrowser
+title: "Filebrowser"
+description: "Here you can find the documentation for hosting Filebrowser with Coolify."
 ---
 
-![Filebrowser](https://raw.githubusercontent.com/filebrowser/logo/master/banner.webp)
+
+![Filebrowser](https://raw.githubusercontent.com/filebrowser/logo/master/banner.png)
 
 ## What is Filebrowser?
 
@@ -14,11 +16,11 @@ Filebrowser provides a file managing interface within a specified directory and 
 
 ## Demo
 
-Url: https://demo.filebrowser.org/
+Link: [Filebrowser Demo](https://demo.filebrowser.org/?utm_source=coolify.io)
 
 Credentials: demo/demo
 
 ## Links
 
-- [The official Filebrowser website ›](https://filebrowser.org/)
-- [GitHub ›](https://github.com/filebrowser/filebrowser)
+- [The official Filebrowser website ›](https://filebrowser.org?utm_source=coolify.io)
+- [GitHub ›](https://github.com/filebrowser/filebrowser?utm_source=coolify.io)

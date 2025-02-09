@@ -1,8 +1,10 @@
 ---
-title: Grafana
+title: "Grafana"
+description: "Here you can find the documentation for hosting Grafana with Coolify."
 ---
 
-![Grafana](https://github.com/grafana/grafana/raw/main/docs/logo-horizontal.webp#gh-light-mode-only)
+
+![Grafana](https://github.com/grafana/grafana/raw/main/docs/logo-horizontal.png#gh-light-mode-only)
 
 ## What is Grafana?
 

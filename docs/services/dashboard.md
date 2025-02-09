@@ -1,8 +1,10 @@
 ---
-title: Dashboard
+title: "Dashboard"
+description: "Here you can find the documentation for hosting Dashboard with Coolify."
 ---
 
-![dashboard](https://github.com/phntxx/dashboard/blob/master/screenshot.webp?raw=true)
+
+![dashboard](https://i.imgur.com/tOnPDYQ.png)
 
 ## What is Dashboard?
 
@@ -19,4 +21,4 @@ So what makes this project different from (or even better than) SUI?
 
 ## Links
 
-- [GitHub ›](https://github.com/phntxx/dashboard/)
+- [GitHub ›](https://github.com/phntxx/dashboard?utm_source=coolify.io)
