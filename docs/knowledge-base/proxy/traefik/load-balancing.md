@@ -2,7 +2,7 @@
 title: "Load-balancing"
 ---
 
-
+# Load-balancing
 You can easily use Traefik to loadbalance an application between:
 
 - 2+ servers

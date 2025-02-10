@@ -2,6 +2,7 @@
 title: "Enable Dashboard"
 ---
 
+# Traefik Dashboard
 By default, the Traefik dashboard is enabled in secure mode, but not configured to be accessible from the internet.
 
 To enable access from the internet, you need to add a dynamic configuration and secure it with a username and password.

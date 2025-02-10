@@ -2,6 +2,7 @@
 title: "Healthcheck"
 ---
 
+# Healthchecks
 For Traefik to be able to route traffic to your services, it needs to know if they are healthy or not. This is done by using healthchecks.
 
 ## Enabled

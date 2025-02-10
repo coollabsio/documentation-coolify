@@ -2,6 +2,7 @@
 title: "Basic Auth Middleware"
 ---
 
+# Basic Auth Middleware
 The configuration is slightly different for [`Standard Applications`](#standard-applications) and [`Docker Compose based applications/one-click services`](#docker-compose-and-services).
 
 ## Standard Applications
