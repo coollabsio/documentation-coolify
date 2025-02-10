@@ -20,7 +20,7 @@ bundledLanguages['ssh'] = {
 export default defineConfig({
   lang: 'en-US',
   title: "Coolify Docs",
-  description: "Self hosting with super powers",
+  description: "Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.",
   appearance: 'force-dark', // 'dark' allows user to change theme
   base: '/docs/',
   cleanUrls: true,
@@ -32,11 +32,24 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['meta', { name: 'theme-color', content: '#000000' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'Coolify Docs' }],
+    ['meta', { property: 'og:url', content: 'https://coolify.io/docs/' }],
+    ['meta', { property: 'og:description', content: 'Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.' }],
+    ['meta', { property: 'og:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
+    ['meta', { property: 'twitter:site', content: '@coolifyio' }],
+    ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { property: 'twitter:title', content: 'Coolify Docs' }],
+    ['meta', { property: 'twitter:description', content: 'Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.' }],
+    ['meta', { property: 'twitter:url', content: 'https://coolify.io/docs/' }],
+    ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['script', { src: 'https://analytics.coollabs.io/js/script.js', 'data-domain': 'coolify.io/docs' }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/logo.svg',
+    logo: '/coolify-logo-transparent.png',
     nav: [
       { text: 'Coolify Cloud', link: 'https://coolify.io/pricing/' },
       {
