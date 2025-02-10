@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
+import llms from 'vite-plugin-llms'
 import { defineConfig } from 'vitepress'
 import { useSidebar } from 'vitepress-openapi'
 import spec from '../public/openapi.json' with { type: 'json' }
@@ -591,7 +592,12 @@ export default defineConfig({
   rewrites: {},
 
   vite: {
-    plugins: [yaml as any],
+    plugins: [
+      yaml as any,
+      llms({
+        llmsDir: 'llms'
+      })
+    ],
     assetsInclude: ['**/*.yml'],
     build: {
       chunkSizeWarningLimit: 5000
