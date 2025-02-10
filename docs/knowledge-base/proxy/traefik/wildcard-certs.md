@@ -3,18 +3,20 @@ title: "Wildcard SSL Certificates"
 description: "A guide to configure wildcard subdomain redirects (with Traefik wildcard certificates) in Coolify."
 ---
 
+# Setup Wildcard SSL Certificates with Traefik
+
 ## Prerequisites
 
 - You need to have a domain name and a DNS provider that supports wildcard subdomains.
 - You need to use [dnsChallenge](https://doc.traefik.io/traefik/https/acme/#dnschallenge) in Traefik to get wildcard certificates from Let's Encrypt.
 - You need to use one of the supported DNS [providers](https://doc.traefik.io/traefik/https/acme/#providers).
 
-<Aside type="tip">
+::: tip Tip
 Each provider needs environment variables to be set in the Traefik configuration. You can find the required variables in the [official documentation](https://doc.traefik.io/traefik/https/acme/#providers).
 
 
 If you need fine-grained token, like with [Cloudflare](https://go-acme.github.io/lego/dns/cloudflare/), check the provider configurations.
-</Aside>
+:::
 
 
 ## Configuration
@@ -136,7 +138,7 @@ traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
 
 > `traefik.http.services.<unique_service_name>.loadbalancer.server.port` should be the same as your application listens on. Port 80 if you use a static deployment.
 
-<Aside type="caution">
+::: warning Caution
   You cannot use both configurations (Normal & SaaS) at the same time on one
   server.
-</Aside>
+:::

@@ -447,7 +447,7 @@ export default defineConfig({
                       { text: 'Healthcheck', link: '/knowledge-base/proxy/traefik/healthcheck' },
                       { text: 'Load Balancing', link: '/knowledge-base/proxy/traefik/load-balancing' },
                       { text: 'Redirects', link: '/knowledge-base/proxy/traefik/redirects' },
-                      { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certificates' }
+                      { text: 'Wildcard SSL Certificates', link: '/knowledge-base/proxy/traefik/wildcard-certs' }
                     ]
                   },
                   {
