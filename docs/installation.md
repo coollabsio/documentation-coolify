@@ -11,7 +11,7 @@ The following instructions are for installing Coolify if you decide to self-host
 ## Self-hosted Installation
 ::: success ⚡️ Quick Installation (recommended):
   ``` sh
-   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
   ```
   Simply run this script in your terminal, and everything will be installed automatically. 
 
