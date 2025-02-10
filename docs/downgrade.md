@@ -43,7 +43,7 @@ Next, you need to SSH into your server to execute the downgrade command.
 ## 3. Execute the Downgrade Command
 To downgrade Coolify to the desired version, run the following command in your terminal:
 ```sh
-  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash -s 4.0.0-beta.369
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash -s 4.0.0-beta.369
 ```
 Replace `4.0.0-beta.369` with the version number you want to downgrade to. 
 

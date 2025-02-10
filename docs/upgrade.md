@@ -60,7 +60,7 @@ If you prefer to have full control over when and how your instance is updated, y
 ### How it works:
 To manually upgrade your Coolify instance, open the terminal on your server and execute the following command:
 ```sh
-  curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
 ```
 This command will download and execute the official [Coolify installation script ↗](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh). The script will check for the latest version and perform the necessary upgrade steps.
 
