@@ -15,16 +15,16 @@ For complex applications, you can use Docker Compose based deployments or the on
   You can host almost any application that you want, not just the ones listed here.
 :::
 
-- [Vite](/docs/applications/vite)
-- [Django](/docs/applications/django)
-- [Jekyll](/docs/applications/jekyll)
-- [Vue.js](/docs/applications/vuejs)
-- [Next.js](/docs/applications/nextjs)
-- [Nuxt](/docs/applications/nuxt)
-- [Laravel](/docs/applications/laravel)
-- [Symfony](/docs/applications/symfony)
-- [Ruby on Rails](/docs/applications/rails)
-- [SvelteKit](/docs/applications/svelte-kit)
+- [Vite](/applications/vite)
+- [Django](/applications/django)
+- [Jekyll](/applications/jekyll)
+- [Vue.js](/applications/vuejs)
+- [Next.js](/applications/nextjs)
+- [Nuxt](/applications/nuxt)
+- [Laravel](/applications/laravel)
+- [Symfony](/applications/symfony)
+- [Ruby on Rails](/applications/rails)
+- [SvelteKit](/applications/svelte-kit)
 
 
 ## General Configuration
