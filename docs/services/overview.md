@@ -25,7 +25,7 @@ You can host ANY service with Coolify that could be containerized.
 
 ## Services
 
-- [ActivePieces](/services/activepieces) - Open source no-code business automation.
+- [Activepieces](/services/activepieces) - Open source no-code business automation.
 - [AnythingLLM](/services/anythingllm) - An open-source LLM client that empowers developers to build and scale workflows quickly.
 - [Appsmith](/services/appsmith) - A low-code application platform for building internal tools.
 - [Appwrite](/services/appwrite) - A backend-as-a-service platform that simplifies the web & mobile app development.
@@ -35,7 +35,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Beszel](/services/beszel) - Lightweight server monitoring hub with historical data, docker stats, and alerts.
 - [Browserless](/services/browserless) - Headless Chrome as a service.
 - [BudgE](/services/budge) - A budgeting personal finance app.
-- [Change Detection](/services/changedetection) - Website change detection monitor and notifications.
+- [Changedetection](/services/changedetection) - Website change detection monitor and notifications.
 - [Chaskiq](/services/chaskiq) - Open source customer engagement platform.
 - [Chatwoot](/services/chatwoot) - Open-source customer engagement suite.
 - [ClassicPress](/services/classicpress) - A business-focused CMS with a strong community.
@@ -81,7 +81,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Logto](/services/logto) - Logto is an Auth0 alternative designed for modern apps and SaaS products.
 - [Mailpit](/services/mailpit) - Self-hosted email and SMTP testing tool.
 - [MediaWiki](/services/mediawiki) - A free and open-source wiki software package.
-- [MeiliSearch](/services/meilisearch) - A powerful, fast, open-source, easy to use, and deploy search engine.
+- [Meilisearch](/services/meilisearch) - A powerful, fast, open-source, easy to use, and deploy search engine.
 - [Metabase](/services/metabase) - The simplest, fastest way to share data and analytics inside your company.
 - [Metube](/services/metube) - A self-hosted video sharing platform.
 - [Minecraft](/services/minecraft) - Minecraft game server.
@@ -91,7 +91,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Mosquitto](/services/mosquitto) - Open-source MQTT broker.
 - [N8N](/services/n8n) - Workflow automation tool.
 - [Nextcloud](/services/nextcloud) - A safe home for all your data.
-- [Sonatype Nexus](/services/sonatype-nexus) - A repository manager that allows you to store, manage, and distribute your software artifacts.
+- [Nexus](/services/sonatype-nexus) - A repository manager that allows you to store, manage, and distribute your software artifacts.
 - [Nitropage](/services/nitropage) - Nitropage is an extensible, drag-and-drop website builder based on SolidStart, completely free and open source.
 - [NocoDB](/services/nocodb) - Open Source Airtable Alternative.
 - [Odoo](/services/odoo) - Open source ERP and CRM.
@@ -103,7 +103,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Penpot](/services/penpot) - Open Source design & prototyping platform.
 - [phpMyAdmin](/services/phpmyadmin) - MySQL database management tool.
 - [Plane](/services/plane) - Open source project planning tool.
-- [Plausible Analytics](/services/plausible) - Simple and privacy-friendly alternative to Google Analytics.
+- [Plausible](/services/plausible) - Simple and privacy-friendly alternative to Google Analytics.
 - [Plex](/services/plex) - Media server software.
 - [Plunk](/services/plunk) - Self-hosted email marketing platform.
 - [Pocketbase](/services/pocketbase) - Open Source backend for your next SaaS and Mobile app.
@@ -120,7 +120,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Slash](/services/slash) - Open-source, self-hosted links and notes manager.
 - [Snapdrop](/services/snapdrop) - Local file sharing in your browser.
 - [Sonarr](/services/sonarr) - A internet PVR for Usenet and Torrents.
-- [StatusNook](/services/statusnook) - A status page system for your website.
+- [Statusnook](/services/statusnook) - A status page system for your website.
 - [Stirling PDF](/services/stirling-pdf) - Powerful PDF manipulation tool.
 - [Supabase](/services/supabase) - Open source Firebase alternative.
 - [Syncthing](/services/syncthing) - Open Source Continuous File Synchronization.
