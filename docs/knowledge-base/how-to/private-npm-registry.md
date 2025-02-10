@@ -16,7 +16,7 @@ If you would like to use a private NPM registry with Coolify, you can do so by f
 2. Add the following environment variables to your project as a `build` variable:
 
 ```bash
-NPM_TOKEN=your_github_token
+NPM_TOKEN=your_npm_token
 ```
 
 3. Deploy your application.
