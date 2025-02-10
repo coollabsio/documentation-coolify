@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
 # Install dependencies with cache
 RUN --mount=type=cache,target=/root/.bun \
     --mount=type=cache,target=/root/.cache/bun \
-    bun install --frozen-lockfile
+    bun install
 
 # Copy only necessary files for build
 COPY docs/ ./docs/
