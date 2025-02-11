@@ -19,7 +19,8 @@ const coreMembers = [
     links: [
       { icon: 'github', link: 'https://github.com/andrasbacsai' },
       { icon: 'expedia', link: 'https://heyandras.dev' },
-      { icon: 'x', link: 'https://x.com/heyandras' }
+      { icon: 'x', link: 'https://x.com/heyandras' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/heyandras.dev' }
     ]
   },
   {
@@ -28,7 +29,9 @@ const coreMembers = [
     title: 'Core Developer',
     links: [
       { icon: 'github', link: 'https://github.com/peaklabs-dev' },
-      { icon: 'x', link: 'https://x.com/peaklabs_dev' }
+      { icon: 'x', link: 'https://x.com/peaklabs_dev' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/peaklabs.dev' },
+      { icon: 'mastodon', link: 'https://fosstodon.org/@peaklabs_dev' }
     ]
   },
   {
