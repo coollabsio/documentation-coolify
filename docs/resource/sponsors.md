@@ -69,6 +69,22 @@ const sponsors = [
     ]
   },
   {
+    avatar: '../images/sponsors/coderabbit.webp',
+    name: 'CodeRabbit',
+    title: 'Cut Code Review Time & Bugs in Half',
+    links: [
+      { icon: 'expedia', link: 'https://www.coderabbit.io/?ref=coolify.io&utm_source=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/convex.webp',
+    name: 'Convex',
+    title: 'Open-source reactive database for web app developers.',
+    links: [
+      { icon: 'expedia', link: 'https://convex.link/coolify.io' }
+    ]
+  },
+  {
     avatar: '../images/sponsors/stream.webp',
     name: 'Stream',
     title: 'APIs and SDKs to Build In-App Chat, Video, & Feeds Faster.',
