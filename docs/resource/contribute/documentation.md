@@ -11,11 +11,11 @@ Follow these steps to contribute to our documentation:
 - Fork the documentation repository on GitHub.
 - Clone your fork to your local system using:
   ```sh
-  git clone https://github.com/your-username/your-repo-name.git
+  git clone https://github.com/coollabsio/documentation-coolify.git
   ```
 - Navigate to the cloned directory:
   ```sh
-  cd your-repo-name
+  cd documentation-coolify
   ```
 
 ## 2. Install Dependencies
