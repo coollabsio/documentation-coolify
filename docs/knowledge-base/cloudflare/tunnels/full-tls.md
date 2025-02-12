@@ -33,11 +33,12 @@ To follow this guide, you'll need:
 
 ### Quick Links to Important Sections:
 - [Create a Cloudflare Origin Certificate](#_1-create-a-cloudflare-origin-certificate)
-- [Add Origin Certificate to Your Server](#_2-add-certificate-to-your-server)
-- [Setup Encryption mode on Cloudflare](#_3-setup-encryption-mode-on-cloudflare)
-- [Configure Tunnel to Use HTTPS](#_4-configure-tunnel-to-use-https)
-- [Configure Cloudflare to Always Use HTTPS](#_5-configure-cloudflare-to-always-use-https)
-- [Update URLs from HTTP to HTTPS](#_6-update-urls-from-http-to-https)
+- [Add Origin Certificate to Your Server](#_2-add-origin-certificate-to-your-server)
+- [Configure Coolify to Use the Origin Certificate](#_3-configure-coolify-to-use-the-origin-certificate)
+- [Setup Encryption mode on Cloudflare](#_4-setup-encryption-mode-on-cloudflare)
+- [Configure Tunnel to Use HTTPS](#_5-configure-tunnel-to-use-https)
+- [Configure Cloudflare to Always Use HTTPS](#_6-configure-cloudflare-to-always-use-https)
+- [Update URLs from HTTP to HTTPS](#_7-update-urls-from-http-to-https)
 
 ---
 
@@ -98,58 +99,103 @@ ssh shadowarcanist@203.0.113.1
 
 Once logged in, navigate to the Coolify proxy directory:
 ```sh
-$ cd /data/coolify/proxy
+cd /data/coolify/proxy
 ```
 
 Check if you have a **certs** folder:
 ```sh
-$ ls
+ls
 > acme.json  docker-compose.yml  dynamic
 ```
 
 If there’s no **certs** folder, create it:
 ```sh
-$ mkdir certs
+mkdir certs
 ```
 
 Verify it was created:
 ```sh
-$ ls
+ls
 > acme.json  certs docker-compose.yml  dynamic
 ```
 
 Now, navigate into the **certs** directory:
 ```sh
-$ cd certs
+cd certs
 ```
 
 Create two new files for the certificate and private key:
 ```sh
-$ touch shadowarcanist.cert shadowarcanist.key
+touch shadowarcanist.cert shadowarcanist.key
 ```
 
 Verify the files were created:
 ```sh
-$ ls
+ls
 > shadowarcanist.cert shadowarcanist.key
 ```
 
 Open the **shadowarcanist.cert** file and paste the certificate from the Cloudflare dashboard:
 ```sh
-$ nano shadowarcanist.cert 
+nano shadowarcanist.cert 
 ```
 Save and exit after pasting the certificate.
 
 Do the same for the **shadowarcanist.key** file and paste the private key:
 ```sh
-$ nano shadowarcanist.key 
+nano shadowarcanist.key 
 ```
 Save and exit.
 
 Now the origin certificate is installed on your server.
 
+## 3. Configure Coolify to Use the Origin Certificate
+Now, in your Coolify dashboard:
 
-## 3. Setup Encryption mode on Cloudflare
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/12.webp" />
+
+1. Go to the **Server** section in the sidebar.
+2. Select **Proxy**.
+3. Open the **Dynamic Configuration** page
+4. Click **Add** button
+
+You will now be prompted to enter the Dynamic Configuration.
+
+<ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/13.webp" />
+
+1. Choose a name for your configuration.
+2. Enter the following details in the configuration field:
+```yaml
+tls:
+  certificates:
+    -
+      certFile: /traefik/certs/shadowarcanist.cert
+      keyFile: /traefik/certs/shadowarcanist.key
+```
+
+::: details Adding Multiple Certificates (click to view)
+ 
+```yaml
+tls:
+  certificates:
+    -
+      certFile: /traefik/certs/shadowarcanist.cert
+      keyFile: /traefik/certs/shadowarcanist.key
+    -
+      certFile: /traefik/certs/name2.cert
+      keyFile: /traefik/certs/name2.key
+    -
+      certFile: /traefik/certs/name3.cert
+      keyFile: /traefik/certs/name3.key
+```
+:::
+
+3. Save the configuration
+
+From now on, Coolify will use the origin certificate for requests matching the hostname.
+
+
+## 4. Setup Encryption mode on Cloudflare
 To set up encryption on Cloudflare, follow these steps:
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/4.webp" />
@@ -163,7 +209,7 @@ To set up encryption on Cloudflare, follow these steps:
 Choose **Full (Strict)** as the encryption mode.
 
 
-## 4. Configure Tunnel to Use HTTPS
+## 5. Configure Tunnel to Use HTTPS
 To configure the tunnel for HTTPS, follow these steps:
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/6.webp" />
@@ -186,7 +232,7 @@ Next, update the hostnames as follows:
 6. Scroll down and click the **Save Hostname** button.
 
 
-## 5. Configure Cloudflare to Always Use HTTPS
+## 6. Configure Cloudflare to Always Use HTTPS
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/9.webp" />
 
@@ -195,7 +241,7 @@ Next, update the hostnames as follows:
 3. Enable **Always Use HTTPS**.
 
 
-## 6. Update URLs from HTTP to HTTPS
+## 7. Update URLs from HTTP to HTTPS
 Now, update all URLs from **HTTP** to **HTTPS** in Coolify, including resources and the instance domain on the settings page.
 
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/full-tls/10.webp" />
