@@ -67,4 +67,4 @@ mongodump --authenticationDatabase=admin --uri=<uri> --gzip --archive=<archive> 
 
 ## S3 Backups
 
-You can also define your own [S3 compatible](/knowledge-base/s3) storage to store your backups.
+You can also define your own [S3 compatible](/knowledge-base/s3/introduction) storage to store your backups.
