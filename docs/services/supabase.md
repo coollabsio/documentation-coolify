@@ -11,7 +11,7 @@ The open source Firebase alternative.
 
 ## Screenshots
 
-![Supabase Preview](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
+<ZoomableImage src="/docs/images/services/supabase-selfhost.webp" />
 
 ## Links
 
