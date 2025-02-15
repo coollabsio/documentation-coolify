@@ -186,17 +186,15 @@ http {
 
         charset utf-8;
 
-        $if(IS_LARAVEL) (
-            location / {
-                try_files $uri $uri/ /index.php?$query_string;
-            }
-        ) else ()
-
         $if(NIXPACKS_PHP_FALLBACK_PATH) (
+            location / {
+                try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
+            }
+        ) else (
           location / {
-            try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
-          }
-        ) else ()
+                try_files $uri $uri/ /index.php?$query_string;
+           }
+        )
 
         location = /favicon.ico { access_log off; log_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
