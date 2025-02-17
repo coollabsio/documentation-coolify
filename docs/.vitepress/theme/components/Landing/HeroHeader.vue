@@ -37,7 +37,9 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
                 <slot name="home-hero-info-after" />
                 <div v-if="actions" class="actions">
                     <div v-for="action in actions" :key="action.link" class="action">
-                        <VPButton tag="a" size="medium" :theme="action.theme" :text="action.text" :href="action.link"
+                        <VPButton v-if="action.theme === 'brand'" class="Hero" tag="a" size="medium" :theme="action.theme" :text="action.text" :href="action.link"
+                            :target="action.target" :rel="action.rel" />
+                        <VPButton v-else tag="a" size="medium" :theme="action.theme" :text="action.text" :href="action.link"
                             :target="action.target" :rel="action.rel" />
                     </div>
                 </div>
@@ -332,5 +334,14 @@ const heroImageSlotExists = inject('hero-image-slot-exists') as Ref<boolean>
         max-width: 320px;
         max-height: 320px;
     }
+}
+
+.VPButton.Hero {
+    transition: background-color 0.3s ease;
+    background-color: #6b16ed !important; /* Original color */
+}
+
+.VPButton.Hero:hover {
+    background-color: #8c4ff7 !important; /* Manually calculated lighter color */
 }
 </style>

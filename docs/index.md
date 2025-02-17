@@ -9,6 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
+      color: '#6b16ed'
       link: /what-is-coolify
     - theme: alt
       text: View Source Code
