@@ -3,7 +3,7 @@
 import type { Theme } from "vitepress";
 
 // Import OpenAPI components
-import { theme, useOpenapi } from "vitepress-openapi";
+import { theme, useOpenapi } from "vitepress-openapi/client";
 
 // Import default theme
 import DefaultTheme from "vitepress/theme";
