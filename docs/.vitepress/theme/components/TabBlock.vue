@@ -39,7 +39,7 @@ const props = defineProps<{
 // Generate service tabs from compose configuration
 const serviceTabs = computed(() => {
   if (!props.compose?.services) return []
-  
+
   return Object.entries(props.compose.services).map(([serviceName, config]) => ({
     title: `${serviceName} Configuration`,
     content: {
@@ -81,8 +81,8 @@ const setActiveTab = (index: number) => {
 
 type Direction = 'next' | 'prev'
 const navigateTab = (direction: Direction) => {
-  const newIndex = direction === 'next' 
-    ? (currentIndex.value + 1) % allTabs.value.length 
+  const newIndex = direction === 'next'
+    ? (currentIndex.value + 1) % allTabs.value.length
     : (currentIndex.value - 1 + allTabs.value.length) % allTabs.value.length
   setActiveTab(newIndex)
 }
@@ -97,7 +97,7 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
 <template>
   <div class="tabs-container">
     <div class="tabs-navigation">
-      <button 
+      <button
         class="group nav-arrow"
         @click="navigateTab('prev')"
         aria-label="Previous tab"
@@ -117,7 +117,7 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
         </button>
       </div>
 
-      <button 
+      <button
         class="group nav-arrow"
         @click="navigateTab('next')"
         aria-label="Next tab"
@@ -138,12 +138,12 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
               <h3 class="text-lg font-medium">{{ tab.content.service.name }}</h3>
               <code class="text-sm block mt-2">Image: {{ tab.content.service.image }}</code>
             </div>
-            
+
             <div class="env-vars">
               <h4 class="font-medium mb-3">Environment Variables</h4>
               <ul class="env-list space-y-2">
-                <li v-for="env in tab.content.service.envVars" 
-                    :key="env.name" 
+                <li v-for="env in tab.content.service.envVars"
+                    :key="env.name"
                     class="env-var flex items-start gap-2">
                   <code class="text-sm px-2 py-1 bg-[var(--vp-c-bg-soft)] rounded shrink-0 text-[var(--vp-c-text-2)]">{{ env.name }}</code>
                   <span v-if="env.value" class="text-sm text-[var(--vp-c-text-2)]">
@@ -161,12 +161,12 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
             <h4 v-if="tab.content.subtitle" class="font-medium text-lg">{{ tab.content.subtitle }}</h4>
 
             <ul v-if="tab.content.items" class="space-y-2">
-              <li v-for="(item, itemIndex) in tab.content.items" 
+              <li v-for="(item, itemIndex) in tab.content.items"
                   :key="itemIndex"
                   class="flex items-center gap-2">
                 <template v-if="item.icon && item.label">
                   <span class="text-lg">{{ item.icon }}</span>
-                  <span class="font-mono font-medium">{{ item.label }}:</span> 
+                  <span class="font-mono font-medium">{{ item.label }}:</span>
                   <span>{{ item.value }}</span>
                 </template>
                 <template v-else-if="item.code">
@@ -192,7 +192,7 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .tabs-container {
   @apply my-6;
 }
