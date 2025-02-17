@@ -7,9 +7,9 @@ toc: false
 
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { useTheme, generateCodeSample } from 'vitepress-openapi'
+import { useTheme, generateCodeSample } from 'vitepress-openapi/client'
 
-const { params, isDark } = useData()
+const { params } = useData()
 const operation = params.value.operation
 
 const themeConfig = {
@@ -59,4 +59,4 @@ const themeConfig = {
 useTheme(themeConfig)
 </script>
 
-<OAOperation :operationId="operation" :isDark="isDark" />
+<OAOperation :operationId="operation" />
