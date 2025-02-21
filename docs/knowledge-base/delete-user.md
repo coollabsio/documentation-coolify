@@ -5,11 +5,11 @@ title: Delete User
 # Delete User
 This guide will show you how to delete a user from the self-hosted Coolify instance.
 
-<Aside type="caution">
+::: warning Caution
   If you delete a user, and Coolify still has connection to the servers, it will
   delete all the resources on the servers as well, not just from Coolify's
   database.
-</Aside>
+:::
 
 Only users who are in the `root` team can delete users from the UI.
 
@@ -20,7 +20,9 @@ Here you can see all the users registered in Coolify. Click on the `Delete` butt
 
 ## Deletion process
 
-<Aside type="tip">The root team or root user cannot be deleted.</Aside>
+::: info Tip
+The root team or root user cannot be deleted.
+:::
 
 Coolify iterate over all the teams of a user and decide of the followings:
 

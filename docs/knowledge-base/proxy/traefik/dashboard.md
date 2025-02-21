@@ -9,10 +9,10 @@ To enable access from the internet, you need to add a dynamic configuration and 
 
 ## Secure mode (with Dynamic Configuration)
 
-<Aside type="tip">
+::: info Tip
   How to configure Traefik's dynamic configuration? [Read
   more](/docs/knowledge-base/traefik/dynamic-configurations)
-</Aside>
+:::
 
 You can enable Traefik's dashboard by adding the following dynamic configuration:
 

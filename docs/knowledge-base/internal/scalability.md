@@ -28,11 +28,11 @@ Which one is the best?
 
 It depends on your needs, but we recommend the `one domain across multiple servers`.
 
-<Aside type="tip">
+::: info Tip
 We also recommend to use [Hetzner](https://coolify.io/hetzner) (referral link) for the servers.
 
 **(The cloud version of Coolify - and all of our other services - is also using Hetzner)**
-</Aside>
+:::
 
 #### One domain across multiple servers (Recommended)
 
