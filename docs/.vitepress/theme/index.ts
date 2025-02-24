@@ -9,7 +9,8 @@ import { theme, useOpenapi } from "vitepress-openapi/client";
 import DefaultTheme from "vitepress/theme";
 
 // Import styles
-import "./style.css";
+// import "./style.css";
+ import "./style-dark-default.css";
 // Custom Scrollbars on Windows
 import "./scrollbar.css";
 // Custom Style override

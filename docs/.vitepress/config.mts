@@ -22,7 +22,7 @@ export default defineConfig({
   lang: 'en-US',
   title: "Coolify Docs",
   description: "Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.",
-  appearance: 'force-dark', // 'dark' allows user to change theme
+  appearance: 'force-dark', // 'dark' allows user to change theme, 'force-dark' doesn't allow user to change theme
   base: '/docs/',
   cleanUrls: true,
   lastUpdated: true,
@@ -577,7 +577,7 @@ export default defineConfig({
       })
     },
     theme: {
-      light: 'github-light',
+      light: 'github-dark',
       dark: 'github-dark'
     },
     // Configure Shiki with SSH language
