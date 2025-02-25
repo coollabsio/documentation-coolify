@@ -79,5 +79,5 @@ Services in Coolify are templates made from normal [docker-compose](https://docs
 
 If there's a service template you'd like to see in Coolify:
 
-1. Search [GitHub discussions](https://github.com/coollabsio/coolify/discussions/categories/new-service-integrations) for existing requests.
+1. Search [GitHub discussions](https://github.com/coollabsio/coolify/discussions/categories/service-template-requests) for existing requests.
 2. If the service has been requested, upvote it. If not, create a new request.
