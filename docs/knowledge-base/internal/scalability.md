@@ -6,6 +6,13 @@ title: "Scalability"
 
 If your application needs load balancing or high availability here are the options you have in Coolify:
 
+- [Traditional Horizontal Scaling](#traditional-horizontal-scaling)
+- [Docker Swarm](#docker-swarm)
+
+::: info Pro Tip 
+ You don’t need to scale your app if you have 0 users. Start simple and scale as your user base grows!
+:::
+
 ## Traditional Horizontal Scaling
 
 With traditional horizontal scaling, you can deploy your applications on multiple servers, and then use a load balancer to distribute the traffic across them.
