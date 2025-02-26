@@ -244,7 +244,6 @@ export default defineConfig({
               { text: 'Syncthing', link: '/services/syncthing' },
               { text: 'Tolgee', link: '/services/tolgee' },
               { text: 'Trigger', link: '/services/trigger' },
-              { text: 'Twenty', link: '/services/twenty' },
               { text: 'Umami', link: '/services/umami' },
               { text: 'Unleash', link: '/services/unleash' },
               { text: 'Unstructured', link: '/services/unstructured' },
