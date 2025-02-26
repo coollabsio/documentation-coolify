@@ -4,7 +4,7 @@
 
 ## Documentation
 
-- [What is Coolify](docs/what-is-coolify.md): Introduction to Coolify
+- [What is Coolify](docs/get-started/introduction.md): Introduction to Coolify
 
 # API Reference
 

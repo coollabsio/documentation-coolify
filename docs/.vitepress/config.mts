@@ -83,7 +83,7 @@ export default defineConfig({
         text: 'Get Started',
         collapsed: false,
         items: [
-          { text: 'What is Coolify?', link: '/what-is-coolify' },
+          { text: 'Introduction', link: '/get-started/introduction' },
           { text: 'Cloud vs Self-Hosted', link: '/cloud-vs-selfhost' },
           { text: 'Installation', link: '/installation' },
           { text: 'Upgrade', link: '/upgrade' },
