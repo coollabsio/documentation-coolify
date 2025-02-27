@@ -126,7 +126,6 @@ You can host ANY service with Coolify that could be containerized.
 - [Syncthing](/services/syncthing) - Open Source Continuous File Synchronization.
 - [Tolgee](/services/tolgee) - Open source localization platform.
 - [Trigger](/services/trigger) - Open-source workflow automation tool.
-- [Twenty](/services/twenty) - Open-source CRM.
 - [Umami](/services/umami) - Simple, fast, privacy-focused alternative to Google Analytics.
 - [Unleash](/services/unleash) - Open-source feature management platform.
 - [Unstructured](/services/unstructured) - Open-source platform and tools to ingest and process unstructured documents for Retrieval Augmented Generation (RAG) and model fine-tuning.
