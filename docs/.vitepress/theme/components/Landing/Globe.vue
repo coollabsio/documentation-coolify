@@ -3,16 +3,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { usePreferredDark } from '@vueuse/core' // VueUse composable to detect dark mode
 
 const globeContainer = ref<HTMLElement | null>(null)
 let Globe: any
 let globeInstance: any = null
 
+// Detect dark mode
+const isDarkMode = usePreferredDark()
+
 // Import Globe.gl dynamically only on client-side
 onMounted(async () => {
   Globe = (await import('globe.gl')).default
   initGlobe()
+})
+
+// Watch for changes in dark mode and update globe texture
+watch(isDarkMode, (newVal) => {
+  if (globeInstance) {
+    globeInstance.globeImageUrl(newVal 
+      ? '//unpkg.com/three-globe/example/img/earth-night.jpg' 
+      : '//unpkg.com/three-globe/example/img/earth-day.jpg')
+  }
 })
 
 // Constants for arc animation
@@ -136,9 +149,11 @@ const emitArc = (sourceIndex: number) => {
 
 const initGlobe = () => {
   if (!globeContainer.value) return
-    // @ts-ignore
+  // @ts-ignore
   globeInstance = new Globe()
-    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+    .globeImageUrl(isDarkMode.value 
+      ? '//unpkg.com/three-globe/example/img/earth-night.jpg' 
+      : '//unpkg.com/three-globe/example/img/earth-day.jpg')
     .backgroundColor('rgba(0,0,0,0)')
     .width(globeContainer.value.offsetWidth)
     .height(globeContainer.value.offsetHeight)

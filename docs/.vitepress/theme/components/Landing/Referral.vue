@@ -1,7 +1,7 @@
 <template>
     <div class="relative flex flex-col gap-4 max-w-lg">
         <div class="flex flex-row gap-2 z-10">
-            <h3 class="text-2xl font-bold tracking-wide">{{ referralTitle }}</h3>
+            <h3 class="text-2xl font-bold tracking-wide text-[9A54FC]">{{ referralTitle }}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 my-auto mr-0 ml-auto">
                 <g id="Ebene_2">
                     <path fill="#d50c2d" class="cls-1"
@@ -21,7 +21,7 @@
                 </g>
             </svg>
         </div>
-        <p class="text-sm font-medium z-10">
+        <p class="text-sm font-bold z-10">
             {{ referralText }}
         </p>
         <div class="relative rounded-lg border border-gray-200 dark:border-[#202127] overflow-hidden max-w-full z-10">
@@ -60,7 +60,7 @@
             <!-- Terminal Content -->
             <div class="p-3 bg-white dark:bg-[#202127]/40">
                 <a :href="referralUrl" target="_blank" rel="noopener noreferrer">
-                    <code class="language-bash mr-auto ml-0 text-sm text-[#E2931D] dark:text-[#FFCB6B]">{{ referralUrl }}</code>
+                    <code class="language-bash mr-auto ml-0 text-sm text-[#E2931D] dark:text-[#FFCB6B] hover:text-gray-50">{{ referralUrl }}</code>
                 </a>
             </div>
 
@@ -98,7 +98,9 @@
             </span>
         </p>
         <ClientOnly>
-            <Globe />
+            <div class="transition duration-1000 ease-in-out absolute top-24 dark:top-0 left-0 w-full h-full flex justify-center items-center blur-xl dark:blur-none">
+                <Globe />
+            </div>
         </ClientOnly>
 
     </div>

@@ -389,11 +389,11 @@ code:hover {
 
 /* Code block container styling */
 .vp-doc div[class*='language-'] {
-  position: relative;
-  margin: 16px 0;
-  background-color: var(--vp-code-bg);
-  border-radius: 8px;
-  overflow-x: auto;
+  position: static;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  overflow-x: visible;
 }
 
 /* Copy button styling - both for main and nested code blocks */
@@ -694,7 +694,7 @@ code:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 
               0 0 2px rgba(255, 255, 255, 0.05) !important;
   margin: 0 3px !important;
-  text-transform: uppercase !important;
+  /* text-transform: uppercase !important; */
   letter-spacing: 0.02em !important;
   font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
 }
@@ -727,4 +727,14 @@ code:hover {
               0 0 3px rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-1px);
   transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .vp-doc div[class*='language-'] {
+    position: relative;
+    margin: 16px 0;
+    background-color: var(--vp-code-bg);
+    border-radius: 8px;
+    overflow-x: auto;
+  }
 }

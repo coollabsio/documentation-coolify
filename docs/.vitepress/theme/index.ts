@@ -9,15 +9,14 @@ import { theme, useOpenapi } from "vitepress-openapi/client";
 import DefaultTheme from "vitepress/theme";
 
 // Import styles
-// import "./style.css";
- import "./style-dark-default.css";
+import "./style.css";
+// import "./style-dark-default.css";
 // Custom Scrollbars on Windows
 import "./scrollbar.css";
 // Custom Style override
 // import "./custom.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
-
 
 // @ts-ignore
 import spec from '../../public/openapi.json' assert { type: 'json' }
