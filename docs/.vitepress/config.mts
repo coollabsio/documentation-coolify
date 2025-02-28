@@ -90,6 +90,7 @@ export default defineConfig({
           { text: 'Upgrade', link: '/get-started/upgrade' },
           { text: 'Downgrade', link: '/get-started/downgrade' },
           { text: 'Uninstallation', link: '/get-started/uninstallation' },
+          { text: 'Support', link: '/get-started/support' },
         ],
       },
       {
