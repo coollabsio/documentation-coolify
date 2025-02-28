@@ -10,7 +10,7 @@ hero:
     - theme: brand
       text: Get Started
       color: '#6b16ed'
-      link: /what-is-coolify
+      link: /get-started/introduction
     - theme: alt
       text: View Source Code
       link: https://github.com/coollabsio/coolify
