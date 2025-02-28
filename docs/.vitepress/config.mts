@@ -88,7 +88,7 @@ export default defineConfig({
           { text: 'Usage', link: '/get-started/usage' },
           { text: 'Installation', link: '/get-started/installation' },
           { text: 'Upgrade', link: '/get-started/upgrade' },
-          { text: 'Downgrade', link: '/downgrade' },
+          { text: 'Downgrade', link: '/get-started/downgrade' },
           { text: 'Uninstallation', link: '/uninstallation' },
         ],
       },
