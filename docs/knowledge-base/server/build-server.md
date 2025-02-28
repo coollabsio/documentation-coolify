@@ -4,7 +4,7 @@ description: "A guide on how to use a build server with Coolify"
 ---
 
 # Build Server
-You could have a build server to build your projects on instead of building them on the server where you host your resources.
+You could have a build server to build your projects on instead of building them on the server where you host your resources. This does not include Docker builds as much as npm build.
 
 This keeps the load separated, so it does not affect your application's performance.
 
