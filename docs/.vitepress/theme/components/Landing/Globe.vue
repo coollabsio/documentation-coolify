@@ -3,30 +3,36 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-import { usePreferredDark } from '@vueuse/core' // VueUse composable to detect dark mode
+import { ref, onMounted, onUnmounted, watch, watchEffect} from 'vue'
+import { useColorMode } from '@vueuse/core' // VueUse composable to detect dark mode
+
+const props = defineProps<{
+  isDarkMode: string
+}>()
 
 const globeContainer = ref<HTMLElement | null>(null)
 let Globe: any
 let globeInstance: any = null
 
-// Detect dark mode
-const isDarkMode = usePreferredDark()
+// Function to update globe texture
+const updateGlobeTexture = () => {
+  if (globeInstance) {
+    const newTextureUrl = props.isDarkMode === 'dark'
+      ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
+      : '//unpkg.com/three-globe/example/img/earth-day.jpg';
+    console.log('Updating globe texture to:', newTextureUrl);
+    globeInstance.globeImageUrl(newTextureUrl);
+  } else {
+    console.warn('globeInstance is not initialized yet.');
+  }
+}
 
 // Import Globe.gl dynamically only on client-side
 onMounted(async () => {
-  Globe = (await import('globe.gl')).default
-  initGlobe()
-})
-
-// Watch for changes in dark mode and update globe texture
-watch(isDarkMode, (newVal) => {
-  if (globeInstance) {
-    globeInstance.globeImageUrl(newVal 
-      ? '//unpkg.com/three-globe/example/img/earth-night.jpg' 
-      : '//unpkg.com/three-globe/example/img/earth-day.jpg')
-  }
-})
+  Globe = (await import('globe.gl')).default;
+  initGlobe();
+  updateGlobeTexture();
+});
 
 // Constants for arc animation
 const ARC_REL_LEN = 0.4
@@ -151,8 +157,8 @@ const initGlobe = () => {
   if (!globeContainer.value) return
   // @ts-ignore
   globeInstance = new Globe()
-    .globeImageUrl(isDarkMode.value 
-      ? '//unpkg.com/three-globe/example/img/earth-night.jpg' 
+    .globeImageUrl(props.isDarkMode === 'dark'
+      ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
       : '//unpkg.com/three-globe/example/img/earth-day.jpg')
     .backgroundColor('rgba(0,0,0,0)')
     .width(globeContainer.value.offsetWidth)
@@ -188,6 +194,10 @@ const initGlobe = () => {
   // Regular emission interval
   const interval = setInterval(emitArcs, FLIGHT_TIME * 1.5)
   globeInstance.__interval = interval
+
+  console.log('Globe initialized with texture:', props.isDarkMode
+    ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
+    : '//unpkg.com/three-globe/example/img/earth-day.jpg')
 }
 
 onUnmounted(() => {
