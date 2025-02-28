@@ -532,7 +532,6 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Team', link: '/resource/team' },
-          { text: 'Support', link: '/support' },
           { text: 'Sponsors', link: '/resource/sponsors' },
           {
             text: 'Contribute',
