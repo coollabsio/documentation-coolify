@@ -86,7 +86,7 @@ export default defineConfig({
           { text: 'Introduction', link: '/get-started/introduction' },
           { text: 'Concepts', link: '/get-started/concepts' },
           { text: 'Usage', link: '/get-started/usage' },
-          { text: 'Installation', link: '/installation' },
+          { text: 'Installation', link: '/get-started/installation' },
           { text: 'Upgrade', link: '/upgrade' },
           { text: 'Downgrade', link: '/downgrade' },
           { text: 'Uninstallation', link: '/uninstallation' },
