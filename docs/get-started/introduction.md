@@ -62,7 +62,7 @@ Coolify delivers unbeatable advantages for developers who want to self-host. Her
 ## Getting Started with Coolify
 Before you jump into using Coolify, it’s worth understanding a few key concepts to make your journey smoother. 
 
-Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concept guide↗](#TO-DO).
+Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concepts guide↗](https://coolify.io/docs/get-started/concepts).
 
 You have two ways to use Coolify:
 - [Self-Host Coolify](#self-host-coolify)
