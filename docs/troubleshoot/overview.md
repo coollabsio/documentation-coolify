@@ -1,16 +1,15 @@
 ---
-title: Troubleshoot Overview
+title: Troubleshooting Overview
 ---
 
-# 🔧 Troubleshoot
+# 🔧 Troubleshooting
 
-In this Troubleshoot section, you will find useful information on how to solve problems with Coolify. 
+This section provides solutions for resolving issues you might encounter with Coolify.
 
-Common mistakes and explanations on issues that can occour will be shown and solved.
+Check the sidebar for a list of all available trouble shooting guides.
 
-::: danger Note:
-  **This troubleshoot page is in active development. Comeback later.**
+::: warning Note:
+  **Please note that this troubleshooting guide is still being actively developed.**
 :::
 
-
-<!-- Add some card groups here that redirects to the troubleshooting guides we have on left sidebar -->
+If you have a suggestion for a new troubleshooting guide or want to contribute, feel free to submit a pull request or open an issue with a detailed description in our GitHub [docs repository ↗](https://github.com/coollabsio/documentation-coolify/issues).
