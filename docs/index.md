@@ -14,7 +14,6 @@ hero:
     - theme: alt
       text: View Source Code
       link: https://github.com/coollabsio/coolify
-
 referral:
   title: "Get €20 Free Credit"
   url: "https://coolify.io/hetzner"

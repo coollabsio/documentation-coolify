@@ -391,8 +391,8 @@ code:hover {
 .vp-doc div[class*='language-'] {
   position: static;
   margin: 0;
-  background-color: transparent;
-  border-radius: 0;
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 10px;
   overflow-x: visible;
 }
 
@@ -410,7 +410,7 @@ code:hover {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color: transparent;
+  background-color: var(--vp-c-text-2);
   opacity: 0;
   transition: all 0.2s ease;
   color: var(--vp-c-text-2);
@@ -726,15 +726,30 @@ code:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25),
               0 0 3px rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-1px);
-  transition: all 0.2s ease;
+  transition: all 0.2s ease !important;
+}
+
+p code:hover, li code:hover {
+  background-color: var(--vp-c-brand-1) !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  p code:hover, li code:hover {
+    background-color: var(--vp-c-brand-1) !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   .vp-doc div[class*='language-'] {
     position: relative;
     margin: 16px 0;
-    background-color: var(--vp-code-bg);
+    background-color: var(--vp-code-bg) !important;
     border-radius: 8px;
     overflow-x: auto;
   }
+
 }

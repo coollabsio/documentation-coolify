@@ -578,7 +578,7 @@ export default defineConfig({
       })
     },
     theme: {
-      light: 'github-dark',
+      light: 'github-light',
       dark: 'github-dark'
     },
     // Configure Shiki with SSH language

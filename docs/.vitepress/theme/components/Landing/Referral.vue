@@ -1,7 +1,7 @@
 <template>
     <div class="relative flex flex-col gap-4 max-w-lg">
         <div class="flex flex-row gap-2 z-10">
-            <h3 class="text-2xl font-bold tracking-wide text-[9A54FC]">{{ referralTitle }}</h3>
+            <h3 class="text-2xl font-bold tracking-wide">{{ referralTitle }}</h3>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.42 22.24" class="w-auto size-3 my-auto mr-0 ml-auto">
                 <g id="Ebene_2">
                     <path fill="#d50c2d" class="cls-1"
@@ -93,7 +93,7 @@
                 <path fill="#EA596E" d="M4.864 29.246L2.526 23.63L.412 29.675zM26 5l-4 1l1-4z" />
                 <path fill="#77B255" d="M31.999 13L36 7.999L33 6z" />
             </svg>
-            <span :class="{ 'ml-2': isCopied }" class="my-auto">
+            <span :class="{ 'ml-2': isCopied }" class="my-auto font-bold">
                 {{ !isCopied ? '' : 'Copied to clipboard!' }}
             </span>
         </p>
@@ -134,3 +134,17 @@ const copyToClipboard = async () => {
     }, 3000)
 }
 </script>
+
+<style scoped>
+a code {
+    background-color: transparent !important;
+    color: var(--vp-c-gray-12) !important;
+    -webkit-text-fill-color: var(--vp-c-gray-12) !important;
+}
+
+a code:hover {
+    background-color: var(--vp-c-brand-1) !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}
+</style>
