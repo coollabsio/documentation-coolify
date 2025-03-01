@@ -525,6 +525,13 @@ export default defineConfig({
           // { text: 'Dashboard Inaccessible via Instance Domain', link: '/troubleshoot/dashboard-inaccessible-via-domain' },
           // { text: 'Server Crash during Build', link: '/troubleshoot/server-crash-during-build' },
           // { text: 'SSL Certificate Failed', link: '/troubleshoot/ssl-cert-not-generating' }
+          {
+            text: 'Dashboard',
+            collapsed: true,
+            items: [
+              { text: 'Dashboard Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
+            ]
+          },
         ],
       },
       {
