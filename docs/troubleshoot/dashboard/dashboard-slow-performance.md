@@ -46,5 +46,5 @@ If none of these steps work:
 
 
 ## Summary of Common Issues
-- **Cloudflare Rocket Loader:** Commonly responsible for issues when using a Cloudflare-managed domain.
-- **Server or Internet Issues:** If the problem persists even when accessing via the IP address.
+- **Cloudflare Rocket Loader:** Most of the time, Rocket Loader causes issues when using a Cloudflare-managed domain
+- **Server or Internet Issues:** Unstable internet connections between the server and user can lead to performance problems.
