@@ -283,10 +283,6 @@ export default defineConfig({
                   //   link: '/knowledge-base/common-issues/backup'
                   // },
                   {
-                    text: 'Cloudflare',
-                    link: '/knowledge-base/common-issues/cloudflare'
-                  },
-                  {
                     text: 'Docker',
                     link: '/knowledge-base/common-issues/docker'
                   },
@@ -521,15 +517,12 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Overview', link: '/troubleshoot/overview' },
-          // { text: 'Wildcard SSL Certificate', link: '/troubleshoot/wildcard-ssl-certs' },
-          // { text: 'Dashboard Inaccessible via Instance Domain', link: '/troubleshoot/dashboard-inaccessible-via-domain' },
-          // { text: 'Server Crash during Build', link: '/troubleshoot/server-crash-during-build' },
-          // { text: 'SSL Certificate Failed', link: '/troubleshoot/ssl-cert-not-generating' }
           {
             text: 'Dashboard',
             collapsed: true,
             items: [
               { text: 'Dashboard Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
+              { text: 'Dashboard Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
             ]
           },
         ],
