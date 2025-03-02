@@ -361,8 +361,8 @@ code:hover {
 }
 
 .dark code:hover {
-  color: var(--vp-c-brand-1) !important;
-  -webkit-text-fill-color: var(--vp-c-brand-1) !important;
+  color: white !important;
+  -webkit-text-fill-color: white !important;
 }
 
 /* Custom Block Colors with webkit support - Light Mode */
@@ -720,7 +720,7 @@ code:hover {
   }
 }
 
-/* Hover effect */
+/* Hover effect for light mode */
 :not(pre) > code:hover {
   background-color: rgba(45, 50, 60, 0.98) !important;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25),
@@ -736,14 +736,13 @@ p code:hover, li code:hover {
 }
 
 @media (prefers-color-scheme: dark) {
-  p code:hover, li code:hover {
+  p code:hover, li code:hover,
+  .custom-block p code:hover, .custom-block li p code:hover {
     background-color: var(--vp-c-brand-1) !important;
     color: white !important;
     -webkit-text-fill-color: white !important;
   }
-}
 
-@media (prefers-color-scheme: dark) {
   .vp-doc div[class*='language-'] {
     position: relative;
     margin: 16px 0;
@@ -751,5 +750,4 @@ p code:hover, li code:hover {
     border-radius: 8px;
     overflow-x: auto;
   }
-
 }

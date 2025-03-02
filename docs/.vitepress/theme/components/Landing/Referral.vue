@@ -99,7 +99,7 @@
         </p>
         <ClientOnly>
             <div class="transition duration-1000 ease-in-out absolute top-24 left-0 w-full h-full flex justify-center items-center blur-xl dark:blur-none">
-                <Globe :is-dark-mode="colorMode" />
+                <Globe />
             </div>
         </ClientOnly>
 
@@ -109,13 +109,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { VPBadge } from 'vitepress/theme'
-import { useClipboard, useColorMode } from '@vueuse/core'
+import { useClipboard } from '@vueuse/core'
 import { useData } from 'vitepress'
 import Globe from './Globe.vue'
 
 // Get frontmatter data
 const { frontmatter } = useData()
-const colorMode = useColorMode()
+
 // Default values
 const referralTitle = frontmatter.value.referral?.title ?? 'Referral Program'
 const referralUrl = frontmatter.value.referral?.url ?? 'https://coolify.io/hetzner'

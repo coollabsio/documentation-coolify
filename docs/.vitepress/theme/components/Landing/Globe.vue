@@ -4,7 +4,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch, watchEffect} from 'vue'
-import { useColorMode } from '@vueuse/core' // VueUse composable to detect dark mode
+import { useData } from 'vitepress'
+const { isDark } = useData()
 
 const props = defineProps<{
   isDarkMode: string
@@ -17,7 +18,7 @@ let globeInstance: any = null
 // Function to update globe texture
 const updateGlobeTexture = () => {
   if (globeInstance) {
-    const newTextureUrl = props.isDarkMode === 'dark'
+    const newTextureUrl = isDark.value
       ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
       : '//unpkg.com/three-globe/example/img/earth-day.jpg';
     console.log('Updating globe texture to:', newTextureUrl);
@@ -157,7 +158,7 @@ const initGlobe = () => {
   if (!globeContainer.value) return
   // @ts-ignore
   globeInstance = new Globe()
-    .globeImageUrl(props.isDarkMode === 'dark'
+    .globeImageUrl(isDark.value
       ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
       : '//unpkg.com/three-globe/example/img/earth-day.jpg')
     .backgroundColor('rgba(0,0,0,0)')
@@ -195,7 +196,7 @@ const initGlobe = () => {
   const interval = setInterval(emitArcs, FLIGHT_TIME * 1.5)
   globeInstance.__interval = interval
 
-  console.log('Globe initialized with texture:', props.isDarkMode
+  console.log('Globe initialized with texture:', isDark.value
     ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
     : '//unpkg.com/three-globe/example/img/earth-day.jpg')
 }
