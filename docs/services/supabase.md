@@ -13,6 +13,10 @@ The open source Firebase alternative.
 
 <ZoomableImage src="/docs/images/services/supabase-selfhost.webp" />
 
+## Notes
+
+You can find your anonymous key in the **Environment Variables** area under **SERVICE_SUPABASEANON_KEY**.
+
 ## Links
 
 - [Official Website ›](https://supabase.io)
