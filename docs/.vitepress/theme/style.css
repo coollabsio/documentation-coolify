@@ -751,3 +751,9 @@ p code:hover, li code:hover {
     overflow-x: auto;
   }
 }
+
+.language-bash code:hover {
+  background-color: initial !important;
+  color: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
