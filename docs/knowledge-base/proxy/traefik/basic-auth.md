@@ -77,7 +77,7 @@ For example you would update the current line
 
 to:
 
-`traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip,mybasicauth`
+`traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=redirect-to-https,mybasicauth`
 
 Notice that in this case `<unique_router_name>` has been replaced with `https-0-wc04wo4ow4scokgsw8wow4s8` which is the unique name for the router that Coolify has already generated for you.
 
