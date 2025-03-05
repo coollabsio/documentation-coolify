@@ -11,7 +11,7 @@ Coolify is a software that makes self-hosting simple and powerful. It lets you r
 
 With Coolify, you get full control over your projects, your data, and your costs. It’s completely free to use, open-source, and has no features locked behind a paywall. 
 
-Think of Coolify as your personal alternative to cloud platforms like [Vercel↗](https://vercel.com), [Railway↗](https://railway.com/), or [Heroku↗](https://www.heroku.com/), but without the huge bills or privacy trade-offs.
+Think of Coolify as your personal alternative to cloud platforms like [Vercel↗](https://vercel.com?utm_source=coolify.io), [Railway↗](https://railway.com/?utm_source=coolify.io), or [Heroku↗](https://www.heroku.com/?utm_source=coolify.io), but without the huge bills or privacy trade-offs.
 
 
 ## What Coolify Is Not
@@ -62,7 +62,7 @@ Coolify delivers unbeatable advantages for developers who want to self-host. Her
 ## Getting Started with Coolify
 Before you jump into using Coolify, it’s worth understanding a few key concepts to make your journey smoother. 
 
-Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concepts guide↗](https://coolify.io/docs/get-started/concepts).
+Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concepts guide↗](/get-started/concepts).
 
 You have two ways to use Coolify:
 - [Self-Host Coolify](#self-host-coolify)
