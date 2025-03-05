@@ -720,19 +720,46 @@ code:hover {
   }
 }
 
-/* Hover effect for light mode */
-:not(pre) > code:hover {
-  background-color: rgba(45, 50, 60, 0.98) !important;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25),
-              0 0 3px rgba(255, 255, 255, 0.1) !important;
-  transform: translateY(-1px);
-  transition: all 0.2s ease !important;
+/* Explicitly prevent hover color change for ALL code blocks with higher specificity */
+.vp-doc [class*='language-'] code:hover,
+div[class*='language-'] code:hover,
+pre[class*='language-'] code:hover {
+  background-color: transparent !important;
+  color: var(--vp-code-color) !important;
+  -webkit-text-fill-color: var(--vp-code-color) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
-p code:hover, li code:hover {
-  background-color: var(--vp-c-brand-1) !important;
-  color: white !important;
-  -webkit-text-fill-color: white !important;
+/* Additional specific prevention with maximum specificity for shell/bash/ssh code blocks */
+.vp-doc .language-bash code:hover,
+.vp-doc .language-ssh code:hover,
+.vp-doc .language-sh code:hover,
+div.language-bash code:hover,
+div.language-ssh code:hover,
+div.language-sh code:hover,
+pre.language-bash code:hover,
+pre.language-ssh code:hover,
+pre.language-sh code:hover,
+.language-sh code:hover,
+.language-sh .line:hover,
+.language-sh span:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+/* Override any other hover effects for code blocks */
+.vp-doc pre *:hover,
+.shiki *:hover,
+.vp-code *:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -750,10 +777,4 @@ p code:hover, li code:hover {
     border-radius: 8px;
     overflow-x: auto;
   }
-}
-
-.language-bash code:hover {
-  background-color: initial !important;
-  color: initial !important;
-  -webkit-text-fill-color: initial !important;
 }
