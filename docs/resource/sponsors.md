@@ -73,7 +73,7 @@ const sponsors = [
     name: 'CodeRabbit',
     title: 'Cut Code Review Time & Bugs in Half',
     links: [
-      { icon: 'expedia', link: 'https://www.coderabbit.io/?ref=coolify.io&utm_source=coolify.io' }
+      { icon: 'expedia', link: 'https://coderabbit.ai/?ref=coolify.io' }
     ]
   },
   {
@@ -242,6 +242,22 @@ const sponsors = [
     title: 'Premium managed hosting solutions',
     links: [
       { icon: 'expedia', link: 'https://liquidweb.com/?utm_source=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/yaak.webp',
+    name: 'Yaak',
+    title: 'The API client for modern developers',
+    links: [
+      { icon: 'expedia', link: 'https://yaak.app/?ref=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/comp.webp',
+    name: 'Comp AI',
+    title: 'The open-source platform that automates compliance.',
+    links: [
+      { icon: 'expedia', link: 'https://www.trycomp.ai/?ref=coolify.io' }
     ]
   },
   {

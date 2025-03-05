@@ -73,7 +73,7 @@ Then you need to add the middleware to the router label, and since one or more m
 
 For example you would update the current line
 
-`traefik.http.routers.http-0-wc04wo4ow4scokgsw8wow4s8.middlewares=redirect-to-https`
+`traefik.http.routers.https-0-wc04wo4ow4scokgsw8wow4s8.middlewares=gzip`
 
 to:
 

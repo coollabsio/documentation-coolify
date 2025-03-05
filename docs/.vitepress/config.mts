@@ -525,6 +525,13 @@ export default defineConfig({
               { text: 'Dashboard Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
             ]
           },
+          {
+            text: 'Server',
+            collapsed: true,
+            items: [
+              { text: 'Crash During Build ', link: '/troubleshoot/server/crash-during-build' },
+            ]
+          },
         ],
       },
       {
