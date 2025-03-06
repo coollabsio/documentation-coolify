@@ -150,7 +150,52 @@
 - [API Documentation](https://coolify.io/docs/api-reference/api/)
 
 ## Knowledge Base
-- [Knowledge Base](https://coolify.io/docs/knowledge-base/)
+- [Overview](https://coolify.io/docs/knowledge-base/overview)
+- [FAQ](https://coolify.io/docs/knowledge-base/faq)
+- [Commands](https://coolify.io/docs/knowledge-base/commands)
+- [Delete User](https://coolify.io/docs/knowledge-base/delete-user)
+- [Self Update](https://coolify.io/docs/knowledge-base/self-update)
+- [Persistent Storage](https://coolify.io/docs/knowledge-base/persistent-storage)
+- [OAuth](https://coolify.io/docs/knowledge-base/oauth)
+- [Monitoring](https://coolify.io/docs/knowledge-base/monitoring)
+- [Notifications](https://coolify.io/docs/knowledge-base/notifications)
+- [Health Checks](https://coolify.io/docs/knowledge-base/health-checks)
+- [Domains](https://coolify.io/docs/knowledge-base/domains)
+- [Drain Logs](https://coolify.io/docs/knowledge-base/drain-logs)
+- [Environment Variables](https://coolify.io/docs/knowledge-base/environment-variables)
+- [Create Root User with ENV](https://coolify.io/docs/knowledge-base/create-root-user-with-env)
+- [Cron Syntax](https://coolify.io/docs/knowledge-base/cron-syntax)
+- [DNS Configuration](https://coolify.io/docs/knowledge-base/dns-configuration)
+- [Change Localhost Key](https://coolify.io/docs/knowledge-base/change-localhost-key)
+
+### Server
+- [Introduction](https://coolify.io/docs/knowledge-base/server/introduction)
+- [OpenSSH](https://coolify.io/docs/knowledge-base/server/openssh)
+- [Oracle Cloud](https://coolify.io/docs/knowledge-base/server/oracle-cloud)
+- [Proxies](https://coolify.io/docs/knowledge-base/server/proxies)
+- [Sentinel](https://coolify.io/docs/knowledge-base/server/sentinel)
+- [Non-Root User](https://coolify.io/docs/knowledge-base/server/non-root-user)
+- [Automated Cleanup](https://coolify.io/docs/knowledge-base/server/automated-cleanup)
+- [Build Server](https://coolify.io/docs/knowledge-base/server/build-server)
+- [Firewall](https://coolify.io/docs/knowledge-base/server/firewall)
+- [Multiple Servers](https://coolify.io/docs/knowledge-base/server/multiple-servers)
+
+### How To
+- [Private NPM Registry](https://coolify.io/docs/knowledge-base/how-to/private-npm-registry)
+- [Hetzner Load Balancing](https://coolify.io/docs/knowledge-base/how-to/hetzner-loadbalancing)
+- [Ollama with GPU](https://coolify.io/docs/knowledge-base/how-to/ollama-with-gpu)
+- [Raspberry Pi OS](https://coolify.io/docs/knowledge-base/how-to/raspberry-pi-os)
+- [WordPress Multisite](https://coolify.io/docs/knowledge-base/how-to/wordpress-multisite)
+
+### Git Integration
+- [GitHub](https://coolify.io/docs/knowledge-base/git/github/)
+- [GitLab](https://coolify.io/docs/knowledge-base/git/gitlab/)
+- [Bitbucket](https://coolify.io/docs/knowledge-base/git/bitbucket/)
+- [Gitea](https://coolify.io/docs/knowledge-base/git/gitea/)
+
+### Cloudflare
+- [Origin Certificates](https://coolify.io/docs/knowledge-base/cloudflare/origin-cert)
+- [Tunnels](https://coolify.io/docs/knowledge-base/cloudflare/tunnels/)
 
 ## Troubleshooting
 - [Overview](https://coolify.io/docs/troubleshoot/overview)
