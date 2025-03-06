@@ -19,11 +19,13 @@ You can find your anonymous key in the **Environment Variables** area under **SE
 
 ## Public Port Access
 
-> NOTE: This is a bug and should be fixed soon.
+::: warning NOTE: 
+There is a bug with making database publicly accessible. This bug will be fixed soon. In the meantime, you can use the following workaround:
+:::
 
 Set **Supabase Db** to public
 
-![CleanShot 2025-03-06 at 07 16 50@2x](https://github.com/user-attachments/assets/70f2dc52-2590-481d-a226-ba7ee3a4ba12)
+<ZoomableImage src="/docs/images/services/supabase-db-fix.webp" />
 
 Then
 
@@ -35,18 +37,18 @@ Then add this line
 
 To 
 ```yaml
-  supabase-db:
-    image: 'supabase/postgres:15.6.1.146'
-    healthcheck:
-      test: 'pg_isready -U postgres -h 127.0.0.1'
-      interval: 5s
-      timeout: 5s
-      retries: 10
-    depends_on:
-      supabase-vector:
-        condition: service_healthy
-    ports:
-      - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
+supabase-db:
+  image: 'supabase/postgres:15.6.1.146'
+  healthcheck:
+    test: 'pg_isready -U postgres -h 127.0.0.1'
+    interval: 5s
+    timeout: 5s
+    retries: 10
+  depends_on:
+    supabase-vector:
+      condition: service_healthy
+  ports:
+    - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
 ```
 
 And Restart
