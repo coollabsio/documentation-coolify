@@ -19,7 +19,7 @@ import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
 
 // @ts-ignore
-import spec from '../../public/openapi.json' assert { type: 'json' }
+import spec from "../../public/openapi.json" assert { type: "json" };
 
 // Import components
 import Card from "./components/Card.vue";
@@ -42,7 +42,7 @@ export default {
     const openapi = useOpenapi({
       spec,
       base: "/docs/api-reference/api/operations/",
-      label: "API"
+      label: "API",
     });
 
     theme.enhanceApp({ app, openapi });
