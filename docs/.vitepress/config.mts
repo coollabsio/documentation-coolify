@@ -603,7 +603,7 @@ export default defineConfig({
     plugins: [
       yaml as any,
       llms({
-        llmsDir: 'llms'
+        llmsDir: '/'
       })
     ],
     assetsInclude: ['**/*.yml'],
