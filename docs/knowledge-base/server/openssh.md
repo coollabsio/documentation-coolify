@@ -25,10 +25,14 @@ These settings need to be configured manually before running the Coolify install
    PubkeyAuthentication yes
    ```
    ::: info Note
-   `PermitRootLogin` can be set to `yes`, `without-password`, or `prohibit-password`. We recommend `prohibit-password` for better security.
+      The `PermitRootLogin` option can be set to `yes`, `without-password`, or `prohibit-password`. For enhanced security, we recommend using `prohibit-password`.
    :::
 
-2. Restart SSH Service
+   ::: warning Caution!
+     Make sure to add your SSH keys to the `~/.ssh/authorized_keys` file before setting `PermitRootLogin` to `prohibit-password`, otherwise you may lock yourself out of the server.
+   :::
+
+1. Restart SSH Service
 
 SystemD:
   ```bash
