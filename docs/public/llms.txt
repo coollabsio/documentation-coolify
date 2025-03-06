@@ -11,7 +11,7 @@
 - [Support](https://coolify.io/docs/get-started/support)
 
 ## Applications
-- [Overview](https://coolify.io/docs/applications/index)
+- [Overview](https://coolify.io/docs/applications/)
 - [Laravel](https://coolify.io/docs/applications/laravel)
 - [VitePress](https://coolify.io/docs/applications/vitepress)
 - [Rails](https://coolify.io/docs/applications/rails)
@@ -26,7 +26,7 @@
 - [Django](https://coolify.io/docs/applications/django)
 
 ## Databases
-- [Overview](https://coolify.io/docs/databases/index)
+- [Overview](https://coolify.io/docs/databases/)
 - [Backups](https://coolify.io/docs/databases/backups)
 - [Redis](https://coolify.io/docs/databases/redis)
 - [MySQL](https://coolify.io/docs/databases/mysql)
