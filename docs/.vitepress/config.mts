@@ -45,8 +45,9 @@ export default defineConfig({
     ['meta', { property: 'twitter:description', content: 'Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.' }],
     ['meta', { property: 'twitter:url', content: 'https://coolify.io/docs/' }],
     ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
-    ['link', { rel: 'icon', href: 'coolify-logo-transparent.png' }],
+    ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
     ['script', { src: 'https://analytics.coollabs.io/js/script.js', 'data-domain': 'coolify.io/docs' }],
+    ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -603,7 +604,7 @@ export default defineConfig({
     plugins: [
       yaml as any,
       llms({
-        llmsDir: '/'
+        llmsDir: './'
       })
     ],
     assetsInclude: ['**/*.yml'],
