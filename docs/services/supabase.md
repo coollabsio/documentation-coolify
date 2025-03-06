@@ -17,6 +17,42 @@ The open source Firebase alternative.
 
 You can find your anonymous key in the **Environment Variables** area under **SERVICE_SUPABASEANON_KEY**.
 
+## Public Port Access
+
+::: warning NOTE: 
+There is a bug with making database publicly accessible. This bug will be fixed soon. In the meantime, you can use the following workaround:
+:::
+
+Set **Supabase Db** to public
+
+<ZoomableImage src="/docs/images/services/supabase-db-fix.webp" />
+
+Then
+
+Go to the **General** tab then **Edit Compose File**
+
+Then add this line 
+`ports:
+      - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}`
+
+To 
+```yaml
+supabase-db:
+  image: 'supabase/postgres:15.6.1.146'
+  healthcheck:
+    test: 'pg_isready -U postgres -h 127.0.0.1'
+    interval: 5s
+    timeout: 5s
+    retries: 10
+  depends_on:
+    supabase-vector:
+      condition: service_healthy
+  ports:
+    - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
+```
+
+And Restart
+
 ## Links
 
 - [Official Website ›](https://supabase.io)
