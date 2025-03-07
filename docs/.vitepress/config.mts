@@ -537,6 +537,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Wildcard SSL not working', link: '/troubleshoot/dns-and-domains/wildcard-ssl-certs' },
+              { text: "Let's Encrypt not working", link: '/troubleshoot/dns-and-domains/lets-encrypt-not-working' },
             ]
           },
         ],
