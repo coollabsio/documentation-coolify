@@ -532,6 +532,13 @@ export default defineConfig({
               { text: 'Crash During Build ', link: '/troubleshoot/server/crash-during-build' },
             ]
           },
+          {
+            text: 'DNS & Domains',
+            collapsed: true,
+            items: [
+              { text: 'Wildcard SSL not working', link: '/troubleshoot/dns-and-domains/wildcard-ssl-certs' },
+            ]
+          },
         ],
       },
       {
