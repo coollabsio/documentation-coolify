@@ -13,7 +13,7 @@ You can easily use Traefik to loadbalance an application between:
 ### Prerequisites
 
 1. Make sure you set the right DNS record for your domain. Your loadbalanced domain should point to the server's IP address where you are setting up the loadbalancer.
-2. You must deploy your application to more than one servers: read more [here](/docs/knowledge-base/server/multiple-servers).
+2. You must deploy your application to more than one servers: read more [here](/knowledge-base/server/multiple-servers).
 3. Make sure Traefik is running on all servers.
 4. Set your `fqdn` to the fqdn you would like to use to reach your application.
 5. After your application are deployed on all servers, you need to make a dynamic configuration for Traefik to loadbalance between your servers in the `/data/coolify/proxy/dynamic` directory.
