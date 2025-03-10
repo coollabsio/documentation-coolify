@@ -10,8 +10,7 @@ To enable access from the internet, you need to add a dynamic configuration and 
 ## Secure mode (with Dynamic Configuration)
 
 ::: info Tip
-  How to configure Traefik's dynamic configuration? [Read
-  more](/docs/knowledge-base/proxy/traefik/dynamic-config)
+  How to configure Traefik's dynamic configuration? [Read more](/knowledge-base/proxy/traefik/dynamic-config)
 :::
 
 You can enable Traefik's dashboard by adding the following dynamic configuration:
