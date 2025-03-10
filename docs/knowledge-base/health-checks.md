@@ -15,3 +15,10 @@ The integrated proxy only forwards the request to your application if the health
 
 You get a warning next to your application's status. It is not mandatory, but it is recommended to set a health check.
 The integrated proxy will forward the request to your application without checking the health.
+
+::: warning  
+Health checks are performed from inside your container. To ensure they work correctly, you must install either `curl` or `wget`.  
+
+If health checks are enabled on a container without `curl` or `wget`, the container will always be marked as unhealthy, causing the deployment to fail.  
+:::
+
