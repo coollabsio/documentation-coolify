@@ -547,8 +547,13 @@ export default defineConfig({
         text: 'Resources',
         collapsed: true,
         items: [
-          { text: 'Team', link: '/resource/team' },
-          { text: 'Sponsors', link: '/resource/sponsors' },
+          {
+            text: 'Integrations',
+            collapsed: true,
+            items: [
+              { text: 'Webstudio', link: '/resource/integrations/webstudio.md' },
+            ],
+          },
           {
             text: 'Contribute',
             collapsed: true,
@@ -558,6 +563,8 @@ export default defineConfig({
               { text: 'Documentation', link: '/resource/contribute/documentation' },
             ],
           },
+          { text: 'Sponsors', link: '/resource/sponsors' },
+          { text: 'Team', link: '/resource/team' },
           // {
           //   text: 'Changelog',
           //   collapsed: true,
