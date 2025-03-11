@@ -20,7 +20,7 @@ Before you start, make sure you have:
 
 - A [GitHub account ↗](https://github.com?utm_source=coolify.io) to host your code.
 - A [Hetzner account ↗](https://coolify.io/hetzner) to provision your server (or an account with any other hosting provider).
-- The [Webstudio CLI ↗](https://webstudio.is/docs/cli?utm_source=coolify.io) installed locally to manage your project exports.
+- The [Webstudio CLI ↗](https://docs.webstudio.is/university/self-hosting/cli?utm_source=coolify.io) installed locally to manage your project exports.
 
 
 ## 1. Create Your GitHub Repository
