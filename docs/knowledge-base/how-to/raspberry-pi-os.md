@@ -28,7 +28,7 @@ To run Coolify on a Raspberry Pi, you will need one of the following Raspberry P
    - Navigate to `Raspberry Pi OS (other)`
    - Select `Raspberry Pi OS Lite (64-bit)`
 
-   ::: warning Caution 
+   ::: warning Caution
    You must select one of the 64-bit OS versions as Coolify is not compatible with 32-bit versions.
    :::
 
@@ -43,6 +43,11 @@ To run Coolify on a Raspberry Pi, you will need one of the following Raspberry P
 
 6. Click `Next` and select `Edit settings` for OS Customization.
    - Navigate to `Services` and enable SSH with a public key.
+
+   ::: warning Caution
+   The SSH key must not have a passphrase or 2FA enabled, otherwise you will not be able to complete the onboarding process.
+   :::
+
    - Configure other options as needed
 
 7. Finish the installation onto the SD card.
