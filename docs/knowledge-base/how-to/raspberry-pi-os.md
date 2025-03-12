@@ -54,4 +54,4 @@ To run Coolify on a Raspberry Pi, you will need one of the following Raspberry P
 
 8. Once complete, insert the microSD card into your Raspberry Pi and power it on.
 
-9. After your Raspberry Pi boots up, proceed with the [Coolify installation](/installation#quick-installation-recommended).
+9. After your Raspberry Pi boots up, proceed with the [Coolify installation](/docs/get-started/installation#quick-installation-recommended).
