@@ -520,6 +520,13 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/troubleshoot/overview' },
           {
+            text: 'Applications',
+            collapsed: true,
+            items: [
+              { text: 'Bad Gateway', link: '/troubleshoot/applications/bad-gateway.md' },
+            ]
+          },
+          {
             text: 'Dashboard',
             collapsed: true,
             items: [
