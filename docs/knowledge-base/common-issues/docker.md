@@ -1,8 +1,12 @@
 ---
-title: "Introduction"
+title: "Common Issues for Docker"
+description: "Here are some common issues and their solutions related to Docker."
 ---
+# Common Issues
 
-#### 1. Expired GitHub Personal Access Token (PAT)
+Here are some common issues and their solutions related to Docker.
+
+## Expired GitHub Personal Access Token (PAT)
 If you encounter the following errors, it means Docker cannot authenticate with the GitHub Container Registry (ghcr.io):
 
 **Error 1:**
