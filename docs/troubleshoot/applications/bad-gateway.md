@@ -3,7 +3,7 @@ title: Bad Gateway Error
 ---
 
 # Bad Gateway Error  
-If your deployed application works when you access it via your server’s IP address and port but shows a **Bad Gateway** error on your domain, the issue is most often due to misconfigured port settings, incorrect host mapping, or your app listening only on localhost.
+If your deployed application **maybe** works when you access it via your server’s IP address and port but shows a **Bad Gateway** error on your domain, the issue is most often due to misconfigured port settings, incorrect host mapping, or your app listening only on localhost.
 
 
 ## Symptoms 
@@ -12,7 +12,7 @@ If your deployed application works when you access it via your server’s IP add
 
 
 ## Diagnosis
-- **Port Configuration:** Check the port your application is listening on and see if the correct port is entered in the **Port Expose** field on the Coolify dashboard.  
+- **Port Configuration:** Check the port your application is listening on and see if the correct port is entered in the **Port Exposes** field on the Coolify dashboard.  
 
 - **Host Mapping:** Check if the application’s port is mapped to the host system.
 
@@ -24,7 +24,7 @@ If your deployed application works when you access it via your server’s IP add
 
 
 ## Solution
-- **Update Port Settings:** Enter the correct port number in the **Port Expose** field on the Coolify dashboard and restart your app.  
+- **Update Port Settings:** Enter the correct port number in the **Port Exposes** field on the Coolify dashboard and restart your app.  
     
     <ZoomableImage src="/docs/images/troubleshoot/applications/bad-gateway/1.webp" />
 - **Remove Host Port Mapping:** If the port is mapped to the host system, remove the mapping so the proxy can route traffic correctly, then restart your app.  
