@@ -42,7 +42,7 @@ The following requirements must be met for the custom docker network in a produc
 
 
 3. **Complete Setup**
-   After configuring the root user credentials, continue with the [installation steps](/installation#quick-installation-recommended) to complete your Coolify setup.
+   After configuring the root user credentials, continue with the [installation steps](/get-started/installation#quick-installation-recommended) to complete your Coolify setup.
 
 
 ## Manual Installation Method
@@ -68,5 +68,5 @@ The following requirements must be met for the custom docker network in a produc
    ```
 
 3. **Complete Setup**
-   After configuring the root user credentials, continue with the [installation steps](/installation#manual-installation) to complete your Coolify setup.
+   After configuring the root user credentials, continue with the [installation steps](/get-started/installation#manual-installation) to complete your Coolify setup.
 
