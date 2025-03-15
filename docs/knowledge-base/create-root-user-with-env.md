@@ -56,7 +56,7 @@ The following requirements must be met for the root user credentials in a produc
 :::
 
 3. **Complete Setup**
-   After configuring the root user credentials, continue with the [installation steps](/installation#quick-installation-recommended) to complete your Coolify setup.
+   After configuring the root user credentials, continue with the [installation steps](/get-started/installation#quick-installation-recommended) to complete your Coolify setup.
 
 
 
@@ -87,5 +87,5 @@ The following requirements must be met for the root user credentials in a produc
 :::
 
 3. **Complete Setup**
-   After configuring the root user credentials, continue with the [installation steps](/installation#manual-installation) to complete your Coolify setup.
+   After configuring the root user credentials, continue with the [installation steps](/get-started/installation#quick-installation-recommended) to complete your Coolify setup.
 

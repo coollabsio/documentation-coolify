@@ -5,7 +5,7 @@ title: Changelogs
 # Coolify v4 Beta-383 is now available! 
 This release of Coolify introduces several exciting updates, including a new method to set the initial root user in the installation script, the ability to import full database backups, enhanced deployment logs, Docker cleanup logs, and much more.
 
-To upgrade your Coolify instance, follow the [upgrade guide](/upgrade)
+To upgrade your Coolify instance, follow the [upgrade guide](/get-started/upgrade)
 
 ---
 

@@ -91,7 +91,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Mosquitto](/services/mosquitto) - Open-source MQTT broker.
 - [N8N](/services/n8n) - Workflow automation tool.
 - [Nextcloud](/services/nextcloud) - A safe home for all your data.
-- [Nexus](/services/sonatype-nexus) - A repository manager that allows you to store, manage, and distribute your software artifacts.
+- [Nexus](/services/nexus) - A repository manager that allows you to store, manage, and distribute your software artifacts.
 - [Nitropage](/services/nitropage) - Nitropage is an extensible, drag-and-drop website builder based on SolidStart, completely free and open source.
 - [NocoDB](/services/nocodb) - Open Source Airtable Alternative.
 - [Odoo](/services/odoo) - Open source ERP and CRM.

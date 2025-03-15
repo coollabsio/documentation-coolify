@@ -26,7 +26,6 @@ export default defineConfig({
   base: '/docs/',
   cleanUrls: true,
   lastUpdated: true,
-  // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
   sitemap: {
     hostname: 'https://coolify.io/docs/'
