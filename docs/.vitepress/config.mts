@@ -171,6 +171,7 @@ export default defineConfig({
               { text: 'Duplicati', link: '/services/duplicati' },
               { text: 'Emby', link: '/services/emby' },
               { text: 'Emby Stat', link: '/services/emby-stat' },
+              { text: 'Evolution API', link: '/services/evolution-api' },
               { text: 'Fider', link: '/services/fider' },
               { text: 'Filebrowser', link: '/services/filebrowser' },
               { text: 'FileFlows', link: '/services/fileflows' },

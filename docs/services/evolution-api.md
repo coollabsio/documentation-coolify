@@ -20,5 +20,6 @@ Once everything is running, you can access your https://url/manager.
 
 ## Links
 
-- [GitHub ›](https://github.com/yourselfhosted/slash)
-- [Official Documentation ›](https://doc.evolution-api.com/v1/en/get-started/introduction)
+
+- [GitHub ›](https://github.com/yourselfhosted/slash?utm_source=coolify.io)
+- [Official Documentation ›](https://doc.evolution-api.com/v1/en/get-started/introduction?utm_source=coolify.io)
