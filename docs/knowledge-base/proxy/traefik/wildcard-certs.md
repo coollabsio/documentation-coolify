@@ -100,16 +100,17 @@ It is useful, because Traefik do not need to generate a new certificate for ever
 
 ```bash
 traefik.enable=true
-traefik.http.routers.<unique_router_name>.rule=Host(`example.coolify.io`) && PathPrefix(`/`)
-traefik.http.routers.<unique_router_name>.entryPoints=https
-traefik.http.routers.<unique_router_name>.middlewares=gzip
-traefik.http.routers.<unique_router_name>.service=<unique_service_name>
+traefik.http.routers.<unique_router_name_https>.rule=Host(`example.coolify.io`) && PathPrefix(`/`)
+traefik.http.routers.<unique_router_name_https>.entryPoints=https
+traefik.http.routers.<unique_router_name_https>.middlewares=gzip
+traefik.http.routers.<unique_router_name_https>.service=<unique_service_name>
+traefik.http.routers.<unique_router_name_https>.tls=true
 traefik.http.services.<unique_service_name>.loadbalancer.server.port=80
-traefik.http.routers.<unique_router_name>.tls=true
-traefik.http.routers.<unique_router_name>.tls.certresolver=letsencrypt
-traefik.http.routers.<unique_router_name>.rule=Host(`example.coolify.io`) && PathPrefix(`/`)
-traefik.http.routers.<unique_router_name>.entryPoints=http
-traefik.http.routers.<unique_router_name>.middlewares=redirect-to-https
+traefik.http.routers.<unique_router_name_https>.tls.certresolver=letsencrypt
+
+traefik.http.routers.<unique_router_name_http>.rule=Host(`example.coolify.io`) && PathPrefix(`/`)
+traefik.http.routers.<unique_router_name_http>.entryPoints=http
+traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
 ```
 
 ### SaaS
