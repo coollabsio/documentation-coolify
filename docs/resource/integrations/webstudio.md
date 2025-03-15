@@ -12,7 +12,7 @@ In this guide, you’ll learn how to set up your project, deploy it on a Hetzner
   
   However, if you're using a different hosting provider, you can still follow this guide with their servers as well.
 
-  If you prefer watching a video instead of reading, you can check out our [tutorial video ↗](https://youtu.be/OnHLO2Plt2E?si=yDM77oK7Xd5UsRSP)
+  If you prefer watching a video instead of reading, you can check out the [tutorial video ↗](https://youtu.be/OnHLO2Plt2E?si=yDM77oK7Xd5UsRSP)
 :::
 
 ## What You’ll Need
@@ -40,29 +40,41 @@ With your project exported locally, [push your code](https://docs.github.com/en/
 
 
 ## 4. Set Up Your Hetzner Server
+::: warning HEADS UP!
+If you already have a server, you don't need to purchase a new one. 
+
+**Webstudio recommends** that your server should have at least **1 CPU and 2GB of RAM** for smooth operation.
+  
+Skip to [Step 6 ↗](#_6-configure-your-project-on-coolify) if your server is already connected to Coolify.
+:::
 Follow these steps to prepare your Hetzner server:
 
 1. **Create a New Server:** Log into [Hetzner Cloud Dashboard ↗](https://console.hetzner.cloud/) and create a new server.
   <ZoomableImage src="/docs/images/resources/integrations/1.webp" />
 
-2. **Choose Your Region:** Select the region that best suits your needs.
+1. **Choose Your Region:** Select the region that best suits your needs.
   <ZoomableImage src="/docs/images/resources/integrations/2.webp" />
 
-3. **Select Ubuntu:** Pick an Ubuntu image (make sure it’s a Docker-supported version, check the [Docker Ubuntu requirements](https://docs.docker.com/engine/install/ubuntu/#os-requirements)).
+1. **Select Ubuntu:** Pick an Ubuntu image (make sure it’s a Docker-supported version, check the [Docker Ubuntu requirements](https://docs.docker.com/engine/install/ubuntu/#os-requirements)).
   <ZoomableImage src="/docs/images/resources/integrations/3.webp" />
 
-4. **Configure Resources:** A shared CPU with at least 2 GB RAM is recommended.
+1. **Configure Resources:** A shared CPU with at least 2 GB RAM is recommended.
   <ZoomableImage src="/docs/images/resources/integrations/4.webp" />
 
-5. **Allocate an IPv4 Address:** Make sure your server has a dedicated IPv4 address.
+1. **Allocate an IPv4 Address:** Make sure your server has a dedicated IPv4 address.
   <ZoomableImage src="/docs/images/resources/integrations/5.webp" />
 
-6. **Finalize Setup:** Click **Create and Buy Now** and wait until your server is provisioned.
+1. **Finalize Setup:** Click **Create and Buy Now** and wait until your server is provisioned.
 
-7. **Save the IP:** Copy your server’s IPv4 address, it will be needed shortly.
+2. **Save the IP:** Copy your server’s IPv4 address, it will be needed shortly.
 
 
 ## 5. Connect Coolify to Your Server
+
+::: warning HEADS UP!
+If your server is already connected to Coolify, skip to the [next step ↗](#_6-configure-your-project-on-coolify).
+:::
+
 1. **Add Private Key:** Login to your Coolify account (or create one if you’re new) and Add a new private key
   <ZoomableImage src="/docs/images/resources/integrations/6.webp" />
   <br />
