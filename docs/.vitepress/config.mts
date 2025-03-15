@@ -93,6 +93,16 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Builds',
+        collapsed: false,
+        items: [
+          { text: 'Introduction', link: '/get-started/introduction' },
+          { text: 'Build Packs', link: '/get-started/concepts' },
+          { text: 'Build Commands', link: '/get-started/usage' },
+          { text: 'Build Servers', link: '/get-started/installation' },
+        ],
+      },
+      {
         text: 'Applications',
         collapsed: true,
         items: [
