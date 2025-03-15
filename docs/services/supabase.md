@@ -53,6 +53,8 @@ supabase-db:
 
 And Restart
 
+> NOTE if you are changing the port to a different port altogether to update the POSTGRES_PORT in the Environment Variables
+
 ## Links
 
 - [Official Website ›](https://supabase.io)
