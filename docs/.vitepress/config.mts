@@ -126,10 +126,20 @@ export default defineConfig({
       },
       {
         text: 'Builds',
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: 'Introduction', link: '/builds/introduction' },
-          { text: 'Build Packs', link: '/builds/packs/introduction' },
+          {
+            text: 'Build Packs',
+            collapsed: true,
+            items: [
+              { text: 'Introduction', link: '/builds/packs/introduction' },
+              { text: 'Static', link: '/builds/packs/static' },
+              { text: 'Nixpacks', link: '/builds/packs/nixpacks' },
+              { text: 'Dockerfile', link: '/builds/packs/docker-file' },
+              { text: 'Docker Compose', link: '/builds/packs/docker-compose' },
+            ]
+          },
           { text: 'Build Commands', link: '/builds/commands' },
           { text: 'Build Servers', link: '/builds/servers' },
         ],
