@@ -129,7 +129,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/builds/introduction' },
-          { text: 'Build Packs', link: '/builds/packs' },
+          { text: 'Build Packs', link: '/builds/packs/introduction' },
           { text: 'Build Commands', link: '/builds/commands' },
           { text: 'Build Servers', link: '/builds/servers' },
         ],
