@@ -133,7 +133,7 @@ export default defineConfig({
             text: 'Build Packs',
             collapsed: true,
             items: [
-              { text: 'Introduction', link: '/builds/packs/introduction' },
+              { text: 'Overview', link: '/builds/packs/overview' },
               { text: 'Static', link: '/builds/packs/static' },
               { text: 'Nixpacks', link: '/builds/packs/nixpacks' },
               { text: 'Dockerfile', link: '/builds/packs/docker-file' },
