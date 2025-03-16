@@ -43,7 +43,7 @@ Coolify have four build packs to meet different requirements:
 ## How to use a Build Pack
 Each build pack has its own step-by-step guide to help you use them in Coolify. Click the links below to learn more about each build pack.
 
-- [Static Build Pack](#TODO)
-- [Nixpack](#TODO)
-- [Dockerfile](#TODO)
-- [Docker Compose](#TODO)
+- [Static Build Pack](/builds/packs/static)
+- [Nixpack](/builds/packs/nixpacks)
+- [Dockerfile](/builds/packs/docker-file)
+- [Docker Compose](/builds/packs/docker-compose)
