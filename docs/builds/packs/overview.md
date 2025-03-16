@@ -45,5 +45,5 @@ Each build pack has its own step-by-step guide to help you use them in Coolify. 
 
 - [Static Build Pack](/builds/packs/static)
 - [Nixpack](/builds/packs/nixpacks)
-- [Dockerfile](/builds/packs/docker-file)
+- [Dockerfile](/builds/packs/dockerfile)
 - [Docker Compose](/builds/packs/docker-compose)

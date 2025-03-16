@@ -136,7 +136,7 @@ export default defineConfig({
               { text: 'Overview', link: '/builds/packs/overview' },
               { text: 'Static', link: '/builds/packs/static' },
               { text: 'Nixpacks', link: '/builds/packs/nixpacks' },
-              { text: 'Dockerfile', link: '/builds/packs/docker-file' },
+              { text: 'Dockerfile', link: '/builds/packs/dockerfile' },
               { text: 'Docker Compose', link: '/builds/packs/docker-compose' },
             ]
           },
