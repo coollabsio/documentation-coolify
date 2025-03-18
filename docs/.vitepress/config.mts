@@ -270,40 +270,6 @@ export default defineConfig({
             link: '/knowledge-base/overview',
             items: [
               {
-                text: 'Common Issues',
-                collapsed: true,
-                items: [
-                  // {
-                  //   text: 'Applications',
-                  //   link: '/knowledge-base/common-issues/applications'
-                  // },
-                  // {
-                  //   text: 'Backup',
-                  //   link: '/knowledge-base/common-issues/backup'
-                  // },
-                  {
-                    text: 'Docker',
-                    link: '/knowledge-base/common-issues/docker'
-                  },
-                  // {
-                  //   text: 'Databases',
-                  //   link: '/knowledge-base/common-issues/databases'
-                  // },
-                  // {
-                  //   text: 'Services',
-                  //   link: '/knowledge-base/common-issues/services'
-                  // },
-                  {
-                    text: 'Servers',
-                    link: '/knowledge-base/common-issues/servers'
-                  },
-                  // {
-                  //   text: 'Proxy',
-                  //   link: '/knowledge-base/common-issues/proxy'
-                  // }
-                ]
-              },
-              {
                 text: 'Internal',
                 collapsed: true,
                 items: [
@@ -523,21 +489,32 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Bad Gateway', link: '/troubleshoot/applications/bad-gateway.md' },
+              { text: 'Failed To Get Access Token During Deployment', link: '/troubleshoot/applications/failed-to-get-token' },
             ]
           },
           {
             text: 'Dashboard',
             collapsed: true,
             items: [
-              { text: 'Dashboard Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
-              { text: 'Dashboard Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+              { text: 'Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
+              { text: 'Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+            ]
+          },
+          {
+            text: 'Docker',
+            collapsed: true,
+            items: [
+              { text: 'Expired GitHub Personal Access Token (PAT)', link: '/troubleshoot/docker/expired-github-personal-access-token' },
             ]
           },
           {
             text: 'Server',
             collapsed: true,
             items: [
-              { text: 'Crash During Build ', link: '/troubleshoot/server/crash-during-build' },
+              { text: 'Connection Unstable', link: '/troubleshoot/server/connection-issues' },
+              { text: 'Crash During Build', link: '/troubleshoot/server/crash-during-build' },
+              { text: '2FA Stopped Working', link: '/troubleshoot/server/two-factor-stopped-working' },
+              { text: 'Raspberry Pi Crashes', link: '/troubleshoot/server/raspberry-crashes' },
             ]
           },
           {
