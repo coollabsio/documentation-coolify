@@ -515,6 +515,7 @@ export default defineConfig({
               { text: 'Crash During Build', link: '/troubleshoot/server/crash-during-build' },
               { text: '2FA Stopped Working', link: '/troubleshoot/server/two-factor-stopped-working' },
               { text: 'Raspberry Pi Crashes', link: '/troubleshoot/server/raspberry-crashes' },
+              { text: 'Server Validation Issues', link: '/troubleshoot/server/validation-issues' },
             ]
           },
           {
