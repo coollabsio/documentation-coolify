@@ -129,7 +129,7 @@ To start the Coolify proxy, follow these steps:
 <ZoomableImage src="/docs/images/knowledge-base/cf-tunnel/all-resource/10.webp" />
 
 1. In the Coolify dashboard, go to the **Servers** page from the sidebar.  
-2. Click on the **Proxy** tab.  
+2. Select the server where coolify is running, then Click on the **Proxy** tab.  
 3. Open the **General** tab.  
 4. Click the **Start Proxy** button.  
 

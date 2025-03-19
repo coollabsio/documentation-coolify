@@ -8,7 +8,9 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Example repository [here](https://github.com/coollabsio/coolify-examples/tree/main/laravel).
 
-## Requirements
+## Deploy with Nixpacks
+
+### Requirements
 
 - Set `Build Pack` to `nixpacks`
 - Set the required [environment variables](#environment-variables)
@@ -265,3 +267,109 @@ stderr_logfile=/var/log/worker-inertia-ssr.log
 stdout_logfile=/var/log/worker-inertia-ssr.log
 '''
 ```
+
+
+## Deploy with Dockerfile and Nginx Unit
+
+### Prerequisites
+
+1. Create a new resource from a private or public repository.
+2. Set the `Ports Exposes` field to `8000`, for exemple.
+3. Set default environnement variables using `Developer view` in `Environment Variables` :
+
+```Environnement variables
+APP_DEBUG=false
+APP_ENV=staging
+APP_KEY= #YourAppKey
+APP_MAINTENANCE_DRIVER=file
+APP_NAME=Laravel
+CACHE_STORE=file
+DB_CONNECTION= #YourDbConnection
+DB_DATABASE= #YourDb
+DB_HOST= #YourDbHost
+DB_PASSWORD= #YourDbPassword
+DB_PORT= #YourDbPort
+DB_USERNAME= #YourDbUsername
+FILESYSTEM_DISK=public
+MAIL_MAILER=log
+SESSION_DRIVER=file
+```
+
+4. Create a `Dockerfile` in the root of your project with the following content:
+
+```Dockerfile
+FROM unit:1.34.1-php8.3
+
+RUN apt update && apt install -y \
+    curl unzip git libicu-dev libzip-dev libpng-dev libjpeg-dev libfreetype6-dev libssl-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) pcntl opcache pdo pdo_mysql intl zip gd exif ftp bcmath \
+    && pecl install redis \
+    && docker-php-ext-enable redis
+
+RUN echo "opcache.enable=1" > /usr/local/etc/php/conf.d/custom.ini \
+    && echo "opcache.jit=tracing" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "opcache.jit_buffer_size=256M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "memory_limit=512M" > /usr/local/etc/php/conf.d/custom.ini \        
+    && echo "upload_max_filesize=64M" >> /usr/local/etc/php/conf.d/custom.ini \
+    && echo "post_max_size=64M" >> /usr/local/etc/php/conf.d/custom.ini
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+WORKDIR /var/www/html
+
+RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache
+
+RUN chown -R unit:unit /var/www/html/storage bootstrap/cache && chmod -R 775 /var/www/html/storage
+
+COPY . .
+
+RUN chown -R unit:unit storage bootstrap/cache && chmod -R 775 storage bootstrap/cache
+
+RUN composer install --prefer-dist --optimize-autoloader --no-interaction
+
+COPY unit.json /docker-entrypoint.d/unit.json
+
+EXPOSE 8000
+
+CMD ["unitd", "--no-daemon"]
+```
+
+3. Create a `unit.json` file (lowercase) at the root of your project with the following content:
+
+```unit.json
+{
+    "listeners": {
+        "*:8000": {
+            "pass": "routes"
+        }
+    },
+
+    "routes": [
+        {
+            "match": {
+                "uri": "!/index.php"
+            },
+            "action": {
+                "share": "/var/www/html/public$uri",
+                "fallback": {
+                    "pass": "applications/laravel"
+                }
+            }
+        }
+    ],
+
+    "applications": {
+        "laravel": {
+            "type": "php",
+            "root": "/var/www/html/public/",
+            "script": "index.php"
+        }
+    }
+}
+```
+4. Set Post-deployment to : 
+    ``` 
+   php artisan optimize:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan optimize
+
+  

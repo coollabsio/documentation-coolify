@@ -26,7 +26,6 @@ export default defineConfig({
   base: '/docs/',
   cleanUrls: true,
   lastUpdated: true,
-  // Added ignoreDeadLinks to temporarily fix build error
   ignoreDeadLinks: true,
   sitemap: {
     hostname: 'https://coolify.io/docs/'
@@ -272,40 +271,6 @@ export default defineConfig({
             link: '/knowledge-base/overview',
             items: [
               {
-                text: 'Common Issues',
-                collapsed: true,
-                items: [
-                  // {
-                  //   text: 'Applications',
-                  //   link: '/knowledge-base/common-issues/applications'
-                  // },
-                  // {
-                  //   text: 'Backup',
-                  //   link: '/knowledge-base/common-issues/backup'
-                  // },
-                  {
-                    text: 'Docker',
-                    link: '/knowledge-base/common-issues/docker'
-                  },
-                  // {
-                  //   text: 'Databases',
-                  //   link: '/knowledge-base/common-issues/databases'
-                  // },
-                  // {
-                  //   text: 'Services',
-                  //   link: '/knowledge-base/common-issues/services'
-                  // },
-                  {
-                    text: 'Servers',
-                    link: '/knowledge-base/common-issues/servers'
-                  },
-                  // {
-                  //   text: 'Proxy',
-                  //   link: '/knowledge-base/common-issues/proxy'
-                  // }
-                ]
-              },
-              {
                 text: 'Internal',
                 collapsed: true,
                 items: [
@@ -330,6 +295,7 @@ export default defineConfig({
                   { text: 'Delete User', link: '/knowledge-base/delete-user' },
                   { text: 'OAuth', link: '/knowledge-base/oauth' },
                   { text: 'Create Root User using ENV', link: '/knowledge-base/create-root-user-with-env' },
+                  { text: 'Define Custom Docker Network with ENV', link: '/knowledge-base/define-custom-docker-network-with-env' },
                   { text: 'Change Localhost Key', link: '/knowledge-base/change-localhost-key' },
                 ]
               },
@@ -369,6 +335,7 @@ export default defineConfig({
                 items: [
                   {
                     text: 'Github', collapsed: true, items: [
+                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/github-app' },
                       { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
                       { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
                     ]
@@ -519,18 +486,45 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/troubleshoot/overview' },
           {
+            text: 'Applications',
+            collapsed: true,
+            items: [
+              { text: 'Bad Gateway', link: '/troubleshoot/applications/bad-gateway.md' },
+              { text: 'Failed To Get Access Token During Deployment', link: '/troubleshoot/applications/failed-to-get-token' },
+            ]
+          },
+          {
             text: 'Dashboard',
             collapsed: true,
             items: [
-              { text: 'Dashboard Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
-              { text: 'Dashboard Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+              { text: 'Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
+              { text: 'Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+            ]
+          },
+          {
+            text: 'Docker',
+            collapsed: true,
+            items: [
+              { text: 'Expired GitHub Personal Access Token (PAT)', link: '/troubleshoot/docker/expired-github-personal-access-token' },
             ]
           },
           {
             text: 'Server',
             collapsed: true,
             items: [
-              { text: 'Crash During Build ', link: '/troubleshoot/server/crash-during-build' },
+              { text: 'Connection Unstable', link: '/troubleshoot/server/connection-issues' },
+              { text: 'Crash During Build', link: '/troubleshoot/server/crash-during-build' },
+              { text: '2FA Stopped Working', link: '/troubleshoot/server/two-factor-stopped-working' },
+              { text: 'Raspberry Pi Crashes', link: '/troubleshoot/server/raspberry-crashes' },
+              { text: 'Server Validation Issues', link: '/troubleshoot/server/validation-issues' },
+            ]
+          },
+          {
+            text: 'DNS & Domains',
+            collapsed: true,
+            items: [
+              { text: 'Wildcard SSL not working', link: '/troubleshoot/dns-and-domains/wildcard-ssl-certs' },
+              { text: "Let's Encrypt not working", link: '/troubleshoot/dns-and-domains/lets-encrypt-not-working' },
             ]
           },
         ],
@@ -539,8 +533,13 @@ export default defineConfig({
         text: 'Resources',
         collapsed: true,
         items: [
-          { text: 'Team', link: '/resource/team' },
-          { text: 'Sponsors', link: '/resource/sponsors' },
+          {
+            text: 'Integrations',
+            collapsed: true,
+            items: [
+              { text: 'Webstudio', link: '/resource/integrations/webstudio.md' },
+            ],
+          },
           {
             text: 'Contribute',
             collapsed: true,
@@ -550,6 +549,8 @@ export default defineConfig({
               { text: 'Documentation', link: '/resource/contribute/documentation' },
             ],
           },
+          { text: 'Sponsors', link: '/resource/sponsors' },
+          { text: 'Team', link: '/resource/team' },
           // {
           //   text: 'Changelog',
           //   collapsed: true,

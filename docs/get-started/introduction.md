@@ -7,15 +7,15 @@ title: Introduction to Coolify
 <br />
 
 ## What is Coolify?
-Coolify is a software that makes self-hosting simple and powerful. It lets you run your applications, databases, and services on your own server, whether that’s an old laptop, a Raspberry Pi, or a rented server from a provider like [Hetzner↗](https://coolify.io/hetzner). 
+Coolify is a software that makes self-hosting simple and powerful. It lets you run your applications, databases, and services on your own server, whether that’s an old laptop, a Raspberry Pi, or a rented server from a provider like [Hetzner ↗](https://coolify.io/hetzner). 
 
 With Coolify, you get full control over your projects, your data, and your costs. It’s completely free to use, open-source, and has no features locked behind a paywall. 
 
-Think of Coolify as your personal alternative to cloud platforms like [Vercel↗](https://vercel.com?utm_source=coolify.io), [Railway↗](https://railway.com/?utm_source=coolify.io), or [Heroku↗](https://www.heroku.com/?utm_source=coolify.io), but without the huge bills or privacy trade-offs.
+Think of Coolify as your personal alternative to cloud platforms like [Vercel ↗](https://vercel.com?utm_source=coolify.io), [Railway ↗](https://railway.com/?utm_source=coolify.io), or [Heroku ↗](https://www.heroku.com/?utm_source=coolify.io), but without the huge bills or privacy trade-offs.
 
 
 ## What Coolify Is Not
-Coolify isn’t a cloud service that hosts everything for you, you need your own server. That could be your old laptop, a Raspberry Pi, or a rented server from a hosting provider like [Hetzner↗](https://coolify.io/hetzner), and you’ll need SSH access to use it. 
+Coolify isn’t a cloud service that hosts everything for you, you need your own server. That could be your old laptop, a Raspberry Pi, or a rented server from a hosting provider like [Hetzner ↗](https://coolify.io/hetzner), and you’ll need SSH access to use it. 
 
 It’s not a zero-effort solution either, if you choose to self-host, you’ll need to set up your server and install Coolify. But once it’s running, managing your projects becomes very easy.
 
@@ -56,13 +56,13 @@ Coolify delivers unbeatable advantages for developers who want to self-host. Her
 | **Quick Setup**             | Start hosting in minutes with minimal maintenance required.                                                    |
 | **User-Friendly Interface** | Manage your infrastructure through a clean, simple dashboard designed for developers.                          |
 | **100% Open Source**        | Review the code, contribute to development, and help shape the platform’s future.                              |
-| **Active Community**        | Join over 13,000 people on Discord and 140,000+ servers running Coolify worldwide.                             |
+| **Active Community**        | Join over 13,000 people on Discord and 145,000+ servers running Coolify worldwide.                             |
 
 
 ## Getting Started with Coolify
 Before you jump into using Coolify, it’s worth understanding a few key concepts to make your journey smoother. 
 
-Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concepts guide↗](/get-started/concepts).
+Learn about servers, SSH access, and how Coolify manages your projects by checking out our [concepts guide ↗](/get-started/concepts).
 
 You have two ways to use Coolify:
 - [Self-Host Coolify](#self-host-coolify)

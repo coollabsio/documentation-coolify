@@ -199,6 +199,14 @@
 
 ## Troubleshooting
 - [Overview](https://coolify.io/docs/troubleshoot/overview)
+- [Failed To Get Access Token During Deployment](https://coolify.io/docs/troubleshoot/applications/failed-to-get-token)
+- [Bad Gateway Error](https://coolify.io/docs/troubleshoot/applications/bad-gateway-error)
+- [Connection Unstable](https://coolify.io/docs/troubleshoot/server/connection-issues)
+- [Expired GitHub Personal Access Token (PAT)](https://coolify.io/docs/troubleshoot/docker/expired-github-personal-access-token)
+- [DNS & Domains](https://coolify.io/docs/troubleshoot/dns-and-domains)
+- [Two Factor Stopped Working](https://coolify.io/docs/troubleshoot/server/two-factor-stopped-working)
+- [Server Validation Issues](https://coolify.io/docs/troubleshoot/server/validation-issues)
+- [Raspberry Pi Crashes](https://coolify.io/docs/troubleshoot/server/raspberry-crashes)
 - [Server Crash During Build](https://coolify.io/docs/troubleshoot/server-crash-during-build)
 - [SSL Certificate Not Generating](https://coolify.io/docs/troubleshoot/ssl-cert-not-generating)
 - [Wildcard SSL Certificates](https://coolify.io/docs/troubleshoot/wildcard-ssl-certs)

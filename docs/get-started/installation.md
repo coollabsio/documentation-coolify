@@ -134,6 +134,11 @@ View the [Script's Source Code ↗](https://github.com/coollabsio/coolify/blob/m
   You can also set up the first admin account directly during the installation. For details, see: [Create Root User with Environment Variables ↗](/knowledge-base/create-root-user-with-env)
 :::
 
+There are several environment variables that you can set to customize your Coolify installation.
+
+For example, you can setup a default root user or define the default docker network pool.
+
+See the [Define Custom Docker Network with ENV ↗](/knowledge-base/define-custom-docker-network-with-env) or the [Create Root User with ENV ↗](/knowledge-base/create-root-user-with-env) for more details.
 
 #### 3. Access Coolify
 After installation, the script will display your Coolify URL (e.g., `http://203.0.113.1:8000`). Visit this URL, and you'll be redirected to a registration page to create your first admin account.

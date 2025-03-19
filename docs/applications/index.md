@@ -133,11 +133,11 @@ If you are using git lfs, you can set this to `true`. `Enabled by default`.
 
 ### Environment Variables
 
-[Read here](/docs/knowledge-base/environment-variables)
+[Read here](/knowledge-base/environment-variables)
 
 ### Persistent Storage
 
-[Read here](/docs/knowledge-base/persistent-storage)
+[Read here](/knowledge-base/persistent-storage)
 
 ### Health Checks
 
@@ -205,5 +205,5 @@ You can deploy any docker images from any Docker compatible repository. For exam
 
 Docker Compose based deployments are useful for complex applications. You can define multiple services in a single `docker-compose.yml` file and deploy them together.
 
-- [Languages/Frameworks](/docs/applications/)
-- [Services](/docs/services/)
+- [Languages/Frameworks](/applications/)
+- [Services](/services/overview)
