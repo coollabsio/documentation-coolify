@@ -25,5 +25,5 @@ jobs:
           TRIEVE_API_KEY: ${{ secrets.TRIEVE_API_KEY }}
           TRIEVE_ORGANIZATION_ID: ${{ secrets.TRIEVE_ORGANIZATION_ID }}
           TRIEVE_DATASET_TRACKING_ID: ${{ secrets.TRIEVE_DATASET_TRACKING_ID }}
-          NODE_OPTIONS: --max-old-space-size=4096
+          NODE_OPTIONS: --max-old-space-size=8192
         run: trieve-vitepress-adapter --path . -s https://coolify.io/docs/openapi.json -r https://coolify.io -a docs/api-reference/api/operations
