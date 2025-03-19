@@ -275,9 +275,9 @@ stdout_logfile=/var/log/worker-inertia-ssr.log
 
 1. Create a new resource from a private or public repository.
 2. Set the `Ports Exposes` field to `8000`, for exemple.
-3. Set default environnement variables using `Developer view` in `Environment Variables` :
+3. Set default environnement variables using `Developer view` in `Environment Variables`:
 
-```Environnement variables
+```sh
 APP_DEBUG=false
 APP_ENV=staging
 APP_KEY= #YourAppKey
@@ -337,7 +337,7 @@ CMD ["unitd", "--no-daemon"]
 
 3. Create a `unit.json` file (lowercase) at the root of your project with the following content:
 
-```unit.json
+```json
 {
     "listeners": {
         "*:8000": {
@@ -368,8 +368,8 @@ CMD ["unitd", "--no-daemon"]
     }
 }
 ```
-4. Set Post-deployment to : 
-    ``` 
-   php artisan optimize:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan optimize
+4. Set Post-deployment to: 
 
-  
+```sh
+php artisan optimize:clear && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan optimize
+```

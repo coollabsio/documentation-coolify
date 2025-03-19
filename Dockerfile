@@ -4,6 +4,7 @@ FROM oven/bun:1.1.44-alpine AS builder
 # Set working directory and copy necessary files
 WORKDIR /app
 
+COPY docs/public/llms.txt llms.txt
 # Copy package files first for better caching
 COPY package.json bun.lockb ./
 
