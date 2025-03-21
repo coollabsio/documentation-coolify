@@ -47,6 +47,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/docs/public/favicon.ico' }],
     ['script', { src: 'https://analytics.coollabs.io/js/script.js', 'data-domain': 'coolify.io/docs' }],
+    ['script', { defer: 'true', 'data-domain': 'coolify.io/docs', src: 'https://plausible.io/js/script.js' }],
     ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],
   themeConfig: {
