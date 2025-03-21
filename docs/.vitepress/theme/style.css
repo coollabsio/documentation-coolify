@@ -725,8 +725,8 @@ code:hover {
 div[class*='language-'] code:hover,
 pre[class*='language-'] code:hover {
   background-color: transparent !important;
-  color: var(--vp-code-color) !important;
-  -webkit-text-fill-color: var(--vp-code-color) !important;
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
   transform: none !important;
   box-shadow: none !important;
   border-color: transparent !important;
