@@ -45,6 +45,7 @@ export default defineConfig({
     ['meta', { property: 'twitter:url', content: 'https://coolify.io/docs/' }],
     ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
     ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/docs/public/favicon.ico' }],
     ['script', { src: 'https://analytics.coollabs.io/js/script.js', 'data-domain': 'coolify.io/docs' }],
     ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],

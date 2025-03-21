@@ -7,10 +7,6 @@ import { ref, onMounted, onUnmounted, watch, watchEffect} from 'vue'
 import { useData } from 'vitepress'
 const { isDark } = useData()
 
-const props = defineProps<{
-  isDarkMode: string
-}>()
-
 const globeContainer = ref<HTMLElement | null>(null)
 let Globe: any
 let globeInstance: any = null
@@ -21,7 +17,6 @@ const updateGlobeTexture = () => {
     const newTextureUrl = isDark.value
       ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
       : '//unpkg.com/three-globe/example/img/earth-day.jpg';
-    console.log('Updating globe texture to:', newTextureUrl);
     globeInstance.globeImageUrl(newTextureUrl);
   } else {
     console.warn('globeInstance is not initialized yet.');
@@ -191,14 +186,10 @@ const initGlobe = () => {
 
   // Initial emission
   emitArcs()
-  
+
   // Regular emission interval
   const interval = setInterval(emitArcs, FLIGHT_TIME * 1.5)
   globeInstance.__interval = interval
-
-  console.log('Globe initialized with texture:', isDark.value
-    ? '//unpkg.com/three-globe/example/img/earth-night.jpg'
-    : '//unpkg.com/three-globe/example/img/earth-day.jpg')
 }
 
 onUnmounted(() => {
