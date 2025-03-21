@@ -389,7 +389,7 @@ code:hover {
 
 /* Code block container styling */
 .vp-doc div[class*='language-'] {
-  position: static;
+  position: relative;
   margin: 0;
   background-color: var(--vp-c-bg-soft);
   border-radius: 10px;
@@ -771,7 +771,6 @@ pre.language-sh code:hover,
   }
 
   .vp-doc div[class*='language-'] {
-    position: relative;
     margin: 16px 0;
     background-color: var(--vp-code-bg) !important;
     border-radius: 8px;
