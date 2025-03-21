@@ -389,7 +389,7 @@ code:hover {
 
 /* Code block container styling */
 .vp-doc div[class*='language-'] {
-  position: static;
+  position: relative;
   margin: 0;
   background-color: var(--vp-c-bg-soft);
   border-radius: 10px;
@@ -725,8 +725,8 @@ code:hover {
 div[class*='language-'] code:hover,
 pre[class*='language-'] code:hover {
   background-color: transparent !important;
-  color: var(--vp-code-color) !important;
-  -webkit-text-fill-color: var(--vp-code-color) !important;
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
   transform: none !important;
   box-shadow: none !important;
   border-color: transparent !important;
@@ -771,7 +771,6 @@ pre.language-sh code:hover,
   }
 
   .vp-doc div[class*='language-'] {
-    position: relative;
     margin: 16px 0;
     background-color: var(--vp-code-bg) !important;
     border-radius: 8px;
