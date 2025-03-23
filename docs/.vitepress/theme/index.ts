@@ -58,9 +58,9 @@ export default {
     app.component("ZoomableImage", ZoomableImage);
     app.component("Globe", Globe);
     app.component("Browser", Browser);
-    
+
     router.onAfterRouteChange = () => {
-      if ((window as any).plausible) {
+      if (typeof window !== 'undefined' && (window as any).plausible) {
         (window as any).plausible('pageview')
       }
     }
@@ -70,7 +70,7 @@ export default {
         const eventData = binding.value || {}
 
         el.addEventListener('click', () => {
-          if ((window as any).plausible && eventName) {
+          if (typeof window !== 'undefined' && (window as any).plausible && eventName) {
             (window as any).plausible(eventName, { props: eventData })
           }
         })
