@@ -4,7 +4,7 @@ title: Vite
 
 # Vite
 
-Vite is a is a build tool that aims to provide a faster and leaner development experience for modern web projects.
+Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 
 [Example repository.](https://github.com/coollabsio/coolify-examples/tree/main/vite)
 
