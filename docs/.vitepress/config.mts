@@ -85,13 +85,29 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/get-started/introduction' },
+          { text: 'Sponsors', link: '/get-started/sponsors' },
+          { text: 'Screenshots', link: '/get-started/screenshots' },
+          { text: 'Videos', link: '/get-started/videos' },
           { text: 'Concepts', link: '/get-started/concepts' },
+          { text: '--------------------------------' },
           { text: 'Usage', link: '/get-started/usage' },
           { text: 'Installation', link: '/get-started/installation' },
           { text: 'Upgrade', link: '/get-started/upgrade' },
           { text: 'Downgrade', link: '/get-started/downgrade' },
           { text: 'Uninstallation', link: '/get-started/uninstallation' },
+          { text: '--------------------------------' },
+          { text: 'Team', link: '/get-started/team' },
           { text: 'Support', link: '/get-started/support' },
+          {
+            text: 'Contribute',
+            collapsed: true,
+            items: [
+              { text: 'Coolify', link: '/get-started/contribute/coolify' },
+              { text: 'New Service', link: '/get-started/contribute/service' },
+              { text: 'Documentation', link: '/get-started/contribute/documentation' },
+            ],
+          },
+
         ],
       },
       {
@@ -261,6 +277,13 @@ export default defineConfig({
               { text: 'Zipline', link: '/services/zipline' }
             ]
           }
+        ],
+      },
+      {
+        text: 'Integrations',
+        collapsed: true,
+        items: [
+          { text: 'Webstudio', link: '/integrations/webstudio.md' },
         ],
       },
       {
@@ -528,41 +551,6 @@ export default defineConfig({
               { text: "Let's Encrypt not working", link: '/troubleshoot/dns-and-domains/lets-encrypt-not-working' },
             ]
           },
-        ],
-      },
-      {
-        text: 'Resources',
-        collapsed: true,
-        items: [
-          {
-            text: 'Integrations',
-            collapsed: true,
-            items: [
-              { text: 'Webstudio', link: '/resource/integrations/webstudio.md' },
-            ],
-          },
-          {
-            text: 'Contribute',
-            collapsed: true,
-            items: [
-              { text: 'Coolify', link: '/resource/contribute/coolify' },
-              { text: 'New Service', link: '/resource/contribute/service' },
-              { text: 'Documentation', link: '/resource/contribute/documentation' },
-            ],
-          },
-          { text: 'Sponsors', link: '/resource/sponsors' },
-          { text: 'Screenshots', link: '/resource/screenshots' },
-          { text: 'Videos', link: '/resource/videos' },
-          { text: 'Team', link: '/resource/team' },
-          // {
-          //   text: 'Changelog',
-          //   collapsed: true,
-          //   items: [
-          //     { text: 'Overview', link: '/resource/changelog/overview' },
-          //     { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
-          //     { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
-          //   ],
-          // },
         ],
       },
     ],
