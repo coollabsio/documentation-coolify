@@ -551,6 +551,8 @@ export default defineConfig({
             ],
           },
           { text: 'Sponsors', link: '/resource/sponsors' },
+          { text: 'Screenshots', link: '/resource/screenshots' },
+          { text: 'Videos', link: '/resource/videos' },
           { text: 'Team', link: '/resource/team' },
           // {
           //   text: 'Changelog',
