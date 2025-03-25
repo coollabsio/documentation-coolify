@@ -3,7 +3,7 @@ title: "Manually Setup GitHub App"
 ---
 
 # GitHub App
-This guide will show you how to use manually setup an existing Github App or how to change a currently configured one.
+This guide will show you how to manually setup an existing Github App or how to change a currently configured one.
 
 Since `4.0.0-beta.399` you are able to change all the Github App details inside Coolify.
 
