@@ -48,12 +48,26 @@ nixPkgs = ["...", "python311Packages.supervisor"]
 
 [phases.build]
 cmds = [
+    "mkdir -p /var/log",
+    "mkdir -p /app/storage/framework/{views,cache,sessions}",
+    "mkdir -p /app/bootstrap/cache",
     "mkdir -p /etc/supervisor/conf.d/",
     "cp /assets/worker-*.conf /etc/supervisor/conf.d/",
     "cp /assets/supervisord.conf /etc/supervisord.conf",
     "chmod +x /assets/start.sh",
+    "chown -R www-data:www-data /var/log /app/storage /app/bootstrap/cache"
     "..."
 ]
+
+[phases.postbuild]
+cmds = [
+    "php artisan migrate --force",
+    "npm run build",
+    "php artisan config:cache",
+    "php artisan route:cache",
+    "php artisan queue:work"
+]
+dependsOn = ["build"]
 
 [start]
 cmd = '/assets/start.sh'
