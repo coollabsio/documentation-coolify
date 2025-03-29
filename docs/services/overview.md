@@ -35,6 +35,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Beszel](/services/beszel) - Lightweight server monitoring hub with historical data, docker stats, and alerts.
 - [Browserless](/services/browserless) - Headless Chrome as a service.
 - [BudgE](/services/budge) - A budgeting personal finance app.
+- [Bugsink](/services/bugsink) - Self-hosted Error Tracking
 - [Changedetection](/services/changedetection) - Website change detection monitor and notifications.
 - [Chaskiq](/services/chaskiq) - Open source customer engagement platform.
 - [Chatwoot](/services/chatwoot) - Open-source customer engagement suite.
