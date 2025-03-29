@@ -9,14 +9,12 @@ You can drain logs of your deployed services to a third-party applications like 
 
 ## How to enable?
 
-1. Enable on your Server
-   First, you need to enable it on your `Server` settings. 
+1. Enable on your Server. 
+   - First, you need to enable it on your `Server` settings. 
+   - Go to your `Server` where you want to enable the `Drain Logs` and click on the `Log Drains` tab.
 
-   Go to your `Server` where you want to enable the `Drain Logs` and click on the `Log Drains` tab.
-
-2. Enable on your Resource
- Go to your resource, `Advanced` tab and enable the `Drain Logs` for the resource.
-
+2. Enable on your Resource. 
+   - Go to your resource, `Advanced` tab and enable the `Drain Logs` for the resource.
 
 ::: warning Caution
   Once you enabled at least one of the `Drain Logs`, you need to `Restart` your
