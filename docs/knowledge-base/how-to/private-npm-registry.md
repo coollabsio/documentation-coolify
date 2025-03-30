@@ -10,7 +10,7 @@ If you would like to use a private NPM registry with Coolify, you can do so by f
 1. Add `.npmrc` file to your project root with the following content:
 
 ```bash
-//registry.npmjs.org/:_authToken=$NPM_TOKEN
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
 ```
 
 2. Add the following environment variables to your project as a `build` variable:
