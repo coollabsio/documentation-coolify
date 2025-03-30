@@ -79,7 +79,7 @@ http://localhost:5173/docs/
 ## 6. Questions and Support
 If you have any questions or run into issues while contributing:
   - **Create an Issue:** Open an issue on the repository detailing your issue.
-  - **Discord:** Reach out to us on contribute channel on the Coolify Discord community.
+  - **Discord:** Reach out to us on contribute channel on the [Coolify Discord community](https://coolify.io/discord).
 
 
 ## 7. Important Notes
