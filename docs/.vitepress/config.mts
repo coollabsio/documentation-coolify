@@ -85,12 +85,11 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/get-started/introduction' },
-          { text: 'Sponsors', link: '/get-started/sponsors' },
+          { text: 'Usage', link: '/get-started/usage' },
+          { text: 'Concepts', link: '/get-started/concepts' },
           { text: 'Screenshots', link: '/get-started/screenshots' },
           { text: 'Videos', link: '/get-started/videos' },
-          { text: 'Concepts', link: '/get-started/concepts' },
           { text: '--------------------------------' },
-          { text: 'Usage', link: '/get-started/usage' },
           { text: 'Installation', link: '/get-started/installation' },
           { text: 'Upgrade', link: '/get-started/upgrade' },
           { text: 'Downgrade', link: '/get-started/downgrade' },
@@ -98,6 +97,7 @@ export default defineConfig({
           { text: '--------------------------------' },
           { text: 'Team', link: '/get-started/team' },
           { text: 'Support', link: '/get-started/support' },
+          { text: 'Sponsors', link: '/get-started/sponsors' },
           {
             text: 'Contribute',
             collapsed: true,
