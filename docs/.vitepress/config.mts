@@ -172,7 +172,7 @@ export default defineConfig({
               { text: 'Beszel', link: '/services/beszel' },
               { text: 'Browserless', link: '/services/browserless' },
               { text: 'BudgE', link: '/services/budge' },
-              { text: 'Bug Sink', link: '/services/bugsink' },
+              { text: 'Bugsink', link: '/services/bugsink' },
               { text: 'Change Detection', link: '/services/changedetection' },
               { text: 'Chaskiq', link: '/services/chaskiq' },
               { text: 'Chatwoot', link: '/services/chatwoot' },
