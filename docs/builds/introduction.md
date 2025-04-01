@@ -33,7 +33,7 @@ Building Docker images can consume a lot of resources on your server, potentiall
 
 To reduce the load on your main server, Coolify allows you to connect additional servers to manage the build process.  
 
-You can set up a separate build server to handle the builds, or use external tools like [GitHub Actions ↗](https://github.com/features/actions?utm_source=coolify.io) to build your images and push them to any container registry. 
+You can set up a separate [build server ↗](/builds/servers) to handle the builds, or use external tools like [GitHub Actions ↗](https://github.com/features/actions?utm_source=coolify.io) to build your images and push them to any container registry. 
 
 Once the images are pushed, you can easily use them on Coolify.
 
