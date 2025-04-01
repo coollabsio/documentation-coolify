@@ -48,26 +48,12 @@ nixPkgs = ["...", "python311Packages.supervisor"]
 
 [phases.build]
 cmds = [
-    "mkdir -p /var/log",
-    "mkdir -p /app/storage/framework/{views,cache,sessions}",
-    "mkdir -p /app/bootstrap/cache",
     "mkdir -p /etc/supervisor/conf.d/",
     "cp /assets/worker-*.conf /etc/supervisor/conf.d/",
     "cp /assets/supervisord.conf /etc/supervisord.conf",
     "chmod +x /assets/start.sh",
-    "chown -R www-data:www-data /var/log /app/storage /app/bootstrap/cache"
     "..."
 ]
-
-[phases.postbuild]
-cmds = [
-    "php artisan migrate --force",
-    "npm run build",
-    "php artisan config:cache",
-    "php artisan route:cache",
-    "php artisan queue:work"
-]
-dependsOn = ["build"]
 
 [start]
 cmd = '/assets/start.sh'
@@ -136,7 +122,7 @@ autostart=true
 autorestart=true
 stopasgroup=true
 killasgroup=true
-numprocs=1
+numprocs=12
 startsecs=0
 stopwaitsecs=3600
 stdout_logfile=/var/log/worker-laravel.log
@@ -197,10 +183,11 @@ http {
         add_header X-Content-Type-Options "nosniff";
 
         client_max_body_size 35M;
-
+     
         index index.php;
-
+     
         charset utf-8;
+     
 
         $if(NIXPACKS_PHP_FALLBACK_PATH) (
             location / {
@@ -211,14 +198,14 @@ http {
                 try_files $uri $uri/ /index.php?$query_string;
            }
         )
-
+     
         location = /favicon.ico { access_log off; log_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
-
+     
         $if(IS_LARAVEL) (
             error_page 404 /index.php;
         ) else ()
-
+     
         location ~ \.php$ {
             fastcgi_pass 127.0.0.1:9000;
             fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
@@ -227,7 +214,7 @@ http {
 
             fastcgi_param PHP_VALUE "upload_max_filesize=30M \n post_max_size=35M";
         }
-
+     
         location ~ /\.(?!well-known).* {
             deny all;
         }
