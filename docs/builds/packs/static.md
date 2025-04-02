@@ -6,13 +6,9 @@ title: Static Build Packs
 
 <br />
 
-Static Build Packs take the files from your project and create a Docker image with a web server to serve them. 
+Static Build Packs take the files from your project and create a Docker image with a web server to serve them. This means your final Docker image has a web server ready to display your HTML, CSS, and JavaScript files.
 
-This means your final Docker image has a web server ready to display your HTML, CSS, and JavaScript files.
-
-Static Build Packs work best when your project is already built (for example, with a static site generator like Astro or Webstudio). 
-
-Once you have the built files, you can upload them to a Git repository and use Coolify to deploy your site.
+Static Build Packs only work if your project is already built (for example, with a static site generator like [Astro]() or [Webstudio]()). Once you have the built files, you can upload them to a Git repository and use Coolify to deploy your site.
 
 
 ## How to Use Static Build Pack
@@ -30,11 +26,12 @@ On Coolify dashboard open your project and click the **Create New Resource** but
 
 
 ### 3. Choose Your Deployment Option
+
 <ZoomableImage src="/docs/images/builds/packs/static/2.webp" />
 
-A. If your Git repository is public, choose the **Public Repository** option.
+**A.** If your Git repository is public, choose the **Public Repository** option.
 
-B. If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a Github App or Deploy Key if needed.)
+**B.** If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a [Github App]() or [Deploy Key]() if needed.)
 
 
 ### 4. Select Your Git Repository
@@ -53,16 +50,18 @@ This tells Coolify to build your image with a static web server.
 
 ### 6. Set the Base Directory
 Enter the path where your static files are located:
+
+<ZoomableImage src="/docs/images/builds/packs/static/5.webp" />
+
 - If your files are in the root of your repository, just type `/`.
 - If they are in a subfolder, type the path to that folder (for example, `/out`).
 
-<ZoomableImage src="/docs/images/builds/packs/static/5.webp" />
 
 After setting the base directory, click the **Continue** button.
 
 
 ### 7. Choose a Web Server
-As of Coolify v4-beta-v402, the only web server option available is **Nginx**. So **Nginx** will be selected by default..
+As of Coolify **v4.0.0-beta.402**, the only web server option available is **Nginx**. So **Nginx** will be selected by default.
 
 <ZoomableImage src="/docs/images/builds/packs/static/6.webp" />
 
@@ -82,11 +81,14 @@ Click the **Deploy** button. The deployment process is usually quick (often less
 
 Once the deployment is finished, visit your domain in a browser to see your live site.
 
-### 10. (Optional) Customize Your Web Server Configuration
+
+### 10. Customize Your Web Server Configuration <Badge type="warning" text="Optional" />
 Coolify provides a default web server configuration that works for most cases. 
 
 If you want to change it then click the **Generate** button to load the default settings and make any changes you need.
 
 <ZoomableImage src="/docs/images/builds/packs/static/9.webp" />
 
+::: warning HEADS UP!
 You have to click on the **Restart** button for the new configuration to take effect.
+:::
