@@ -8,7 +8,7 @@ title: Static Build Packs
 
 Static Build Packs take the files from your project and create a Docker image with a web server to serve them. This means your final Docker image has a web server ready to display your HTML, CSS, and JavaScript files.
 
-Static Build Packs only work if your project is already built (for example, with a static site generator like [Astro]() or [Webstudio]()). Once you have the built files, you can upload them to a Git repository and use Coolify to deploy your site.
+Static Build Packs only work if your project is already built (for example, with a static site generator like [Astro ↗](https://astro.build/?utm_source=coolify.io) or [Webstudio ↗](https://webstudio.is/?utm_source=coolify.io)). Once you have the built files, you can upload them to a Git repository and use Coolify to deploy your site.
 
 
 ## How to Use Static Build Pack
@@ -16,7 +16,7 @@ Static Build Packs only work if your project is already built (for example, with
 ### 1. Prepare Your Static Files
 First, build your site with your favorite static site generator. This process creates a folder with all the files your site needs (HTML, CSS, JavaScript, etc.).  
 
-Next, upload these static files to a Git repository. You can use GitHub, GitLab, or any other Git service. For this guide, we will use GitHub as an example.
+Next, upload these static files to a Git repository. You can use [GitHub ↗](https://github.com/?utm_source=coolify.io), [GitLab ↗](https://about.gitlab.com/?utm_source=coolify.io), or any other Git service. For this guide, we will use [GitHub ↗](https://github.com/?utm_source=coolify.io) as an example.
 
 
 ### 2. Create a New Resource in Coolify
@@ -31,7 +31,7 @@ On Coolify dashboard open your project and click the **Create New Resource** but
 
 **A.** If your Git repository is public, choose the **Public Repository** option.
 
-**B.** If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a [Github App]() or [Deploy Key]() if needed.)
+**B.** If your repository is private, you can select **Github App** or **Deploy Key**. (These methods require extra configuration. You can check the guides on setting up a [Github App ↗](/knowledge-base/git/github/github-app) or [Deploy Key ↗](/knowledge-base/git/github/integration#with-deploy-keys) if needed.)
 
 
 ### 4. Select Your Git Repository
@@ -61,7 +61,7 @@ After setting the base directory, click the **Continue** button.
 
 
 ### 7. Choose a Web Server
-As of Coolify **v4.0.0-beta.402**, the only web server option available is **Nginx**. So **Nginx** will be selected by default.
+As of Coolify **v4.0.0-beta.402**, the only web server option available is [Nginx ↗](https://nginx.org/en/?utm_source=coolify.io). So **Nginx** will be selected by default.
 
 <ZoomableImage src="/docs/images/builds/packs/static/6.webp" />
 
