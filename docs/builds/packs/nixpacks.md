@@ -133,3 +133,11 @@ You may need to include a `nixpacks.toml` file in your repository for these chan
 
 ### Configuration file
 Nixpacks supports specifying build configurations in a nixpacks.toml or nixpacks.json file. If one of these files is present in the root of your repository, it will be automatically used. For more details, refer to the [Nixpacks documentation](https://nixpacks.com/docs/configuration/file).
+
+
+## Known issues and solutions
+::: details 1. Outdated Packages/Dependencies
+Sometimes, Nixpacks may use older package versions. If you encounter this issue, update the `nixpkgs` archive version in your `nixpacks.toml` file. You can learn more about this in the Nixpacks docs on [nixpkgs archive](https://nixpacks.com/docs/configuration/file#nixpkgs-archive)
+
+This is a Nixpacks-related issue, not a Coolify issue. For further assistance, please contact the Nixpacks support team.
+:::
