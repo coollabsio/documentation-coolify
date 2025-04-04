@@ -341,6 +341,7 @@ export default defineConfig({
                   { text: 'Environment Variables', link: '/knowledge-base/environment-variables' },
                   { text: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
                   { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
+                  { text: 'Rolling Updates', link: '/knowledge-base/rolling-updates' },
                   { text: 'Health Checks', link: '/knowledge-base/health-checks' },
                   { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
                 ]
