@@ -462,6 +462,7 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                       { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
+                      { text: 'Basic Auth', link: '/knowledge-base/proxy/caddy/basic-auth' },
                     ]
                   },
                 ]
