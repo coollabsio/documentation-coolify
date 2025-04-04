@@ -6,9 +6,9 @@ title: Nixpacks Build Pack
 
 <br />
 
-Nixpacks is a open source build pack created by [Railway](railway.com) and the source is available on [github](). Coolify uses Nixpacks as one of the build pack.
+Nixpacks is a open source build pack created by [Railway](https://railway.com?utm_source=coolify.io) and the source is available on [Github](https://github.com/railwayapp/nixpacks?utm_source=coolify.io). Coolify uses Nixpacks as one of the build pack.
 
-Nixpacks checks your git repository (also called as "source directory" in nixpacks) and generates a Dockerfile, then it will build a docker image based on the Dockerfile it generated.
+Nixpacks checks your git repository (also called as "**source directory**" in nixpacks) and generates a Dockerfile, then it will build a docker image based on the Dockerfile it generated.
 
 Nixpacks can deploy both fully static websites and non-static applications. Once your repository is set up, you can use Coolify to deploy your project with ease.
 
@@ -43,11 +43,11 @@ Coolify will default to using Nixpacks. If it doesn’t, click to select Nixpack
 
 ### 5. Configure Build Pack
 We have different options like Base Directory, Publish Directory, and Ports that slightly change based on the application you deploy (static websites/applications). So, below we have two sections for the deployments possible with Nixpacks.
-- [How to deploy fully static websites]()
-- [How to deploy Non-Static Website/Applications]()
+- [How to deploy Fully Static Websites](#how-to-deploy-fully-static-website)
+- [How to deploy Non-Static Website/Applications](#how-to-deploy-non-static-website-applications)
 
 ## How to deploy Fully Static Website?
-First you have to follow the previous section on this docs [How to use Nixpacks]() then follow the below steps
+First, follow the previous section in this documentation: [How to use Nixpacks](#how-to-use-nixpacks). After that, proceed with the steps below.
 
 <ZoomableImage src="/docs/images/builds/packs/nixpacks/nixpacks.webp" />
 
@@ -93,7 +93,8 @@ Nixpacks will build the website using your codebase and create a Docker image wi
 
 
 ## How to deploy Non-Static Website/Applications?
-First you have to follow the previous section on this docs [How to use Nixpacks on Coolify?]() then follow the below steps
+First, follow the previous section in this documentation: [How to use Nixpacks](#how-to-use-nixpacks). After that, proceed with the steps below.
+
 <ZoomableImage src="/docs/images/builds/packs/nixpacks/nixpacks.webp" />
 
 1. **Branch:** Coolify will automatically detect the branch from your Repostiory.
@@ -116,11 +117,13 @@ Nixpacks analyzes your codebase, builds a Docker image, and then starts a contai
 
 ## Advanced Configuration
 ### Environment Variables
-You can customize Nixpacks' behavior using environment variables. There are many variables available for different application frameworks, and you can find detailed information in their documentation: [Nixpacks Environment Variables](https://nixpacks.com/docs/configuration/environment).  
+You can customize Nixpacks' behavior using environment variables. There are many variables available for different application frameworks, and you can find detailed information in their documentation: [Nixpacks Environment Variables](https://nixpacks.com/docs/configuration/environment?utm_source=coolify.io).  
 
 To add or modify environment variables in Coolify, simply click on the **Environment Variables** tab, where you can manage them easily.
 
 <ZoomableImage src="/docs/images/builds/packs/nixpacks/nixpacks.webp" />
+
+---
 
 ### Commands
 If needed, you can override the default install, build, and start commands. Simply scroll down to the build section on Coolify and input your custom commands.
@@ -131,13 +134,15 @@ If needed, you can override the default install, build, and start commands. Simp
 You may need to include a `nixpacks.toml` file in your repository for these changes to take effect.
 :::
 
+---
+
 ### Configuration file
-Nixpacks supports specifying build configurations in a nixpacks.toml or nixpacks.json file. If one of these files is present in the root of your repository, it will be automatically used. For more details, refer to the [Nixpacks documentation](https://nixpacks.com/docs/configuration/file).
+Nixpacks supports specifying build configurations in a nixpacks.toml or nixpacks.json file. If one of these files is present in the root of your repository, it will be automatically used. For more details, refer to the [Nixpacks documentation](https://nixpacks.com/docs/configuration/file?utm_source=coolify.io).
 
 
 ## Known issues and solutions
 ::: details 1. Outdated Packages/Dependencies
-Sometimes, Nixpacks may use older package versions. If you encounter this issue, update the `nixpkgs` archive version in your `nixpacks.toml` file. You can learn more about this in the Nixpacks docs on [nixpkgs archive](https://nixpacks.com/docs/configuration/file#nixpkgs-archive)
+Sometimes, Nixpacks may use older package versions. If you encounter this issue, update the `nixpkgs` archive version in your `nixpacks.toml` file. You can learn more about this in the Nixpacks docs on [nixpkgs archive](https://nixpacks.com/docs/configuration/file#nixpkgs-archive?utm_source=coolify.io)
 
 This is a Nixpacks-related issue, not a Coolify issue. For further assistance, please contact the Nixpacks support team.
 :::
