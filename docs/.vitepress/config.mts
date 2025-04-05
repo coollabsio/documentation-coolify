@@ -164,6 +164,7 @@ export default defineConfig({
             link: '/services/overview',
             items: [
               { text: 'ActivePieces', link: '/services/activepieces' },
+              { text: 'Actual Budget', link: '/services/actualbudget' },
               { text: 'AnythingLLM', link: '/services/anythingllm' },
               { text: 'Appsmith', link: '/services/appsmith' },
               { text: 'Appwrite', link: '/services/appwrite' },
