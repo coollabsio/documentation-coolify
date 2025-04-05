@@ -20,14 +20,15 @@ To secure your database connection with SSL:
 
 1. **Access Database Settings**  
    In your Coolify dashboard go to the general settings page of the database you want to secure.
+   <ZoomableImage src="/docs/images/database/ssl/1.webp" />
 
 2. **Enable SSL Mode**  
    Check the **Enable SSL** option to activate SSL for the database connection.
+   <ZoomableImage src="/docs/images/database/ssl/2.webp" />
 
 3. **Select the SSL Mode**  
    Choose the SSL mode from the dropdown menu. For example, select **verify-full** for maximum security.  
-   
-   <ZoomableImage src="/docs/images/knowledge-base/database-ssl/enable.webp" />
+   <ZoomableImage src="/docs/images/database/ssl/3.webp" />
 
 
 ::: warning **Note:** 
@@ -41,6 +42,7 @@ Coolify automatically binds the generated certificates and keys to the required 
 
 ## 2. SSL Modes Explained
 Coolify supports several SSL modes, each providing a different level of security:
+<ZoomableImage src="/docs/images/database/ssl/4.webp" />
 
 - **allow (insecure)**  
   This mode permits both encrypted and unencrypted connections. It does not enforce SSL, so if SSL fails, the connection will fall back to an unencrypted state. 
@@ -75,7 +77,8 @@ For maximum security, **verify-full** is recommended.
 ## 3. CA SSL Certificate Management
 Coolify manages the CA certificate automatically, ensuring that secure database connections are validated. 
 
-In the dashboard, under **Servers > Proxy > Advanced**, you can see the following options:
+In the dashboard, under **Servers > YOUR_SERVER_NAME > Proxy > Advanced**, you can see the following options:
+<ZoomableImage src="/docs/images/database/ssl/5.webp" />
 
 - **CA SSL Certificate**: Displays the current CA certificate used.
 - **Save Certificate**: Allows you to save a local copy of the certificate.
