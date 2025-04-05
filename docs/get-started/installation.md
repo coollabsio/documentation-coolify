@@ -251,6 +251,10 @@ Launch Coolify using Docker Compose:
 docker compose --env-file /data/coolify/source/.env -f /data/coolify/source/docker-compose.yml -f /data/coolify/source/docker-compose.prod.yml up -d --pull always --remove-orphans --force-recreate
 ```
 
+::: warning ⚠️ Important:
+You might have to do `docker login` at this point if you have any issues above.
+:::
+
 #### 8. Access Coolify
 You can now access Coolify by visiting `http://203.0.113.1:8000` (replace the `203.0.113.1` with the IP address of your server).
 

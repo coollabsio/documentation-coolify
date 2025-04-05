@@ -32,15 +32,24 @@ The token will only be able to access resources that are owned by the team that 
 
 ## Permissions
 
+::: warning HEADS UP!
+Some API data won't get returned if the API token doesn't have correct permissions
+:::
+
 Currently there are three types of permissions:
 
 - read-only `(default)`
+- read:sensitive
 - view:sensitive
 - `*` (all permissions)
 
 ### `read-only`
 
 With this permission, you can only read data from the API, but you can't create, update, or delete any resources. Also you can't see sensitive data.
+
+### `read:sensitive`
+
+With this permission, you can only read data from the API and see sensitive information that is normally redacted. You cannot create, update, or delete any resources.
 
 ### `view:sensitive`
 

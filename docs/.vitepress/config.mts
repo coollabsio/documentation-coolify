@@ -141,6 +141,7 @@ export default defineConfig({
             text: 'Overview',
             link: '/databases/index',
             items: [
+              { text: 'Database SSL', link: '/databases/ssl' },
               { text: 'Backups', link: '/databases/backups' },
               { text: 'MySQL', link: '/databases/mysql' },
               { text: 'MariaDB', link: '/databases/mariadb' },
@@ -163,11 +164,14 @@ export default defineConfig({
             link: '/services/overview',
             items: [
               { text: 'ActivePieces', link: '/services/activepieces' },
+              { text: 'Actual Budget', link: '/services/actualbudget' },
               { text: 'AnythingLLM', link: '/services/anythingllm' },
               { text: 'Appsmith', link: '/services/appsmith' },
               { text: 'Appwrite', link: '/services/appwrite' },
               { text: 'Argilla', link: '/services/argilla' },
               { text: 'Authentik', link: '/services/authentik' },
+              { text: 'Affine', link: '/services/affine' },
+              { text: 'Apprise API', link: '/services/apprise-api' },
               { text: 'Baby Buddy', link: '/services/babybuddy' },
               { text: 'Beszel', link: '/services/beszel' },
               { text: 'Browserless', link: '/services/browserless' },
@@ -341,6 +345,7 @@ export default defineConfig({
                   { text: 'Environment Variables', link: '/knowledge-base/environment-variables' },
                   { text: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
                   { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
+                  { text: 'Rolling Updates', link: '/knowledge-base/rolling-updates' },
                   { text: 'Health Checks', link: '/knowledge-base/health-checks' },
                   { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
                 ]
@@ -349,6 +354,7 @@ export default defineConfig({
                 text: 'How-Tos',
                 collapsed: true,
                 items: [
+                  { text: 'Backup & Restore Coolify', link: '/knowledge-base/how-to/backup-restore-coolify' },
                   { text: 'Load-balancing on Hetzner', link: '/knowledge-base/how-to/hetzner-loadbalancing' },
                   { text: 'Wordpress Multisite', link: '/knowledge-base/how-to/wordpress-multisite' },
                   { text: 'Raspberry Pi OS Setup', link: '/knowledge-base/how-to/raspberry-pi-os' },
@@ -462,6 +468,7 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                       { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
+                      { text: 'Basic Auth', link: '/knowledge-base/proxy/caddy/basic-auth' },
                     ]
                   },
                 ]

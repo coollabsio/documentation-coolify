@@ -80,10 +80,10 @@ You have two ways to use Coolify:
   - Let the Coolify team manage Coolify for you. 
   - With Coolify Cloud, you don’t need to install or update Coolify yourself, and no server resources are required for Coolify itself, it runs on the Coolify team’s managed servers. 
   - Simply create an account from [here ↗](https://app.coolify.io/register), connect your servers via SSH keys, and start deploying. 
-  - This is a paid service (starts fro **$5/mo**), as it costs the team to host and maintain the infrastructure. 
+  This is a paid service (starting at $5/mo), as it costs the team to host and maintain the infrastructure. 
   - Updates on Coolify Cloud are thoroughly tested by the core team, so they might be slightly delayed for added stability.
 
 
 ## Join Our Community
 Got questions or need support? Our [discord community](https://discord.gg/coolify) is here to help. 
-Connect with other coolify users on our community server to get assistance and share your experiences.
+Connect with other Coolify users on our community server to get assistance and share your experiences.
