@@ -171,6 +171,7 @@ export default defineConfig({
               { text: 'Argilla', link: '/services/argilla' },
               { text: 'Authentik', link: '/services/authentik' },
               { text: 'Affine', link: '/services/affine' },
+              { text: 'Apprise API', link: '/services/apprise-api' },
               { text: 'Baby Buddy', link: '/services/babybuddy' },
               { text: 'Beszel', link: '/services/beszel' },
               { text: 'Browserless', link: '/services/browserless' },
