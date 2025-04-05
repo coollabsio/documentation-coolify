@@ -19,7 +19,7 @@ Database SSL adds an extra layer of security by encrypting data exchanged with y
 To secure your database connection with SSL:
 
 1. **Access Database Settings**  
-   In your Coolify dashboard go to the general settings page of the database you want to secure.
+   In your Coolify dashboard, access the general settings of the database you want to secure.
    <ZoomableImage src="/docs/images/database/ssl/1.webp" />
 
 2. **Enable SSL Mode**  
