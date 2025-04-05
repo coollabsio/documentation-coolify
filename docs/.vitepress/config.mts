@@ -170,6 +170,7 @@ export default defineConfig({
               { text: 'Appwrite', link: '/services/appwrite' },
               { text: 'Argilla', link: '/services/argilla' },
               { text: 'Authentik', link: '/services/authentik' },
+              { text: 'Affine', link: '/services/affine' },
               { text: 'Baby Buddy', link: '/services/babybuddy' },
               { text: 'Beszel', link: '/services/beszel' },
               { text: 'Browserless', link: '/services/browserless' },
