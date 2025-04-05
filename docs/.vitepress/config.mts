@@ -141,6 +141,7 @@ export default defineConfig({
             text: 'Overview',
             link: '/databases/index',
             items: [
+              { text: 'Database SSL', link: '/databases/ssl' },
               { text: 'Backups', link: '/databases/backups' },
               { text: 'MySQL', link: '/databases/mysql' },
               { text: 'MariaDB', link: '/databases/mariadb' },
