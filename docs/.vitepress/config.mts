@@ -140,7 +140,6 @@ export default defineConfig({
               { text: 'Docker Compose', link: '/builds/packs/docker-compose' },
             ]
           },
-          { text: 'Build Commands', link: '/builds/commands' },
           { text: 'Build Servers', link: '/builds/servers' },
         ],
       },
