@@ -19,12 +19,15 @@ The rest of this guide will focus on the manual backup method, which is ideal fo
 ## 1. Create a Manual Backup
 1. **Go to Backup Page on Dashboard:**  
    In your Coolify dashboard, click on **Settings** and select the **Backup** tab to view your database and backup settings.
+   <ZoomableImage src="/docs/images/knowledge-base/how-tos/backup-restore-coolify/1.webp" />
 
-3. **Trigger a Backup:**  
+2. **Trigger a Backup:**  
    Click on the **Backup Now** button. This will start the backup process in the background.
+   <ZoomableImage src="/docs/images/knowledge-base/how-tos/backup-restore-coolify/2.webp" />
 
-4. **Download or Copy Backup Location:**  
+3. **Download or Copy Backup Location:**  
    Once the backup is complete, you will see a **Download** button and a location path in the UI.  
+   <ZoomableImage src="/docs/images/knowledge-base/how-tos/backup-restore-coolify/3.webp" />
    - **Download:** Saves the backup file to your local computer.
    - **Copy Path:** You can use this path with a tool like SCP to transfer the backup file directly to your new server.
 
