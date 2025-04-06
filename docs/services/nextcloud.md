@@ -13,6 +13,16 @@ NextCloud is an open-source productivity platform that provides a secure and pri
 
 ![NextCloud preview](https://raw.githubusercontent.com/nextcloud/screenshots/master/nextcloud-hub-files-25-preview.png)
 
+## Setup
+
+- Deploy NextCloud using Coolify template
+- In the NextCloud UI login with credentials:
+  - Username: `admin`
+  - Password: `admin`
+
+<ZoomableImage src="/docs/images/services/beszel_doc_1.webp" />
+<ZoomableImage src="/docs/images/services/beszel_doc_2.webp" />
+
 ## Links
 
 - [The official website ›](https://nextcloud.com/)
