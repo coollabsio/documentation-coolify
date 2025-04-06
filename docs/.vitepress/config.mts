@@ -7,6 +7,7 @@ import spec from '../public/openapi.json' with { type: 'json' }
 import container from 'markdown-it-container'
 import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 const sidebar = useSidebar({ spec, collapsible: true })
 
@@ -578,6 +579,7 @@ export default defineConfig({
           }
         }
       })
+      md.use(tabsMarkdownPlugin)
     },
     theme: {
       light: 'github-light',
