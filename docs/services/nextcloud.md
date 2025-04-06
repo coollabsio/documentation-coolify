@@ -20,9 +20,6 @@ NextCloud is an open-source productivity platform that provides a secure and pri
   - Username: `admin`
   - Password: `admin`
 
-<ZoomableImage src="/docs/images/services/beszel_doc_1.webp" />
-<ZoomableImage src="/docs/images/services/beszel_doc_2.webp" />
-
 ## Links
 
 - [The official website ›](https://nextcloud.com/)
