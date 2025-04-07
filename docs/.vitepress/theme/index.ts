@@ -18,6 +18,9 @@ import "./scrollbar.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
 
+// Import plugins
+import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
+
 // @ts-ignore
 import spec from "../../public/openapi.json" assert { type: "json" };
 
@@ -40,13 +43,15 @@ export default {
   extends: DefaultTheme,
   Layout: Landing,
   enhanceApp({ app, router, siteData }) {
+    enhanceAppWithTabs(app);
+
     const openapi = useOpenapi({
       spec,
       base: "/docs/api-reference/api/operations/",
       label: "API",
     });
 
-    theme.enhanceApp({ app, openapi })
+    theme.enhanceApp({ app, openapi });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);
     app.component("LandingSection", Sections);
@@ -60,21 +65,25 @@ export default {
     app.component("Browser", Browser);
 
     router.onAfterRouteChange = () => {
-      if (typeof window !== 'undefined' && (window as any).plausible) {
-        (window as any).plausible('pageview')
+      if (typeof window !== "undefined" && (window as any).plausible) {
+        (window as any).plausible("pageview");
       }
-    }
-    app.directive('plausible', {
+    };
+    app.directive("plausible", {
       mounted(el: HTMLElement, binding: DirectiveBinding) {
-        const eventName = binding.arg
-        const eventData = binding.value || {}
+        const eventName = binding.arg;
+        const eventData = binding.value || {};
 
-        el.addEventListener('click', () => {
-          if (typeof window !== 'undefined' && (window as any).plausible && eventName) {
-            (window as any).plausible(eventName, { props: eventData })
+        el.addEventListener("click", () => {
+          if (
+            typeof window !== "undefined" &&
+            (window as any).plausible &&
+            eventName
+          ) {
+            (window as any).plausible(eventName, { props: eventData });
           }
-        })
-      }
-    })
+        });
+      },
+    });
   },
 } satisfies Theme;

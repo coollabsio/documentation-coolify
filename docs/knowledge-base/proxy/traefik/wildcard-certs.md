@@ -14,16 +14,13 @@ description: "A guide to configure wildcard subdomain redirects (with Traefik wi
 ::: tip Tip
 Each provider needs environment variables to be set in the Traefik configuration. You can find the required variables in the [official documentation](https://doc.traefik.io/traefik/https/acme/#providers).
 
-
 If you need fine-grained token, like with [Cloudflare](https://go-acme.github.io/lego/dns/cloudflare/), check the provider configurations.
 :::
-
 
 ## Configuration
 
 1. Setup your wildcard subdomain DNS records, `*.coolify.io`.
 2. Go to your Proxy settings (Servers / Proxy menu) and add the following configuration based on your [providers](https://doc.traefik.io/traefik/https/acme/#providers). The example will use `Hetzner` as a provider.
-
 
 ```bash
 version: '3.8'
@@ -120,6 +117,26 @@ Redirect all subdomains to one application. You can use this option if you want 
 - In your application, leave the FQDN configuration `empty`.
 - Add the following custom label configuration:
 
+:::tabs key:saas
+== Traefik v3
+
+```bash
+traefik.enable=true
+traefik.http.routers.<unique_router_name_https>.rule=HostRegexp(`^.+\.coolify\.io$`)
+traefik.http.routers.<unique_router_name_https>.entryPoints=https
+traefik.http.routers.<unique_router_name_https>.middlewares=gzip
+traefik.http.routers.<unique_router_name_https>.service=<unique_service_name>
+traefik.http.routers.<unique_router_name_https>.tls.certresolver=letsencrypt
+traefik.http.services.<unique_service_name>.loadbalancer.server.port=80
+traefik.http.routers.<unique_router_name_https>.tls=true
+
+traefik.http.routers.<unique_router_name_http>.rule=HostRegexp(`^.+\.coolify\.io$`)
+traefik.http.routers.<unique_router_name_http>.entryPoints=http
+traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
+```
+
+== Traefik v2
+
 ```bash
 traefik.enable=true
 traefik.http.routers.<unique_router_name_https>.rule=HostRegexp(`{subdomain:[a-zA-Z0-9-]+}.coolify.io`)
@@ -135,11 +152,13 @@ traefik.http.routers.<unique_router_name_http>.entryPoints=http
 traefik.http.routers.<unique_router_name_http>.middlewares=redirect-to-https
 ```
 
+:::
+
 > `traefik.http.routers.<unique_router_name_https>.tls.certresolver` should be the same as your `certresolver` name in Traefik proxy configuration, by default `letsencrypt`.
 
 > `traefik.http.services.<unique_service_name>.loadbalancer.server.port` should be the same as your application listens on. Port 80 if you use a static deployment.
 
 ::: warning Caution
-  You cannot use both configurations (Normal & SaaS) at the same time on one
-  server.
+You cannot use both configurations (Normal & SaaS) at the same time on one
+server.
 :::
