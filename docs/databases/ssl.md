@@ -30,20 +30,19 @@ To secure your database connection with SSL:
    Choose the SSL mode from the dropdown menu. For example, select **verify-full** for maximum security.  
    <ZoomableImage src="/docs/images/database/ssl/3.webp" />
 
+::: warning **Note:**  
+To make use of SSL after enabling it, you need to use the new connection URL for your app, which includes the SSL configuration. 
 
-::: warning **Note:** 
-For some databases like PostgreSQL, SSL might already be enforced through the connection string. 
-
-For others, such as Redis-based databases, enabling this setting is essential.
+If you are not using the new URL, the database connection will not use SSL (in most cases).
 :::
 
 Coolify automatically binds the generated certificates and keys to the required locations, so manual changes are only needed if you wish to use custom certificates.
-
 
 ## 2. SSL Modes Explained
 Coolify supports several SSL modes, each providing a different level of security:
 <ZoomableImage src="/docs/images/database/ssl/4.webp" />
 
+### PostgreSQL
 - **allow (insecure)**  
   This mode permits both encrypted and unencrypted connections. It does not enforce SSL, so if SSL fails, the connection will fall back to an unencrypted state. 
   
@@ -69,8 +68,26 @@ Coolify supports several SSL modes, each providing a different level of security
   
   This provides full assurance that you are connecting to the correct server, similar to the security level provided by Cloudflare Origin Certificate setups.
 
+### Other Databases
+- **MySQL & MongoDB:**  
+  Only the following modes are available: **prefer, require, verify ca, verify full**.
+- **MariaDB, Redis, KeyDB, DragonFly DB:**  
+  No SSL modes are visible in the UI.
+- **Clickhouse DB:**  
+  SSL is not supported, there is no checkbox to enable SSL nor dropdown options.
+
+::: warning Developer Note
+Modes lower than **require** are not 100% secure as they only encrypt the connection without full verification of the server’s identity. 
+
+For modes higher than **require** (i.e., **verify-ca** and **verify-full**), you must mount the Coolify CA certificate into the container that connects to the database for additional security. 
+
+Note that in most cases (for example, PostgreSQL), merely enabling SSL does nothing unless you use the new connection URL that enforces SSL. 
+
+However, for some databases, like the redis-based ones, enabling SSL in the UI does enforce the mode.
+:::
+
 ::: success Tip
-For maximum security, **verify-full** is recommended.
+For maximum security, **verify-full** is recommended (when available).
 :::
 
 
@@ -86,7 +103,9 @@ In the dashboard, under **Servers > YOUR_SERVER_NAME > Proxy > Advanced**, you c
 
 
 ### Recommended Configuration
-For secure connections, mount the Coolify CA certificate into all containers that need to connect to your databases. The recommended bind mount is:
+For secure connections, mount the Coolify CA certificate into all containers that need to connect to your databases. 
+
+The recommended bind mount is:
 
 ```sh
 /data/coolify/ssl/coolify-ca.crt:/etc/ssl/certs/coolify-ca.crt:ro
