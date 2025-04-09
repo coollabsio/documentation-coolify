@@ -52,6 +52,10 @@ export default defineConfig({
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    carbonAds: {
+      code: 'CW7IPKJJ',
+      placement: 'coolifyio'
+    },
     logo: '/coolify-logo-transparent.png',
     nav: [
       { text: 'Coolify Cloud', link: 'https://coolify.io/pricing/' },
