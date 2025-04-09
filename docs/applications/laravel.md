@@ -269,6 +269,31 @@ stdout_logfile=/var/log/worker-inertia-ssr.log
 '''
 ```
 
+### Persistent php.ini customizations
+
+If you want to customize settings from your php.ini file, you can easily do so by using the `php_admin_value` directive and appending them to your `php-fpm.conf` file like this:
+
+```toml
+"php-fpm.conf" = '''
+[www]
+listen = 127.0.0.1:9000
+user = www-data
+group = www-data
+listen.owner = www-data
+listen.group = www-data
+pm = dynamic
+pm.max_children = 50
+pm.min_spare_servers = 4
+pm.max_spare_servers = 32
+pm.start_servers = 18
+clear_env = no
+
+php_admin_value[memory_limit] = 512M
+php_admin_value[max_execution_time] = 60
+php_admin_value[max_input_time] = 60
+php_admin_value[post_max_size] = 256M
+'''
+```
 
 ## Deploy with Dockerfile and Nginx Unit
 
