@@ -373,7 +373,8 @@ export default defineConfig({
                 items: [
                   {
                     text: 'Github', collapsed: true, items: [
-                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/github-app' },
+                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/manually-setup-github-app' },
+                      { text: 'Move Between GitHub Apps', link: '/knowledge-base/git/github/move-between-github-apps' },
                       { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
                       { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
                     ]
