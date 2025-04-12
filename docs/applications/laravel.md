@@ -140,7 +140,7 @@ pm = dynamic
 pm.max_children = 50 # To reduce memory/CPU usage, change to 5.
 pm.min_spare_servers = 4 # To reduce memory/CPU usage, change to 1.
 pm.max_spare_servers = 32 # To reduce memory/CPU usage, change to 3.
-pm.start_servers = 18 # To reduce memory/CPU usage, change to 42.
+pm.start_servers = 18 # To reduce memory/CPU usage, change to 2.
 clear_env = no
 '''
 
