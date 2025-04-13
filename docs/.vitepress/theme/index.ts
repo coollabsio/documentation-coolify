@@ -47,8 +47,6 @@ export default {
 
     const openapi = useOpenapi({
       spec,
-      base: "/docs/api-reference/api/operations/",
-      label: "API",
     });
 
     theme.enhanceApp({ app, openapi });
