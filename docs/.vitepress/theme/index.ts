@@ -45,11 +45,11 @@ export default {
   enhanceApp({ app, router, siteData }) {
     enhanceAppWithTabs(app);
 
-    const openapi = useOpenapi({
+    useOpenapi({
       spec,
     });
 
-    theme.enhanceApp({ app, openapi });
+    theme.enhanceApp({ app });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);
     app.component("LandingSection", Sections);
