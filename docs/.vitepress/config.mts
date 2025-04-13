@@ -8,6 +8,7 @@ import container from 'markdown-it-container'
 import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 const sidebar = useSidebar({ spec, collapsible: true })
 
@@ -614,7 +615,21 @@ export default defineConfig({
       yaml as any,
       llms({
         llmsDir: './'
-      })
+      }),
+      groupIconVitePlugin({
+        customIcon: {
+          bruno: 'vscode-icons:file-type-bruno',
+          curl: 'simple-icons:curl',
+        },
+        defaultLabels: [
+          'bruno',
+          'curl',
+          '.ts',
+          '.js',
+          '.py',
+          '.php',
+        ],
+      }),
     ],
     assetsInclude: ['**/*.yml'],
     build: {

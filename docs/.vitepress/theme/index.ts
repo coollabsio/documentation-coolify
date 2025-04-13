@@ -17,6 +17,7 @@ import "./scrollbar.css";
 // import "./custom.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
+import 'virtual:group-icons.css'
 
 // Import plugins
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";

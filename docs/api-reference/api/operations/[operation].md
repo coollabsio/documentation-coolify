@@ -23,6 +23,7 @@ const themeConfig = {
                 lang: 'bruno',
                 label: 'Bruno',
                 highlighter: 'plaintext',
+                icon: 'bruno',
             },
             ...useTheme().getCodeSamplesAvailableLanguages(),
         ],
