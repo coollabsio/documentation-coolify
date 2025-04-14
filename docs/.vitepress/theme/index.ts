@@ -17,6 +17,7 @@ import "./scrollbar.css";
 // import "./custom.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
+import 'virtual:group-icons.css'
 
 // Import plugins
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
@@ -45,13 +46,11 @@ export default {
   enhanceApp({ app, router, siteData }) {
     enhanceAppWithTabs(app);
 
-    const openapi = useOpenapi({
+    useOpenapi({
       spec,
-      base: "/docs/api-reference/api/operations/",
-      label: "API",
     });
 
-    theme.enhanceApp({ app, openapi });
+    theme.enhanceApp({ app });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);
     app.component("LandingSection", Sections);

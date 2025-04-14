@@ -8,6 +8,7 @@ import container from 'markdown-it-container'
 import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 const sidebar = useSidebar({ spec, collapsible: true })
 
@@ -373,7 +374,8 @@ export default defineConfig({
                 items: [
                   {
                     text: 'Github', collapsed: true, items: [
-                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/github-app' },
+                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/manually-setup-github-app' },
+                      { text: 'Move Between GitHub Apps', link: '/knowledge-base/git/github/move-between-github-apps' },
                       { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
                       { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
                     ]
@@ -613,7 +615,21 @@ export default defineConfig({
       yaml as any,
       llms({
         llmsDir: './'
-      })
+      }),
+      groupIconVitePlugin({
+        customIcon: {
+          bruno: 'vscode-icons:file-type-bruno',
+          curl: 'simple-icons:curl',
+        },
+        defaultLabels: [
+          'bruno',
+          'curl',
+          '.ts',
+          '.js',
+          '.py',
+          '.php',
+        ],
+      }),
     ],
     assetsInclude: ['**/*.yml'],
     build: {
