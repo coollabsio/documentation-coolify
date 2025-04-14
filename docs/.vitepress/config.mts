@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
-import llms from 'vite-plugin-llms'
+import llmstxt from 'vitepress-plugin-llms'
 import { defineConfig } from 'vitepress'
 import { useSidebar } from 'vitepress-openapi'
 import spec from '../public/openapi.json' with { type: 'json' }
@@ -604,7 +604,7 @@ export default defineConfig({
     },
     // Map ssh to ssh-config
     languageAlias: {
-      ssh: 'ssh-config'
+      ssh: 'ssh-config',
     }
   },
 
@@ -613,8 +613,11 @@ export default defineConfig({
   vite: {
     plugins: [
       yaml as any,
-      llms({
-        llmsDir: './'
+      llmstxt({
+        ignoreFiles: [    
+          '/docs/api-reference/api/**/*',
+          '**/api-reference/api/**/*'
+        ],
       }),
       groupIconVitePlugin({
         customIcon: {
