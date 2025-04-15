@@ -11,9 +11,10 @@
     "postcss": "8.5.1",
     "tailwindcss": "3.2.4",
     "tsx": "4.19.2",
-    "vite-plugin-llms": "^1.0.2",
     "vite-plugin-yaml": "^1.0.5",
     "vitepress": "1.6.3",
+    "vitepress-plugin-group-icons": "^1.5.1",
+    "vitepress-plugin-llms": "^1.1.0",
     "vitepress-plugin-tabs": "^0.6.0",
     "vue": "^3.5.13"
   },
@@ -35,7 +36,7 @@
   "dependencies": {
     "@vueuse/core": "12.5.0",
     "globe.gl": "2.39.7",
-    "vitepress-openapi": "0.0.3-alpha.62"
+    "vitepress-openapi": "0.0.3-alpha.75"
   },
   "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
 }

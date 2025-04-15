@@ -102,7 +102,7 @@ After restoring the backup, update your environment configuration to allow the n
 
 3. **Add the Previous APP Key:**  
    Add a new environment variable called `APP_PREVIOUS_KEYS` and paste the `APP_KEY` you saved earlier:
-   ```env
+   ```yaml
    APP_PREVIOUS_KEYS=your_previous_app_key_here
    ```
    Save and exit the editor.
