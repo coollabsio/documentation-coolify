@@ -150,7 +150,7 @@ If you change environment variables afterwards or anything seems broken, press C
 
 ::: info Tip:
 To enable Telescope, add the following to your `.env` file:
-```env
+```yaml
 TELESCOPE_ENABLED=true
 ```
 :::
