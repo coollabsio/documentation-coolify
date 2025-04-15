@@ -91,16 +91,24 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/get-started/introduction' },
+          { 
+            text: 'Installation', 
+            link: '/get-started/installation',
+            collapsed: false, 
+            items: [
+              { text: 'Upgrade', link: '/get-started/upgrade' },
+              { text: 'Downgrade', link: '/get-started/downgrade' },
+              { text: 'Uninstallation', link: '/get-started/uninstallation' },
+            ]
+          },
           { text: 'Usage', link: '/get-started/usage' },
-          { text: 'Concepts', link: '/get-started/concepts' },
-          { text: 'Screenshots', link: '/get-started/screenshots' },
-          { text: 'Videos', link: '/get-started/videos' },
-          { text: '--------------------------------' },
-          { text: 'Installation', link: '/get-started/installation' },
-          { text: 'Upgrade', link: '/get-started/upgrade' },
-          { text: 'Downgrade', link: '/get-started/downgrade' },
-          { text: 'Uninstallation', link: '/get-started/uninstallation' },
-          { text: '--------------------------------' },
+          { text: 'Concepts', link: '/get-started/concepts',
+            collapsed: true,
+            items: [
+              { text: 'Screenshots', link: '/get-started/screenshots' },
+              { text: 'Videos', link: '/get-started/videos' },
+            ]
+           },
           { text: 'Team', link: '/get-started/team' },
           { text: 'Support', link: '/get-started/support' },
           { text: 'Sponsors', link: '/get-started/sponsors' },
