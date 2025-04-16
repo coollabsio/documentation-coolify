@@ -66,6 +66,7 @@ Click on the **Environment Variables** tab to add or update them.
 <ZoomableImage src="/docs/images/builds/packs/dockerfile/7.webp" />
 
 ### Pre/Post Deployment Commands
+<ZoomableImage src="/docs/images/builds/packs/dockerfile/8.webp" />
 - **Pre-deployment:** Optionally, specify a script or command to execute in the existing container before deployment begins. This command is run with `sh -c`, so you do not need to add it manually.
 - **Post-deployment:** Optionally, specify a script or command to execute in the newly built container after deployment completes. This command is also executed with `sh -c`.
 
@@ -79,5 +80,9 @@ To resolve this, fix the issue causing the container to be unhealthy or remove t
 ::: details 2. App only works inside the Container
 If your app works when you check it with a `curl localhost` inside the container but you receive a 404 or "No Available Server" error when accessing your domain, verify the port settings.  
 
-Make sure that the port in the network settings matches the port where your application is listening. Also, check the startup log to ensure the application is not only listening on localhost. If needed, change it to listen on all interfaces (for example, `0.0.0.0`).
+Make sure that the port in the network settings matches the port where your application is listening. Also, check the startup log to ensure the application is not only listening on localhost. 
+
+<ZoomableImage src="/docs/images/builds/packs/dockerfile/9.webp" />
+
+If needed, change it to listen on all interfaces (for example, `0.0.0.0`).
 :::
