@@ -5,9 +5,9 @@ title: Docker Compose Build Packs
 <ZoomableImage src="/docs/images/builds/packs/compose/compose-banner.webp" />
 <br />
 
-Docker Compose build packs let you deploy multiple Docker containers and configure them easily. 
+Docker Compose lets you deploy multiple Docker containers and configure them easily. 
 
-With the Docker Compose build pack, you use your own Docker Compose file (i.e. `docker-compose.y[a]ml`) as the single source of truth, giving you full control over how your application is built and deployed on Coolify.
+With the Docker Compose build pack, you can use your own Docker Compose file (i.e. `docker-compose.y[a]ml`) as the single source of truth, giving you full control over how your application is built and deployed on Coolify.
 
 ## How to use Docker Compose?
 ### 1. Create a New Resource in Coolify
