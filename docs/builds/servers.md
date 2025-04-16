@@ -64,5 +64,5 @@ To assign a build server to an existing resource, follow these steps:
    <ZoomableImage src="/docs/images/builds/servers/4.webp" />
 
 3. **Set Up Your Container Registry:**  
-   Ensure that a container registry is configured for the resource. This is required to store the built images.
+   Make sure that your build server is authenticated with the container registry. See [this guide](/knowledge-base/docker/registry) for more details.
 
