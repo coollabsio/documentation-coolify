@@ -73,7 +73,10 @@ Click on the **Environment Variables** tab to add or update them.
 
 ## Known Issues and Solutions
 ::: details 1. Visiting the Application Domain Shows "No Available Server"
-If you see a "No Available Server" error when visiting your website, it is likely due to the health check for your container. Run `docker ps` on your server terminal to check if your container is unhealthy or still starting.  
+If you see a "No Available Server" error when visiting your website, it is likely due to the health check for your container. 
+
+Run `docker ps` on your server terminal to check if your container is unhealthy or still starting.  
+
 To resolve this, fix the issue causing the container to be unhealthy or remove the health checks.
 :::
 
