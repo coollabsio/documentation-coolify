@@ -3,7 +3,7 @@ title: Build Server
 description: Learn how to use a build server with Coolify to separate your build process from your deployment environment.
 ---
 
-<ZoomableImage src="/docs/images/builds/servers/servers-banner.webp" />
+<ZoomableImage src="/docs/images/builds/servers/banner.webp" />
 
 <br />
 
@@ -32,23 +32,23 @@ To start using a build server with Coolify, follow these steps:
 1. **Add a New Server to Coolify:**  
    In your Coolify dashboard, go to the servers page and click the **+ Add** button.
 
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
+   <ZoomableImage src="/docs/images/builds/servers/1.webp" />
 
    - If you have already connected a server to Coolify, you can skip this step and go to the next one.
 
 2. **Enable the Build Server Feature:**  
    In the popup modal, enable the **Build Server** feature.
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
+   <ZoomableImage src="/docs/images/builds/servers/2.webp" />
 
    - If you have already connected your server, enable the Build Server feature as shown in the image below.
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
+   <ZoomableImage src="/docs/images/builds/servers/3.webp" />
 
 ::: warning HEADS UP!
 You cannot deploy any application to a server that is marked as a build server. 
 
 If you want to deploy apps, uncheck the build server option on your server from the servers page in the Coolify dashboard.
 
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
+   <ZoomableImage src="/docs/images/builds/servers/3.webp" />
 :::
 
 
@@ -58,14 +58,11 @@ To assign a build server to an existing resource, follow these steps:
 1. **Go to Your Resource:**  
    In your Coolify dashboard, navigate to the general settings of the application you want to use the build server for.
 
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
-
 2. **Activate the Build Server Option:**  
-   Under the **Build** section, enable the `Build Server` option.
+   Under the **Build** section, enable the `Use a Build Server ?` option.
 
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
+   <ZoomableImage src="/docs/images/builds/servers/4.webp" />
 
 3. **Set Up Your Container Registry:**  
    Ensure that a container registry is configured for the resource. This is required to store the built images.
 
-   <ZoomableImage src="/docs/images/builds/servers/abcd.webp" />
