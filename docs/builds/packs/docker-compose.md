@@ -2,7 +2,7 @@
 title: Docker Compose Build Packs
 ---
 
-<ZoomableImage src="/docs/images/builds/packs/compose/compose-banner.webp" />
+<ZoomableImage src="/docs/images/builds/packs/compose/banner.webp" />
 <br />
 
 Docker Compose lets you deploy multiple Docker containers and configure them easily. 
@@ -38,10 +38,11 @@ Coolify defaults to using Nixpacks. Click the Nixpacks option and select **Docke
 
 
 ### 5. Configure the Build Pack
-<ZoomableImage src="/docs/images/builds/packs/compose/4.webp" />
+<ZoomableImage src="/docs/images/builds/packs/compose/5.webp" />
 
 - **Branch:** Coolify will automatically detect the branch in your repository.
 - **Base Directory:** Enter the directory that Coolify should use as the root. Use `/` if your files are at the root or specify a subfolder (like `/backend` for a monorepo).
+- **Docker Compose Location:** Enter the path to your Docker Compose file, this path is combined with the Base Directory. Make sure the file extension matches exactly, if it doesn’t then Coolify won’t be able to load it.
 
 Click on **Continue** button once you have set all the above settings to correct details.
 
@@ -59,7 +60,7 @@ services:
       - SOME_DEFAULT_VARIABLE=${OTHER_NAME_IN_COOLIFY:-hello}  # Sets a default value "hello" that can be edited.
 ```
 
-<ZoomableImage src="/docs/images/builds/packs/compose/5.webp" />
+<ZoomableImage src="/docs/images/builds/packs/compose/6.webp" />
 
 ### Coolify's Magic Environment Variables
 Coolify can generate dynamic environment variables for you using the following syntax: `SERVICE_<TYPE>_<IDENTIFIER>`. 
@@ -155,7 +156,7 @@ By default, each compose stack is deployed to a separate network named after you
 
 If you want to connect services across different stacks (for example, linking an application to a separate database), enable the **Connect to Predefined Network** option on your Service Stack page. 
 
-<ZoomableImage src="/docs/images/builds/packs/compose/6.webp" />
+<ZoomableImage src="/docs/images/builds/packs/compose/7.webp" />
 
 Note that you must use the full name (like `postgres-<uuid>`) when referencing a service in another stack.
 
@@ -163,7 +164,7 @@ Note that you must use the full name (like `postgres-<uuid>`) when referencing a
 ### Raw Docker Compose Deployment
 For advanced users, Coolify offers a "Raw Compose Deployment" mode. This option lets you deploy your Docker Compose file directly without many of Coolify's additional configurations.
 
-<ZoomableImage src="/docs/images/builds/packs/compose/7.webp" />
+<ZoomableImage src="/docs/images/builds/packs/compose/8.webp" />
 
 ::: danger CAUTION
   This mode is intended for advanced users familiar with Docker Compose.
