@@ -6,9 +6,9 @@ title: Dockerfile Build Pack
 
 <br />
 
-Dockerfile build packs include step-by-step instructions to build a Docker image that Coolify uses to deploy your application or website. 
+Dockerfile includes step-by-step instructions to build a Docker image that Coolify uses to deploy your application or website. 
 
-With Dockerfile, you have complete control over how your application is built and deployed on Coolify.
+The Dockerfile build pack allows you to use your own Dockerfile to deploy your application, you have complete control over how your application is built and deployed on Coolify.
 
 
 ## How to use Dockerfile?
