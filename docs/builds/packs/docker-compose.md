@@ -188,3 +188,12 @@ labels:
   - "traefik.http.routers.<unique_router_name>.rule=Host(`shadowarcanist.com`) && PathPrefix(`/`)"
   - traefik.http.routers.<unique_router_name>.entryPoints=http
 ```
+
+## Known Issues and Solutions
+::: details 1. Visiting the Application Domain Shows "No Available Server"
+If you see a "No Available Server" error when visiting your website, it is likely due to the health check for your container. 
+
+Run `docker ps` on your server terminal to check if your container is unhealthy or still starting.  
+
+To resolve this, fix the issue causing the container to be unhealthy or remove the health checks.
+:::
