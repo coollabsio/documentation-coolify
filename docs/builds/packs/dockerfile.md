@@ -2,7 +2,7 @@
 title: Dockerfile Build Pack
 ---
 
-<ZoomableImage src="/docs/images/builds/packs/dockerfile/dockerfile-banner.webp" />
+<ZoomableImage src="/docs/images/builds/packs/dockerfile/banner.webp" />
 
 <br />
 

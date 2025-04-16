@@ -2,7 +2,7 @@
 title: Static Build Packs
 ---
 
-<ZoomableImage src="/docs/images/builds/packs/static/static-banner.webp" />
+<ZoomableImage src="/docs/images/builds/packs/static/banner.webp" />
 
 <br />
 

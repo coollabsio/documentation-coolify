@@ -2,7 +2,7 @@
 title: Nixpacks Build Pack
 ---
 
-<ZoomableImage src="/docs/images/builds/packs/nixpacks/nixpacks-banner.webp" />
+<ZoomableImage src="/docs/images/builds/packs/nixpacks/banner.webp" />
 
 <br />
 
