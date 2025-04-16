@@ -44,7 +44,7 @@ To start using a build server with Coolify, follow these steps:
    <ZoomableImage src="/docs/images/builds/servers/3.webp" />
 
 ::: warning HEADS UP!
-You cannot deploy any application to a server that is marked as a build server. 
+As of **Coolify v4.0.0-beta.408** you cannot deploy any application to a server that is marked as a build server. 
 
 If you want to deploy apps, uncheck the build server option on your server from the servers page in the Coolify dashboard.
 
