@@ -18,7 +18,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
-         version: latest
+          version: latest
           buildkitd-flags: --debug
 
       - uses: actions/cache@v4.2.0
