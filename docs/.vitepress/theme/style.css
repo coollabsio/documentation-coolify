@@ -168,10 +168,11 @@
   --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
 
   /* Enhanced code highlighting, especially for Safari */
-  --vp-code-color: #f8f8f8;
-  --vp-code-link-color: #42b883;
-  --vp-code-link-hover-color: #35495e;
-  --vp-code-bg: #292d3e;  /* Darker background for better contrast */
+  --vp-code-color: #24292f;
+  --vp-code-link-color: #0969da;
+  --vp-code-link-hover-color: #0969da;
+  --vp-code-bg: #f6f8fa !important;
+  --vp-c-text-dark-1: #24292f;
 }
 
 /**
@@ -242,13 +243,13 @@
   --vp-c-bg: #0D0B0F;
   --vp-c-bg-alt: #0D0B0F;
   --vp-c-bg-elv: #202127;
-  --vp-c-bg-soft: #202127;
+  --vp-c-bg-soft: #161b22 !important;
   --vp-c-text-1: #F2F2F2;
   --vp-c-text-2: #9A989D;
   --vp-c-text-3: #9A989D;
   
   /* Lighter code background in dark mode */
-  --vp-code-bg: #1a1a1f;  /* Darker background in dark mode */
+  --vp-code-bg: #161b22 !important;  /* Darker background in dark mode */
   
   --vp-custom-block-tip-border: #0C4C69;
   --vp-custom-block-tip-text: #A7D2E8;
@@ -311,7 +312,7 @@
 
   /* Enhanced code highlighting, especially for Safari */
   --vp-code-color: #F2F2F2;
-  --vp-code-bg: #1a1a1f;  /* Darker background in dark mode */
+  --vp-code-bg: #161b22 !important;  /* Darker background in dark mode */
 }
 
 /* Container padding override */
@@ -391,7 +392,7 @@ code:hover {
 .vp-doc div[class*='language-'] {
   position: relative;
   margin: 0;
-  background-color: var(--vp-c-bg-soft);
+  background-color: var(--vp-code-bg);
   border-radius: 10px;
   overflow-x: visible;
 }
@@ -574,6 +575,7 @@ code:hover {
 
 /* Reset webkit styles for code blocks */
 .vp-doc [class*='language-'] code {
+  
   -webkit-text-fill-color: initial !important;
 }
 
@@ -720,47 +722,25 @@ code:hover {
   }
 }
 
-/* Explicitly prevent hover color change for ALL code blocks with higher specificity */
-.vp-doc [class*='language-'] code:hover,
-div[class*='language-'] code:hover,
-pre[class*='language-'] code:hover {
-  background-color: transparent !important;
-  color: inherit !important;
-  -webkit-text-fill-color: inherit !important;
-  transform: none !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
-}
-
-/* Additional specific prevention with maximum specificity for shell/bash/ssh code blocks */
-.vp-doc .language-bash code:hover,
-.vp-doc .language-ssh code:hover,
-.vp-doc .language-sh code:hover,
-div.language-bash code:hover,
-div.language-ssh code:hover,
-div.language-sh code:hover,
-pre.language-bash code:hover,
-pre.language-ssh code:hover,
-pre.language-sh code:hover,
-.language-sh code:hover,
-.language-sh .line:hover,
-.language-sh span:hover {
-  background-color: transparent !important;
-  color: inherit !important;
-  -webkit-text-fill-color: inherit !important;
-  transform: none !important;
-  box-shadow: none !important;
-  border-color: transparent !important;
-}
-
-/* Override any other hover effects for code blocks */
-.vp-doc pre *:hover,
+/* Disable ALL hover effects for code blocks */
+.vp-doc [class*='language-'] *:hover,
+.vp-doc div[class*='language-'] *:hover,
+.vp-doc pre[class*='language-'] *:hover,
 .shiki *:hover,
-.vp-code *:hover {
-  background-color: inherit !important;
+.vp-code *:hover,
+.vp-doc code *:hover,
+div[class*='language-'] *:hover,
+pre[class*='language-'] *:hover {
   color: inherit !important;
   -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+  text-decoration: none !important;
 }
+
+/* Remove all the other hover prevention blocks since they're now consolidated above */
 
 @media (prefers-color-scheme: dark) {
   p code:hover, li code:hover,
@@ -776,4 +756,15 @@ pre.language-sh code:hover,
     border-radius: 8px;
     overflow-x: auto;
   }
+}
+
+/* Override Shiki theme colors for light mode */
+.shiki.github-light {
+  --shiki-light-keyword: #cf222e !important;     /* red */
+  --shiki-light-string: #0a3069 !important;      /* dark blue for strings */
+  --shiki-light-function: #8250df !important;    /* purple */
+  --shiki-light-number: #0550ae !important;      /* blue */
+  --shiki-light-boolean: #0550ae !important;     /* blue */
+  --shiki-light-comment: #6e7781 !important;     /* gray */
+  --shiki-light-property: #953800 !important;    /* brown */
 }

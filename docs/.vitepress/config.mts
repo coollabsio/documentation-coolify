@@ -9,7 +9,8 @@ import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-
+import { loadEnv } from 'vitepress'
+const env = loadEnv('', process.cwd())
 const sidebar = useSidebar({ spec, collapsible: true })
 
 // Add SSH to bundled languages
@@ -18,6 +19,8 @@ bundledLanguages['ssh'] = {
   scopeName: 'source.ssh-config',
   path: join(dirname(fileURLToPath(import.meta.url)), '../../node_modules/shiki/languages/ssh-config.tmLanguage.json')
 }
+
+console.log(env)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -48,7 +51,7 @@ export default defineConfig({
     ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
     ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/docs/public/favicon.ico' }],
-    ['script', { defer: 'true', src: 'https://analytics.coollabs.io/js/script.tagged-events.js', 'data-domain': 'coolify.io/docs' }],
+    ['script', { defer: 'true', src: 'https://analytics.coollabs.io/js/script.tagged-events.js', 'data-domain': env.VITE_ANALYTICS_DOMAIN ?? 'coolify.io/docs' }],
     ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],
   themeConfig: {
@@ -91,10 +94,10 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/get-started/introduction' },
-          { 
-            text: 'Installation', 
+          {
+            text: 'Installation',
             link: '/get-started/installation',
-            collapsed: false, 
+            collapsed: false,
             items: [
               { text: 'Upgrade', link: '/get-started/upgrade' },
               { text: 'Downgrade', link: '/get-started/downgrade' },
@@ -102,13 +105,14 @@ export default defineConfig({
             ]
           },
           { text: 'Usage', link: '/get-started/usage' },
-          { text: 'Concepts', link: '/get-started/concepts',
+          {
+            text: 'Concepts', link: '/get-started/concepts',
             collapsed: true,
             items: [
               { text: 'Screenshots', link: '/get-started/screenshots' },
               { text: 'Videos', link: '/get-started/videos' },
             ]
-           },
+          },
           { text: 'Team', link: '/get-started/team' },
           { text: 'Support', link: '/get-started/support' },
           { text: 'Sponsors', link: '/get-started/sponsors' },
@@ -122,6 +126,25 @@ export default defineConfig({
             ],
           },
 
+        ],
+      },
+      {
+        text: 'Builds',
+        collapsed: true,
+        items: [
+          { text: 'Introduction', link: '/builds/introduction' },
+          {
+            text: 'Build Packs',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/builds/packs/overview' },
+              { text: 'Static', link: '/builds/packs/static' },
+              { text: 'Nixpacks', link: '/builds/packs/nixpacks' },
+              { text: 'Dockerfile', link: '/builds/packs/dockerfile' },
+              { text: 'Docker Compose', link: '/builds/packs/docker-compose' },
+            ]
+          },
+          { text: 'Build Servers', link: '/builds/servers' },
         ],
       },
       {
@@ -601,7 +624,7 @@ export default defineConfig({
     plugins: [
       yaml as any,
       llmstxt({
-        ignoreFiles: [    
+        ignoreFiles: [
           '/docs/api-reference/api/**/*',
           '**/api-reference/api/**/*'
         ],
