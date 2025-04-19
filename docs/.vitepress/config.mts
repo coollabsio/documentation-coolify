@@ -20,6 +20,8 @@ bundledLanguages['ssh'] = {
   path: join(dirname(fileURLToPath(import.meta.url)), '../../node_modules/shiki/languages/ssh-config.tmLanguage.json')
 }
 
+console.log(env)
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
