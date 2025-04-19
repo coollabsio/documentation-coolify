@@ -1,6 +1,7 @@
 # Stage 1: Build Stage (oven/bun:1.1.44-alpine, ARM64)
 FROM oven/bun:1.1.44-alpine AS builder
 
+ARG VITE_ANALYTICS_DOMAIN
 RUN apk add --no-cache nodejs npm
 
 # Set working directory and copy necessary files
