@@ -253,7 +253,7 @@ const sponsors = [
     ]
   },
   {
-    avatar: '../images/sponsors/darweb.svg',
+    avatar: '../images/sponsors/darweb.webp',
     name: 'Darweb',
     title: 'Design. Develop. Deliver. Specialized in 3D CPQ Solutions for eCommerce',
     links: [
@@ -261,7 +261,7 @@ const sponsors = [
     ]
   },
   {
-    avatar: '../images/sponsors/wzit.png',
+    avatar: '../images/sponsors/wzit.webp',
     name: 'WZ-IT',
     title: 'German agency for customized cloud solutions, migration, managed services and open source hosting',
     links: [
@@ -269,7 +269,7 @@ const sponsors = [
     ]
   },
   {
-    avatar: '../images/sponsors/supadata.svg',
+    avatar: '../images/sponsors/supadata.webp',
     name: 'Supadata',
     title: 'Scrape YouTube, web, and files. Get AI-ready, clean data for your next project',
     links: [
@@ -277,7 +277,7 @@ const sponsors = [
     ]
   },
   {
-    avatar: '../images/team/coollabs-logo-smaller.png',
+    avatar: '../images/team/coollabs-logo-smaller.webp',
     name: 'You Company?',
     title: 'Will Your Company Be Next?'
   }
