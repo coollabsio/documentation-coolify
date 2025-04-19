@@ -79,17 +79,9 @@ const sponsors = [
   {
     avatar: '../images/sponsors/convex.webp',
     name: 'Convex',
-    title: 'Open-source reactive database for web app developers.',
+    title: 'Open-source reactive database for web app developers',
     links: [
       { icon: 'expedia', link: 'https://convex.link/coolify.io' }
-    ]
-  },
-  {
-    avatar: '../images/sponsors/stream.webp',
-    name: 'Stream',
-    title: 'APIs and SDKs to Build In-App Chat, Video, & Feeds Faster.',
-    links: [
-      { icon: 'expedia', link: 'https://getstream.io/?utm_source=opensource&utm_medium=referral&utm_content=&utm_campaign=coolifyq12025' }
     ]
   },
   {
@@ -255,9 +247,33 @@ const sponsors = [
   {
     avatar: '../images/sponsors/comp.webp',
     name: 'Comp AI',
-    title: 'The open-source platform that automates compliance.',
+    title: 'The open-source platform that automates compliance',
     links: [
       { icon: 'expedia', link: 'https://www.trycomp.ai/?ref=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/darweb.svg',
+    name: 'Darweb',
+    title: 'Design. Develop. Deliver. Specialized in 3D CPQ Solutions for eCommerce',
+    links: [
+      { icon: 'expedia', link: 'https://darweb.nl/?ref=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/wzit.png',
+    name: 'WZ-IT',
+    title: 'German agency for customized cloud solutions, migration, managed services and open source hosting',
+    links: [
+      { icon: 'expedia', link: 'https://wz-it.com/?ref=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/supadata.svg',
+    name: 'Supadata',
+    title: 'Scrape YouTube, web, and files. Get AI-ready, clean data for your next project',
+    links: [
+      { icon: 'expedia', link: 'https://supadata.ai/?ref=coolify.io' }
     ]
   },
   {
