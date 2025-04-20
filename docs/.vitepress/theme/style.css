@@ -685,16 +685,16 @@ code:hover {
 
 /* Markdown Labels like NODE_ENV */
 :not(pre) > code {
-  background-color: rgba(40, 44, 52, 0.95) !important;
-  color: #f0f0f0 !important;
-  -webkit-text-fill-color: #f0f0f0 !important;
-  font-weight: 500 !important;
-  padding: 4px 8px !important;
+  background-color: rgba(40, 44, 52, 0) !important;
+  color: rgba(185, 185, 185, 0.795)  !important;
+  -webkit-text-fill-color: rgba(95, 95, 95, 0.795) !important;
+  font-weight: 600 !important;
+  padding: 4px 4px !important;
   border-radius: 6px !important;
   font-size: 0.7em !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 
-              0 0 2px rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(185, 185, 185, 0.795) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 
+              0 0 1px rgba(255, 255, 255, 0.05) !important;
   margin: 0 3px !important;
   /* text-transform: uppercase !important; */
   letter-spacing: 0.02em !important;
@@ -703,7 +703,7 @@ code:hover {
 
 /* Dark mode adjustments */
 .dark :not(pre) > code {
-  background-color: rgba(50, 50, 60, 0.95) !important;
+  background-color: rgb(50, 50, 60) !important;
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
