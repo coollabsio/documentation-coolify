@@ -64,9 +64,7 @@ services:
 
 ### Coolify's Magic Environment Variables
 ::: warning HEADS UP!
-As of Coolify v4.0.0-beta.410, Magic Environment Variables are only supported for One-Click Services and Docker Compose-based deployments. 
-
-This means that Git-based Docker Compose deployments are not yet supported. The team is actively working on adding support in future releases of Coolify.
+Support for Magic Environment Variables in Compose files based on Git sources has been added in Coolify v4.0.0-beta.Andras
 :::
 
 Coolify can generate dynamic environment variables for you using the following syntax: `SERVICE_<TYPE>_<IDENTIFIER>`. 
