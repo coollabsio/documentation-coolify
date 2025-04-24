@@ -3,11 +3,11 @@ name: Production Build
 on:
   push:
     branches:
-      - main
+      - v4.x
 
 env:
   GITHUB_REGISTRY: ghcr.io
-  IMAGE_NAME: coollabsio/documentation-coolify
+  IMAGE_NAME: coollabsio/coolify-documentation
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           version: latest
           buildkitd-flags: --debug
 
-      - uses: actions/cache@v4.2.0
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.bun/install/cache
