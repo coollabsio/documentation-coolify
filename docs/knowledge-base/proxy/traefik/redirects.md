@@ -106,6 +106,6 @@ docker inspect <container-id>
 You can additionally check the traefik container logs, by finding the traefik container id and then running
 
 ```bash
-docker logs -f <traefik-container-id>
+docker logs -f coolify-proxy
 ```
 
