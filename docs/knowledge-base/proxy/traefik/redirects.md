@@ -87,3 +87,25 @@ traefik.http.middlewares.example-middleware.redirectregex.regex=^(http|https)://
 traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://www.${2}
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
+
+## Debugging
+
+You can check, if the traefik settings have been correctly applied, when inspecting your docker target container.
+
+Find your docker container id
+```bash
+docker ps
+```
+
+Inspect the containers labels
+
+```bash
+docker inspect <container-id>
+```
+
+You can additionally check the traefik container logs, by finding the traefik container id and then running
+
+```bash
+docker logs -f <traefik-container-id>
+```
+
