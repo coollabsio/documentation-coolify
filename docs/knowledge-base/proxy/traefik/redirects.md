@@ -103,7 +103,7 @@ Inspect the containers labels
 docker inspect <container-id>
 ```
 
-You can additionally check the traefik container logs, by finding the traefik container id and then running
+You can additionally check the traefik container logs, by running
 
 ```bash
 docker logs -f coolify-proxy
