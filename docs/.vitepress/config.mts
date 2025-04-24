@@ -1,9 +1,9 @@
+import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
-import llmstxt from 'vitepress-plugin-llms'
-import { defineConfig } from 'vitepress'
+import llmsTxt from 'vitepress-plugin-llms'
 import { useSidebar } from 'vitepress-openapi'
-import spec from '../public/openapi.json' with { type: 'json' }
+import spec from './theme/openapi.json' with { type: 'json' }
 import container from 'markdown-it-container'
 import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
@@ -11,16 +11,9 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { loadEnv } from 'vitepress'
 const env = loadEnv('', process.cwd())
+
+// @ts-ignore
 const sidebar = useSidebar({ spec, collapsible: true })
-
-// Add SSH to bundled languages
-bundledLanguages['ssh'] = {
-  id: 'ssh',
-  scopeName: 'source.ssh-config',
-  path: join(dirname(fileURLToPath(import.meta.url)), '../../node_modules/shiki/languages/ssh-config.tmLanguage.json')
-}
-
-console.log(env)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -35,7 +28,6 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://coolify.io/docs/'
   },
-
   head: [
     ['meta', { name: 'theme-color', content: '#000000' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -50,7 +42,7 @@ export default defineConfig({
     ['meta', { property: 'twitter:url', content: 'https://coolify.io/docs/' }],
     ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
     ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/docs/public/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/docs/favicon.ico' }],
     ['script', { defer: 'true', src: 'https://analytics.coollabs.io/js/script.tagged-events.js', 'data-domain': env.VITE_ANALYTICS_DOMAIN ?? 'coolify.io/docs' }],
     ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],
@@ -581,7 +573,6 @@ export default defineConfig({
         ],
       },
     ],
-
   },
 
   markdown: {
@@ -623,7 +614,7 @@ export default defineConfig({
   vite: {
     plugins: [
       yaml as any,
-      llmstxt({
+      llmsTxt({
         ignoreFiles: [
           '/docs/api-reference/api/**/*',
           '**/api-reference/api/**/*'

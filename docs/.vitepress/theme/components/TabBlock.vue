@@ -135,14 +135,14 @@ const isLastTab = computed(() => currentIndex.value === allTabs.value.length - 1
           <!-- Service Configuration -->
           <div v-if="isServiceTab(index)" class="service-config space-y-4">
             <div class="service-header mb-4">
-              <h3 class="text-lg font-medium">{{ tab.content.service.name }}</h3>
-              <code class="text-sm block mt-2">Image: {{ tab.content.service.image }}</code>
+              <h3 class="text-lg font-medium">{{ tab.content?.service?.name }}</h3>
+              <code class="text-sm block mt-2">Image: {{ tab.content?.service?.image }}</code>
             </div>
 
             <div class="env-vars">
               <h4 class="font-medium mb-3">Environment Variables</h4>
               <ul class="env-list space-y-2">
-                <li v-for="env in tab.content.service.envVars"
+                <li v-for="env in tab.content?.service?.envVars"
                     :key="env.name"
                     class="env-var flex items-start gap-2">
                   <code class="text-sm px-2 py-1 bg-[var(--vp-c-bg-soft)] rounded shrink-0 text-[var(--vp-c-text-2)]">{{ env.name }}</code>

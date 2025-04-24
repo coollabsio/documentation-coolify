@@ -1,29 +1,17 @@
 // https://vitepress.dev/guide/custom-theme
-// Import types
-import type { Theme } from "vitepress";
-
-// Import OpenAPI components
+import { h } from 'vue'
+import type { Theme } from 'vitepress'
 import { theme, useOpenapi } from "vitepress-openapi/client";
-
-// Import default theme
-import DefaultTheme from "vitepress/theme";
-
-// Import styles
-import "./style.css";
-// import "./style-dark-default.css";
-// Custom Scrollbars on Windows
-import "./scrollbar.css";
-// Custom Style override
-// import "./custom.css";
+import DefaultTheme from 'vitepress/theme'
+import spec from "./openapi.json" assert { type: "json" };
+import './style.css'
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
+// Custom Scrollbars on Windows
+import "./scrollbar.css";
 import 'virtual:group-icons.css'
-
-// Import plugins
-import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
-
 // @ts-ignore
-import spec from "../../public/openapi.json" assert { type: "json" };
+import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 
 // Import components
 import Card from "./components/Card.vue";
@@ -43,14 +31,21 @@ import { DirectiveBinding } from "vue";
 export default {
   extends: DefaultTheme,
   Layout: Landing,
+  // Layout: () => {
+  //   return h(DefaultTheme.Layout, null, {
+  //     // https://vitepress.dev/guide/extending-default-theme#layout-slots
+  //   })
+  // },
   enhanceApp({ app, router, siteData }) {
     enhanceAppWithTabs(app);
 
     useOpenapi({
       spec,
     });
-
+    
+    // @ts-ignore
     theme.enhanceApp({ app });
+
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);
     app.component("LandingSection", Sections);
@@ -85,4 +80,4 @@ export default {
       },
     });
   },
-} satisfies Theme;
+} satisfies Theme
