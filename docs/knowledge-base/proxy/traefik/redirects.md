@@ -47,6 +47,26 @@ traefik.http.middlewares.example-middleware.redirectregex.replacement=${1}://www
 traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 ```
 
+### domain -> other domain
+
+```bash {4,8-10}
+traefik.http.middlewares.redirect-otherdomain.redirectregex.regex=^(https?://)?source-domain\.com(.*)
+traefik.http.middlewares.redirect-otherdomain.redirectregex.replacement=https://target-domain.com${2}
+traefik.http.middlewares.redirect-otherdomain.redirectregex.permanent=true
+```
+
+If you also need to generate a ssl cert for the target-domain, additionally add a routers entry
+
+```bash {4,8-10}
+traefik.http.routers.redirect-otherdomain.middlewares=redirect-to-https
+traefik.http.routers.redirect-otherdomain.rule=Host(`target-domain.com`) && PathPrefix(`/`)
+traefik.http.routers.redirect-otherdomain.entryPoints=https
+traefik.http.routers.redirect-otherdomain.middlewares=redirect-otherdomain
+traefik.http.routers.redirect-otherdomain.rule=Host(`target-domain.com`) && PathPrefix(`/`)
+traefik.http.routers.redirect-otherdomain.tls.certresolver=letsencrypt
+traefik.http.routers.redirect-otherdomain.tls=true
+```
+
 ## Docker Compose based Applications & one-click Services
 
 - You need to set both FQDNs for your resource, so for example: `coolify.io,www.coolify.io`
