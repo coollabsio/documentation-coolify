@@ -2,8 +2,6 @@ import { source } from '@/lib/source';
 import {
   DocsPage,
   DocsBody,
-  DocsDescription,
-  DocsTitle,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
@@ -17,16 +15,19 @@ export default async function Page(props: {
   if (!page) notFound();
 
   const MDXContent = page.data.body;
+  const lastUpdated = new Date(page.data.lastModified).toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
     <DocsPage
-        toc={page.data.toc}
-        full={page.data.full}
-        breadcrumb={{ enabled: false }}
-        tableOfContent={{
-          style: 'clerk'
-        }}
-      >
+      toc={page.data.toc}
+      full={page.data.full}
+      breadcrumb={{ enabled: false }}
+      tableOfContent={{ style: 'clerk' }}
+    >
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
@@ -34,7 +35,9 @@ export default async function Page(props: {
           })}
         />
         <br />
-        <br />
+        <div style={{ fontSize: '0.875rem', color: '#666' }}>
+          Last updated: {lastUpdated}
+        </div>
       </DocsBody>
     </DocsPage>
   );
