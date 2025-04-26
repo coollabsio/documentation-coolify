@@ -1,7 +1,78 @@
 ---
-title: Quick Start
-description: Components
+title: Coolify documentation
+description: Explore Coolify’s features, integrations, guides, troubleshooting tips, and usage steps.
+full: true
 ---
 
+import { CardImage } from "@/components/CardImage";
 
-## Home page v5 brrrr
+{/* Changing the cols from 3 to 4 for this page only */}
+export function CardImages({ children }) {
+  return (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-4 mt-5">
+      {children}
+    </div>
+  );
+}
+
+# Coolify documentation [!toc]
+Explore Coolify’s features, API, integrations, guides, troubleshooting tips, and usage steps.
+
+
+## Popular
+<CardImages>
+  <CardImage
+    title="How to setup Firewall?"
+    description="[ Guide ] - Setup Firewall to block unwanted access to your server."
+    href="#"
+    imageSrc="/images/home/index/1.png"
+  />
+  <CardImage
+    title="Apps shows Bad Gateway"
+    description="[ Troubleshoot ] - Solution to fix Bad Gateway error on apps deployed using Coolify."
+    href="#"
+    imageSrc="/images/home/index/2.png"
+  />
+  <CardImage
+    title="Upgrade Coolify Guide"
+    description="[ Guide ] - Update Coolify to the latest version without any data loss."
+    href="#"
+    imageSrc="/images/home/index/3.png"
+  />
+  <CardImage
+    title="How to Setup Backups?"
+    description="[ Guide ] - Setup Automated backup for Coolify and Services databases."
+    href="#"
+    imageSrc="/images/home/index/4.png"
+  />
+</CardImages>
+
+---
+
+## Coolify Basics
+<CardImages>
+  <CardImage
+    title="What is Coolify?"
+    description="Introduction to Coolify and it's features and benefits."
+    href="#"
+    imageSrc="/images/home/index/5.png"
+  />
+  <CardImage
+    title="How to Install Coolify?"
+    description="[ Guide ] - Setup your server and install Coolify."
+    href="#"
+    imageSrc="/images/home/index/6.png"
+  />
+  <CardImage
+    title="Coolify Self-hosted vs Cloud"
+    description="Comparison of Coolify Self-hosted vs Cloud Hosting."
+    href="#"
+    imageSrc="/images/home/index/7.png"
+  />
+  <CardImage
+    title="Coolify Concepts"
+    description="Concepts that you need to know about Coolify."
+    href="#"
+    imageSrc="/images/home/index/8.png"
+  />
+</CardImages>
