@@ -3,7 +3,7 @@ import {
   DocsPage,
   DocsBody,
 } from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 
@@ -11,6 +11,12 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  // If slug is missing, redirect to /docs/home
+  if (!params.slug || params.slug.length === 0) {
+    redirect('/docs/home');
+  }
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
@@ -51,6 +57,15 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  // If slug is missing, redirect metadata generation too (optional, but safe)
+  if (!params.slug || params.slug.length === 0) {
+    return {
+      title: 'Redirecting...',
+      description: 'Redirecting to Home page...',
+    };
+  }
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
