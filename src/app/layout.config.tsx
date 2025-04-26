@@ -1,3 +1,4 @@
+import { BookIcon, CodeIcon, HelpCircleIcon } from 'lucide-react';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 /**
@@ -23,4 +24,24 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
+  links: [
+    {
+      icon: <CodeIcon />,
+      text: 'API',
+      url: '/docs/v5/api',
+      active: 'nested-url',
+    },
+    {
+      icon: <BookIcon />,
+      text: 'Guides',
+      url: '/docs/guides',
+      active: 'nested-url',
+    },
+    {
+      icon: <HelpCircleIcon />,
+      text: 'Troubleshoot',
+      url: '/docs/troubleshoot',
+      active: 'nested-url',
+    },
+  ],
 };
