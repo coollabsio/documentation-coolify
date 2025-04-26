@@ -5,7 +5,23 @@
   "pages": 
   [
     "--- Get Started ---",
-    "...",
+    "introduction",
+    "usage",
+    "concepts",
+    "installation",
+    "upgrade",
+    "downgrade",
+    "uninstallation",
+    "--- Resources ---",
+    "team",
+    "sponsors",
+    "support",
+    "licence",
+    "--- Links ---",
+    "[Discord Community](https://discord.gg/coolify)",
+    "[Found a Bug? Report to us!](https://discord.gg/coolify)",
+    "[Got an idea? Submit it here!](https://discord.gg/coolify)",
+    "[Service Status](https://discord.gg/coolify)",
     "!index"
   ]
 }
