@@ -6,7 +6,7 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Pre, CodeBlock } from 'fumadocs-ui/components/codeblock';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { TypeTable } from 'fumadocs-ui/components/type-table';
-import Details from '@/components/Details';
+import Details from '@/components/details';
 
 export function getMDXComponents(components: MDXComponents = {}): MDXComponents {
   return {
