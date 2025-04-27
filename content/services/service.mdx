@@ -7,7 +7,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Cpu, Microchip, Database, ArrowUpDown, Cog, Radiation, CircleDashed, User, KeyRound, Link, BookMarked, Code, LifeBuoy } from "lucide-react";
 import { Unplug, ServerCrash, Cloud } from "lucide-react";
 import { ImageCard } from "@/components/image-card";
-import { ImageCards } from "@/components/ImageCards";
+import { ImageCardGroup } from "@/components/image-card-group";
 import { MediaCard } from "@/components/media-card";
 import { MediaCardGroup } from "@/components/media-card-group";
 
@@ -121,7 +121,7 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics.
 ## Tutorials from Coolify Community
 <Tabs items={['Video Tutorials', 'Written Guides']}>
 <Tab value="Video Tutorials">
-<ImageCards>
+<ImageCardGroup>
   <ImageCard
     title="ShadowArcanist"
     description="How to deploy Umami analytics on Coolify"
@@ -143,10 +143,10 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics.
     imageSrc="/tuts/3.png"
     eventName="NPM card"
   />
-</ImageCards>
+</ImageCardGroup>
 </Tab>
 <Tab value="Written Guides">
-<ImageCards>
+<ImageCardGroup>
   <ImageCard
     title="ShadowArcanist"
     description="How to Setup Backup for Umami Database"
@@ -168,7 +168,7 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics.
     imageSrc="/tuts/6.png"
     eventName="NPM card"
   />
-</ImageCards>
+</ImageCardGroup>
 </Tab>
 </Tabs>
 

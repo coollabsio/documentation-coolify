@@ -7,7 +7,7 @@ full: true
 import { ImageCard } from "@/components/image-card";
 
 {/* Changing the cols from 3 to 4 for this page only */}
-export function ImageCards({ children }) {
+export function ImageCardGroup({ children }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-4 mt-5">
       {children}
@@ -20,7 +20,7 @@ Explore Coolify’s features, API, integrations, guides, troubleshooting tips, a
 
 
 ## Popular
-<ImageCards>
+<ImageCardGroup>
   <ImageCard
     title="How to setup Firewall?"
     description="[ Guide ] - Setup Firewall to block unwanted access to your server."
@@ -45,12 +45,12 @@ Explore Coolify’s features, API, integrations, guides, troubleshooting tips, a
     href="#"
     imageSrc="/images/home/index/4.png"
   />
-</ImageCards>
+</ImageCardGroup>
 
 ---
 
 ## Coolify Basics
-<ImageCards>
+<ImageCardGroup>
   <ImageCard
     title="What is Coolify?"
     description="Introduction to Coolify and it's features and benefits."
@@ -75,4 +75,4 @@ Explore Coolify’s features, API, integrations, guides, troubleshooting tips, a
     href="#"
     imageSrc="/images/home/index/8.png"
   />
-</ImageCards>
+</ImageCardGroup>
