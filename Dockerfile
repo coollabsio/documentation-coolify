@@ -4,6 +4,8 @@ FROM oven/bun@sha256:61619159073fe9a09b813ff20364d676b6ce8a8a9e57307bef1380d1baa
 # Set the working directory for the build
 WORKDIR /app
 
+RUN apk add --no-cache git
+
 # Copy the project files from the build context into the container
 COPY . .
 
