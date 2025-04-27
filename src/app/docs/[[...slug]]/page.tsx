@@ -1,3 +1,4 @@
+// src/app/docs/[[...slug]]/page.tsx
 import { source } from '@/lib/source';
 import {
   DocsPage,
@@ -7,25 +8,32 @@ import { notFound, redirect } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const params = await props.params;
+type ParamsPromise = { params: Promise<{ slug?: string[] }> };
 
-  // If slug is missing, redirect to /docs/home
-  if (!params.slug || params.slug.length === 0) {
+type PageParams = { slug?: string[] };
+
+export default async function Page(props: ParamsPromise) {
+  // Await the params promise before using
+  const { slug } = await props.params;
+
+  // If slug is missing or empty, redirect to /docs/home
+  if (!slug || slug.length === 0) {
     redirect('/docs/home');
   }
 
-  const page = source.getPage(params.slug);
+  const page = source.getPage(slug);
   if (!page) notFound();
 
   const MDXContent = page.data.body;
-  const lastUpdated = new Date(page.data.lastModified).toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+
+  // Safely handle optional lastModified
+  const lastUpdated = page.data.lastModified
+    ? new Date(page.data.lastModified).toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null;
 
   return (
     <DocsPage
@@ -41,32 +49,42 @@ export default async function Page(props: {
           })}
         />
         <br />
-        <div style={{ fontSize: '0.875rem', color: '#666' }}>
-          Last updated: {lastUpdated}
-        </div>
+        {lastUpdated && (
+          <div style={{ fontSize: '0.875rem', color: '#666' }}>
+            Last updated: {lastUpdated}
+          </div>
+        )}
       </DocsBody>
     </DocsPage>
   );
 }
 
+// Tell Next.js all the paths we need to pre-render, including the base /docs
 export async function generateStaticParams() {
-  return source.generateParams();
+  // source.generateParams() returns e.g. [{ slug: ['home'] }, ...]
+  const paramsList = await source.generateParams();
+  return [
+    // include the empty slug for /docs itself
+    { slug: [] },
+    // then all the real doc pages
+    ...paramsList,
+  ];
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const params = await props.params;
+// Generate per-page metadata (title, description)
+export async function generateMetadata(props: ParamsPromise) {
+  // Await the params promise
+  const { slug } = await props.params;
 
-  // If slug is missing, redirect metadata generation too (optional, but safe)
-  if (!params.slug || params.slug.length === 0) {
+  // Redirect metadata too if someone hits /docs directly
+  if (!slug || slug.length === 0) {
     return {
       title: 'Redirecting...',
       description: 'Redirecting to Home page...',
     };
   }
 
-  const page = source.getPage(params.slug);
+  const page = source.getPage(slug);
   if (!page) notFound();
 
   return {
