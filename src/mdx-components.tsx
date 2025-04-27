@@ -1,7 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import defaultComponents from 'fumadocs-ui/mdx';
 import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
-import { Callout } from 'fumadocs-ui/components/callout';
+import { Callout } from '@/components/Callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Pre, CodeBlock } from 'fumadocs-ui/components/codeblock';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
