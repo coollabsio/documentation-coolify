@@ -4,10 +4,10 @@ description: Explore Coolify’s features, integrations, guides, troubleshooting
 full: true
 ---
 
-import { CardImage } from "@/components/CardImage";
+import { ImageCard } from "@/components/image-card";
 
 {/* Changing the cols from 3 to 4 for this page only */}
-export function CardImages({ children }) {
+export function ImageCards({ children }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-4 mt-5">
       {children}
@@ -20,59 +20,59 @@ Explore Coolify’s features, API, integrations, guides, troubleshooting tips, a
 
 
 ## Popular
-<CardImages>
-  <CardImage
+<ImageCards>
+  <ImageCard
     title="How to setup Firewall?"
     description="[ Guide ] - Setup Firewall to block unwanted access to your server."
     href="#"
     imageSrc="/images/home/index/1.png"
   />
-  <CardImage
+  <ImageCard
     title="Apps shows Bad Gateway"
     description="[ Troubleshoot ] - Solution to fix Bad Gateway error on apps deployed using Coolify."
     href="#"
     imageSrc="/images/home/index/2.png"
   />
-  <CardImage
+  <ImageCard
     title="Upgrade Coolify Guide"
     description="[ Guide ] - Update Coolify to the latest version without any data loss."
     href="#"
     imageSrc="/images/home/index/3.png"
   />
-  <CardImage
+  <ImageCard
     title="How to Setup Backups?"
     description="[ Guide ] - Setup Automated backup for Coolify and Services databases."
     href="#"
     imageSrc="/images/home/index/4.png"
   />
-</CardImages>
+</ImageCards>
 
 ---
 
 ## Coolify Basics
-<CardImages>
-  <CardImage
+<ImageCards>
+  <ImageCard
     title="What is Coolify?"
     description="Introduction to Coolify and it's features and benefits."
     href="#"
     imageSrc="/images/home/index/5.png"
   />
-  <CardImage
+  <ImageCard
     title="How to Install Coolify?"
     description="[ Guide ] - Setup your server and install Coolify."
     href="#"
     imageSrc="/images/home/index/6.png"
   />
-  <CardImage
+  <ImageCard
     title="Coolify Self-hosted vs Cloud"
     description="Comparison of Coolify Self-hosted vs Cloud Hosting."
     href="#"
     imageSrc="/images/home/index/7.png"
   />
-  <CardImage
+  <ImageCard
     title="Coolify Concepts"
     description="Concepts that you need to know about Coolify."
     href="#"
     imageSrc="/images/home/index/8.png"
   />
-</CardImages>
+</ImageCards>

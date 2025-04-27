@@ -2,7 +2,7 @@ import { Card } from "fumadocs-ui/components/card"; // Adjust import if needed
 import Image from "next/image";
 
 
-interface CardImageProps {
+interface ImageCardProps {
   title: string;
   description: string;
   href: string;
@@ -10,13 +10,13 @@ interface CardImageProps {
   imageAlt?: string;
 }
 
-export function CardImage({
+export function ImageCard({
   title,
   description,
   href,
   imageSrc,
   imageAlt = title,
-}: CardImageProps) {
+}: ImageCardProps) {
   return (
     <Card
       href={href}
