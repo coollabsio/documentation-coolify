@@ -13,8 +13,8 @@ COPY . .
 RUN bun install && \
     bun run build
 
-# Stage 2: Final NGINX image (nginxinc/nginx-unprivileged:1.27.5-alpine-slim, ARM64)
-FROM nginxinc/nginx-unprivileged@sha256:0f4b5cc46dbcd3ed755d2dbcf852713c1dd66532927ddd574e8c01fbf6c15e7f AS final
+# Stage 2: Final NGINX image (nginxinc/nginx-unprivileged:1.27.3-alpine-slim, ARM64)
+FROM nginxinc/nginx-unprivileged@sha256:ad8208f59f060b5e49638b15902af1965e2e53dc76395903fecfbee3bb0b9018 AS final
 
 # Copy the NGINX config file from the deployment folder
 COPY nginx.conf /etc/nginx/conf.d/default.conf
