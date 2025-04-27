@@ -41,6 +41,13 @@ export default async function Page(props: ParamsPromise) {
       full={page.data.full}
       breadcrumb={{ enabled: false }}
       tableOfContent={{ style: 'clerk' }}
+      editOnGithub={{
+        owner: 'coollabsio',
+        repo: 'coolify-docs',
+        sha: 'next',
+        // file path, make sure it's valid
+        path: `content/${page.file.path}`,
+      }}
     >
       <DocsBody>
         <MDXContent
