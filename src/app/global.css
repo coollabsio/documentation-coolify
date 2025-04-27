@@ -1,15 +1,12 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
+/* Below line breaks dev, and it is responsible for showing the req type on side bar, the api docs work fine without this (reported it to maintainer - https://github.com/fuma-nama/fumadocs/discussions/1789 ) */
+
+/* If you want to test the api docs locally without  waiting for maintiner to fix the issue then read the readme file on the same directory as this css file */
+/* @import 'fumadocs-openapi/css/preset.css'; */
 
 :root {
-  --radius: 1rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0.606 0.25 292.717);
   --primary-foreground: oklch(0.969 0.016 293.756);
   --secondary: oklch(0.967 0.001 286.375);
@@ -45,7 +42,7 @@
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.7 0.22 293.009);
-  --primary-foreground: oklch(0.421 0.095 57.708);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);

@@ -3,31 +3,35 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build && next-sitemap",
     "dev": "next dev --turbo",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "gen:api": "node ./scripts/generate-api-docs.mjs",
+    "build": "bun run gen:api && next build && next-sitemap && next export"
   },
   "dependencies": {
-    "fumadocs-core": "15.2.11",
+    "ajv": "^8.17.1",
+    "fumadocs-core": "^15.2.11",
     "fumadocs-mdx": "11.6.1",
-    "fumadocs-ui": "15.2.11",
+    "fumadocs-openapi": "^8.1.2",
+    "fumadocs-ui": "^15.2.11",
     "lucide-react": "^0.503.0",
     "next": "15.3.1",
     "next-sitemap": "^4.2.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "shiki": "^3.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/mdx": "^2.0.13",
     "@types/node": "22.15.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "typescript": "^5.8.3",
-    "@types/mdx": "^2.0.13",
-    "@tailwindcss/postcss": "^4.1.4",
-    "tailwindcss": "^4.1.4",
-    "postcss": "^8.5.3",
     "eslint": "^8",
-    "eslint-config-next": "15.3.1"
+    "eslint-config-next": "15.3.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
   }
 }

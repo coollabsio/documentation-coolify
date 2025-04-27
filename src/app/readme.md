@@ -1,0 +1,1 @@
+Go to /node_modules/fumadocs-openapi and create a new folder called css then inside the folder create a new file called preset.css and add this line to the file: @source '../dist/**/*.js';  then uncomment this @import 'fumadocs-openapi/css/preset.css'; line in the global.css file and visit the api page on docs - it will work
