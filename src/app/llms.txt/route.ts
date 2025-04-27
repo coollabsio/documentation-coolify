@@ -20,7 +20,7 @@ const processor = remark()
  
 export async function GET() {
   // all scanned content
-  const files = await fg(['./content/**/*.mdx']);
+  const files = await fg(['./content/v5/**/*.mdx']);
  
   const scan = files.map(async (file) => {
     const fileContent = await fs.readFile(file);

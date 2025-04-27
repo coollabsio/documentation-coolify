@@ -15,9 +15,9 @@ export default async function Page(props: ParamsPromise) {
   // Await the params promise before using
   const { slug } = await props.params;
 
-  // If slug is missing or empty, redirect to /docs/home
-  if (!slug || slug.length === 0) {
-    redirect('/docs/home');
+  // If slug is missing or empty and it's /docs/v5, redirect to /docs/v5/home
+  if (!slug || slug.length === 0 || (slug.length === 1 && slug[0] === 'v5')) {
+    redirect('/docs/v5/home');
   }
 
   const page = source.getPage(slug);
@@ -44,7 +44,7 @@ export default async function Page(props: ParamsPromise) {
         owner: 'coollabsio',
         repo: 'coolify-docs',
         sha: 'next',
-        path: `content/${page.file.path}`,
+        path: `content/v5/${page.file.path}`,
       }}
     >
       <DocsBody>
@@ -64,13 +64,14 @@ export default async function Page(props: ParamsPromise) {
   );
 }
 
-// Tell Next.js all the paths we need to pre-render, including the base /docs
+// Tell Next.js all the paths we need to pre-render, including the base /docs/v5
 export async function generateStaticParams() {
   // source.generateParams() returns e.g. [{ slug: ['home'] }, ...]
   const paramsList = await source.generateParams();
   return [
-    // include the empty slug for /docs itself
+    // include the empty slug for /docs and /docs/v5 itself
     { slug: [] },
+    { slug: ['v5'] }, // This ensures /docs/v5 is pre-rendered
     // then all the real doc pages
     ...paramsList,
   ];
@@ -81,8 +82,8 @@ export async function generateMetadata(props: ParamsPromise) {
   // Await the params promise
   const { slug } = await props.params;
 
-  // Redirect metadata too if someone hits /docs directly
-  if (!slug || slug.length === 0) {
+  // Redirect metadata too if someone hits /docs/v5 directly
+  if (!slug || slug.length === 0 || (slug.length === 1 && slug[0] === 'v5')) {
     return {
       title: 'Redirecting...',
       description: 'Redirecting to Home page...',
