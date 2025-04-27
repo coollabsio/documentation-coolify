@@ -8,7 +8,7 @@ import { Cpu, Microchip, Database, ArrowUpDown, Cog, Radiation, CircleDashed, Us
 import { Unplug, ServerCrash, Cloud } from "lucide-react";
 import { CardImage } from "@/components/CardImage";
 import { CardImages } from "@/components/CardImages";
-import { Imagez } from "@/components/Imagez";
+import { MediaCard } from "@/components/media-card";
 import { Imagezs } from "@/components/Imagezs";
 
 ![](/images/umami.png)
@@ -25,22 +25,22 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics.
 <Tabs items={["Dark Mode", "Light Mode"]}>
 <Tab value="Dark Mode">
 <Imagezs>
-  <Imagez
+  <MediaCard
     description="Server Validation"
     imageSrc="/images/images/1.png"
     eventName="NPM card"
   />
-  <Imagez
+  <MediaCard
     description="Server Settings"
     imageSrc="/images/images/2.png"
     eventName="PNPM card"
   />
-  <Imagez
+  <MediaCard
     description="Server Tunnels"
     imageSrc="/images/images/3.png"
     eventName="YARN card"
   />
-    <Imagez
+    <MediaCard
     description="Connect Servers"
     imageSrc="/images/images/4.png"
     eventName="YARN card"
@@ -50,22 +50,22 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics.
 
 <Tab value="Light Mode">
 <Imagezs>
-  <Imagez
+  <MediaCard
     description="Tunnel Creator"
     imageSrc="/images/images/5.png"
     eventName="NPM card"
   />
-  <Imagez
+  <MediaCard
     description="Tunnel Installer"
     imageSrc="/images/images/6.png"
     eventName="PNPM card"
   />
-  <Imagez
+  <MediaCard
     description="Tunnel Connectors"
     imageSrc="/images/images/7.png"
     eventName="YARN card"
   />
-    <Imagez
+    <MediaCard
     description="Traffic Router"
     imageSrc="/images/images/8.png"
     eventName="YARN card"
