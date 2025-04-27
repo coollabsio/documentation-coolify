@@ -1,4 +1,3 @@
-// src/app/docs/[[...slug]]/page.tsx
 import { source } from '@/lib/source';
 import {
   DocsPage,
@@ -45,7 +44,6 @@ export default async function Page(props: ParamsPromise) {
         owner: 'coollabsio',
         repo: 'coolify-docs',
         sha: 'next',
-        // file path, make sure it's valid
         path: `content/${page.file.path}`,
       }}
     >

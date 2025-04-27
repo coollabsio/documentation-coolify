@@ -17,7 +17,6 @@ export function getMDXComponents(components: MDXComponents = {}): MDXComponents 
         alt={alt as string}
         width={'1280'}
         height={'720'}
-        data-umami-event="Zoom Images"
         {...props}
       />
     ),
