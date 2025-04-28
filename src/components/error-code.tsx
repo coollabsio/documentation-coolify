@@ -1,0 +1,47 @@
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react';
+import { cn } from 'fumadocs-ui/utils/cn';
+
+type ErrorCodeProps = Omit<HTMLAttributes<HTMLDivElement>, 'title'> & {
+  title?: ReactNode;
+  code?: string | number;
+  children?: ReactNode;
+};
+
+export const ErrorCode = forwardRef<HTMLDivElement, ErrorCodeProps>(
+  ({ className, children, title, code, ...props }, ref) => {
+    const statusCode = code ? (
+      <span className="ml-2 inline-flex items-center justify-center bg-[#ffe4e4] dark:bg-[#573131] text-[#ff6166] dark:text-[#ff6166] rounded-lg text-sm font-medium mr-3 h-8 w-12">
+        {code}
+      </span>
+
+    ) : null;    
+
+    const customTitle = title ? (
+      <code className="bg-gray-200 dark:bg-gray-800 px-1 rounded font-medium text-fd-card-foreground">
+        {title}
+      </code>
+    ) : null;
+
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'my-4 flex flex-row items-center gap-1 rounded-lg  bg-fd-card p-3 text-sm text-fd-card-foreground shadow-md',
+          className,
+        )}
+        {...props}
+      >
+
+        {statusCode}
+        <div className="min-w-0 flex flex-col flex-1 gap-2 py-4">
+          {customTitle ? <p className="font-medium !my-0">{customTitle}</p> : null}
+          <div className="text-fd-muted-foreground prose-no-margin empty:hidden pl-1">
+            {children}
+          </div>
+        </div>
+      </div>
+    );
+  },
+);
+
+ErrorCode.displayName = 'ErrorCode';
