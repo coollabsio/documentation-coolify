@@ -31,11 +31,12 @@ export function ImageCard({
 
   return (
     <Card
+      className="transition hover:shadow-lg hover:bg-fd-muted cursor-pointer"
       title={
         <a
           href={href}
           onClick={handleClick}
-          className="block"
+          className="block no-underline text-inherit"
         >
           <div className="flex flex-col">
             <div className="-mx-4 -mt-4 mb-4">
