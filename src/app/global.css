@@ -1,14 +1,10 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
-
-/* Below line breaks dev, and it is responsible for showing the req type on side bar, the api docs work fine without this (reported it to maintainer - https://github.com/fuma-nama/fumadocs/discussions/1789 ) */
-
-/* If you want to test the api docs locally without  waiting for maintiner to fix the issue then read the readme file on the same directory as this css file */
 @import 'fumadocs-openapi/css/preset.css';
 
 
-/* The below codes are copy pasted from node_modules/fumadocs-ui/css/neutral.css copied it here so that we can override the colors,
+/* The below codes are copy pasted from node_modules/fumadocs-ui/css/neutral.css - copied it here so that we can override the colors,
 right now we are only overriding the main theme color to match the logo, dark and light mode both have different contrast colors for better readability */
 @theme {
   --color-fd-background: hsl(0, 0%, 96%);
