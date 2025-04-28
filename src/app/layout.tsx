@@ -18,8 +18,9 @@ export default function Layout({ children }: { children: ReactNode }) {
               type: 'static',
             },
           }}
-          
         >{children}</RootProvider>
+        {/* Replace this with production url */}
+        <script defer data-domain="coolify.dev" src="https://plausible.shadowarcanist.pvt/js/script.tagged-events.js"></script>
       </body>
     </html>
   );

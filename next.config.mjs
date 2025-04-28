@@ -7,6 +7,8 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  // Allow CORS for development purpose, only to test plausible analaytics
+  allowedDevOrigins: ['*.shadowarcanist.pvt'],
   output: 'export',
   images: {
     unoptimized: true,

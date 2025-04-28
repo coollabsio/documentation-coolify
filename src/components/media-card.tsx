@@ -2,6 +2,7 @@
 
 import { Card } from "fumadocs-ui/components/card";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom"; 
+import { trackEvent } from "@/lib/plausible"; 
 
 interface MediaCardProps {
   title: string;
@@ -9,6 +10,7 @@ interface MediaCardProps {
   href: string;
   imageSrc: string;
   imageAlt?: string;
+  plausibleEventName?: string;
 }
 
 export function MediaCard({
@@ -17,10 +19,19 @@ export function MediaCard({
   href,
   imageSrc,
   imageAlt = title,
+  plausibleEventName,
 }: MediaCardProps) {
+  
+  const handleClick = (e: React.MouseEvent) => {
+    if (plausibleEventName) {
+      trackEvent(plausibleEventName); // Track event when clicked
+    }
+  };
+
   return (
     <Card
       href={href}
+      onClick={handleClick} // Attach the handleClick to the onClick event
       title={
         <div className="flex flex-col">
           <div className="-mx-4 -mt-4 mb-4">
