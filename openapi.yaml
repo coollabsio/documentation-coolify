@@ -3,9 +3,13 @@ info:
   title: Coolify
   version: '0.1'
 servers:
-  -
-    url: 'https://app.coolify.io/api/v1'
-    description: 'Coolify Cloud API. Change the host to your own instance if you are self-hosting.'
+  - url: 'https://app.coolify.io/api/v1'
+    description: 'Coolify Cloud API'
+  - url: 'https://{self_hosted_domain}/api/v1'
+    variables:
+      self_hosted_domain:
+        default: ''
+        description: 'Enter the domain of your Self-Hosted Coolify instance (do not include https:// or http://)'
 paths:
   /applications:
     get:
