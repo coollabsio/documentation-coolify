@@ -51,7 +51,7 @@ export default async function Page(props: ParamsPromise) {
             owner: 'coollabsio',
             repo:  'coolify-docs',
             sha:   'next',
-            path:  `content/v5/${page.file.path}`,
+            path:  `content/${page.file.path}`,
             className: '-mt-6 mb-15'
           },
         })
