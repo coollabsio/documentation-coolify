@@ -137,13 +137,9 @@ group = www-data
 listen.owner = www-data
 listen.group = www-data
 pm = dynamic
-# To reduce memory/CPU usage, change to 5.
 pm.max_children = 50
-# To reduce memory/CPU usage, change to 1.
 pm.min_spare_servers = 4
-# To reduce memory/CPU usage, change to 3.
 pm.max_spare_servers = 32
-# To reduce memory/CPU usage, change to 2.
 pm.start_servers = 18
 clear_env = no
 php_admin_value[post_max_size] = 35M
