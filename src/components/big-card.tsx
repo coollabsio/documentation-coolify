@@ -14,7 +14,7 @@ export type BigCardProps = Omit<HTMLAttributes<HTMLElement>, 'title'> & {
   href?: string;
   external?: boolean;
   arrow?: boolean;
-  plausibleEventName?: string;
+  data_plausible_event_name?: string;
 };
 
 export function BigCard({
@@ -23,19 +23,19 @@ export function BigCard({
   title,
   description,
   arrow,
-  plausibleEventName,
+  data_plausible_event_name,
   ...props
 }: BigCardProps) {
   const E = props.href ? Link : 'div';
 
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (
-      plausibleEventName &&
+      data_plausible_event_name &&
       typeof window !== 'undefined' &&
       typeof window.plausible === 'function'
     ) {
-      window.plausible(plausibleEventName);
-      console.log(`[Plausible] Tracked event: ${plausibleEventName}`);
+      window.plausible(data_plausible_event_name);
+      console.log(`[Plausible] Tracked event: ${data_plausible_event_name}`);
     }
   };
 

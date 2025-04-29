@@ -43,11 +43,11 @@ export function getMDXComponents(extra: MDXComponents = {}): MDXComponents {
 
   for (const [tag, Component] of Object.entries(base) as [keyof MDXComponents, React.ComponentType<any>][]) {
     wrapped[tag] = (props: any) => {
-      const { plausibleEventName, onClick, _rsc, ...rest } = props
+      const { data_plausible_event_name, onClick, _rsc, ...rest } = props
 
-      if (typeof plausibleEventName === 'string' && typeof window !== 'undefined') {
+      if (typeof data_plausible_event_name === 'string' && typeof window !== 'undefined') {
         const handleClick = (e: any) => {
-          trackEvent(plausibleEventName)
+          trackEvent(data_plausible_event_name)
           if (typeof onClick === 'function') onClick(e)
         }
 

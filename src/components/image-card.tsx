@@ -10,7 +10,7 @@ interface ImageCardProps {
   href: string;
   imageSrc: string;
   imageAlt?: string;
-  plausibleEventName?: string;
+  data_plausible_event_name?: string;
 }
 
 export function ImageCard({
@@ -19,13 +19,13 @@ export function ImageCard({
   href,
   imageSrc,
   imageAlt = title,
-  plausibleEventName,
+  data_plausible_event_name,
 }: ImageCardProps) {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (plausibleEventName && typeof window !== "undefined" && typeof window.plausible === "function") {
-      window.plausible(plausibleEventName); // Trigger the Plausible event
-      console.log(`[Plausible] Tracked event: ${plausibleEventName}`);
+    if (data_plausible_event_name && typeof window !== "undefined" && typeof window.plausible === "function") {
+      window.plausible(data_plausible_event_name); // Trigger the Plausible event
+      console.log(`[Plausible] Tracked event: ${data_plausible_event_name}`);
     }
   };
 

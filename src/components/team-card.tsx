@@ -18,7 +18,7 @@ export interface TeamCardProps {
   position: string;
   imageSrc: string;
   imageAlt?: string;
-  plausibleEventName?: string;
+  data_plausible_event_name?: string;
   x?: string;
   web?: string;
   youtube?: string;
@@ -30,7 +30,7 @@ export function TeamCard({
   position,
   imageSrc,
   imageAlt,
-  plausibleEventName,
+  data_plausible_event_name,
   className,
   ...rest
 }: TeamCardProps) {
@@ -41,12 +41,12 @@ export function TeamCard({
       const url = rest[key] as string;
       const handleSocialClick = () => {
         if (
-          plausibleEventName &&
+          data_plausible_event_name &&
           typeof window !== 'undefined' &&
           typeof window.plausible === 'function'
         ) {
-          window.plausible(plausibleEventName);
-          console.log(`[Plausible] Tracked event: ${plausibleEventName}`);
+          window.plausible(data_plausible_event_name);
+          console.log(`[Plausible] Tracked event: ${data_plausible_event_name}`);
         }
       };
       return (

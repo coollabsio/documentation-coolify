@@ -10,7 +10,7 @@ interface MediaCardProps {
   href: string;
   imageSrc: string;
   imageAlt?: string;
-  plausibleEventName?: string;
+  data_plausible_event_name?: string;
 }
 
 export function MediaCard({
@@ -19,12 +19,12 @@ export function MediaCard({
   href,
   imageSrc,
   imageAlt = title,
-  plausibleEventName,
+  data_plausible_event_name,
 }: MediaCardProps) {
   
   const handleClick = (e: React.MouseEvent) => {
-    if (plausibleEventName) {
-      trackEvent(plausibleEventName); // Track event when clicked
+    if (data_plausible_event_name) {
+      trackEvent(data_plausible_event_name); // Track event when clicked
     }
   };
 
