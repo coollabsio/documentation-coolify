@@ -25,7 +25,6 @@ export function ImageCard({
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (data_plausible_event_name && typeof window !== "undefined" && typeof window.plausible === "function") {
       window.plausible(data_plausible_event_name); // Trigger the Plausible event
-      console.log(`[Plausible] Tracked event: ${data_plausible_event_name}`);
     }
   };
 

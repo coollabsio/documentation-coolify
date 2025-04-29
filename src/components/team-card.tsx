@@ -46,7 +46,6 @@ export function TeamCard({
           typeof window.plausible === 'function'
         ) {
           window.plausible(data_plausible_event_name);
-          console.log(`[Plausible] Tracked event: ${data_plausible_event_name}`);
         }
       };
       return (
