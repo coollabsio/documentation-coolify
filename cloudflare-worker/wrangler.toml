@@ -1,0 +1,10 @@
+name = "coolify-docs-feedback"
+main = "src/index.ts"
+compatibility_date = "2025-04-29"
+
+
+[vars]
+# Site url is shown on discord message
+SITE_URL = "https://coolify.io"
+# we’ll supply two secrets via `wrangler secret put`:
+# DISCORD_WEBHOOK_URL_GOOD, DISCORD_WEBHOOK_URL_BAD

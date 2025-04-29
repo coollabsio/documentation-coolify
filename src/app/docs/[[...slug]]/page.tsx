@@ -6,6 +6,7 @@ import {
 import { notFound, redirect } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
+import FeedbackClient from '@/components/feedback-client'
 
 type ParamsPromise = { params: Promise<{ slug?: string[] }> };
 
@@ -45,7 +46,7 @@ export default async function Page(props: ParamsPromise) {
         repo: 'coolify-docs',
         sha: 'next',
         path: `content/v5/${page.file.path}`,
-      }}
+      }}    
     >
       <DocsBody>
         <MDXContent
@@ -60,6 +61,7 @@ export default async function Page(props: ParamsPromise) {
           </div>
         )}
       </DocsBody>
+      <FeedbackClient />
     </DocsPage>
   );
 }
