@@ -1,11 +1,53 @@
 ---
-title: Quick Start
+title: Changelog
 description: Components
-full: true
+full: false
 showEdit: false
 showLastUpdated: false
 showRate: false
 ---
 
+import { ChangelogEntry } from "@/components/changelog";
 
-## Changelogs
+# Changelog
+New updates and improvements
+
+## Coolify v5.0.0-beta.2
+<ChangelogEntry
+  date="April 27 2025"
+  description="Overhauled usability in the WYSIWYG editor."
+  sections={[
+    {
+      title: "Fixes",
+      items: [
+        "[ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.",
+        <span>[ Backups (Coolify) ] - S3 storage selection is shown even if no <a href="/docs/seo">S3 Storage</a> is defined/active.</span>,
+        "[ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard."
+      ]
+    },
+    {
+      title: "New Features",
+      items: [
+        "Magic environment variables are now supported in Git-based Docker-Compose deployments  ",
+        "Added HTTP Basic Authentication on the dashboard for all services ",
+        "Added support for custom --hostname option in Docker-based deployments ",
+      ]
+    }
+  ]}
+/>
+
+
+## Coolify v5.0.0-beta.1
+<ChangelogEntry
+  date="April 22 2025"
+  description="Tiny Bug Fixes"
+  sections={[
+    {
+      title: "Fixes",
+      items: [
+        "[ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.",
+        "[ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard."
+      ]
+    }
+  ]}
+/>
