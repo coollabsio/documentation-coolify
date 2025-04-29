@@ -10,8 +10,6 @@ import FeedbackClient from '@/components/feedback-client'
 
 type ParamsPromise = { params: Promise<{ slug?: string[] }> };
 
-type PageParams = { slug?: string[] };
-
 export default async function Page(props: ParamsPromise) {
   // Await the params promise before using
   const { slug } = await props.params;
@@ -24,6 +22,11 @@ export default async function Page(props: ParamsPromise) {
   const page = source.getPage(slug);
   if (!page) notFound();
 
+  const showEdit        = page.data.showEdit        ?? true;
+  const showLastUpdated = page.data.showLastUpdated ?? true;
+  const showRate        = page.data.showRate        ?? true;
+  const isApiPage     = slug[0] === 'v5' && slug[1] === 'api';
+  const finalShowEdit = isApiPage ? false : showEdit;
   const MDXContent = page.data.body;
 
   // Safely handle optional lastModified
@@ -41,13 +44,18 @@ export default async function Page(props: ParamsPromise) {
       full={page.data.full}
       breadcrumb={{ enabled: false }}
       tableOfContent={{ style: 'clerk' }}
-      editOnGithub={{
-        owner: 'coollabsio',
-        repo: 'coolify-docs',
-        sha: 'next',
-        path: `content/v5/${page.file.path}`,
-      }}    
       footer={{ enabled: false }}
+      {
+        ...(finalShowEdit && {
+          editOnGithub: {
+            owner: 'coollabsio',
+            repo:  'coolify-docs',
+            sha:   'next',
+            path:  `content/v5/${page.file.path}`,
+            className: '-mt-6 mb-15'
+          },
+        })
+      }
     >
       <DocsBody>
         <MDXContent
@@ -56,13 +64,16 @@ export default async function Page(props: ParamsPromise) {
           })}
         />
         <br />
-        {lastUpdated && (
-          <div style={{ fontSize: '0.875rem', color: '#666' }}>
-            Last updated: {lastUpdated}
-          </div>
-        )}
+        {showLastUpdated && lastUpdated && (
+        <div
+          className="last-updated"
+          style={{ fontSize: '0.875rem', color: '#666' }}
+        >
+          Last updated: {lastUpdated}
+        </div>
+      )}
+        {showRate && <FeedbackClient />}
       </DocsBody>
-      <FeedbackClient />
     </DocsPage>
   );
 }
