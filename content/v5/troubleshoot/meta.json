@@ -4,7 +4,22 @@
   "icon": "Wrench",
   "pages": 
   [
-    "--- Get Started ---",
-    "..."
+    "--- Security ---",
+    "overview",
+    "--- Networking ---",
+    "overview",
+    "--- Infrastructure ---",
+    "overview",    
+    "--- Storage ---",
+    "overview",
+    "--- Monitoring ---",
+    "overview",
+    "--- Links ---",
+    "[UsersRound][Discord Community](https://discord.gg/coolify)",
+    "[Sparkles][Become a Sponsor](https://coolify.io/sponsorships/)",
+    "[Shirt][Buy Merch](https://shop.coollabs.io/)",
+    "[Bug][Report a Bug](https://discord.gg/coolifyx)",
+    "[Lightbulb][Suggest an Idea](https://discord.gg/coolifyy)",
+    "!index"
   ]
 }

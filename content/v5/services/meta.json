@@ -1,9 +1,38 @@
 {
   "title": "Services",
   "root": true,
-  "icon": "House",
+  "icon": "Cog",
   "pages": 
   [
-    "..."
+    "catalog",
+    "--- AI & ML ---",
+    "service",
+    "--- Automation ---",
+    "service",    
+    "--- Communication ---",
+    "service",
+    "--- CMS & Blogging ---",
+    "service",
+    "--- Data & Analytics ---",
+    "service",
+    "--- Design & Creative ---",
+    "service",
+    "--- Development ---",
+    "service",
+    "--- File Management ---",
+    "service",
+    "--- Infrastructure & Security ---",
+    "service",
+    "--- Media ---",
+    "service",
+    "--- Productivity ---",
+    "service",
+    "--- Links ---",
+    "[UsersRound][Discord Community](https://discord.gg/coolify)",
+    "[Sparkles][Become a Sponsor](https://coolify.io/sponsorships/)",
+    "[Shirt][Buy Merch](https://shop.coollabs.io/)",
+    "[Bug][Report a Bug](https://discord.gg/coolifyx)",
+    "[Lightbulb][Suggest an Idea](https://discord.gg/coolifyy)",
+    "!index"
   ]
 }
