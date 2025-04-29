@@ -47,6 +47,7 @@ export default async function Page(props: ParamsPromise) {
         sha: 'next',
         path: `content/v5/${page.file.path}`,
       }}    
+      footer={{ enabled: false }}
     >
       <DocsBody>
         <MDXContent
