@@ -138,7 +138,7 @@ export function Rate({
               autoFocus
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 resize-none focus-visible:outline-none placeholder:text-fd-muted-foreground"
+              className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 focus-visible:outline-none placeholder:text-fd-muted-foreground"
               placeholder="Leave your feedback..."
               onKeyDown={(e) => {
                 if (!e.shiftKey && e.key === 'Enter') {
