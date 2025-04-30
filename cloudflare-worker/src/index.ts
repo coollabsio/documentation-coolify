@@ -4,22 +4,35 @@ export interface Env {
   // Discord webhook secrets
   DISCORD_WEBHOOK_URL_GOOD: string;
   DISCORD_WEBHOOK_URL_BAD: string;
+  FEEDBACK_KV: KVNamespace;
+  ALLOWED_ORIGIN: string;
+}
+
+// 1h window, max 10 requests per IP
+const WINDOW_SECONDS = 60 * 60;
+const MAX_REQUESTS = 10;
+
+// SHA-256 hex hash of input (to avoid storing raw IP)
+async function hash(input: string): Promise<string> {
+  const data = new TextEncoder().encode(input);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 export default {
   async fetch(request: Request, env: Env) {
-    const ALLOWED_ORIGIN = "https://coolify.io";
+    const ALLOWED_ORIGIN = env.ALLOWED_ORIGIN;
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    };
 
-    // Handle CORS preflight
+    // CORS preflight
     if (request.method === "OPTIONS") {
-      return new Response(null, {
-        status: 204,
-        headers: {
-          "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-          "Access-Control-Allow-Methods": "POST, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type",
-        },
-      });
+      return new Response(null, { status: 204, headers: corsHeaders });
     }
 
     if (request.method !== "POST") {
@@ -33,12 +46,37 @@ export default {
     let payload: { url: string; opinion: "good" | "bad"; message: string };
     try {
       payload = await request.json();
-    } catch (err) {
-      return new Response("Invalid JSON: " + err, {
+    } catch {
+      return new Response("Invalid JSON", {
         status: 400,
         headers: { "Access-Control-Allow-Origin": ALLOWED_ORIGIN },
       });
     }
+
+    // Rate-limit: IP only
+    const ip = request.headers.get("cf-connecting-ip") || "unknown";
+    const ipHash = await hash(ip);
+    const rlKey = `rl:${ipHash}`;
+
+    const prev = await env.FEEDBACK_KV.get(rlKey);
+    const count = prev ? parseInt(prev, 10) : 0;
+    if (count >= MAX_REQUESTS) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Too Many Requests" }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+          },
+        }
+      );
+    }
+    // Bump counter (auto-expires in 1h)
+    await env.FEEDBACK_KV.put(rlKey, String(count + 1), {
+      expirationTtl: WINDOW_SECONDS,
+    });
+
     const { url, opinion, message } = payload;
 
     // Resolve full URL for absolute links

@@ -6,5 +6,11 @@ compatibility_date = "2025-04-29"
 [vars]
 # Site url is shown on discord message
 SITE_URL = "https://coolify.io"
-# we’ll supply two secrets via `wrangler secret put`:
-# DISCORD_WEBHOOK_URL_GOOD, DISCORD_WEBHOOK_URL_BAD
+ALLOWED_ORIGIN         = "*"
+# Bind DISCORD_WEBHOOK_URL_GOOD & _BAD via `wrangler secret put`
+
+# [env.production]
+# kv_namespaces = [
+#   { binding = "FEEDBACK_KV", id = "<KV_NAMESPACE_ID>" }
+# ]
+# Add KV from Cloudflare dashboard directly 
