@@ -1,5 +1,5 @@
-# Stage 1: Builder stage using the optimized Bun image (oven/bun:canary-alpine, ARM64)
-FROM oven/bun@sha256:61619159073fe9a09b813ff20364d676b6ce8a8a9e57307bef1380d1baa99be6 AS builder
+# Stage 1: Builder stage using the optimized Bun image (oven/bun:1.2.11-alpine, linux/arm64)
+FROM oven/bun:1.2.11-alpine AS builder
 
 # Set the working directory for the build
 WORKDIR /app
@@ -13,8 +13,8 @@ COPY apps/docs-site .
 RUN bun install && \
     bun run build
 
-# Stage 2: Final NGINX image (nginxinc/nginx-unprivileged:1.27.3-alpine-slim, ARM64)
-FROM nginxinc/nginx-unprivileged@sha256:ad8208f59f060b5e49638b15902af1965e2e53dc76395903fecfbee3bb0b9018 AS final
+# Stage 2: Final NGINX image (nginxinc/nginx-unprivileged:alpine3.21-slim, linux/arm64)
+FROM nginxinc/nginx-unprivileged:alpine3.21-slim AS final
 
 # Copy the NGINX config file from the deployment folder
 COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
