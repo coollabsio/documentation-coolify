@@ -550,6 +550,7 @@ export default defineConfig({
             items: [
               { text: 'Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
               { text: 'Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+              { text: 'Disable 2FA Manually', link: '/troubleshoot/dashboard/disable-2fa-manually' },
             ]
           },
           {
