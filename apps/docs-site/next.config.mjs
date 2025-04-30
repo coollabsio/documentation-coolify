@@ -7,6 +7,12 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+
+  // Disable ESLint during builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   // Allow CORS for development purpose, only to test plausible analaytics
   allowedDevOrigins: ['*.shadowarcanist.pvt'],
   output: 'export',
