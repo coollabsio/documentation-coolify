@@ -7,7 +7,7 @@
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "gen:api": "node ./scripts/generate-api-docs.mjs",
-    "build": "next build && next-sitemap && next export"
+    "build": "next build && next-sitemap"
   },
   "dependencies": {
     "ajv": "^8.17.1",
