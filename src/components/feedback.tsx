@@ -44,8 +44,10 @@ function set(url: string, feedback: Feedback | null) {
  
 export function Rate({
   onRateAction,
+  rateLimitExceeded = false,
 }: {
   onRateAction: (url: string, feedback: Feedback) => Promise<void>;
+  rateLimitExceeded?: boolean;
 }) {
   const url = usePathname();
   const [previous, setPrevious] = useState<Feedback | null>(null);
@@ -115,7 +117,11 @@ export function Rate({
       <CollapsibleContent className="mt-3">
         {previous ? (
           <div className="px-3 py-6 flex flex-col items-center gap-3 bg-fd-card text-fd-card-foreground text-sm text-center rounded-xl text-fd-muted-foreground">
-            <p>Thank you for your feedback!</p>
+            <p>
+              {rateLimitExceeded
+                ? 'Too many requests. Please wait before trying again.'
+                : 'Thank you for your feedback!'}
+            </p>
             <button
               className={cn(
                 buttonVariants({
@@ -129,7 +135,7 @@ export function Rate({
                 setPrevious(null);
               }}
             >
-              Submit Again?
+              {rateLimitExceeded ? 'Try Again?' : 'Submit Again?'}
             </button>
           </div>
         ) : (
