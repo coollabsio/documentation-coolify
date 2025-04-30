@@ -1,0 +1,16 @@
+# Ignore absolutely everything by default
+*
+
+# …but allow the deployment folder and its contents
+!deployment/
+!deployment/Dockerfile
+!deployment/nginx.conf
+
+# …and allow apps/docs-site and everything under it
+!apps/
+apps/*
+!apps/docs-site/
+!apps/docs-site/**
+
+# (Optionally) ignore local Dockerfiles elsewhere if any
+!Dockerfile

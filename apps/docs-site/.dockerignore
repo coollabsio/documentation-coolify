@@ -1,1 +1,7 @@
 node_modules
+.source
+.next
+.env.example
+.gitignore
+next-env.d.ts
+readme.node_modules
