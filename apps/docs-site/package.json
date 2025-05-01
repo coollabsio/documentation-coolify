@@ -7,7 +7,8 @@
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "gen:api": "node ./scripts/generate-api-docs.mjs",
-    "build": "next build && next-sitemap"
+    "build": "next build && next-sitemap",
+    "shadow:staging": "sh ../../development/shadowarcanist/staging.sh"
   },
   "dependencies": {
     "ajv": "^8.17.1",
