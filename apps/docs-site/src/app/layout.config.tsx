@@ -13,7 +13,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <Image src="/logo.png" alt="Logo" width={24} height={24} />
-        Coolify Documentation
+        Coolify Docs
       </>
     ),
   },
