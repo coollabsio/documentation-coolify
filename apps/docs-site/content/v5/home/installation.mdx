@@ -2,4 +2,229 @@
 title: Installation
 description: Explore Coolify’s features, integrations, guides, troubleshooting tips, and usage steps.
 icon: Rocket
+full: false
+showEdit: true
+showLastUpdated: true
+showRate: true
 ---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Cpu, Microchip, Database, ArrowUpDown, Cog, Radiation, CircleDashed, User, KeyRound, Link, BookMarked, Code, LifeBuoy, AlertTriangle, Info, Layers, Server, Box, Download, Folder, HardDrive, Play, Settings, Shield, Terminal } from "lucide-react";
+import { Unplug, ServerCrash, Cloud } from "lucide-react";
+import { ImageCard } from "@/components/image-card";
+import { ImageCardGroup } from "@/components/image-card-group";
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+# Installation
+If you decide to go with **Coolify Cloud**, there's no installation required. 
+
+Simply visit [Coolify Cloud Registration](https://app.coolify.io/register) to create an account and start using Coolify within minutes!
+
+Below, you'll find instructions for installing Coolify if you prefer to **self-host** it.
+
+---
+
+## Self-hosted Installation
+If you like taking control and managing everything yourself, self-hosting Coolify is the way to go. 
+
+It's completely free (apart from your server costs) and gives you full control over your setup.
+
+---
+
+## Before You Begin
+Before installing Coolify, make sure your server meets the necessary requirements.
+
+<Tabs items={['System', 'OS', 'CPU/Arch', 'Specs', 'Real-World Usage']}>
+
+  <Tab value="System">
+    <Callout>Coolify requires a server with SSH access. A fresh server is strongly recommended to avoid app conflicts.</Callout>
+    <Details className="mt-5">
+      <Detail label="Access" value="SSH required" icon={<Link />} />
+      <Detail label="Server Type" value="VPS, Dedicated, VM, Pi, etc." icon={<Server />} />
+      <Detail label="Network" value="IPv4 recommended" icon={<ArrowUpDown />} />
+    </Details>
+  </Tab>
+
+  <Tab value="OS">
+    <Callout>Coolify supports multiple Linux distributions. Make sure your OS is one of the supported ones.</Callout>
+    <Details className="mt-5">
+      <Detail label="Debian-based" value="Debian, Ubuntu" icon={<CircleDashed />} />
+      <Detail label="RedHat-based" value="CentOS, Fedora, AlmaLinux, etc." icon={<CircleDashed />} />
+      <Detail label="SUSE-based" value="SUSE, openSUSE" icon={<CircleDashed />} />
+      <Detail label="Other" value="Arch, Alpine, Raspberry Pi OS (64-bit)" icon={<CircleDashed />} />
+    </Details>
+  </Tab>
+
+  <Tab value="CPU/Arch">
+    <Callout>Coolify supports 64-bit systems only. Make sure your server is running a compatible architecture.</Callout>
+    <Details className="mt-5">
+      <Detail label="Supported Architectures" value="AMD64, ARM64" icon={<Cpu />} />
+      <Detail label="Raspberry Pi Note" value="64-bit OS required" icon={<Info />} />
+    </Details>
+  </Tab>
+
+  <Tab value="Specs">
+    <Callout>Minimum recommended specs ensure stable performance. Higher specs may be needed based on usage.</Callout>
+    <Details className="mt-5">
+      <Detail label="CPU" value="2 cores" icon={<Cpu />} />
+      <Detail label="Memory" value="2 GB RAM" icon={<Microchip />} />
+      <Detail label="Storage" value="30 GB free" icon={<Database />} />
+      <Detail label="Tip" value="Enable swap or upgrade if building & hosting on same server" icon={<AlertTriangle />} />
+    </Details>
+  </Tab>
+
+  <Tab value="Real-World Usage">
+    <Callout>This is an example production setup from a real Coolify user for running multiple apps and services.</Callout>
+    <Details className="mt-5">
+      <Detail label="Memory" value="8 GB (avg 3.5 GB used)" icon={<Microchip />} />
+      <Detail label="CPU" value="4 cores (avg 20–30%)" icon={<Cpu />} />
+      <Detail label="Storage" value="150 GB (avg 40 GB used)" icon={<Database />} />
+      <Detail label="Apps Hosted" value="3 NodeJS, 4 Static, Ghost, DBs, etc." icon={<Layers />} />
+    </Details>
+  </Tab>
+
+</Tabs>
+
+
+
+## Installation
+
+Coolify can be installed in several ways depending on your platform and preferences.
+
+<Tabs items={['Automated', 'Manual', 'Rasberry PI', 'Hetzner', 'Oracle', 'AWS']}>
+
+  <Tab value="Automated">
+    <Callout type="success">
+       Automatically installs Docker and Coolify with minimal setup. 
+       
+       (Recommended for most users)
+    </Callout>
+
+    <Steps>
+    <Step>
+    **Prepare Your Server**
+    - Log in as the root user (non-root users are not fully supported yet).
+    - Set up your firewall with the help of the [Firewall Guide](/knowledge-base/server/firewall).
+    - Ensure that [curl](https://curl.se/) is installed (it usually comes pre-installed).
+    </Step>
+
+    <Step>
+    **Run the Installation Script**
+
+    Once your server is ready, run:
+    ```sh
+    curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+    ```
+    <Callout type="tip">
+      If you're not logged in as the root user, run the script with sudo:
+
+      ```sh
+      curl -fsSL https://cdn.coollabs.io/coolify/install.sh | sudo bash
+      ```
+    </Callout>
+
+    <Accordions type="single">
+      <Accordion title="Learn more about the Installer">
+      #### What the Installer Does: [!toc]
+      - Installs essential tools (curl, wget, git, jq, openssl)
+      - Installs Docker Engine (version 24+)
+      - Configures Docker settings (logging, daemon)
+      - Sets up directories at `/data/coolify`
+      - Configures SSH keys for server management
+      - Installs and starts Coolify
+
+
+      #### Source Code [!toc]
+      - View the [Script's Source Code](https://github.com/coollabsio/coolify/blob/main/scripts/install.sh)
+
+      </Accordion>
+      <Accordion title="Tip for advanced users">
+      You can also set up the first admin account directly during the installation. For details, see: [Create Root User with Environment Variables](/knowledge-base/create-root-user-with-env)
+      There are several environment variables that you can set to customize your Coolify installation.
+
+      For example, you can setup a default root user or define the default docker network pool.
+
+      See the [Define Custom Docker Network with ENV ](/knowledge-base/define-custom-docker-network-with-env) or the [Create Root User with ENV](/knowledge-base/create-root-user-with-env) for more details.
+      </Accordion>
+    </Accordions>
+    </Step>
+
+
+    <Step>
+    **Access Coolify**
+
+    After installation, the script will display your Coolify URL (e.g., `http://203.0.113.1:8000`). 
+    
+    Visit this URL, and you'll be redirected to a registration page to create your first admin account.
+
+    <Callout type="warn">
+    **Immediately create your admin account after installation.**
+    
+    If someone else accesses the registration page before you, they might gain full control of your server.
+    </Callout>
+    </Step>
+    </Steps>
+
+  </Tab>
+
+  <Tab value="Manual">
+    <Callout type="warn">
+      Advanced method. Gives full control over the setup but requires manual Docker, directory, and environment config.
+    </Callout>
+    <Details className="mt-5">
+      <Detail label="Docker" value="Install manually (24+ required)" icon={<Box />} />
+      <Detail label="Directory" value="/data/coolify must exist" icon={<Folder />} />
+      <Detail label="Env Setup" value="Manually set .env values" icon={<Settings />} />
+      <Detail label="Launch" value="docker compose up -d" icon={<Play />} />
+    </Details>
+  </Tab>
+
+  <Tab value="Rasberry PI">
+    <Callout type="warn">
+      Advanced method. Gives full control over the setup but requires manual Docker, directory, and environment config.
+    </Callout>
+    <Details className="mt-5">
+      <Detail label="Docker" value="Install manually (24+ required)" icon={<Box />} />
+      <Detail label="Directory" value="/data/coolify must exist" icon={<Folder />} />
+      <Detail label="Env Setup" value="Manually set .env values" icon={<Settings />} />
+      <Detail label="Launch" value="docker compose up -d" icon={<Play />} />
+    </Details>
+  </Tab>
+
+  <Tab value="Hetzner">
+    <Callout>
+      Hetzner is our recommended hosting provider. You can deploy pre-configured servers quickly.
+    </Callout>
+    <Details className="mt-5">
+      <Detail label="Recommended Image" value="Ubuntu 22.04 Minimal" icon={<HardDrive />} />
+      <Detail label="SSH Access" value="Enable during server creation" icon={<KeyRound />} />
+      <Detail label="Firewall" value="Allow ports 22, 80, 443" icon={<Shield />} />
+      <Detail label="Install" value="Use Standard method or our prebuilt images" icon={<Download />} />
+    </Details>
+  </Tab>
+
+  <Tab value="Oracle">
+    <Callout type="info">
+      Oracle Free Tier is compatible with Coolify but may require swap space due to 1GB RAM limitation.
+    </Callout>
+    <Details className="mt-5">
+      <Detail label="OS Image" value="Ubuntu 22.04 LTS" icon={<HardDrive />} />
+      <Detail label="Memory" value="1GB – Add swap manually" icon={<Microchip />} />
+      <Detail label="Install" value="Standard method works with curl" icon={<Terminal />} />
+    </Details>
+  </Tab>
+
+  <Tab value="AWS">
+    <Callout type="info">
+      Coolify works well on AWS EC2 instances. Choose an instance with at least 2GB RAM.
+    </Callout>
+    <Details className="mt-5">
+      <Detail label="Recommended Type" value="t3.small or larger" icon={<Cpu />} />
+      <Detail label="OS Image" value="Ubuntu 22.04" icon={<HardDrive />} />
+      <Detail label="Firewall (SG)" value="Allow ports 22, 80, 443" icon={<Shield />} />
+      <Detail label="Install" value="Run Standard install via curl" icon={<Terminal />} />
+    </Details>
+  </Tab>
+
+</Tabs>
