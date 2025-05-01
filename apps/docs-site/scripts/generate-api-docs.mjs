@@ -3,7 +3,7 @@ import { generateFiles } from 'fumadocs-openapi'
 
 void generateFiles({
   input: ['./openapi.yaml', './openapi.json'],
-  output: './content/v5/api',
+  output: './content/v5/api/endpoints',
   includeDescription: true,
   addGeneratedComment: true,
   per: 'operation',
