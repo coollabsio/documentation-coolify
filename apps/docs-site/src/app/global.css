@@ -35,7 +35,7 @@ right now we are only overriding the main theme color to match the logo, dark an
   --color-fd-card: hsl(0, 0%, 9.8%);
   --color-fd-card-foreground: hsl(0, 0%, 98%);
   --color-fd-border: hsl(0, 0%, 14%);
-  --color-fd-primary: hsl(260, 89%, 74%);
+  --color-fd-primary: rgb(169, 130, 248);
   --color-fd-primary-foreground: hsl(0, 0%, 100%);
   --color-fd-secondary: hsl(0, 0%, 12.9%);
   --color-fd-secondary-foreground: hsl(0, 0%, 98%);
@@ -52,7 +52,7 @@ right now we are only overriding the main theme color to match the logo, dark an
 
 
 .light {
-  --color-fd-primary: hsl(260, 100%, 67%);
+  --color-fd-primary: rgb(143, 87, 255);
 }
 
 .last-updated {

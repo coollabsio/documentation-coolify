@@ -1,54 +1,64 @@
-import React, { ReactNode } from "react";
+"use client";
 
-interface ChangelogSection {
-  title: string;
-  items: ReactNode[];
+import { ReactNode } from "react";
+import React from 'react';
+
+import { cn } from "fumadocs-ui/utils/cn";
+
+export interface UpdatesProps {
+  children: ReactNode;
+  className?: string;
 }
 
-interface ChangelogEntryProps {
-  date: string;
-  description?: ReactNode;
-  sections: ChangelogSection[];
+export interface UpdateProps {
+  children: ReactNode;
+  label: string;
+  id?: string;
+  className?: string;
 }
 
-export const ChangelogEntry: React.FC<ChangelogEntryProps> = ({
-  date,
-  description,
-  sections,
-}) => {
+export function Updates({ children, className }: UpdatesProps) {
   return (
-    <div className="relative pl-10 ml-4 border-l-2 border-gray-600 space-y-2">
-      {/* Dot Indicator */}
-      <div className="absolute top-1 left-[-7px] w-3 h-3 rounded-full bg-purple-300 dark:bg-purple-600 border-2 border-white dark:border-gray-900" />
+    <div className={cn("flex flex-col space-y-4 fd-updates", className)}>{children}</div> 
+  );
+}
 
-      {/* Date chip */}
-      <div className="flex items-center">
-        <span className="inline-flex items-center justify-center bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-100 rounded-lg text-sm font-medium h-6 px-3">
-          {date}
-        </span>
+export function Update({ children, label, id, className }: UpdateProps) {
+  const updateId = id || label.toLowerCase().replace(/\s+/g, "-");
+
+  return (
+    <div
+      id={updateId}
+      className={cn(
+        "flex flex-col relative items-start w-full lg:flex-row gap-4 lg:gap-6 py-6 fd-update",
+        className
+      )}
+    >
+      <div className="lg:sticky top-[112px] group flex flex-col w-full lg:w-[160px] items-start flex-shrink-0 justify-start">
+        {/* Background color for light and dark mode */}
+        <div className="cursor-pointer px-4 py-2 rounded-lg text-sm flex items-center flex-grow-0 justify-center font-medium bg-[#8f57ff] dark:bg-[#a982f8] text-white dark:text-primary-light">
+          {label}
+        </div>
       </div>
-
-
-      {/* Optional description */}
-      {description && <p className="text-fd-foreground">{description}</p>}
-
-      {/* Sections */}
-      <div className="space-y-4">
-        {sections.map((sec, index) => (
-          <div key={index}>
-            <div className="text-lg font-semibold text-fd-card-foreground-muted">
-              {sec.title}
-            </div>
-            <ul className="list-disc list-inside space-y-1 mt-1">
-              {sec.items.map((itm, i) => (
-                <li key={i} className="text-fd-muted-foreground">
-                  {itm}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div className="flex-1 overflow-hidden px-0.5 max-w-full prose prose-gray dark:prose-invert space-y-1">
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child)) {
+            if (child.type === "h2") {
+              // Adjust margin-bottom of h2 (reduce gap between h2 and paragraph)
+              return React.cloneElement(child, {
+                className: cn(child.props.className, "mb-2"),
+              });
+            }
+            if (child.type === "p") {
+              // Adjust margin-top of paragraphs (reduce gap above the paragraph)
+              return React.cloneElement(child, {
+                className: cn(child.props.className, "mt-1"), 
+              });
+            }
+          }
+          return child;
+        })}
       </div>
     </div>
   );
-};
+}

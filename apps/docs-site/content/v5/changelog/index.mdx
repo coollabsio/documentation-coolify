@@ -1,53 +1,170 @@
 ---
 title: Changelog
-description: Components
+description: New updates and improvements
 full: false
 showEdit: false
 showLastUpdated: false
 showRate: false
 ---
 
-import { ChangelogEntry } from "@/components/changelog";
+import { Updates, Update } from '@/components/changelog'
 
-# Changelog
+
+# Changelogs
+<Callout type="tip">
 New updates and improvements
+</Callout>
+---
+<Updates>
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.2
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
 
-## Coolify v5.0.0-beta.2
-<ChangelogEntry
-  date="April 27 2025"
-  description="Overhauled usability in the WYSIWYG editor."
-  sections={[
-    {
-      title: "Fixes",
-      items: [
-        "[ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.",
-        <span>[ Backups (Coolify) ] - S3 storage selection is shown even if no <a href="/docs/seo">S3 Storage</a> is defined/active.</span>,
-        "[ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard."
-      ]
-    },
-    {
-      title: "New Features",
-      items: [
-        "Magic environment variables are now supported in Git-based Docker-Compose deployments  ",
-        "Added HTTP Basic Authentication on the dashboard for all services ",
-        "Added support for custom --hostname option in Docker-based deployments ",
-      ]
-    }
-  ]}
-/>
+    * Added HTTP Basic Authentication on the dashboard for all services
 
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
 
-## Coolify v5.0.0-beta.1
-<ChangelogEntry
-  date="April 22 2025"
-  description="Tiny Bug Fixes"
-  sections={[
-    {
-      title: "Fixes",
-      items: [
-        "[ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.",
-        "[ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard."
-      ]
-    }
-  ]}
-/>
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+
+---
+
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.1
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
+
+    * Added HTTP Basic Authentication on the dashboard for all services
+
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.0
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
+
+    * Added HTTP Basic Authentication on the dashboard for all services
+
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.-1
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
+
+    * Added HTTP Basic Authentication on the dashboard for all services
+
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.-2
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
+
+    * Added HTTP Basic Authentication on the dashboard for all services
+
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+
+  <Update label="June 2026">
+    ## Coolify v5.0.0-beta.-3
+    ---
+    ### New Features
+    * Magic environment variables are now supported in Git-based Docker-Compose deployments
+
+    * Added HTTP Basic Authentication on the dashboard for all services
+
+    * Added support for custom `--hostname option` in Docker-based deployments
+    ---
+    ### Fixes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+    ---
+    ### Breaking Changes
+    * [ Proxy (Traefik) ] - Caddy labels are generated even when Generate labels only for Traefik is enabled on Proxy Settings.
+    
+    * [ Backups (Coolify) ] - S3 storage selection is shown even if no S3 Storage is defined/active.
+
+    * [ Services ] - When a service using MongoDB is deployed, the Backups menu is not shown on the dashboard.
+  </Update>
+</Updates>
