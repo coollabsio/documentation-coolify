@@ -12,7 +12,7 @@ export interface DetailProps {
   /**
    * Optional icon element. If provided, will be cloned to apply sizing classes.
    */
-  icon?: ReactElement;
+  icon?: ReactElement<{ className?: string }>; 
   /**
    * Optional size string for the icon (e.g. "h-5 w-5").
    * Defaults to "h-5 w-5" if not provided.
