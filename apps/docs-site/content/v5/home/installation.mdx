@@ -10,7 +10,7 @@ showRate: true
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Cpu, Microchip, Database, ArrowUpDown, Cog, Radiation, CircleDashed, User, KeyRound, Link, BookMarked, Code, LifeBuoy, AlertTriangle, Info, Layers, Server, Box, Download, Folder, HardDrive, Play, Settings, Shield, Terminal } from "lucide-react";
+import { Cpu, Microchip, Database, ArrowUpDown, Cog, Radiation, CircleDashed, User, KeyRound, CircleUserRound, BookMarked, Code, LifeBuoy, AlertTriangle, Info, Layers, Server, Box, Download, Folder, HardDrive, Play, Settings, Shield, Terminal } from "lucide-react";
 import { Unplug, ServerCrash, Cloud } from "lucide-react";
 import { ImageCard } from "@/components/image-card";
 import { ImageCardGroup } from "@/components/image-card-group";
@@ -35,19 +35,30 @@ It's completely free (apart from your server costs) and gives you full control o
 ## Before You Begin
 Before installing Coolify, make sure your server meets the necessary requirements.
 
-<Tabs items={['System', 'OS', 'CPU/Arch', 'Specs', 'Real-World Usage']}>
+<Tabs items={['Hardware', 'Operating System', 'CPU Architecture', 'Real-World Usage']}>
 
-  <Tab value="System">
-    <Callout>Coolify requires a server with SSH access. A fresh server is strongly recommended to avoid app conflicts.</Callout>
+  <Tab value="Hardware">
+    <Callout type="tip">
+      We recommend using a **fresh server** without any pre-installed apps to **avoid conflicts** with Coolify. 
+    
+      While Coolify can run on lower-spec servers, we suggest slightly higher resources to avoid resource issues after deploying a few apps.
+    </Callout>
     <Details className="mt-5">
-      <Detail label="Access" value="SSH required" icon={<Link />} />
-      <Detail label="Server Type" value="VPS, Dedicated, VM, Pi, etc." icon={<Server />} />
-      <Detail label="Network" value="IPv4 recommended" icon={<ArrowUpDown />} />
+      <Detail label="CPU" value="2 Cores" icon={<Cpu />} />
+      <Detail label="Memory" value="2 GB RAM" icon={<Microchip />} />
+      <Detail label="Storage" value="30 GB" icon={<Database />} />
+      <Detail label="Access" value="Root User SSH" icon={<CircleUserRound />} />
+      <Detail label="Network" value="IPv4 or IPv6 - (IPv4 recommended)" icon={<ArrowUpDown />} />
+      <Detail label="Server Type" value="VPS, Dedicated Server, Bare Metal, VM, Rasberry Pi, etc." icon={<Server />} />
     </Details>
   </Tab>
 
-  <Tab value="OS">
-    <Callout>Coolify supports multiple Linux distributions. Make sure your OS is one of the supported ones.</Callout>
+  <Tab value="Operating System">
+    <Callout type="tip">
+      We recommend using a **fresh server** without any pre-installed apps to **avoid conflicts** with Coolify.
+    
+      While Coolify can run on lower-spec servers, we suggest slightly higher resources to avoid resource issues after deploying a few apps. 
+    </Callout>
     <Details className="mt-5">
       <Detail label="Debian-based" value="Debian, Ubuntu" icon={<CircleDashed />} />
       <Detail label="RedHat-based" value="CentOS, Fedora, AlmaLinux, etc." icon={<CircleDashed />} />
@@ -56,21 +67,11 @@ Before installing Coolify, make sure your server meets the necessary requirement
     </Details>
   </Tab>
 
-  <Tab value="CPU/Arch">
+  <Tab value="CPU Architecture">
     <Callout>Coolify supports 64-bit systems only. Make sure your server is running a compatible architecture.</Callout>
     <Details className="mt-5">
       <Detail label="Supported Architectures" value="AMD64, ARM64" icon={<Cpu />} />
       <Detail label="Raspberry Pi Note" value="64-bit OS required" icon={<Info />} />
-    </Details>
-  </Tab>
-
-  <Tab value="Specs">
-    <Callout>Minimum recommended specs ensure stable performance. Higher specs may be needed based on usage.</Callout>
-    <Details className="mt-5">
-      <Detail label="CPU" value="2 cores" icon={<Cpu />} />
-      <Detail label="Memory" value="2 GB RAM" icon={<Microchip />} />
-      <Detail label="Storage" value="30 GB free" icon={<Database />} />
-      <Detail label="Tip" value="Enable swap or upgrade if building & hosting on same server" icon={<AlertTriangle />} />
     </Details>
   </Tab>
 
