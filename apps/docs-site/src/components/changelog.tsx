@@ -43,17 +43,22 @@ export function Update({ children, label, id, className }: UpdateProps) {
       <div className="flex-1 overflow-hidden px-0.5 max-w-full prose prose-gray dark:prose-invert space-y-1">
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
-            if (child.type === "h2") {
-              // Adjust margin-bottom of h2 (reduce gap between h2 and paragraph)
-              return React.cloneElement(child, {
-                className: cn(child.props.className, "mb-2"),
-              });
-            }
-            if (child.type === "p") {
-              // Adjust margin-top of paragraphs (reduce gap above the paragraph)
-              return React.cloneElement(child, {
-                className: cn(child.props.className, "mt-1"), 
-              });
+            const childElement = child as React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+            const hasClassName = 'className' in childElement.props;
+
+            if (hasClassName) {
+              if (childElement.type === "h2") {
+                // Adjust margin-bottom of h2 (reduce gap between h2 and paragraph)
+                return React.cloneElement(childElement, {
+                  className: cn(childElement.props.className, "mb-2"),
+                });
+              }
+              if (childElement.type === "p") {
+                // Adjust margin-top of paragraphs (reduce gap above the paragraph)
+                return React.cloneElement(childElement, {
+                  className: cn(childElement.props.className, "mt-1"),
+                });
+              }
             }
           }
           return child;
