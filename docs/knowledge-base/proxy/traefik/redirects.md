@@ -15,7 +15,7 @@ The configuration is slightly different for `Standard Applications` and `Docker 
 
 ### www -> non-www
 
-```bash {4,8-10}
+```bash
 # A similar line is already defined.
 traefik.http.routers.<unique_router_name>.rule=Host(`www.coolify.io`) && PathPrefix(`/`)
 
@@ -32,7 +32,7 @@ traefik.http.middlewares.example-middleware.redirectregex.permanent=true
 
 ### non-www -> www
 
-```bash {4,8-10}
+```bash
 # A similar line is already defined.
 traefik.http.routers.<unique_router_name>.rule=Host(`coolify.io`) && PathPrefix(`/`)
 
@@ -58,11 +58,9 @@ traefik.http.middlewares.redirect-otherdomain.redirectregex.permanent=true
 If you also need to generate a ssl cert for the target-domain, additionally add a routers entry
 
 ```bash
-traefik.http.routers.redirect-otherdomain.middlewares=redirect-to-https
+traefik.http.routers.redirect-otherdomain.middlewares=redirect-to-https,redirect-otherdomain
 traefik.http.routers.redirect-otherdomain.rule=Host(`target-domain.com`) && PathPrefix(`/`)
 traefik.http.routers.redirect-otherdomain.entryPoints=https
-traefik.http.routers.redirect-otherdomain.middlewares=redirect-otherdomain
-traefik.http.routers.redirect-otherdomain.rule=Host(`target-domain.com`) && PathPrefix(`/`)
 traefik.http.routers.redirect-otherdomain.tls.certresolver=letsencrypt
 traefik.http.routers.redirect-otherdomain.tls=true
 ```
