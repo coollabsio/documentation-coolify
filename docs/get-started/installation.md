@@ -117,6 +117,28 @@ This is the simplest and fastest way to get Coolify up and running.
 - Set up your firewall with the help of the [Firewall Guide ↗](/knowledge-base/server/firewall).
 - Ensure that [curl ↗](https://curl.se/) is installed (it usually comes pre-installed).
 
+- **Docker prerequisites**
+  - Install Docker Engine (v24+) and the Docker Compose plugin.
+    ```bash
+    # on Ubuntu/Debian, for example:
+    sudo apt update
+    sudo apt install -y docker.io docker-compose-plugin
+    sudo systemctl enable --now docker
+    ```
+  - Make sure your user can run Docker (e.g. by adding yourself to the `docker` group) or simply run the installer as root.
+
+- **Registry authentication**
+  - If you hit errors pulling from GitHub Container Registry (`ghcr.io`), you may have stale credentials. Clear them:
+    ```bash
+    docker logout ghcr.io
+    ```
+  - If you need authenticated pulls (e.g. private images), log back in with a PAT:
+    ```bash
+    docker login ghcr.io
+    # or, to avoid Docker Hub rate limits:
+    docker login
+    ```
+
 #### 2. Run the Installation Script
 Once your server is ready, run:
 ```sh
