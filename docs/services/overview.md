@@ -101,6 +101,7 @@ You can host ANY service with Coolify that could be containerized.
 - [Outline](/services/outline) - Open-source collaboration tool.
 - [Overseerr](/services/overseerr) - A request management and media discovery tool built to work with your existing Plex ecosystem.
 - [Pairdrop](/services/pairdrop) - Local file sharing in your browser.
+- [Paymenter](/services/paymenter) - Open-Source Billing, Built for Hosting Providers.
 - [Penpot](/services/penpot) - Open Source design & prototyping platform.
 - [phpMyAdmin](/services/phpmyadmin) - MySQL database management tool.
 - [Plane](/services/plane) - Open source project planning tool.
