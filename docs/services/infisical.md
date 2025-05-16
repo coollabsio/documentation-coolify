@@ -7,7 +7,12 @@ description: "Here you can find the documentation for hosting Infisical with Coo
 
 ## What is Infisical?
 
-Infisical is the open source secret management platform that developers use to centralize their application configuration and secrets like API keys and database credentials as well as manage their internal PKI.
+Infisical is the open source security infrastructure platform that engineers use for secrets management, internal PKI, key management, and SSH workflow orchestration.
+
+- Secrets Management: Infisical's secrets management module lets developers centralize and securely manage application configuration, API keys, database credentials, and other sensitive data.
+- Public Key Infrastructure (PKI): Infisical PKI lets you operate an internal certificate authority and manage the full X.509 certificate lifecycle for services, applications, and devices.
+- Key Management System (KMS): Infisical KMS helps you generate and securely manage encryption keys to encrypt/decrypt data.
+- SSH Certificate Management: Infisical SSH lets you provision engineers short-lived, secure SSH access to infrastructure by replacing traditional static SSH keys with ephemeral certificate-based authentication.
 
 ## Screenshots
 

@@ -277,6 +277,22 @@ const sponsors = [
     ]
   },
   {
+    avatar: '../images/sponsors/gozunga.webp',
+    name: 'Gozunga',
+    title: 'Seriously Simple Cloud Infrastructure',
+    links: [
+      { icon: 'expedia', link: 'https://gozunga.com/?ref=coolify.io' }
+    ]
+  },
+  {
+    avatar: '../images/sponsors/macarne.webp',
+    name: 'Macarne',
+    title: 'Best IP Transit & Carrier Ethernet Solutions for Simplified Network Connectivity',
+    links: [
+      { icon: 'expedia', link: 'https://macarne.com/?ref=coolify.io' }
+    ]
+  },
+  {
     avatar: '../images/team/coollabs-logo-smaller.webp',
     name: 'Your Company?',
     title: 'Will Your Company Be Next?'
