@@ -280,6 +280,7 @@ export default defineConfig({
               { text: 'Outline', link: '/services/outline' },
               { text: 'Overseerr', link: '/services/overseerr' },
               { text: 'Pairdrop', link: '/services/pairdrop' },
+              { text: 'Paymenter', link: '/services/paymenter' },
               { text: 'Penpot', link: '/services/penpot' },
               { text: 'phpMyAdmin', link: '/services/phpmyadmin' },
               { text: 'Plane', link: '/services/plane' },
