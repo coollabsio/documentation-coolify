@@ -28,6 +28,9 @@ onMounted(async () => {
   Globe = (await import('globe.gl')).default;
   initGlobe();
   updateGlobeTexture();
+  watch(isDark, () => {
+    updateGlobeTexture();
+  });
 });
 
 // Constants for arc animation
