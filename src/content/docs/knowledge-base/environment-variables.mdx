@@ -193,25 +193,8 @@ COOLIFY_{SERVICE}_SECRET_{TYPE}_{LENGHT}
 - `COOLIFY_` -- Required prefix.
 - `{SERVICE}` -- Your service name (e.g. `MYSQL`, `WORDPRESS_ADMIN_USER` etc.). This is the name of the service you're generating the environment variable for. It can contain one or more words (or numbers) with underscores separating them.
 - `SECRET` -- A constant that tells Coolify to generate a secure secret value.
-- `{TYPE}` -- The type of secret your generating, for example `FULL` or `INT` etc. - read more about the different types below.
+- `{TYPE}` -- The type of secret your generating, for example `SYMBOLS`, `STR`, `INT` etc. - read more about the different types below.
 - `{LENGHT}` -- The length of the secret you're generating - this indicates how long the secret should be. Each secret type supports this length parameter.
-
-#### Full Secret
-```yaml
-COOLIFY_{SERVICE}_SECRET_FULL_{LENGHT}
-```
-Character Set:
-- Uppercase letters
-- Lowercase letters
-- Numbers
-- Special characters
-
-Example usage:
-```yaml
-environment:
-  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_FULL_64}
-```
-- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
 
 #### Characters and Numbers Secret
 ```yaml
@@ -320,6 +303,118 @@ environment:
 ```
 - This will generate a 64 character value for the `MYSQL_PASSWORD` variable with the character set specified.
 
+#### Characters, Numbers and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Uppercase, Numbers and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_UP_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_UP_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Lowercase, Numbers and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_LOW_{LENGHT}
+```   
+Character Set:
+- Lowercase letters
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_LOW_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Uppercase, Lowercase and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_STR_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Lowercase letters
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_STR_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Uppercase and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_STR_UP_{LENGHT}
+```
+Character Set:
+- Uppercase letters
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_STR_UP_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Lowercase and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_STR_LOW_{LENGHT}
+```
+Character Set:
+- Lowercase letters
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_STR_LOW_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+#### Numbers and Symbols Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_SYMBOLS_INT_{LENGHT}
+```
+Character Set:
+- Numbers
+- Special characters
+
+Example usage:
+```yaml
+environment:
+  - ADMIN_PASSWORD=${COOLIFY_ADMIN_SECRET_SYMBOLS_INT_64}
+```
+- This will generate a 64 character value for the `ADMIN_PASSWORD` variable with the character set specified.
+
+
 #### Full Hexadecimal Secret
 ```yaml
 COOLIFY_{SERVICE}_SECRET_HEX_{LENGTH}
@@ -409,13 +504,26 @@ environment:
 ```
 - This will generate a 40 character value for the `RUNNER_TOKEN` variable with the character set specified.
 
+#### Laravel `APP_KEY` Secret
+```yaml
+COOLIFY_{SERVICE}_SECRET_APP_KEY
+```
+Function:
+- Generates a Laravel `APP_KEY` which is required for Laravel applications.
+
+Example usage:
+```yaml
+environment:
+  - APP_KEY=${COOLIFY_MY_LARAVEL_APP_SECRET_APP_KEY}
+```
+- This will generate a Laravel `APP_KEY` for the Laravel application.
 
 ### Username Variables
 Coolify provides several ways to generate random usernames automatically through magic environment variables.
 
-#### Full Username
+#### Characters, Numbers and Symbols Username
 ```yaml
-COOLIFY_{SERVICE}_USER_FULL_{LENGTH}
+COOLIFY_{SERVICE}_USER_SYMBOLS_{LENGTH}
 ```
 Character Set:
 - Uppercase letters
@@ -426,11 +534,11 @@ Character Set:
 Example usage:
 ```yaml
 environment:
-  - ADMIN_USERNAME=${COOLIFY_ADMIN_USER_FULL_32}
+  - ADMIN_USERNAME=${COOLIFY_ADMIN_USER_SYMBOLS_32}
 ```
 - This will generate a 32 character value for the `ADMIN_USERNAME` variable with the character set specified.
 
-#### Characters and Numberers Username
+#### Characters and Numbers Username
 ```yaml
 COOLIFY_{SERVICE}_USER_{LENGTH}
 ```
@@ -542,8 +650,23 @@ environment:
 ### UUID Variables
 Coolify can generate UUIDs (Universally Unique Identifiers) for you automatically.
 
+#### CUID2
 ```yaml
-COOLIFY_{SERVICE}_UUID
+COOLIFY_{SERVICE}_CUID2
+```
+Generation:
+- A random CUID2.
+
+Example usage:
+```yaml
+environment:
+  - APP_UUID=${COOLIFY_APP_CUID2}
+```
+
+#### UUID v4
+
+```yaml
+COOLIFY_{SERVICE}_UUID_V4
 ```
 Generation:
 - A random UUID v4.
@@ -551,9 +674,24 @@ Generation:
 Example usage:
 ```yaml
 environment:
-  - APP_UUID=${COOLIFY_APP_UUID}
+  - APP_UUID=${COOLIFY_APP_UUID_V4}
 ```
-- This will generate a random UUID v4 for the `APP_UUID` variable.
+- This will generate a random lowercase UUID v4 for the `APP_UUID` variable.
+
+#### TSID
+
+```yaml
+COOLIFY_{SERVICE}_TSID
+``` 
+Generation:
+- A random TSID.
+
+Example usage:
+```yaml
+environment:
+  - APP_UUID=${COOLIFY_APP_TSID}
+```
+- This will generate a random uppercase TSID for the `APP_UUID` variable.
 
 
 ### Base64 Encode Environment Variables
@@ -608,7 +746,7 @@ Function:
 Example usage:
 ```yaml
 environment:
-  - SMTP_PASSWORD=${COOLIFY_SECRET_UI_SMTP_SECRET_FULL_64}
+  - SMTP_PASSWORD=${COOLIFY_SECRET_UI_SMTP_SECRET_64}
 ```
 - This will show the `SMTP_PASSWORD` variable in the UI with a password field.
 
