@@ -17,9 +17,13 @@ import "./scrollbar.css";
 // import "./custom.css";
 import "./tailwind.postcss";
 import "vitepress-openapi/dist/style.css";
+import 'virtual:group-icons.css'
+
+// Import plugins
+import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 
 // @ts-ignore
-import spec from '../../public/openapi.json' assert { type: 'json' }
+import spec from "./openapi.json" assert { type: "json" };
 
 // Import components
 import Card from "./components/Card.vue";
@@ -34,18 +38,19 @@ import TabBlock from "./components/TabBlock.vue";
 import ZoomableImage from "./components/ZoomableImage.vue";
 import Globe from "./components/Landing/Globe.vue";
 import Browser from "./components/Landing/Browser.vue";
+import { DirectiveBinding } from "vue";
 
 export default {
   extends: DefaultTheme,
   Layout: Landing,
   enhanceApp({ app, router, siteData }) {
-    const openapi = useOpenapi({
+    enhanceAppWithTabs(app);
+
+    useOpenapi({
       spec,
-      base: "/docs/api-reference/api/operations/",
-      label: "API"
     });
 
-    theme.enhanceApp({ app, openapi });
+    theme.enhanceApp({ app });
     app.component("Card", Card);
     app.component("CardGroup", CardGroup);
     app.component("LandingSection", Sections);
@@ -57,5 +62,27 @@ export default {
     app.component("ZoomableImage", ZoomableImage);
     app.component("Globe", Globe);
     app.component("Browser", Browser);
+
+    router.onAfterRouteChange = () => {
+      if (typeof window !== "undefined" && (window as any).plausible) {
+        (window as any).plausible("pageview");
+      }
+    };
+    app.directive("plausible", {
+      mounted(el: HTMLElement, binding: DirectiveBinding) {
+        const eventName = binding.arg;
+        const eventData = binding.value || {};
+
+        el.addEventListener("click", () => {
+          if (
+            typeof window !== "undefined" &&
+            (window as any).plausible &&
+            eventName
+          ) {
+            (window as any).plausible(eventName, { props: eventData });
+          }
+        });
+      },
+    });
   },
 } satisfies Theme;

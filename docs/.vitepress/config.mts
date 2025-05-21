@@ -1,13 +1,16 @@
 import { fileURLToPath, URL } from 'node:url'
 import yaml from 'vite-plugin-yaml'
-import llms from 'vite-plugin-llms'
+import llmstxt from 'vitepress-plugin-llms'
 import { defineConfig } from 'vitepress'
 import { useSidebar } from 'vitepress-openapi'
-import spec from '../public/openapi.json' with { type: 'json' }
+import spec from './theme/openapi.json' with { type: 'json' }
 import container from 'markdown-it-container'
 import { bundledLanguages } from 'shiki'
 import { join, dirname } from 'node:path'
-
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { loadEnv } from 'vitepress'
+const env = loadEnv('', process.cwd())
 const sidebar = useSidebar({ spec, collapsible: true })
 
 // Add SSH to bundled languages
@@ -16,6 +19,8 @@ bundledLanguages['ssh'] = {
   scopeName: 'source.ssh-config',
   path: join(dirname(fileURLToPath(import.meta.url)), '../../node_modules/shiki/languages/ssh-config.tmLanguage.json')
 }
+
+console.log(env)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -44,11 +49,17 @@ export default defineConfig({
     ['meta', { property: 'twitter:description', content: 'Self hosting with superpowers: An open-source & self-hostable Heroku / Netlify / Vercel alternative.' }],
     ['meta', { property: 'twitter:url', content: 'https://coolify.io/docs/' }],
     ['meta', { property: 'twitter:image', content: 'https://coolcdn.b-cdn.net/assets/coolify/og-image-docs.png' }],
-    ['link', { rel: 'icon', href: 'coolify-logo-transparent.png' }],
-    ['script', { src: 'https://analytics.coollabs.io/js/script.js', 'data-domain': 'coolify.io/docs' }],
+    ['link', { rel: 'icon', href: '/docs/coolify-logo-transparent.png' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['script', { defer: 'true', src: 'https://analytics.coollabs.io/js/script.tagged-events.js', 'data-domain': env.VITE_ANALYTICS_DOMAIN ?? 'coolify.io/docs' }],
+    ['script', { async: 'true', src: '/docs/trieve-user-script.js' }],
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    carbonAds: {
+      code: 'CW7IPKJJ',
+      placement: 'coolifyio'
+    },
     logo: '/coolify-logo-transparent.png',
     nav: [
       { text: 'Coolify Cloud', link: 'https://coolify.io/pricing/' },
@@ -73,7 +84,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/coollabsio/coolify' },
-      { icon: 'discord', link: 'https://discord.gg/coolify' },
+      { icon: 'discord', link: 'https://coollabs.io/discord' },
       { icon: 'x', link: 'https://x.com/coolifyio' }
     ],
 
@@ -83,13 +94,57 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Introduction', link: '/get-started/introduction' },
-          { text: 'Concepts', link: '/get-started/concepts' },
+          {
+            text: 'Installation',
+            link: '/get-started/installation',
+            collapsed: false,
+            items: [
+              { text: 'Upgrade', link: '/get-started/upgrade' },
+              { text: 'Downgrade', link: '/get-started/downgrade' },
+              { text: 'Uninstallation', link: '/get-started/uninstallation' },
+            ]
+          },
           { text: 'Usage', link: '/get-started/usage' },
-          { text: 'Installation', link: '/get-started/installation' },
-          { text: 'Upgrade', link: '/get-started/upgrade' },
-          { text: 'Downgrade', link: '/get-started/downgrade' },
-          { text: 'Uninstallation', link: '/get-started/uninstallation' },
+          {
+            text: 'Concepts', link: '/get-started/concepts',
+            collapsed: true,
+            items: [
+              { text: 'Screenshots', link: '/get-started/screenshots' },
+              { text: 'Videos', link: '/get-started/videos' },
+            ]
+          },
+          { text: 'Team', link: '/get-started/team' },
           { text: 'Support', link: '/get-started/support' },
+          { text: 'Sponsors', link: '/get-started/sponsors' },
+          {
+            text: 'Contribute',
+            collapsed: true,
+            items: [
+              { text: 'Coolify', link: '/get-started/contribute/coolify' },
+              { text: 'New Service', link: '/get-started/contribute/service' },
+              { text: 'Documentation', link: '/get-started/contribute/documentation' },
+            ],
+          },
+
+        ],
+      },
+      {
+        text: 'Builds',
+        collapsed: true,
+        items: [
+          { text: 'Introduction', link: '/builds/introduction' },
+          {
+            text: 'Build Packs',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/builds/packs/overview' },
+              { text: 'Static', link: '/builds/packs/static' },
+              { text: 'Nixpacks', link: '/builds/packs/nixpacks' },
+              { text: 'Dockerfile', link: '/builds/packs/dockerfile' },
+              { text: 'Docker Compose', link: '/builds/packs/docker-compose' },
+            ]
+          },
+          { text: 'Build Servers', link: '/builds/servers' },
         ],
       },
       {
@@ -123,6 +178,7 @@ export default defineConfig({
             text: 'Overview',
             link: '/databases/index',
             items: [
+              { text: 'Database SSL', link: '/databases/ssl' },
               { text: 'Backups', link: '/databases/backups' },
               { text: 'MySQL', link: '/databases/mysql' },
               { text: 'MariaDB', link: '/databases/mariadb' },
@@ -145,15 +201,19 @@ export default defineConfig({
             link: '/services/overview',
             items: [
               { text: 'ActivePieces', link: '/services/activepieces' },
+              { text: 'Actual Budget', link: '/services/actualbudget' },
               { text: 'AnythingLLM', link: '/services/anythingllm' },
               { text: 'Appsmith', link: '/services/appsmith' },
               { text: 'Appwrite', link: '/services/appwrite' },
               { text: 'Argilla', link: '/services/argilla' },
               { text: 'Authentik', link: '/services/authentik' },
+              { text: 'Affine', link: '/services/affine' },
+              { text: 'Apprise API', link: '/services/apprise-api' },
               { text: 'Baby Buddy', link: '/services/babybuddy' },
               { text: 'Beszel', link: '/services/beszel' },
               { text: 'Browserless', link: '/services/browserless' },
               { text: 'BudgE', link: '/services/budge' },
+              { text: 'Bugsink', link: '/services/bugsink' },
               { text: 'Change Detection', link: '/services/changedetection' },
               { text: 'Chaskiq', link: '/services/chaskiq' },
               { text: 'Chatwoot', link: '/services/chatwoot' },
@@ -170,6 +230,7 @@ export default defineConfig({
               { text: 'Duplicati', link: '/services/duplicati' },
               { text: 'Emby', link: '/services/emby' },
               { text: 'Emby Stat', link: '/services/emby-stat' },
+              { text: 'Evolution API', link: '/services/evolution-api' },
               { text: 'Fider', link: '/services/fider' },
               { text: 'Filebrowser', link: '/services/filebrowser' },
               { text: 'FileFlows', link: '/services/fileflows' },
@@ -262,6 +323,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Integrations',
+        collapsed: true,
+        items: [
+          { text: 'Webstudio', link: '/integrations/webstudio.md' },
+        ],
+      },
+      {
         text: 'Knowledge Base',
         collapsed: true,
         items: [
@@ -269,40 +337,6 @@ export default defineConfig({
             text: 'Overview',
             link: '/knowledge-base/overview',
             items: [
-              {
-                text: 'Common Issues',
-                collapsed: true,
-                items: [
-                  // {
-                  //   text: 'Applications',
-                  //   link: '/knowledge-base/common-issues/applications'
-                  // },
-                  // {
-                  //   text: 'Backup',
-                  //   link: '/knowledge-base/common-issues/backup'
-                  // },
-                  {
-                    text: 'Docker',
-                    link: '/knowledge-base/common-issues/docker'
-                  },
-                  // {
-                  //   text: 'Databases',
-                  //   link: '/knowledge-base/common-issues/databases'
-                  // },
-                  // {
-                  //   text: 'Services',
-                  //   link: '/knowledge-base/common-issues/services'
-                  // },
-                  {
-                    text: 'Servers',
-                    link: '/knowledge-base/common-issues/servers'
-                  },
-                  // {
-                  //   text: 'Proxy',
-                  //   link: '/knowledge-base/common-issues/proxy'
-                  // }
-                ]
-              },
               {
                 text: 'Internal',
                 collapsed: true,
@@ -327,8 +361,9 @@ export default defineConfig({
                   { text: 'Commands', link: '/knowledge-base/commands' },
                   { text: 'Delete User', link: '/knowledge-base/delete-user' },
                   { text: 'OAuth', link: '/knowledge-base/oauth' },
-                  { text: 'Create Root User using ENV', link: '/knowledge-base/create-root-user-with-env' },
-                  { text: 'Define Custom Docker Network with ENV', link: '/knowledge-base/define-custom-docker-network-with-env' },
+                  { text: 'Default Root User', link: '/knowledge-base/create-root-user-with-env' },
+                  { text: 'Custom Docker Network', link: '/knowledge-base/define-custom-docker-network-with-env' },
+                  { text: 'Custom Docker Registry', link: '/knowledge-base/custom-docker-registry' },
                   { text: 'Change Localhost Key', link: '/knowledge-base/change-localhost-key' },
                 ]
               },
@@ -347,6 +382,7 @@ export default defineConfig({
                   { text: 'Environment Variables', link: '/knowledge-base/environment-variables' },
                   { text: 'Persistent Storage', link: '/knowledge-base/persistent-storage' },
                   { text: 'Drain Logs', link: '/knowledge-base/drain-logs' },
+                  { text: 'Rolling Updates', link: '/knowledge-base/rolling-updates' },
                   { text: 'Health Checks', link: '/knowledge-base/health-checks' },
                   { text: 'Cron Syntax', link: '/knowledge-base/cron-syntax' },
                 ]
@@ -355,6 +391,7 @@ export default defineConfig({
                 text: 'How-Tos',
                 collapsed: true,
                 items: [
+                  { text: 'Backup & Restore Coolify', link: '/knowledge-base/how-to/backup-restore-coolify' },
                   { text: 'Load-balancing on Hetzner', link: '/knowledge-base/how-to/hetzner-loadbalancing' },
                   { text: 'Wordpress Multisite', link: '/knowledge-base/how-to/wordpress-multisite' },
                   { text: 'Raspberry Pi OS Setup', link: '/knowledge-base/how-to/raspberry-pi-os' },
@@ -368,7 +405,8 @@ export default defineConfig({
                 items: [
                   {
                     text: 'Github', collapsed: true, items: [
-                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/github-app' },
+                      { text: 'Manually Setup GitHub App', link: '/knowledge-base/git/github/manually-setup-github-app' },
+                      { text: 'Move Between GitHub Apps', link: '/knowledge-base/git/github/move-between-github-apps' },
                       { text: 'Integrations', link: '/knowledge-base/git/github/integration' },
                       { text: 'Github Actions', link: '/knowledge-base/git/github/github-actions' },
                     ]
@@ -468,6 +506,7 @@ export default defineConfig({
                     collapsed: true,
                     items: [
                       { text: 'Overview', link: '/knowledge-base/proxy/caddy/overview' },
+                      { text: 'Basic Auth', link: '/knowledge-base/proxy/caddy/basic-auth' },
                     ]
                   },
                 ]
@@ -485,32 +524,11 @@ export default defineConfig({
             link: '/api-reference/authorization',
           },
           ...sidebar.generateSidebarGroups({
-            /**
-             * Optionally, you can filter paths by a prefix. Default is an empty string.
-             */
-            startsWith: 'operations',
-
-            /**
-             * Optionally, you can specify if the sidebar items are collapsible. Default is true.
-             */
-            collapsible: true,
-
-            /**
-             * Optionally, you can specify a depth for the sidebar items. Default is 6, which is the maximum VitePress sidebar depth.
-             */
-            depth: 6,
-
-            /**
-             * Optionally, you can specify a link prefix for all generated sidebar items. Default is `/operations/`.
-             */
             linkPrefix: '/api-reference/api/operations/',
-
-            /**
-             * Optionally, you can specify a template for the sidebar items. You can see the default value
-             * in `sidebarItemTemplate` function in the `useSidebar` composable.
-             */
-            //sidebarItemTemplate: (method: string, path: string): string => `[${method}] ${path}`,
-          }),
+          }).map((group) => ({
+            ...group,
+            collapsed: true
+          }))
         ],
       },
       {
@@ -523,21 +541,34 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Bad Gateway', link: '/troubleshoot/applications/bad-gateway.md' },
+              { text: 'Failed To Get Access Token During Deployment', link: '/troubleshoot/applications/failed-to-get-token' },
             ]
           },
           {
             text: 'Dashboard',
             collapsed: true,
             items: [
-              { text: 'Dashboard Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
-              { text: 'Dashboard Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+              { text: 'Inaccessible ', link: '/troubleshoot/dashboard/dashboard-inaccessible' },
+              { text: 'Very Slow ', link: '/troubleshoot/dashboard/dashboard-slow-performance' },
+              { text: 'Disable 2FA Manually', link: '/troubleshoot/dashboard/disable-2fa-manually' },
+            ]
+          },
+          {
+            text: 'Docker',
+            collapsed: true,
+            items: [
+              { text: 'Expired GitHub Personal Access Token (PAT)', link: '/troubleshoot/docker/expired-github-personal-access-token' },
             ]
           },
           {
             text: 'Server',
             collapsed: true,
             items: [
-              { text: 'Crash During Build ', link: '/troubleshoot/server/crash-during-build' },
+              { text: 'Connection Unstable', link: '/troubleshoot/server/connection-issues' },
+              { text: 'Crash During Build', link: '/troubleshoot/server/crash-during-build' },
+              { text: '2FA Stopped Working', link: '/troubleshoot/server/two-factor-stopped-working' },
+              { text: 'Raspberry Pi Crashes', link: '/troubleshoot/server/raspberry-crashes' },
+              { text: 'Server Validation Issues', link: '/troubleshoot/server/validation-issues' },
             ]
           },
           {
@@ -548,39 +579,6 @@ export default defineConfig({
               { text: "Let's Encrypt not working", link: '/troubleshoot/dns-and-domains/lets-encrypt-not-working' },
             ]
           },
-        ],
-      },
-      {
-        text: 'Resources',
-        collapsed: true,
-        items: [
-          {
-            text: 'Integrations',
-            collapsed: true,
-            items: [
-              { text: 'Webstudio', link: '/resource/integrations/webstudio.md' },
-            ],
-          },
-          {
-            text: 'Contribute',
-            collapsed: true,
-            items: [
-              { text: 'Coolify', link: '/resource/contribute/coolify' },
-              { text: 'New Service', link: '/resource/contribute/service' },
-              { text: 'Documentation', link: '/resource/contribute/documentation' },
-            ],
-          },
-          { text: 'Sponsors', link: '/resource/sponsors' },
-          { text: 'Team', link: '/resource/team' },
-          // {
-          //   text: 'Changelog',
-          //   collapsed: true,
-          //   items: [
-          //     { text: 'Overview', link: '/resource/changelog/overview' },
-          //     { text: 'v4 Beta-384', link: '/resource/changelog/v4-beta-384' },
-          //     { text: 'v4 Beta-383', link: '/resource/changelog/v4-beta-383' },
-          //   ],
-          // },
         ],
       },
     ],
@@ -605,6 +603,7 @@ export default defineConfig({
           }
         }
       })
+      md.use(tabsMarkdownPlugin)
     },
     theme: {
       light: 'github-light',
@@ -616,7 +615,7 @@ export default defineConfig({
     },
     // Map ssh to ssh-config
     languageAlias: {
-      ssh: 'ssh-config'
+      ssh: 'ssh-config',
     }
   },
 
@@ -625,9 +624,26 @@ export default defineConfig({
   vite: {
     plugins: [
       yaml as any,
-      llms({
-        llmsDir: '/'
-      })
+      llmstxt({
+        ignoreFiles: [
+          '/docs/api-reference/api/**/*',
+          '**/api-reference/api/**/*'
+        ],
+      }),
+      groupIconVitePlugin({
+        customIcon: {
+          bruno: 'vscode-icons:file-type-bruno',
+          curl: 'simple-icons:curl',
+        },
+        defaultLabels: [
+          'bruno',
+          'curl',
+          '.ts',
+          '.js',
+          '.py',
+          '.php',
+        ],
+      }),
     ],
     assetsInclude: ['**/*.yml'],
     build: {

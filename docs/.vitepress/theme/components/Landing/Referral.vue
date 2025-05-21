@@ -36,8 +36,10 @@
                     <span class="text-xs text-gray-700 dark:text-gray-200">Terminal</span>
                 </div>
                 <button type="button"
+                    v-plausible:cta-click="{ source: 'referral-link' }"
                     class="inline-flex items-center p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-md transition-colors"
-                    @click="copyToClipboard">
+                    @click="copyToClipboard"
+                >
                     <!-- TODO: Replace w a Icon module source=https://icones.js.org/collection/all?s=clipboard-document&icon=heroicons:clipboard-document -->
                     <svg v-if="!isCopied" xmlns="http://www.w3.org/2000/svg" class="size-5" width="32" height="32"
                         viewBox="0 0 24 24">

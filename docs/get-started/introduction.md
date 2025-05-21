@@ -56,7 +56,7 @@ Coolify delivers unbeatable advantages for developers who want to self-host. Her
 | **Quick Setup**             | Start hosting in minutes with minimal maintenance required.                                                    |
 | **User-Friendly Interface** | Manage your infrastructure through a clean, simple dashboard designed for developers.                          |
 | **100% Open Source**        | Review the code, contribute to development, and help shape the platform’s future.                              |
-| **Active Community**        | Join over 13,000 people on Discord and 145,000+ servers running Coolify worldwide.                             |
+| **Active Community**        | Join over 14,000 people on Discord and 161,000+ servers running Coolify worldwide.                             |
 
 
 ## Getting Started with Coolify
@@ -80,10 +80,10 @@ You have two ways to use Coolify:
   - Let the Coolify team manage Coolify for you. 
   - With Coolify Cloud, you don’t need to install or update Coolify yourself, and no server resources are required for Coolify itself, it runs on the Coolify team’s managed servers. 
   - Simply create an account from [here ↗](https://app.coolify.io/register), connect your servers via SSH keys, and start deploying. 
-  - This is a paid service (starts fro **$5/mo**), as it costs the team to host and maintain the infrastructure. 
+  This is a paid service (starting at $5/mo), as it costs the team to host and maintain the infrastructure. 
   - Updates on Coolify Cloud are thoroughly tested by the core team, so they might be slightly delayed for added stability.
 
 
 ## Join Our Community
-Got questions or need support? Our discord community is here to help. 
-Connect with other coolify users on our community server to get assistance and share your experiences.
+Got questions or need support? Our [discord community](https://coollabs.io/discord) is here to help. 
+Connect with other Coolify users on our community server to get assistance and share your experiences.
