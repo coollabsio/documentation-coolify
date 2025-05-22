@@ -42,6 +42,12 @@ You can find the video instructions for this process in [Coolify's GitHub reposi
 
 If you wish to connect to databases hosted on Coolify, but external to the Superset service template, you will need to turn on the option: [Connect to Predefined Networks](https://coolify.io/docs/knowledge-base/docker/compose#connect-to-predefined-networks).
 
+### Configuring Superset
+
+Please refer to the [official documentation](https://superset.apache.org/docs/configuration/configuring-superset) for how you can tweak your `superset_config.py`.
+
+This python config file can be edited using Coolify's UI by navigating to your service's [Persistent Storage](https://coolify.io/docs/knowledge-base/persistent-storage) under the Configuration tab.
+
 ## Links
 
 - [Official Website ›](https://superset.apache.org)
