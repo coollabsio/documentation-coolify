@@ -62,8 +62,9 @@ services:
       - '--providers.docker.exposedbydefault=false'
       - '--providers.file.directory=/traefik/dynamic/'
       - '--providers.file.watch=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true'
-      - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http'
+      # use dnschallenge instead of httpchallenge
+      # - '--certificatesresolvers.letsencrypt.acme.httpchallenge=true'
+      # - '--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=http'
       - '--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=hetzner'
       - '--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0'
       - '--certificatesresolvers.letsencrypt.acme.storage=/traefik/acme.json'
